@@ -22,6 +22,7 @@ mixin _$ValueFailure<T> {
     required TResult Function() empty,
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$ValueFailure<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$ValueFailure<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$ValueFailure<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$ValueFailure<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +161,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function() empty,
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
   }) {
     return exceedingLength(maxLength);
   }
@@ -166,6 +173,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
   }) {
     return exceedingLength?.call(maxLength);
   }
@@ -177,6 +185,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -192,6 +201,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
   }) {
     return exceedingLength(this);
   }
@@ -203,6 +213,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
   }) {
     return exceedingLength?.call(this);
   }
@@ -214,6 +225,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -275,6 +287,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function() empty,
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
   }) {
     return empty();
   }
@@ -286,6 +299,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
   }) {
     return empty?.call();
   }
@@ -297,6 +311,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -312,6 +327,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
   }) {
     return empty(this);
   }
@@ -323,6 +339,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
   }) {
     return empty?.call(this);
   }
@@ -334,6 +351,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -392,6 +410,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function() empty,
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
   }) {
     return invalidEmail();
   }
@@ -403,6 +422,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
   }) {
     return invalidEmail?.call();
   }
@@ -414,6 +434,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -429,6 +450,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
   }) {
     return invalidEmail(this);
   }
@@ -440,6 +462,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
   }) {
     return invalidEmail?.call(this);
   }
@@ -451,6 +474,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -533,6 +557,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function() empty,
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
   }) {
     return shortPassword(minLength);
   }
@@ -544,6 +569,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
   }) {
     return shortPassword?.call(minLength);
   }
@@ -555,6 +581,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? empty,
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -570,6 +597,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(Empty<T> value) empty,
     required TResult Function(InvalidEmail<T> value) invalidEmail,
     required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
   }) {
     return shortPassword(this);
   }
@@ -581,6 +609,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
   }) {
     return shortPassword?.call(this);
   }
@@ -592,6 +621,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(Empty<T> value)? empty,
     TResult Function(InvalidEmail<T> value)? invalidEmail,
     TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -609,4 +639,127 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PaswordsAreNotSameCopyWith<T, $Res> {
+  factory _$$PaswordsAreNotSameCopyWith(_$PaswordsAreNotSame<T> value,
+          $Res Function(_$PaswordsAreNotSame<T>) then) =
+      __$$PaswordsAreNotSameCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$PaswordsAreNotSameCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$PaswordsAreNotSameCopyWith<T, $Res> {
+  __$$PaswordsAreNotSameCopyWithImpl(_$PaswordsAreNotSame<T> _value,
+      $Res Function(_$PaswordsAreNotSame<T>) _then)
+      : super(_value, (v) => _then(v as _$PaswordsAreNotSame<T>));
+
+  @override
+  _$PaswordsAreNotSame<T> get _value => super._value as _$PaswordsAreNotSame<T>;
+}
+
+/// @nodoc
+
+class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
+  const _$PaswordsAreNotSame();
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.paswordsAreNotSame()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PaswordsAreNotSame<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int maxLength) exceedingLength,
+    required TResult Function() empty,
+    required TResult Function() invalidEmail,
+    required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
+  }) {
+    return paswordsAreNotSame();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+  }) {
+    return paswordsAreNotSame?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    required TResult orElse(),
+  }) {
+    if (paswordsAreNotSame != null) {
+      return paswordsAreNotSame();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
+  }) {
+    return paswordsAreNotSame(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+  }) {
+    return paswordsAreNotSame?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    required TResult orElse(),
+  }) {
+    if (paswordsAreNotSame != null) {
+      return paswordsAreNotSame(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PaswordsAreNotSame<T> implements ValueFailure<T> {
+  const factory PaswordsAreNotSame() = _$PaswordsAreNotSame<T>;
 }

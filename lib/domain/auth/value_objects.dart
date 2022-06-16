@@ -23,4 +23,8 @@ class Password extends ValueObject {
   }
 
   const Password._(this.value);
+
+  factory Password.secondPassword(Password repeatedPassword, String password) {
+    return Password._(validateTwoPasswords(repeatedPassword, password));
+  }
 }

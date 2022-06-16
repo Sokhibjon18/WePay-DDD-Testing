@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:we_pay/domain/auth/value_objects.dart';
 import 'package:we_pay/domain/core/value_failure.dart';
 
 Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
@@ -15,6 +16,16 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return right(input);
   } else {
     return left(const ValueFailure.shortPassword(minLength: 6));
+  }
+}
+
+Either<ValueFailure<String>, String> validateTwoPasswords(Password password, String input) {
+  if (input.length < 6) {
+    return left(const ValueFailure.shortPassword(minLength: 6));
+  } else if (password.getRight().toString() == input) {
+    return right(input);
+  } else {
+    return left(const ValueFailure.paswordsAreNotSame());
   }
 }
 

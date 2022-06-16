@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "854123972211",
+    "project_id": "wepay-817af",
+    "storage_bucket": "wepay-817af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854123972211:android:0f147309e22f47a7958c06",
+        "android_client_info": {
+          "package_name": "com.example.we_pay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854123972211-2vikpg903sa0q0fo4jdif1ljf3tej3ks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD25a57-MCgyTyaNj0ixAk_ZwALK7GHWZI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854123972211-2vikpg903sa0q0fo4jdif1ljf3tej3ks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

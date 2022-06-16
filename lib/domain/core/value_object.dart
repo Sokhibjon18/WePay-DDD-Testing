@@ -8,7 +8,7 @@ abstract class ValueObject<T> {
   const ValueObject();
   Either<ValueFailure<T>, T> get value;
 
-  T getEitherValue() => value.fold((f) => throw UnexpectedErrorValue(f), id);
+  T getRight() => value.fold((f) => throw UnexpectedErrorValue(f), id);
 
   Either<ValueFailure<dynamic>, dynamic> get failureOrUnit {
     return value.fold(
