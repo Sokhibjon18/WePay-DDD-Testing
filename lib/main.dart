@@ -5,7 +5,6 @@ import 'package:we_pay/injection.dart';
 import 'package:we_pay/presentation/core/my_app.dart';
 
 void main(List<String> args) async {
-  // learning git skills asd safsd
   WidgetsFlutterBinding.ensureInitialized();
   configurInjection(Environment.prod);
   await Firebase.initializeApp();
