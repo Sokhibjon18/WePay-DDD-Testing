@@ -32,19 +32,30 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(height: 32),
               const SignUpForm(),
               const SizedBox(height: 32),
-              SimpleBtn(
-                child: context.read<AuthBloc>().state.isSubmitting
-                    ? const CircularProgressIndicator()
-                    : const Text(
-                        'Sign Up',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                onTap: () {
-                  context.read<AuthBloc>().add(const AuthEvent.registerWithEmailAndPassword());
+              BlocBuilder<AuthBloc, AuthState>(
+                buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+                builder: (context, state) {
+                  return SimpleBtn(
+                    child: context.read<AuthBloc>().state.isSubmitting
+                        ? const CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            'Sign Up',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                    onTap: () {
+                      if (!context.read<AuthBloc>().state.isSubmitting) {
+                        context
+                            .read<AuthBloc>()
+                            .add(const AuthEvent.registerWithEmailAndPassword());
+                      }
+                    },
+                  );
                 },
               ),
               Container(
@@ -73,7 +84,7 @@ class SignUpPage extends StatelessWidget {
               const SizedBox(height: 32),
               SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: loginWithAnother('assets/images/google.png', 'Google'),
+                child: loginWithAnother(context, 'assets/images/google.png', 'Google'),
               ),
               const SizedBox(height: 48),
               Row(
