@@ -28,8 +28,10 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => firebaseInjectableModules.firestore);
   gh.lazySingleton<_i5.GoogleSignIn>(
       () => firebaseInjectableModules.googleSignIn);
-  gh.lazySingleton<_i6.IAuthFacade>(() =>
-      _i7.FirebaseAuthFacade(get<_i3.FirebaseAuth>(), get<_i5.GoogleSignIn>()));
+  gh.lazySingleton<_i6.IAuthFacade>(() => _i7.FirebaseAuthFacade(
+      get<_i3.FirebaseAuth>(),
+      get<_i5.GoogleSignIn>(),
+      get<_i4.FirebaseFirestore>()));
   gh.factory<_i8.AuthBloc>(() => _i8.AuthBloc(get<_i6.IAuthFacade>()));
   return get;
 }
