@@ -4,6 +4,7 @@ part of 'auth_bloc.dart';
 class AuthState with _$AuthState {
   const factory AuthState({
     required EmailAddress emailAddress,
+    required Name name,
     required Password password,
     required Password repeatedPassword,
     required bool showErrorMessage,
@@ -13,6 +14,7 @@ class AuthState with _$AuthState {
 
   factory AuthState.initial() => AuthState(
         emailAddress: EmailAddress(''),
+        name: Name(''),
         password: Password(''),
         repeatedPassword: Password(''),
         showErrorMessage: false,

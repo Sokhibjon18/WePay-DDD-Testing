@@ -6,6 +6,7 @@ import 'package:we_pay/domain/auth/value_objects.dart';
 abstract class IAuthFacade {
   Future<Option<User>> getSignedUser();
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
+    required Name name,
     required EmailAddress email,
     required Password password,
   });

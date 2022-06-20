@@ -21,6 +21,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   String get uid => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   List<Apartment> get ownedApartments => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
@@ -37,6 +38,7 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res>;
   $Res call(
       {String uid,
+      String name,
       List<Apartment> ownedApartments,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
@@ -52,6 +54,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
   @override
   $Res call({
     Object? uid = freezed,
+    Object? name = freezed,
     Object? ownedApartments = freezed,
     Object? serverTimeStamp = freezed,
   }) {
@@ -59,6 +62,10 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       ownedApartments: ownedApartments == freezed
           ? _value.ownedApartments
@@ -80,6 +87,7 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @override
   $Res call(
       {String uid,
+      String name,
       List<Apartment> ownedApartments,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
@@ -97,6 +105,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
+    Object? name = freezed,
     Object? ownedApartments = freezed,
     Object? serverTimeStamp = freezed,
   }) {
@@ -104,6 +113,10 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       ownedApartments: ownedApartments == freezed
           ? _value._ownedApartments
@@ -122,6 +135,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
 class _$_UserModel extends _UserModel {
   const _$_UserModel(
       {required this.uid,
+      required this.name,
       final List<Apartment> ownedApartments = const [],
       @ServerTimestampConverter() required this.serverTimeStamp})
       : _ownedApartments = ownedApartments,
@@ -132,6 +146,8 @@ class _$_UserModel extends _UserModel {
 
   @override
   final String uid;
+  @override
+  final String name;
   final List<Apartment> _ownedApartments;
   @override
   @JsonKey()
@@ -146,7 +162,7 @@ class _$_UserModel extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(uid: $uid, ownedApartments: $ownedApartments, serverTimeStamp: $serverTimeStamp)';
+    return 'UserModel(uid: $uid, name: $name, ownedApartments: $ownedApartments, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -155,6 +171,7 @@ class _$_UserModel extends _UserModel {
         (other.runtimeType == runtimeType &&
             other is _$_UserModel &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other._ownedApartments, _ownedApartments) &&
             const DeepCollectionEquality()
@@ -166,6 +183,7 @@ class _$_UserModel extends _UserModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(_ownedApartments),
       const DeepCollectionEquality().hash(serverTimeStamp));
 
@@ -183,6 +201,7 @@ class _$_UserModel extends _UserModel {
 abstract class _UserModel extends UserModel {
   const factory _UserModel(
       {required final String uid,
+      required final String name,
       final List<Apartment> ownedApartments,
       @ServerTimestampConverter()
           required final FieldValue serverTimeStamp}) = _$_UserModel;
@@ -193,6 +212,8 @@ abstract class _UserModel extends UserModel {
 
   @override
   String get uid => throw _privateConstructorUsedError;
+  @override
+  String get name => throw _privateConstructorUsedError;
   @override
   List<Apartment> get ownedApartments => throw _privateConstructorUsedError;
   @override

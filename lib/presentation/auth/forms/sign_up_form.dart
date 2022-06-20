@@ -36,6 +36,29 @@ class SignUpForm extends StatelessWidget {
               TextFormField(
                 autocorrect: false,
                 cursorColor: Colors.blue,
+                onChanged: (value) => context.read<AuthBloc>().add(NameChanged(value)),
+                validator: (_) => context.read<AuthBloc>().state.name.value.fold(
+                      (f) => f.maybeMap(
+                        shortageName: (value) => 'Shortage name',
+                        orElse: () => null,
+                      ),
+                      (r) => null,
+                    ),
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.person_outline_rounded, color: Colors.grey),
+                  label: const Text('Name'),
+                  labelStyle: const TextStyle(color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: Colors.grey[100]!),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                autocorrect: false,
+                cursorColor: Colors.blue,
                 onChanged: (value) => context.read<AuthBloc>().add(EmailChanged(value)),
                 validator: (_) => context.read<AuthBloc>().state.emailAddress.value.fold(
                       (f) => f.maybeMap(
