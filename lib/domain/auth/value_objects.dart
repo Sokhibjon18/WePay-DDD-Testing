@@ -28,3 +28,14 @@ class Password extends ValueObject {
     return Password._(validateTwoPasswords(repeatedPassword, password));
   }
 }
+
+class Name extends ValueObject {
+  @override
+  final Either<ValueFailure, String> value;
+
+  const Name._(this.value);
+
+  factory Name(String input) {
+    return Name._(validateName(input));
+  }
+}

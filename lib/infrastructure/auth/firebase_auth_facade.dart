@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -25,6 +24,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Either<AuthFailure, Unit>> registerWithEmailAndPassword({
+    required Name name,
     required EmailAddress email,
     required Password password,
   }) async {
@@ -33,7 +33,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: email.getRight(),
         password: password.getRight(),
       );
-      saveOrUpdateUser();
+      saveOrUpdateUser(name: name.getRight());
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'email-already-in-use'
@@ -84,7 +84,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<void> saveOrUpdateUser() async {
+  Future<void> saveOrUpdateUser({String? name}) async {
     try {
       String uid = _auth.currentUser!.uid;
       final user = await _firestore.collection('user').doc(uid).get();
@@ -92,7 +92,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         UserModel userModel = UserModel.fromJson(user.data()!);
         _firestore.updateUser(userModel);
       } else {
-        UserModel userModel = UserModel(uid: uid, serverTimeStamp: FieldValue.serverTimestamp());
+        UserModel userModel =
+            UserModel(uid: uid, name: name!, serverTimeStamp: FieldValue.serverTimestamp());
         _firestore.setUser(userModel);
       }
     } on FirebaseException catch (e) {
