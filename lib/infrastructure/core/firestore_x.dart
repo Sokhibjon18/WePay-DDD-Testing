@@ -10,10 +10,20 @@ extension FirebaseFirestoreX on FirebaseFirestore {
     await FirebaseFirestore.instance.collection('user').doc(userModel.uid).set(userModel.toJson());
   }
 
+  Future<void> addApartmentToUser(String userId, String apartmentId) async {
+    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+      'ownedApartments': FieldValue.arrayUnion([apartmentId])
+    });
+  }
+
   Future<void> updateUser(UserModel userModel) async {
     await FirebaseFirestore.instance
         .collection('user')
         .doc(userModel.uid)
         .update(userModel.toJson());
+  }
+
+  DocumentReference<Map<String, dynamic>> apartment(String apartmentId) {
+    return FirebaseFirestore.instance.collection('apartment').doc(apartmentId);
   }
 }

@@ -10,4 +10,5 @@ abstract class ValueFailure<T> with _$ValueFailure {
   const factory ValueFailure.shortPassword({required int minLength}) = ShortPassword;
   const factory ValueFailure.paswordsAreNotSame() = PaswordsAreNotSame;
   const factory ValueFailure.shortageName() = ShortageName;
+  const factory ValueFailure.shortageAddress() = ShortageAddress;
 }
