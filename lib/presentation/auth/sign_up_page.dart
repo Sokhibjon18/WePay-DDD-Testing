@@ -94,7 +94,7 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   const Text('Already have an account?'),
                   const SizedBox(width: 8),
-                  textBtn('Sign Up', () {
+                  textBtn('Log In', () {
                     context.read<AuthBloc>().add(const Refresh());
                     context.router.replace(const LogInRoute());
                   }),

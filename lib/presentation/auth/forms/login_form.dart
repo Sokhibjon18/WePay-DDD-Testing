@@ -1,7 +1,9 @@
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:we_pay/presentation/router/router.gr.dart';
 
 class LoginFrom extends StatelessWidget {
   const LoginFrom({Key? key}) : super(key: key);
@@ -22,7 +24,9 @@ class LoginFrom extends StatelessWidget {
               );
               FlushbarHelper.createError(message: failureMessage).show(context);
             },
-            (r) => null,
+            (r) {
+              context.router.replace(const HomeRoute());
+            },
           ),
         );
       },
