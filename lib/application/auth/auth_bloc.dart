@@ -33,17 +33,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         authFailureOrSuccessOption: none(),
       ));
     });
+    on<NameChanged>((event, emit) {
+      emit(state.copyWith(
+        name: Name(event.name),
+        authFailureOrSuccessOption: none(),
+      ));
+    });
     on<ResigisterWithEmailAndPassword>((event, emit) async {
       Either<AuthFailure, Unit>? failureOrSuccess;
 
       final emailIsValid = state.emailAddress.isValid();
       final passwordIsValid = state.password.isValid();
       final repeatedPaswordIsValid = state.repeatedPassword.isValid();
+      final nameIsValid = state.name.isValid();
 
-      if (emailIsValid && passwordIsValid && repeatedPaswordIsValid) {
+      if (emailIsValid && passwordIsValid && repeatedPaswordIsValid && nameIsValid) {
         emit(state.copyWith(isSubmitting: true, authFailureOrSuccessOption: none()));
 
         failureOrSuccess = await _authFacade.registerWithEmailAndPassword(
+          name: state.name,
           email: state.emailAddress,
           password: state.password,
         );

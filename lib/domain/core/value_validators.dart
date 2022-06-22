@@ -32,3 +32,15 @@ Either<ValueFailure<String>, String> validateTwoPasswords(Password password, Str
 Either<ValueFailure<String>, String> validateEmail(String input) {
   return EmailValidator.validate(input) ? right(input) : left(const ValueFailure.invalidEmail());
 }
+
+Either<ValueFailure<String>, String> validateName(String input) {
+  return input.length < 3 ? left(const ValueFailure.shortageName()) : right(input);
+}
+
+Either<ValueFailure<String>, String> validateAddress(String input) {
+  return input.length < 3 ? left(const ValueFailure.shortageAddress()) : right(input);
+}
+
+Either<ValueFailure<String>, String> validateHouseNumber(String input) {
+  return input.isEmpty ? left(const ValueFailure.empty()) : right(input);
+}

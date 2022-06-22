@@ -1,4 +1,3 @@
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,19 +38,28 @@ class LogInPage extends StatelessWidget {
                 const SizedBox(height: 32),
                 const LoginFrom(),
                 const SizedBox(height: 32),
-                SimpleBtn(
-                  child: context.read<AuthBloc>().state.isSubmitting
-                      ? const CircularProgressIndicator()
-                      : const Text(
-                          'Log In',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                  onTap: () {
-                    context.read<AuthBloc>().add(const AuthEvent.signInWithEmailAndPassword());
+                BlocBuilder<AuthBloc, AuthState>(
+                  buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
+                  builder: (context, state) {
+                    return SimpleBtn(
+                      child: context.read<AuthBloc>().state.isSubmitting
+                          ? const CircularProgressIndicator(color: Colors.white)
+                          : const Text(
+                              'Log In',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                      onTap: () {
+                        if (!context.read<AuthBloc>().state.isSubmitting) {
+                          context
+                              .read<AuthBloc>()
+                              .add(const AuthEvent.signInWithEmailAndPassword());
+                        }
+                      },
+                    );
                   },
                 ),
                 const SizedBox(height: 48),
@@ -74,7 +82,7 @@ class LogInPage extends StatelessWidget {
                 const SizedBox(height: 32),
                 SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  child: loginWithAnother('assets/images/google.png', 'Google'),
+                  child: loginWithAnother(context, 'assets/images/google.png', 'Google'),
                 ),
                 const SizedBox(height: 48),
                 Row(
