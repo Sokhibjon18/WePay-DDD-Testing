@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+//! compare your reusable textField with textField which is used in auth
+//! you don't need to wrap textField in order to give border grey strock
+//! you gave 2 times margin to textField
 Container reusableTextField(String text) {
   return Container(
     margin: const EdgeInsets.only(left: 32, right: 32, top: 20),
@@ -103,6 +105,7 @@ void bottomsheet(context) {
                 topRight: Radius.circular(20),
               ),
             ),
+            //! don't give exect height to all widgets, most times it gives overflow pixels
             height: MediaQuery.of(context).size.height * 0.07,
             child: const Center(
               child: Text(
@@ -126,22 +129,29 @@ void bottomsheet(context) {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width*0.384,
+                //! DO NOT NEED exect sizes, instead use expanded and sizedBox widgets
+                width: MediaQuery.of(context).size.width * 0.384,
                 margin: const EdgeInsets.only(left: 32, right: 24, top: 24),
                 child: reusableTextField('House number'),
               ),
               Container(
-                width: MediaQuery.of(context).size.width*0.39,
+                //! DO NOT NEED exect sizes, instead use expanded and sizedBox widgets
+                width: MediaQuery.of(context).size.width * 0.39,
                 margin: const EdgeInsets.only(right: 32, top: 24),
                 child: reusableTextField('Flat number'),
               ),
             ],
           ),
           Container(
-            height: MediaQuery.of(context).size.height*0.05,
+            //! DO NOT NEED exect sizes, instead use expanded and sizedBox widgets
+            height: MediaQuery.of(context).size.height * 0.05,
             margin: const EdgeInsets.only(left: 32, right: 32, top: 25),
             color: Colors.blue,
-            child: const Center(child: Text('Add', style: TextStyle(color: Colors.white, fontSize: 16),)),
+            child: const Center(
+                child: Text(
+              'Add',
+              style: TextStyle(color: Colors.white, fontSize: 16),
+            )),
           ),
         ],
       ),
