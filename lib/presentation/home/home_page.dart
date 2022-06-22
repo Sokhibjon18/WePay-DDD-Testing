@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'reusables.dart';
 
-
-class Home_page extends StatefulWidget {
-  const Home_page({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  _Home_pageState createState() => _Home_pageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _Home_pageState extends State<Home_page> {
+class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,4 +27,3 @@ class _Home_pageState extends State<Home_page> {
     );
   }
 }
-
