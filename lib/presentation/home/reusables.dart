@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 Container reusableTextField(String text) {
   return Container(
-    margin: const EdgeInsets.only(left: 32, right: 32, top: 20),
     decoration: const BoxDecoration(
       boxShadow: [
         BoxShadow(
@@ -32,53 +31,6 @@ Container reusableTextField(String text) {
   );
 }
 
-// Container taskContainer(Data data, BuildContext context) {
-//   return Container(
-//     margin: const EdgeInsets.all(15),
-//     decoration: const BoxDecoration(
-//       color: Colors.white,
-//       boxShadow: [
-//         BoxShadow(
-//           spreadRadius: 1,
-//           color: Colors.grey,
-//         ),
-//       ],
-//     ),
-//     child: Row(
-//       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//       children: [
-//         Container(
-//           width: MediaQuery.of(context).size.width*0.54,
-//           margin: const EdgeInsets.only(left: 10, bottom: 6, top: 7),
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Text(
-//                 data.location,
-//                 style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-//                 overflow: TextOverflow.ellipsis,
-//               ),
-//               Text(
-//                 'Xonadoshlar: ' + data.people,
-//                 style: const TextStyle(fontSize: 12, color: Colors.grey),
-//                 maxLines: 2,
-//                 overflow: TextOverflow.fade,
-//                 //softWrap: true,
-//               ),
-//             ],
-//           ),
-//         ),
-//         Container(
-//           width: 113,
-//           height: 26,
-//           color: Colors.green,
-//           child: Center(child: Text('Yan: '+data.price+" so'm", style: const TextStyle(color: Colors.white),)),
-//         ),
-//       ],
-//     ),
-//   );
-// }
-
 void bottomsheet(context) {
   List informs = ['Region', 'District', 'Street'];
   showModalBottomSheet(
@@ -103,7 +55,7 @@ void bottomsheet(context) {
                 topRight: Radius.circular(20),
               ),
             ),
-            height: MediaQuery.of(context).size.height * 0.07,
+            height: 56,
             child: const Center(
               child: Text(
                 'Adding apartment',
@@ -126,22 +78,27 @@ void bottomsheet(context) {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width*0.384,
+                width: 48,
                 margin: const EdgeInsets.only(left: 32, right: 24, top: 24),
                 child: reusableTextField('House number'),
               ),
               Container(
-                width: MediaQuery.of(context).size.width*0.39,
+                width: 48,
                 margin: const EdgeInsets.only(right: 32, top: 24),
                 child: reusableTextField('Flat number'),
               ),
             ],
           ),
           Container(
-            height: MediaQuery.of(context).size.height*0.05,
+            height: 45,
             margin: const EdgeInsets.only(left: 32, right: 32, top: 25),
             color: Colors.blue,
-            child: const Center(child: Text('Add', style: TextStyle(color: Colors.white, fontSize: 16),)),
+            child: const Center(
+              child: Text(
+                'Add',
+                style: TextStyle(color: Colors.white, fontSize: 16),
+              ),
+            ),
           ),
         ],
       ),
