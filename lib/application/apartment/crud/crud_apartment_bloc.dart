@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -15,7 +17,10 @@ part 'crud_apartment_bloc.freezed.dart';
 class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
   final IApartmentRepository _repository;
 
+  StreamController<Either<ApartmentFailure, List<Apartment>>> apartmentStream = StreamController();
+
   CRUDApartmentBloc(this._repository) : super(CRUDApartmentState.initial()) {
+    apartmentStream.addStream(_repository.watchAll());
     on<_Initial>((event, emit) {
       emit(CRUDApartmentState.initial());
     });
@@ -65,5 +70,10 @@ class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
         creationFailure: optionOf(failureOrSuccess),
       ));
     });
+  }
+  @override
+  Future<void> close() {
+    apartmentStream!.close();
+    return super.close();
   }
 }

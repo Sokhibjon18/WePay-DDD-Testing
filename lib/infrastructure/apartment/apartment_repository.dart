@@ -10,6 +10,7 @@ import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/domain/models/user_model/user_model.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
+import 'package:rxdart/rxdart.dart';
 
 @LazySingleton(as: IApartmentRepository)
 class ApartmentRepository implements IApartmentRepository {
@@ -88,13 +89,16 @@ class ApartmentRepository implements IApartmentRepository {
 
   @override
   Stream<Either<ApartmentFailure, List<Apartment>>> watchAll() async* {
-    try {
-      final query = await _firestore.collection('apartment').get();
-      final apartmentList = query.docs.map((e) => Apartment.fromJson(e.data())).toList();
-      yield right(apartmentList);
-    } on FirebaseException catch (e) {
-      log('${e.code} ${e.message}');
-      yield left(const ApartmentFailure.serverError());
-    }
+    final snapshotStream = _firestore.collection('apartment').snapshots();
+    yield* snapshotStream.map((snapshot) {
+      final apartmentList = snapshot.docs.map((e) => Apartment.fromJson(e.data())).toList();
+      return right<ApartmentFailure, List<Apartment>>(apartmentList);
+    }).onErrorReturnWith((error, stackTrace) {
+      if (error is FirebaseException && stackTrace.toString().contains('PERMISSION_DENIED')) {
+        return left(const ApartmentFailure.permissionDenied());
+      } else {
+        return left(const ApartmentFailure.serverError());
+      }
+    });
   }
 }

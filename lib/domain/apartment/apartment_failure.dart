@@ -5,4 +5,5 @@ part 'apartment_failure.freezed.dart';
 @freezed
 abstract class ApartmentFailure with _$ApartmentFailure {
   const factory ApartmentFailure.serverError() = ServerError;
+  const factory ApartmentFailure.permissionDenied() = PermissionDenied;
 }
