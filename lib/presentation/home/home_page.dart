@@ -5,7 +5,7 @@ import 'package:we_pay/application/apartment/crud/crud_apartment_bloc.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/presentation/home/widgets/bottom_sheet.dart';
-import 'package:we_pay/presentation/home/widgets/task_container.dart';
+import 'package:we_pay/presentation/home/widgets/apartment_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,7 +39,7 @@ class HomePageState extends State<HomePage> {
             (r) => ListView.builder(
               itemCount: r.length,
               itemBuilder: (context, index) {
-                return TaskContainer(apartment: r[index]);
+                return ApartmentItem(apartment: r[index]);
               },
             ),
           );

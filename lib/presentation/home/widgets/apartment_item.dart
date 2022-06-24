@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 
-class TaskContainer extends StatelessWidget {
-  const TaskContainer({Key? key, required this.apartment}) : super(key: key);
+class ApartmentItem extends StatelessWidget {
+  const ApartmentItem({Key? key, required this.apartment}) : super(key: key);
 
   final Apartment apartment;
 
