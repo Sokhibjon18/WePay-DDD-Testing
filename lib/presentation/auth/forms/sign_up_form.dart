@@ -1,13 +1,35 @@
+import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
+import 'package:we_pay/presentation/router/router.gr.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: (context, state) {
+        state.authFailureOrSuccessOption.fold(
+          () => null,
+          (a) => a.fold(
+            (failure) {
+              String failureMessage = failure.map(
+                canceledByUser: (_) => 'Canceled by user',
+                serverError: (_) => 'Server error',
+                emailAlreadyInUse: (_) => 'Email already in use',
+                invalidEmailAndPasswordCombination: (_) => 'Incorrect user or password',
+              );
+              FlushbarHelper.createError(message: failureMessage).show(context);
+            },
+            (r) {
+              context.router.replace(const HomeRoute());
+            },
+          ),
+        );
+      },
       builder: (context, state) {
         return Form(
           autovalidateMode: context.read<AuthBloc>().state.showErrorMessage
@@ -15,6 +37,29 @@ class SignUpForm extends StatelessWidget {
               : AutovalidateMode.disabled,
           child: Column(
             children: [
+              TextFormField(
+                autocorrect: false,
+                cursorColor: Colors.blue,
+                onChanged: (value) => context.read<AuthBloc>().add(NameChanged(value)),
+                validator: (_) => context.read<AuthBloc>().state.name.value.fold(
+                      (f) => f.maybeMap(
+                        shortageName: (value) => 'Shortage name',
+                        orElse: () => null,
+                      ),
+                      (r) => null,
+                    ),
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.person_outline_rounded, color: Colors.grey),
+                  label: const Text('Name'),
+                  labelStyle: const TextStyle(color: Colors.grey),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(width: 1, color: Colors.grey[100]!),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
               TextFormField(
                 autocorrect: false,
                 cursorColor: Colors.blue,

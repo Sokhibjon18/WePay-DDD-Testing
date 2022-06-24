@@ -1,6 +1,9 @@
+import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:we_pay/presentation/router/router.gr.dart';
 
 class LoginFrom extends StatelessWidget {
   const LoginFrom({Key? key}) : super(key: key);
@@ -11,7 +14,20 @@ class LoginFrom extends StatelessWidget {
       listener: (context, state) {
         state.authFailureOrSuccessOption.fold(
           () => null,
-          (a) => a.fold((l) => null, (r) => null),
+          (a) => a.fold(
+            (failure) {
+              String failureMessage = failure.map(
+                canceledByUser: (_) => 'Canceled by user',
+                serverError: (_) => 'Server error',
+                emailAlreadyInUse: (_) => 'Email already in use',
+                invalidEmailAndPasswordCombination: (_) => 'Incorrect user or password',
+              );
+              FlushbarHelper.createError(message: failureMessage).show(context);
+            },
+            (r) {
+              context.router.replace(const HomeRoute());
+            },
+          ),
         );
       },
       builder: (context, state) {

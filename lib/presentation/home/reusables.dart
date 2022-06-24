@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+//! compare your reusable textField with textField which is used in auth
+//! you don't need to wrap textField in order to give border grey strock
+//! you gave 2 times margin to textField
 Container reusableTextField(String text) {
   return Container(
     decoration: const BoxDecoration(
@@ -78,12 +80,10 @@ void bottomsheet(context) {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                width: 48,
                 margin: const EdgeInsets.only(left: 32, right: 24, top: 24),
                 child: reusableTextField('House number'),
               ),
               Container(
-                width: 48,
                 margin: const EdgeInsets.only(right: 32, top: 24),
                 child: reusableTextField('Flat number'),
               ),

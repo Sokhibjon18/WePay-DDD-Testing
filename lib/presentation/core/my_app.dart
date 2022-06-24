@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/injection.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
+import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
@@ -13,6 +14,11 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => getIt<AuthBloc>()),
+        BlocProvider(
+          create: (_) {
+            return getIt<SignInCheckerBloc>()..add(const SignInCheckerEvent.authCheckRequest());
+          },
+        ),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
