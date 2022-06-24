@@ -33,7 +33,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: email.getRight(),
         password: password.getRight(),
       );
-      saveOrUpdateUser(name: name.getRight());
+      saveOrUpdateUser(name: name.getRight(), email: email.getRight());
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'email-already-in-use'
@@ -84,7 +84,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<void> saveOrUpdateUser({String? name}) async {
+  Future<void> saveOrUpdateUser({String? name, String? email}) async {
     try {
       String uid = _auth.currentUser!.uid;
       final user = await _firestore.collection('user').doc(uid).get();
@@ -92,8 +92,12 @@ class FirebaseAuthFacade implements IAuthFacade {
         UserModel userModel = UserModel.fromJson(user.data()!);
         _firestore.updateUser(userModel);
       } else {
-        UserModel userModel =
-            UserModel(uid: uid, name: name!, serverTimeStamp: FieldValue.serverTimestamp());
+        UserModel userModel = UserModel(
+          uid: uid,
+          name: name!,
+          email: email,
+          serverTimeStamp: FieldValue.serverTimestamp(),
+        );
         _firestore.setUser(userModel);
       }
     } on FirebaseException catch (e) {

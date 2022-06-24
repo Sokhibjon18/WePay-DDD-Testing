@@ -2,6 +2,7 @@ part of 'crud_apartment_bloc.dart';
 
 @freezed
 class CRUDApartmentEvent with _$CRUDApartmentEvent {
+  const factory CRUDApartmentEvent.initial() = _Initial;
   const factory CRUDApartmentEvent.regionChanged(String region) = _RegionChanged;
   const factory CRUDApartmentEvent.districtChanged(String district) = _DistrictChanged;
   const factory CRUDApartmentEvent.streetNameChanged(String street) = _StreetNameChanged;

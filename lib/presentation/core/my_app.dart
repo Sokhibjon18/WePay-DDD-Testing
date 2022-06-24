@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:we_pay/application/apartment/crud/crud_apartment_bloc.dart';
 import 'package:we_pay/injection.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
@@ -15,10 +16,10 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => getIt<AuthBloc>()),
         BlocProvider(
-          create: (_) {
-            return getIt<SignInCheckerBloc>()..add(const SignInCheckerEvent.authCheckRequest());
-          },
+          create: (_) =>
+              getIt<SignInCheckerBloc>()..add(const SignInCheckerEvent.authCheckRequest()),
         ),
+        BlocProvider(create: (_) => getIt<CRUDApartmentBloc>()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),

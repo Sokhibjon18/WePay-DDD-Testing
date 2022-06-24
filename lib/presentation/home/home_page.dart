@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'reusables.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:we_pay/application/apartment/crud/crud_apartment_bloc.dart';
+import 'package:we_pay/presentation/home/home_page_bottom_sheet.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,6 +20,7 @@ class HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
+              context.read<CRUDApartmentBloc>().add(const CRUDApartmentEvent.initial());
               bottomsheet(context);
             },
             icon: const Icon(Icons.add),

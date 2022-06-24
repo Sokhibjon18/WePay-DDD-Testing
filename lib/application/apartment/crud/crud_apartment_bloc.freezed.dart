@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CRUDApartmentEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -28,6 +29,7 @@ mixin _$CRUDApartmentEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -38,6 +40,7 @@ mixin _$CRUDApartmentEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -49,6 +52,7 @@ mixin _$CRUDApartmentEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -59,6 +63,7 @@ mixin _$CRUDApartmentEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -69,6 +74,7 @@ mixin _$CRUDApartmentEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -95,6 +101,140 @@ class _$CRUDApartmentEventCopyWithImpl<$Res>
   final CRUDApartmentEvent _value;
   // ignore: unused_field
   final $Res Function(CRUDApartmentEvent) _then;
+}
+
+/// @nodoc
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, (v) => _then(v as _$_Initial));
+
+  @override
+  _$_Initial get _value => super._value as _$_Initial;
+}
+
+/// @nodoc
+
+class _$_Initial implements _Initial {
+  const _$_Initial();
+
+  @override
+  String toString() {
+    return 'CRUDApartmentEvent.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(String region) regionChanged,
+    required TResult Function(String district) districtChanged,
+    required TResult Function(String street) streetNameChanged,
+    required TResult Function(String house) houseNumberChanged,
+    required TResult Function(String flat) flatNumberChanged,
+    required TResult Function() creatApartment,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_RegionChanged value) regionChanged,
+    required TResult Function(_DistrictChanged value) districtChanged,
+    required TResult Function(_StreetNameChanged value) streetNameChanged,
+    required TResult Function(_HouseNumberChanged value) houseNumberChanged,
+    required TResult Function(_FlatNumberChanged value) flatNumberChanged,
+    required TResult Function(_CreateApartment value) creatApartment,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initial implements CRUDApartmentEvent {
+  const factory _Initial() = _$_Initial;
 }
 
 /// @nodoc
@@ -162,6 +302,7 @@ class _$_RegionChanged implements _RegionChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -175,6 +316,7 @@ class _$_RegionChanged implements _RegionChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -188,6 +330,7 @@ class _$_RegionChanged implements _RegionChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -205,6 +348,7 @@ class _$_RegionChanged implements _RegionChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -218,6 +362,7 @@ class _$_RegionChanged implements _RegionChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -231,6 +376,7 @@ class _$_RegionChanged implements _RegionChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -320,6 +466,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -333,6 +480,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -346,6 +494,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -363,6 +512,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -376,6 +526,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -389,6 +540,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -479,6 +631,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -492,6 +645,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -505,6 +659,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -522,6 +677,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -535,6 +691,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -548,6 +705,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -638,6 +796,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -651,6 +810,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -664,6 +824,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -681,6 +842,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -694,6 +856,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -707,6 +870,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -797,6 +961,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -810,6 +975,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -823,6 +989,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -840,6 +1007,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -853,6 +1021,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -866,6 +1035,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -931,6 +1101,7 @@ class _$_CreateApartment implements _CreateApartment {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initial,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
@@ -944,6 +1115,7 @@ class _$_CreateApartment implements _CreateApartment {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -957,6 +1129,7 @@ class _$_CreateApartment implements _CreateApartment {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
@@ -974,6 +1147,7 @@ class _$_CreateApartment implements _CreateApartment {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
@@ -987,6 +1161,7 @@ class _$_CreateApartment implements _CreateApartment {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -1000,6 +1175,7 @@ class _$_CreateApartment implements _CreateApartment {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
@@ -1028,7 +1204,8 @@ mixin _$CRUDApartmentState {
   HouseNumber get flatNumber => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
-  Option<dynamic> get creationFailure => throw _privateConstructorUsedError;
+  Option<Either<ApartmentFailure, Unit>> get creationFailure =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CRUDApartmentStateCopyWith<CRUDApartmentState> get copyWith =>
@@ -1048,7 +1225,7 @@ abstract class $CRUDApartmentStateCopyWith<$Res> {
       HouseNumber flatNumber,
       bool loading,
       bool showErrorMessage,
-      Option<dynamic> creationFailure});
+      Option<Either<ApartmentFailure, Unit>> creationFailure});
 }
 
 /// @nodoc
@@ -1103,7 +1280,7 @@ class _$CRUDApartmentStateCopyWithImpl<$Res>
       creationFailure: creationFailure == freezed
           ? _value.creationFailure
           : creationFailure // ignore: cast_nullable_to_non_nullable
-              as Option<dynamic>,
+              as Option<Either<ApartmentFailure, Unit>>,
     ));
   }
 }
@@ -1123,7 +1300,7 @@ abstract class _$$_AddingApartmentStateCopyWith<$Res>
       HouseNumber flatNumber,
       bool loading,
       bool showErrorMessage,
-      Option<dynamic> creationFailure});
+      Option<Either<ApartmentFailure, Unit>> creationFailure});
 }
 
 /// @nodoc
@@ -1180,7 +1357,7 @@ class __$$_AddingApartmentStateCopyWithImpl<$Res>
       creationFailure: creationFailure == freezed
           ? _value.creationFailure
           : creationFailure // ignore: cast_nullable_to_non_nullable
-              as Option<dynamic>,
+              as Option<Either<ApartmentFailure, Unit>>,
     ));
   }
 }
@@ -1213,7 +1390,7 @@ class _$_AddingApartmentState implements _AddingApartmentState {
   @override
   final bool showErrorMessage;
   @override
-  final Option<dynamic> creationFailure;
+  final Option<Either<ApartmentFailure, Unit>> creationFailure;
 
   @override
   String toString() {
@@ -1263,15 +1440,15 @@ class _$_AddingApartmentState implements _AddingApartmentState {
 
 abstract class _AddingApartmentState implements CRUDApartmentState {
   const factory _AddingApartmentState(
-          {required final Address regionName,
-          required final Address districtName,
-          required final Address streetName,
-          required final HouseNumber houseNumber,
-          required final HouseNumber flatNumber,
-          required final bool loading,
-          required final bool showErrorMessage,
-          required final Option<dynamic> creationFailure}) =
-      _$_AddingApartmentState;
+      {required final Address regionName,
+      required final Address districtName,
+      required final Address streetName,
+      required final HouseNumber houseNumber,
+      required final HouseNumber flatNumber,
+      required final bool loading,
+      required final bool showErrorMessage,
+      required final Option<Either<ApartmentFailure, Unit>>
+          creationFailure}) = _$_AddingApartmentState;
 
   @override
   Address get regionName => throw _privateConstructorUsedError;
@@ -1288,7 +1465,8 @@ abstract class _AddingApartmentState implements CRUDApartmentState {
   @override
   bool get showErrorMessage => throw _privateConstructorUsedError;
   @override
-  Option<dynamic> get creationFailure => throw _privateConstructorUsedError;
+  Option<Either<ApartmentFailure, Unit>> get creationFailure =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AddingApartmentStateCopyWith<_$_AddingApartmentState> get copyWith =>

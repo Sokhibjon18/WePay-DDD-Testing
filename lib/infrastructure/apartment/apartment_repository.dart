@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
@@ -6,6 +8,7 @@ import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
+import 'package:we_pay/domain/models/user_model/user_model.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
 
 @LazySingleton(as: IApartmentRepository)
@@ -33,21 +36,65 @@ class ApartmentRepository implements IApartmentRepository {
     }
   }
 
-  @override
-  Future<Either<ApartmentFailure, Unit>> delete(Apartment apartment) {
-    // TODO: implement delete
-    throw UnimplementedError();
+  Future<Either<ApartmentFailure, Unit>> deleteApartmentFromUser(Apartment apartment) async {
+    List<Apartment> detectApartmentAndDelete(List<Apartment> ownedApartments) {
+      List<Apartment> newApartmentList = [];
+      for (var element in ownedApartments) {
+        if (element.uid != apartment.uid) {
+          newApartmentList.add(element);
+        }
+      }
+      return newApartmentList;
+    }
+
+    try {
+      final userId = apartment.ownerId!;
+      final userMap =
+          await _firestore.collection('user').doc(userId).get().then((value) => value.data());
+      var user = UserModel.fromJson(userMap!);
+      user = user.copyWith(ownedApartments: detectApartmentAndDelete(user.ownedApartments));
+      await _firestore.updateUser(user);
+      return right(unit);
+    } on FirebaseException catch (e) {
+      log('${e.code} ${e.message}');
+      return left(const ApartmentFailure.serverError());
+    }
   }
 
   @override
-  Future<Either<ApartmentFailure, Unit>> update(Apartment apartment) {
-    // TODO: implement update
-    throw UnimplementedError();
+  Future<Either<ApartmentFailure, Unit>> delete(Apartment apartment) async {
+    try {
+      final apartmentId = apartment.uid!;
+      final userId = _auth.currentUser!.uid;
+      if (userId == apartment.ownerId) {
+        await _firestore.collection('apartment').doc(apartmentId).delete();
+      }
+      return right(unit);
+    } on FirebaseException catch (e) {
+      return left(const ApartmentFailure.serverError());
+    }
   }
 
   @override
-  Stream<Either<ApartmentFailure, List<Apartment>>> watchAll() {
-    // TODO: implement watchAll
-    throw UnimplementedError();
+  Future<Either<ApartmentFailure, Unit>> update(Apartment apartment) async {
+    try {
+      _firestore.apartment(apartment.uid!).update(apartment.toJson());
+      return right(unit);
+    } on FirebaseException catch (e) {
+      log('${e.code} ${e.message}');
+      return left(const ApartmentFailure.serverError());
+    }
+  }
+
+  @override
+  Stream<Either<ApartmentFailure, List<Apartment>>> watchAll() async* {
+    try {
+      final query = await _firestore.collection('apartment').get();
+      final apartmentList = query.docs.map((e) => Apartment.fromJson(e.data())).toList();
+      yield right(apartmentList);
+    } on FirebaseException catch (e) {
+      log('${e.code} ${e.message}');
+      yield left(const ApartmentFailure.serverError());
+    }
   }
 }

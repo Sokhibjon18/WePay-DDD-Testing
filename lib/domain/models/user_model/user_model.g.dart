@@ -9,6 +9,7 @@ part of 'user_model.dart';
 _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       uid: json['uid'] as String,
       name: json['name'] as String,
+      email: json['email'] as String?,
       ownedApartments: (json['ownedApartments'] as List<dynamic>?)
               ?.map((e) => Apartment.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -21,6 +22,7 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'name': instance.name,
+      'email': instance.email,
       'ownedApartments': instance.ownedApartments,
       'serverTimeStamp':
           const ServerTimestampConverter().toJson(instance.serverTimeStamp),

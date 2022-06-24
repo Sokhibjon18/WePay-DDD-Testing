@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:uuid/uuid.dart';
+import 'package:injectable/injectable.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
 import 'package:we_pay/domain/apartment/value_objects.dart';
@@ -11,15 +11,16 @@ part 'crud_apartment_event.dart';
 part 'crud_apartment_state.dart';
 part 'crud_apartment_bloc.freezed.dart';
 
+@injectable
 class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
   final IApartmentRepository _repository;
 
   CRUDApartmentBloc(this._repository) : super(CRUDApartmentState.initial()) {
+    on<_Initial>((event, emit) {
+      emit(CRUDApartmentState.initial());
+    });
     on<_RegionChanged>((event, emit) {
-      emit(state.copyWith(
-        regionName: Address(event.region),
-        creationFailure: none(),
-      ));
+      emit(state.copyWith(regionName: Address(event.region), creationFailure: none()));
     });
     on<_DistrictChanged>((event, emit) {
       emit(state.copyWith(districtName: Address(event.district), creationFailure: none()));
@@ -53,7 +54,7 @@ class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
             district: state.districtName.getRight(),
             street: state.streetName.getRight(),
             houseNumber: state.houseNumber.getRight(),
-            flatNumber: state.flatNumber.getRight(),
+            flatNumber: state.flatNumber.isValid() ? state.flatNumber.getRight() : '',
           ),
         );
       }

@@ -12,6 +12,7 @@ abstract class UserModel implements _$UserModel {
   const factory UserModel({
     required String uid,
     required String name,
+    String? email,
     @Default([]) List<Apartment> ownedApartments,
     @ServerTimestampConverter() required FieldValue serverTimeStamp,
   }) = _UserModel;

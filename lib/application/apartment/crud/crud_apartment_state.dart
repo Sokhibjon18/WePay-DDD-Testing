@@ -10,7 +10,7 @@ class CRUDApartmentState with _$CRUDApartmentState {
     required HouseNumber flatNumber,
     required bool loading,
     required bool showErrorMessage,
-    required Option creationFailure,
+    required Option<Either<ApartmentFailure, Unit>> creationFailure,
   }) = _AddingApartmentState;
 
   factory CRUDApartmentState.initial() => CRUDApartmentState(
