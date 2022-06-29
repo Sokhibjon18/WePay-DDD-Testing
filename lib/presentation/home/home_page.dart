@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/apartment/crud/crud_apartment_bloc.dart';
+import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/presentation/home/widgets/bottom_sheet.dart';
@@ -19,12 +19,13 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text('Houses'),
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
             onPressed: () {
-              context.read<CRUDApartmentBloc>().add(const CRUDApartmentEvent.initial());
+              context.read<FormApartmentBloc>().add(const FormApartmentEvent.initial());
               bottomsheet(context);
             },
             icon: const Icon(Icons.add),
@@ -32,17 +33,26 @@ class HomePageState extends State<HomePage> {
         ],
       ),
       body: StreamBuilder<z.Either<ApartmentFailure, List<Apartment>>>(
-        stream: context.read<CRUDApartmentBloc>().apartmentStream.stream,
+        stream: context.read<FormApartmentBloc>().apartmentStream.stream,
         builder: (context, snapshot) {
-          return snapshot.data!.fold(
-            (l) => Container(),
-            (r) => ListView.builder(
-              itemCount: r.length,
-              itemBuilder: (context, index) {
-                return ApartmentItem(apartment: r[index]);
-              },
-            ),
-          );
+          return snapshot.data == null
+              ? Container()
+              : snapshot.data!.fold(
+                  (l) => Container(),
+                  (r) => ListView.separated(
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: r.length,
+                    itemBuilder: (context, index) {
+                      return ApartmentItem(apartment: r[index]);
+                    },
+                    separatorBuilder: (BuildContext _, int index) {
+                      return Container(
+                        height: 0.5,
+                        color: Colors.grey[300],
+                      );
+                    },
+                  ),
+                );
         },
       ),
     );

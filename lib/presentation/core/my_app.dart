@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/apartment/crud/crud_apartment_bloc.dart';
+import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
 import 'package:we_pay/injection.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           create: (_) =>
               getIt<SignInCheckerBloc>()..add(const SignInCheckerEvent.authCheckRequest()),
         ),
-        BlocProvider(create: (_) => getIt<CRUDApartmentBloc>()),
+        BlocProvider(create: (_) => getIt<FormApartmentBloc>()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),

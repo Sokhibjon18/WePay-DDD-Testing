@@ -11,7 +11,7 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       name: json['name'] as String,
       email: json['email'] as String?,
       ownedApartments: (json['ownedApartments'] as List<dynamic>?)
-              ?.map((e) => Apartment.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => e as String)
               .toList() ??
           const [],
       serverTimeStamp: const ServerTimestampConverter()

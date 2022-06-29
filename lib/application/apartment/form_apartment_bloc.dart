@@ -9,20 +9,20 @@ import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
 import 'package:we_pay/domain/apartment/value_objects.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 
-part 'crud_apartment_event.dart';
-part 'crud_apartment_state.dart';
-part 'crud_apartment_bloc.freezed.dart';
+part 'form_apartment_event.dart';
+part 'form_apartment_state.dart';
+part 'form_apartment_bloc.freezed.dart';
 
 @injectable
-class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
+class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
   final IApartmentRepository _repository;
 
   StreamController<Either<ApartmentFailure, List<Apartment>>> apartmentStream = StreamController();
 
-  CRUDApartmentBloc(this._repository) : super(CRUDApartmentState.initial()) {
+  FormApartmentBloc(this._repository) : super(FormApartmentState.initial()) {
     apartmentStream.addStream(_repository.watchAll());
     on<_Initial>((event, emit) {
-      emit(CRUDApartmentState.initial());
+      emit(FormApartmentState.initial());
     });
     on<_RegionChanged>((event, emit) {
       emit(state.copyWith(regionName: Address(event.region), creationFailure: none()));
@@ -38,6 +38,41 @@ class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
     });
     on<_FlatNumberChanged>((event, emit) {
       emit(state.copyWith(flatNumber: HouseNumber(event.flat), creationFailure: none()));
+    });
+    on<_EditingApartment>((event, emit) {
+      emit(FormApartmentState.edit(event.apartment));
+    });
+    on<_UpdateApartment>((event, emit) async {
+      Either<ApartmentFailure, Unit>? failureOrSuccess;
+
+      final validateRegion = state.regionName.isValid();
+      final validateDistrict = state.districtName.isValid();
+      final validateStreet = state.streetName.isValid();
+      final validateHouseNumber = state.houseNumber.isValid();
+
+      if (validateHouseNumber && validateStreet && validateDistrict && validateRegion) {
+        emit(state.copyWith(
+          loading: true,
+          creationFailure: none(),
+        ));
+
+        failureOrSuccess = await _repository.update(
+          Apartment(
+            uid: event.uid,
+            region: state.regionName.getRight(),
+            district: state.districtName.getRight(),
+            street: state.streetName.getRight(),
+            houseNumber: state.houseNumber.getRight(),
+            flatNumber: state.flatNumber.isValid() ? state.flatNumber.getRight() : '',
+          ),
+        );
+      }
+
+      emit(state.copyWith(
+        loading: false,
+        showErrorMessage: true,
+        creationFailure: optionOf(failureOrSuccess),
+      ));
     });
     on<_CreateApartment>((event, emit) async {
       Either<ApartmentFailure, Unit>? failureOrSuccess;
@@ -70,10 +105,27 @@ class CRUDApartmentBloc extends Bloc<CRUDApartmentEvent, CRUDApartmentState> {
         creationFailure: optionOf(failureOrSuccess),
       ));
     });
+    on<_DeleteApartment>((event, emit) async {
+      Either<ApartmentFailure, Unit>? failureOrSuccess;
+
+      emit(state.copyWith(
+        loading: true,
+        creationFailure: none(),
+      ));
+
+      failureOrSuccess = await _repository.delete(event.apartment);
+
+      emit(state.copyWith(
+        loading: false,
+        showErrorMessage: true,
+        creationFailure: optionOf(failureOrSuccess),
+      ));
+    });
   }
-  @override
-  Future<void> close() {
-    apartmentStream!.close();
-    return super.close();
-  }
+
+  // @override
+  // Future<void> close() {
+  //   apartmentStream.close();
+  //   return super.close();
+  // }
 }

@@ -10,7 +10,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/apartment/crud/crud_apartment_bloc.dart' as _i12;
+import 'application/apartment/form_apartment_bloc.dart' as _i12;
 import 'application/auth/auth_bloc.dart' as _i11;
 import 'application/sign_in_checker/sign_in_checker_bloc.dart' as _i10;
 import 'domain/apartment/i_apartment_repository.dart' as _i6;
@@ -41,8 +41,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i10.SignInCheckerBloc>(
       () => _i10.SignInCheckerBloc(get<_i8.IAuthFacade>()));
   gh.factory<_i11.AuthBloc>(() => _i11.AuthBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i12.CRUDApartmentBloc>(
-      () => _i12.CRUDApartmentBloc(get<_i6.IApartmentRepository>()));
+  gh.factory<_i12.FormApartmentBloc>(
+      () => _i12.FormApartmentBloc(get<_i6.IApartmentRepository>()));
   return get;
 }
 

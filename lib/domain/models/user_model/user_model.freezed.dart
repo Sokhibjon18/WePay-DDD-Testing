@@ -23,7 +23,7 @@ mixin _$UserModel {
   String get uid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
-  List<Apartment> get ownedApartments => throw _privateConstructorUsedError;
+  List<String> get ownedApartments => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
   FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
 
@@ -41,7 +41,7 @@ abstract class $UserModelCopyWith<$Res> {
       {String uid,
       String name,
       String? email,
-      List<Apartment> ownedApartments,
+      List<String> ownedApartments,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
@@ -77,7 +77,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
       ownedApartments: ownedApartments == freezed
           ? _value.ownedApartments
           : ownedApartments // ignore: cast_nullable_to_non_nullable
-              as List<Apartment>,
+              as List<String>,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
           : serverTimeStamp // ignore: cast_nullable_to_non_nullable
@@ -96,7 +96,7 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       {String uid,
       String name,
       String? email,
-      List<Apartment> ownedApartments,
+      List<String> ownedApartments,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
 }
 
@@ -134,7 +134,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
       ownedApartments: ownedApartments == freezed
           ? _value._ownedApartments
           : ownedApartments // ignore: cast_nullable_to_non_nullable
-              as List<Apartment>,
+              as List<String>,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
           : serverTimeStamp // ignore: cast_nullable_to_non_nullable
@@ -150,7 +150,7 @@ class _$_UserModel extends _UserModel {
       {required this.uid,
       required this.name,
       this.email,
-      final List<Apartment> ownedApartments = const [],
+      final List<String> ownedApartments = const [],
       @ServerTimestampConverter() required this.serverTimeStamp})
       : _ownedApartments = ownedApartments,
         super._();
@@ -164,10 +164,10 @@ class _$_UserModel extends _UserModel {
   final String name;
   @override
   final String? email;
-  final List<Apartment> _ownedApartments;
+  final List<String> _ownedApartments;
   @override
   @JsonKey()
-  List<Apartment> get ownedApartments {
+  List<String> get ownedApartments {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ownedApartments);
   }
@@ -221,7 +221,7 @@ abstract class _UserModel extends UserModel {
       {required final String uid,
       required final String name,
       final String? email,
-      final List<Apartment> ownedApartments,
+      final List<String> ownedApartments,
       @ServerTimestampConverter()
           required final FieldValue serverTimeStamp}) = _$_UserModel;
   const _UserModel._() : super._();
@@ -236,7 +236,7 @@ abstract class _UserModel extends UserModel {
   @override
   String? get email => throw _privateConstructorUsedError;
   @override
-  List<Apartment> get ownedApartments => throw _privateConstructorUsedError;
+  List<String> get ownedApartments => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
   FieldValue get serverTimeStamp => throw _privateConstructorUsedError;

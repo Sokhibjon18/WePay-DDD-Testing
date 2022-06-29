@@ -38,11 +38,11 @@ class ApartmentRepository implements IApartmentRepository {
   }
 
   Future<Either<ApartmentFailure, Unit>> deleteApartmentFromUser(Apartment apartment) async {
-    List<Apartment> detectApartmentAndDelete(List<Apartment> ownedApartments) {
-      List<Apartment> newApartmentList = [];
-      for (var element in ownedApartments) {
-        if (element.uid != apartment.uid) {
-          newApartmentList.add(element);
+    List<String> detectApartmentAndDelete(List<String> ownedApartments) {
+      List<String> newApartmentList = [];
+      for (var apartmentId in ownedApartments) {
+        if (apartmentId != apartment.uid) {
+          newApartmentList.add(apartmentId);
         }
       }
       return newApartmentList;
@@ -69,9 +69,10 @@ class ApartmentRepository implements IApartmentRepository {
       final userId = _auth.currentUser!.uid;
       if (userId == apartment.ownerId) {
         await _firestore.collection('apartment').doc(apartmentId).delete();
+        await deleteApartmentFromUser(apartment);
       }
       return right(unit);
-    } on FirebaseException catch (e) {
+    } on FirebaseException catch (_) {
       return left(const ApartmentFailure.serverError());
     }
   }
@@ -79,7 +80,11 @@ class ApartmentRepository implements IApartmentRepository {
   @override
   Future<Either<ApartmentFailure, Unit>> update(Apartment apartment) async {
     try {
-      _firestore.apartment(apartment.uid!).update(apartment.toJson());
+      final mapApartment = apartment.toJson()
+        ..remove('users')
+        ..remove('ownerId')
+        ..remove('uid');
+      _firestore.apartment(apartment.uid!).update(mapApartment);
       return right(unit);
     } on FirebaseException catch (e) {
       log('${e.code} ${e.message}');

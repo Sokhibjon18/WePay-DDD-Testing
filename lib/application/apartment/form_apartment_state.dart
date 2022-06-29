@@ -1,8 +1,8 @@
-part of 'crud_apartment_bloc.dart';
+part of 'form_apartment_bloc.dart';
 
 @freezed
-class CRUDApartmentState with _$CRUDApartmentState {
-  const factory CRUDApartmentState({
+class FormApartmentState with _$FormApartmentState {
+  const factory FormApartmentState({
     required Address regionName,
     required Address districtName,
     required Address streetName,
@@ -13,12 +13,23 @@ class CRUDApartmentState with _$CRUDApartmentState {
     required Option<Either<ApartmentFailure, Unit>> creationFailure,
   }) = _AddingApartmentState;
 
-  factory CRUDApartmentState.initial() => CRUDApartmentState(
+  factory FormApartmentState.initial() => FormApartmentState(
         regionName: Address(''),
         districtName: Address(''),
         streetName: Address(''),
         houseNumber: HouseNumber(''),
         flatNumber: HouseNumber(''),
+        loading: false,
+        showErrorMessage: false,
+        creationFailure: none(),
+      );
+
+  factory FormApartmentState.edit(Apartment apartment) => FormApartmentState(
+        regionName: Address(apartment.region),
+        districtName: Address(apartment.district),
+        streetName: Address(apartment.street),
+        houseNumber: HouseNumber(apartment.houseNumber),
+        flatNumber: HouseNumber(apartment.flatNumber),
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),

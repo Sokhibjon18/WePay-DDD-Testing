@@ -1,10 +1,11 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/apartment/crud/crud_apartment_bloc.dart';
+import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
+import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/presentation/home/widgets/text_form_field.dart';
 
-void bottomsheet(context) {
+void bottomsheet(BuildContext context, {Apartment? apartment}) {
   showModalBottomSheet<dynamic>(
     context: context,
     backgroundColor: Colors.transparent,
@@ -33,10 +34,10 @@ void bottomsheet(context) {
                 ),
               ),
               height: 56,
-              child: const Center(
+              child: Center(
                 child: Text(
-                  'Adding apartment',
-                  style: TextStyle(
+                  apartment == null ? 'Adding apartment' : 'Edit apartment',
+                  style: const TextStyle(
                     fontSize: 18,
                     color: Colors.white,
                   ),
@@ -45,7 +46,7 @@ void bottomsheet(context) {
             ),
             Container(
               padding: const EdgeInsets.only(top: 24, left: 32, right: 32, bottom: 32),
-              child: BlocConsumer<CRUDApartmentBloc, CRUDApartmentState>(
+              child: BlocConsumer<FormApartmentBloc, FormApartmentState>(
                 listener: (context, state) {
                   state.creationFailure.map(
                     (a) => a.fold(
@@ -58,7 +59,7 @@ void bottomsheet(context) {
                 builder: (context, state) {
                   return Form(
                     autovalidateMode:
-                        BlocProvider.of<CRUDApartmentBloc>(context).state.showErrorMessage
+                        BlocProvider.of<FormApartmentBloc>(context).state.showErrorMessage
                             ? AutovalidateMode.always
                             : AutovalidateMode.disabled,
                     child: Column(
@@ -66,11 +67,12 @@ void bottomsheet(context) {
                         reusableTextField(
                           context: context,
                           hint: 'Region',
+                          text: apartment?.region ?? '',
                           onChanged: (text) {
-                            BlocProvider.of<CRUDApartmentBloc>(context)
-                                .add(CRUDApartmentEvent.regionChanged(text));
+                            BlocProvider.of<FormApartmentBloc>(context)
+                                .add(FormApartmentEvent.regionChanged(text));
                           },
-                          validator: () => BlocProvider.of<CRUDApartmentBloc>(context)
+                          validator: () => BlocProvider.of<FormApartmentBloc>(context)
                               .state
                               .regionName
                               .value
@@ -86,11 +88,12 @@ void bottomsheet(context) {
                         reusableTextField(
                           context: context,
                           hint: 'District',
+                          text: apartment?.district ?? '',
                           onChanged: (text) {
-                            BlocProvider.of<CRUDApartmentBloc>(context)
-                                .add(CRUDApartmentEvent.districtChanged(text));
+                            BlocProvider.of<FormApartmentBloc>(context)
+                                .add(FormApartmentEvent.districtChanged(text));
                           },
-                          validator: () => BlocProvider.of<CRUDApartmentBloc>(context)
+                          validator: () => BlocProvider.of<FormApartmentBloc>(context)
                               .state
                               .districtName
                               .value
@@ -106,11 +109,12 @@ void bottomsheet(context) {
                         reusableTextField(
                           context: context,
                           hint: 'Street',
+                          text: apartment?.street ?? '',
                           onChanged: (text) {
-                            BlocProvider.of<CRUDApartmentBloc>(context)
-                                .add(CRUDApartmentEvent.streetNameChanged(text));
+                            BlocProvider.of<FormApartmentBloc>(context)
+                                .add(FormApartmentEvent.streetNameChanged(text));
                           },
-                          validator: () => BlocProvider.of<CRUDApartmentBloc>(context)
+                          validator: () => BlocProvider.of<FormApartmentBloc>(context)
                               .state
                               .streetName
                               .value
@@ -130,11 +134,12 @@ void bottomsheet(context) {
                               child: reusableTextField(
                                 context: context,
                                 hint: 'House number',
+                                text: apartment?.houseNumber ?? '',
                                 onChanged: (text) {
-                                  BlocProvider.of<CRUDApartmentBloc>(context)
-                                      .add(CRUDApartmentEvent.houseNumberChanged(text));
+                                  BlocProvider.of<FormApartmentBloc>(context)
+                                      .add(FormApartmentEvent.houseNumberChanged(text));
                                 },
-                                validator: () => BlocProvider.of<CRUDApartmentBloc>(context)
+                                validator: () => BlocProvider.of<FormApartmentBloc>(context)
                                     .state
                                     .houseNumber
                                     .value
@@ -153,9 +158,10 @@ void bottomsheet(context) {
                               child: reusableTextField(
                                 context: context,
                                 hint: 'Flat number',
+                                text: apartment?.flatNumber ?? '',
                                 onChanged: (text) {
-                                  BlocProvider.of<CRUDApartmentBloc>(context)
-                                      .add(CRUDApartmentEvent.flatNumberChanged(text));
+                                  BlocProvider.of<FormApartmentBloc>(context)
+                                      .add(FormApartmentEvent.flatNumberChanged(text));
                                 },
                                 validator: () {},
                               ),
@@ -165,8 +171,14 @@ void bottomsheet(context) {
                         InkWell(
                           onTap: () {
                             if (!state.loading) {
-                              BlocProvider.of<CRUDApartmentBloc>(context)
-                                  .add(const CRUDApartmentEvent.creatApartment());
+                              apartment == null
+                                  ? BlocProvider.of<FormApartmentBloc>(context)
+                                      .add(const FormApartmentEvent.creatApartment())
+                                  : BlocProvider.of<FormApartmentBloc>(context)
+                                      .add(FormApartmentEvent.updateApartment(
+                                      apartment.uid!,
+                                      apartment.ownerId!,
+                                    ));
                             }
                           },
                           child: Container(
@@ -177,7 +189,7 @@ void bottomsheet(context) {
                               child: state.loading
                                   ? const CircularProgressIndicator(color: Colors.white)
                                   : const Text(
-                                      'Add',
+                                      'Save',
                                       style: TextStyle(color: Colors.white, fontSize: 16),
                                     ),
                             ),

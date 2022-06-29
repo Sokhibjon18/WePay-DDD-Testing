@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'crud_apartment_bloc.dart';
+part of 'form_apartment_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,92 +15,110 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CRUDApartmentEvent {
+mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CRUDApartmentEventCopyWith<$Res> {
-  factory $CRUDApartmentEventCopyWith(
-          CRUDApartmentEvent value, $Res Function(CRUDApartmentEvent) then) =
-      _$CRUDApartmentEventCopyWithImpl<$Res>;
+abstract class $FormApartmentEventCopyWith<$Res> {
+  factory $FormApartmentEventCopyWith(
+          FormApartmentEvent value, $Res Function(FormApartmentEvent) then) =
+      _$FormApartmentEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CRUDApartmentEventCopyWithImpl<$Res>
-    implements $CRUDApartmentEventCopyWith<$Res> {
-  _$CRUDApartmentEventCopyWithImpl(this._value, this._then);
+class _$FormApartmentEventCopyWithImpl<$Res>
+    implements $FormApartmentEventCopyWith<$Res> {
+  _$FormApartmentEventCopyWithImpl(this._value, this._then);
 
-  final CRUDApartmentEvent _value;
+  final FormApartmentEvent _value;
   // ignore: unused_field
-  final $Res Function(CRUDApartmentEvent) _then;
+  final $Res Function(FormApartmentEvent) _then;
 }
 
 /// @nodoc
@@ -112,7 +130,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, (v) => _then(v as _$_Initial));
@@ -128,7 +146,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.initial()';
+    return 'FormApartmentEvent.initial()';
   }
 
   @override
@@ -144,12 +162,15 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return initial();
   }
@@ -158,12 +179,15 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return initial?.call();
   }
@@ -172,12 +196,15 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -190,12 +217,15 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return initial(this);
   }
@@ -204,12 +234,15 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return initial?.call(this);
   }
@@ -218,12 +251,15 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -233,8 +269,200 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements CRUDApartmentEvent {
+abstract class _Initial implements FormApartmentEvent {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$$_EditingApartmentCopyWith<$Res> {
+  factory _$$_EditingApartmentCopyWith(
+          _$_EditingApartment value, $Res Function(_$_EditingApartment) then) =
+      __$$_EditingApartmentCopyWithImpl<$Res>;
+  $Res call({Apartment apartment});
+
+  $ApartmentCopyWith<$Res> get apartment;
+}
+
+/// @nodoc
+class __$$_EditingApartmentCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
+    implements _$$_EditingApartmentCopyWith<$Res> {
+  __$$_EditingApartmentCopyWithImpl(
+      _$_EditingApartment _value, $Res Function(_$_EditingApartment) _then)
+      : super(_value, (v) => _then(v as _$_EditingApartment));
+
+  @override
+  _$_EditingApartment get _value => super._value as _$_EditingApartment;
+
+  @override
+  $Res call({
+    Object? apartment = freezed,
+  }) {
+    return _then(_$_EditingApartment(
+      apartment == freezed
+          ? _value.apartment
+          : apartment // ignore: cast_nullable_to_non_nullable
+              as Apartment,
+    ));
+  }
+
+  @override
+  $ApartmentCopyWith<$Res> get apartment {
+    return $ApartmentCopyWith<$Res>(_value.apartment, (value) {
+      return _then(_value.copyWith(apartment: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_EditingApartment implements _EditingApartment {
+  const _$_EditingApartment(this.apartment);
+
+  @override
+  final Apartment apartment;
+
+  @override
+  String toString() {
+    return 'FormApartmentEvent.editingApartment(apartment: $apartment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_EditingApartment &&
+            const DeepCollectionEquality().equals(other.apartment, apartment));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(apartment));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_EditingApartmentCopyWith<_$_EditingApartment> get copyWith =>
+      __$$_EditingApartmentCopyWithImpl<_$_EditingApartment>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
+    required TResult Function(String region) regionChanged,
+    required TResult Function(String district) districtChanged,
+    required TResult Function(String street) streetNameChanged,
+    required TResult Function(String house) houseNumberChanged,
+    required TResult Function(String flat) flatNumberChanged,
+    required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
+  }) {
+    return editingApartment(apartment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+  }) {
+    return editingApartment?.call(apartment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    required TResult orElse(),
+  }) {
+    if (editingApartment != null) {
+      return editingApartment(apartment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
+    required TResult Function(_RegionChanged value) regionChanged,
+    required TResult Function(_DistrictChanged value) districtChanged,
+    required TResult Function(_StreetNameChanged value) streetNameChanged,
+    required TResult Function(_HouseNumberChanged value) houseNumberChanged,
+    required TResult Function(_FlatNumberChanged value) flatNumberChanged,
+    required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
+  }) {
+    return editingApartment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+  }) {
+    return editingApartment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    required TResult orElse(),
+  }) {
+    if (editingApartment != null) {
+      return editingApartment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditingApartment implements FormApartmentEvent {
+  const factory _EditingApartment(final Apartment apartment) =
+      _$_EditingApartment;
+
+  Apartment get apartment => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_EditingApartmentCopyWith<_$_EditingApartment> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -247,7 +475,7 @@ abstract class _$$_RegionChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_RegionChangedCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_RegionChangedCopyWith<$Res> {
   __$$_RegionChangedCopyWithImpl(
       _$_RegionChanged _value, $Res Function(_$_RegionChanged) _then)
@@ -279,7 +507,7 @@ class _$_RegionChanged implements _RegionChanged {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.regionChanged(region: $region)';
+    return 'FormApartmentEvent.regionChanged(region: $region)';
   }
 
   @override
@@ -303,12 +531,15 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return regionChanged(region);
   }
@@ -317,12 +548,15 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return regionChanged?.call(region);
   }
@@ -331,12 +565,15 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (regionChanged != null) {
@@ -349,12 +586,15 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return regionChanged(this);
   }
@@ -363,12 +603,15 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return regionChanged?.call(this);
   }
@@ -377,12 +620,15 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (regionChanged != null) {
@@ -392,7 +638,7 @@ class _$_RegionChanged implements _RegionChanged {
   }
 }
 
-abstract class _RegionChanged implements CRUDApartmentEvent {
+abstract class _RegionChanged implements FormApartmentEvent {
   const factory _RegionChanged(final String region) = _$_RegionChanged;
 
   String get region => throw _privateConstructorUsedError;
@@ -411,7 +657,7 @@ abstract class _$$_DistrictChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_DistrictChangedCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_DistrictChangedCopyWith<$Res> {
   __$$_DistrictChangedCopyWithImpl(
       _$_DistrictChanged _value, $Res Function(_$_DistrictChanged) _then)
@@ -443,7 +689,7 @@ class _$_DistrictChanged implements _DistrictChanged {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.districtChanged(district: $district)';
+    return 'FormApartmentEvent.districtChanged(district: $district)';
   }
 
   @override
@@ -467,12 +713,15 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return districtChanged(district);
   }
@@ -481,12 +730,15 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return districtChanged?.call(district);
   }
@@ -495,12 +747,15 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (districtChanged != null) {
@@ -513,12 +768,15 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return districtChanged(this);
   }
@@ -527,12 +785,15 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return districtChanged?.call(this);
   }
@@ -541,12 +802,15 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (districtChanged != null) {
@@ -556,7 +820,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   }
 }
 
-abstract class _DistrictChanged implements CRUDApartmentEvent {
+abstract class _DistrictChanged implements FormApartmentEvent {
   const factory _DistrictChanged(final String district) = _$_DistrictChanged;
 
   String get district => throw _privateConstructorUsedError;
@@ -575,7 +839,7 @@ abstract class _$$_StreetNameChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StreetNameChangedCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_StreetNameChangedCopyWith<$Res> {
   __$$_StreetNameChangedCopyWithImpl(
       _$_StreetNameChanged _value, $Res Function(_$_StreetNameChanged) _then)
@@ -607,7 +871,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.streetNameChanged(street: $street)';
+    return 'FormApartmentEvent.streetNameChanged(street: $street)';
   }
 
   @override
@@ -632,12 +896,15 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return streetNameChanged(street);
   }
@@ -646,12 +913,15 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return streetNameChanged?.call(street);
   }
@@ -660,12 +930,15 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (streetNameChanged != null) {
@@ -678,12 +951,15 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return streetNameChanged(this);
   }
@@ -692,12 +968,15 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return streetNameChanged?.call(this);
   }
@@ -706,12 +985,15 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (streetNameChanged != null) {
@@ -721,7 +1003,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   }
 }
 
-abstract class _StreetNameChanged implements CRUDApartmentEvent {
+abstract class _StreetNameChanged implements FormApartmentEvent {
   const factory _StreetNameChanged(final String street) = _$_StreetNameChanged;
 
   String get street => throw _privateConstructorUsedError;
@@ -740,7 +1022,7 @@ abstract class _$$_HouseNumberChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_HouseNumberChangedCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_HouseNumberChangedCopyWith<$Res> {
   __$$_HouseNumberChangedCopyWithImpl(
       _$_HouseNumberChanged _value, $Res Function(_$_HouseNumberChanged) _then)
@@ -772,7 +1054,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.houseNumberChanged(house: $house)';
+    return 'FormApartmentEvent.houseNumberChanged(house: $house)';
   }
 
   @override
@@ -797,12 +1079,15 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return houseNumberChanged(house);
   }
@@ -811,12 +1096,15 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return houseNumberChanged?.call(house);
   }
@@ -825,12 +1113,15 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (houseNumberChanged != null) {
@@ -843,12 +1134,15 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return houseNumberChanged(this);
   }
@@ -857,12 +1151,15 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return houseNumberChanged?.call(this);
   }
@@ -871,12 +1168,15 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (houseNumberChanged != null) {
@@ -886,7 +1186,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   }
 }
 
-abstract class _HouseNumberChanged implements CRUDApartmentEvent {
+abstract class _HouseNumberChanged implements FormApartmentEvent {
   const factory _HouseNumberChanged(final String house) = _$_HouseNumberChanged;
 
   String get house => throw _privateConstructorUsedError;
@@ -905,7 +1205,7 @@ abstract class _$$_FlatNumberChangedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FlatNumberChangedCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_FlatNumberChangedCopyWith<$Res> {
   __$$_FlatNumberChangedCopyWithImpl(
       _$_FlatNumberChanged _value, $Res Function(_$_FlatNumberChanged) _then)
@@ -937,7 +1237,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.flatNumberChanged(flat: $flat)';
+    return 'FormApartmentEvent.flatNumberChanged(flat: $flat)';
   }
 
   @override
@@ -962,12 +1262,15 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return flatNumberChanged(flat);
   }
@@ -976,12 +1279,15 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return flatNumberChanged?.call(flat);
   }
@@ -990,12 +1296,15 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (flatNumberChanged != null) {
@@ -1008,12 +1317,15 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return flatNumberChanged(this);
   }
@@ -1022,12 +1334,15 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return flatNumberChanged?.call(this);
   }
@@ -1036,12 +1351,15 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (flatNumberChanged != null) {
@@ -1051,7 +1369,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   }
 }
 
-abstract class _FlatNumberChanged implements CRUDApartmentEvent {
+abstract class _FlatNumberChanged implements FormApartmentEvent {
   const factory _FlatNumberChanged(final String flat) = _$_FlatNumberChanged;
 
   String get flat => throw _privateConstructorUsedError;
@@ -1069,7 +1387,7 @@ abstract class _$$_CreateApartmentCopyWith<$Res> {
 
 /// @nodoc
 class __$$_CreateApartmentCopyWithImpl<$Res>
-    extends _$CRUDApartmentEventCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
     implements _$$_CreateApartmentCopyWith<$Res> {
   __$$_CreateApartmentCopyWithImpl(
       _$_CreateApartment _value, $Res Function(_$_CreateApartment) _then)
@@ -1086,7 +1404,7 @@ class _$_CreateApartment implements _CreateApartment {
 
   @override
   String toString() {
-    return 'CRUDApartmentEvent.creatApartment()';
+    return 'FormApartmentEvent.creatApartment()';
   }
 
   @override
@@ -1102,12 +1420,15 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
     required TResult Function(String street) streetNameChanged,
     required TResult Function(String house) houseNumberChanged,
     required TResult Function(String flat) flatNumberChanged,
     required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
   }) {
     return creatApartment();
   }
@@ -1116,12 +1437,15 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
   }) {
     return creatApartment?.call();
   }
@@ -1130,12 +1454,15 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
     TResult Function(String street)? streetNameChanged,
     TResult Function(String house)? houseNumberChanged,
     TResult Function(String flat)? flatNumberChanged,
     TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
     required TResult orElse(),
   }) {
     if (creatApartment != null) {
@@ -1148,12 +1475,15 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
     required TResult Function(_StreetNameChanged value) streetNameChanged,
     required TResult Function(_HouseNumberChanged value) houseNumberChanged,
     required TResult Function(_FlatNumberChanged value) flatNumberChanged,
     required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
   }) {
     return creatApartment(this);
   }
@@ -1162,12 +1492,15 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
   }) {
     return creatApartment?.call(this);
   }
@@ -1176,12 +1509,15 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
     TResult Function(_StreetNameChanged value)? streetNameChanged,
     TResult Function(_HouseNumberChanged value)? houseNumberChanged,
     TResult Function(_FlatNumberChanged value)? flatNumberChanged,
     TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
     required TResult orElse(),
   }) {
     if (creatApartment != null) {
@@ -1191,12 +1527,398 @@ class _$_CreateApartment implements _CreateApartment {
   }
 }
 
-abstract class _CreateApartment implements CRUDApartmentEvent {
+abstract class _CreateApartment implements FormApartmentEvent {
   const factory _CreateApartment() = _$_CreateApartment;
 }
 
 /// @nodoc
-mixin _$CRUDApartmentState {
+abstract class _$$_UpdateApartmentCopyWith<$Res> {
+  factory _$$_UpdateApartmentCopyWith(
+          _$_UpdateApartment value, $Res Function(_$_UpdateApartment) then) =
+      __$$_UpdateApartmentCopyWithImpl<$Res>;
+  $Res call({String uid, String ownerId});
+}
+
+/// @nodoc
+class __$$_UpdateApartmentCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
+    implements _$$_UpdateApartmentCopyWith<$Res> {
+  __$$_UpdateApartmentCopyWithImpl(
+      _$_UpdateApartment _value, $Res Function(_$_UpdateApartment) _then)
+      : super(_value, (v) => _then(v as _$_UpdateApartment));
+
+  @override
+  _$_UpdateApartment get _value => super._value as _$_UpdateApartment;
+
+  @override
+  $Res call({
+    Object? uid = freezed,
+    Object? ownerId = freezed,
+  }) {
+    return _then(_$_UpdateApartment(
+      uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      ownerId == freezed
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdateApartment implements _UpdateApartment {
+  const _$_UpdateApartment(this.uid, this.ownerId);
+
+  @override
+  final String uid;
+  @override
+  final String ownerId;
+
+  @override
+  String toString() {
+    return 'FormApartmentEvent.updateApartment(uid: $uid, ownerId: $ownerId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateApartment &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.ownerId, ownerId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(ownerId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_UpdateApartmentCopyWith<_$_UpdateApartment> get copyWith =>
+      __$$_UpdateApartmentCopyWithImpl<_$_UpdateApartment>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
+    required TResult Function(String region) regionChanged,
+    required TResult Function(String district) districtChanged,
+    required TResult Function(String street) streetNameChanged,
+    required TResult Function(String house) houseNumberChanged,
+    required TResult Function(String flat) flatNumberChanged,
+    required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
+  }) {
+    return updateApartment(uid, ownerId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+  }) {
+    return updateApartment?.call(uid, ownerId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    required TResult orElse(),
+  }) {
+    if (updateApartment != null) {
+      return updateApartment(uid, ownerId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
+    required TResult Function(_RegionChanged value) regionChanged,
+    required TResult Function(_DistrictChanged value) districtChanged,
+    required TResult Function(_StreetNameChanged value) streetNameChanged,
+    required TResult Function(_HouseNumberChanged value) houseNumberChanged,
+    required TResult Function(_FlatNumberChanged value) flatNumberChanged,
+    required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
+  }) {
+    return updateApartment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+  }) {
+    return updateApartment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    required TResult orElse(),
+  }) {
+    if (updateApartment != null) {
+      return updateApartment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateApartment implements FormApartmentEvent {
+  const factory _UpdateApartment(final String uid, final String ownerId) =
+      _$_UpdateApartment;
+
+  String get uid => throw _privateConstructorUsedError;
+  String get ownerId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_UpdateApartmentCopyWith<_$_UpdateApartment> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DeleteApartmentCopyWith<$Res> {
+  factory _$$_DeleteApartmentCopyWith(
+          _$_DeleteApartment value, $Res Function(_$_DeleteApartment) then) =
+      __$$_DeleteApartmentCopyWithImpl<$Res>;
+  $Res call({Apartment apartment});
+
+  $ApartmentCopyWith<$Res> get apartment;
+}
+
+/// @nodoc
+class __$$_DeleteApartmentCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
+    implements _$$_DeleteApartmentCopyWith<$Res> {
+  __$$_DeleteApartmentCopyWithImpl(
+      _$_DeleteApartment _value, $Res Function(_$_DeleteApartment) _then)
+      : super(_value, (v) => _then(v as _$_DeleteApartment));
+
+  @override
+  _$_DeleteApartment get _value => super._value as _$_DeleteApartment;
+
+  @override
+  $Res call({
+    Object? apartment = freezed,
+  }) {
+    return _then(_$_DeleteApartment(
+      apartment == freezed
+          ? _value.apartment
+          : apartment // ignore: cast_nullable_to_non_nullable
+              as Apartment,
+    ));
+  }
+
+  @override
+  $ApartmentCopyWith<$Res> get apartment {
+    return $ApartmentCopyWith<$Res>(_value.apartment, (value) {
+      return _then(_value.copyWith(apartment: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteApartment implements _DeleteApartment {
+  const _$_DeleteApartment(this.apartment);
+
+  @override
+  final Apartment apartment;
+
+  @override
+  String toString() {
+    return 'FormApartmentEvent.deleteApartment(apartment: $apartment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteApartment &&
+            const DeepCollectionEquality().equals(other.apartment, apartment));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(apartment));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_DeleteApartmentCopyWith<_$_DeleteApartment> get copyWith =>
+      __$$_DeleteApartmentCopyWithImpl<_$_DeleteApartment>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
+    required TResult Function(String region) regionChanged,
+    required TResult Function(String district) districtChanged,
+    required TResult Function(String street) streetNameChanged,
+    required TResult Function(String house) houseNumberChanged,
+    required TResult Function(String flat) flatNumberChanged,
+    required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
+  }) {
+    return deleteApartment(apartment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+  }) {
+    return deleteApartment?.call(apartment);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    required TResult orElse(),
+  }) {
+    if (deleteApartment != null) {
+      return deleteApartment(apartment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
+    required TResult Function(_RegionChanged value) regionChanged,
+    required TResult Function(_DistrictChanged value) districtChanged,
+    required TResult Function(_StreetNameChanged value) streetNameChanged,
+    required TResult Function(_HouseNumberChanged value) houseNumberChanged,
+    required TResult Function(_FlatNumberChanged value) flatNumberChanged,
+    required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
+  }) {
+    return deleteApartment(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+  }) {
+    return deleteApartment?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    required TResult orElse(),
+  }) {
+    if (deleteApartment != null) {
+      return deleteApartment(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteApartment implements FormApartmentEvent {
+  const factory _DeleteApartment(final Apartment apartment) =
+      _$_DeleteApartment;
+
+  Apartment get apartment => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_DeleteApartmentCopyWith<_$_DeleteApartment> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$FormApartmentState {
   Address get regionName => throw _privateConstructorUsedError;
   Address get districtName => throw _privateConstructorUsedError;
   Address get streetName => throw _privateConstructorUsedError;
@@ -1208,15 +1930,15 @@ mixin _$CRUDApartmentState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CRUDApartmentStateCopyWith<CRUDApartmentState> get copyWith =>
+  $FormApartmentStateCopyWith<FormApartmentState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CRUDApartmentStateCopyWith<$Res> {
-  factory $CRUDApartmentStateCopyWith(
-          CRUDApartmentState value, $Res Function(CRUDApartmentState) then) =
-      _$CRUDApartmentStateCopyWithImpl<$Res>;
+abstract class $FormApartmentStateCopyWith<$Res> {
+  factory $FormApartmentStateCopyWith(
+          FormApartmentState value, $Res Function(FormApartmentState) then) =
+      _$FormApartmentStateCopyWithImpl<$Res>;
   $Res call(
       {Address regionName,
       Address districtName,
@@ -1229,13 +1951,13 @@ abstract class $CRUDApartmentStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CRUDApartmentStateCopyWithImpl<$Res>
-    implements $CRUDApartmentStateCopyWith<$Res> {
-  _$CRUDApartmentStateCopyWithImpl(this._value, this._then);
+class _$FormApartmentStateCopyWithImpl<$Res>
+    implements $FormApartmentStateCopyWith<$Res> {
+  _$FormApartmentStateCopyWithImpl(this._value, this._then);
 
-  final CRUDApartmentState _value;
+  final FormApartmentState _value;
   // ignore: unused_field
-  final $Res Function(CRUDApartmentState) _then;
+  final $Res Function(FormApartmentState) _then;
 
   @override
   $Res call({
@@ -1287,7 +2009,7 @@ class _$CRUDApartmentStateCopyWithImpl<$Res>
 
 /// @nodoc
 abstract class _$$_AddingApartmentStateCopyWith<$Res>
-    implements $CRUDApartmentStateCopyWith<$Res> {
+    implements $FormApartmentStateCopyWith<$Res> {
   factory _$$_AddingApartmentStateCopyWith(_$_AddingApartmentState value,
           $Res Function(_$_AddingApartmentState) then) =
       __$$_AddingApartmentStateCopyWithImpl<$Res>;
@@ -1305,7 +2027,7 @@ abstract class _$$_AddingApartmentStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_AddingApartmentStateCopyWithImpl<$Res>
-    extends _$CRUDApartmentStateCopyWithImpl<$Res>
+    extends _$FormApartmentStateCopyWithImpl<$Res>
     implements _$$_AddingApartmentStateCopyWith<$Res> {
   __$$_AddingApartmentStateCopyWithImpl(_$_AddingApartmentState _value,
       $Res Function(_$_AddingApartmentState) _then)
@@ -1394,7 +2116,7 @@ class _$_AddingApartmentState implements _AddingApartmentState {
 
   @override
   String toString() {
-    return 'CRUDApartmentState(regionName: $regionName, districtName: $districtName, streetName: $streetName, houseNumber: $houseNumber, flatNumber: $flatNumber, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure)';
+    return 'FormApartmentState(regionName: $regionName, districtName: $districtName, streetName: $streetName, houseNumber: $houseNumber, flatNumber: $flatNumber, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure)';
   }
 
   @override
@@ -1438,7 +2160,7 @@ class _$_AddingApartmentState implements _AddingApartmentState {
           this, _$identity);
 }
 
-abstract class _AddingApartmentState implements CRUDApartmentState {
+abstract class _AddingApartmentState implements FormApartmentState {
   const factory _AddingApartmentState(
       {required final Address regionName,
       required final Address districtName,

@@ -5,11 +5,13 @@ Widget reusableTextField({
   required String hint,
   required Function onChanged,
   required Function validator,
+  required String text,
 }) {
   return TextFormField(
     cursorColor: Colors.white,
     onChanged: (value) => onChanged(value),
     validator: (_) => validator(),
+    initialValue: text,
     decoration: InputDecoration(
       labelText: hint,
       labelStyle: const TextStyle(color: Colors.grey),
