@@ -5,6 +5,7 @@ import 'package:we_pay/injection.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
 import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
+import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
               getIt<SignInCheckerBloc>()..add(const SignInCheckerEvent.authCheckRequest()),
         ),
         BlocProvider(create: (_) => getIt<FormApartmentBloc>()),
+        BlocProvider(create: (_) => getIt<ProductActorBloc>()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),

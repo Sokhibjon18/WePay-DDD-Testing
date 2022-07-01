@@ -9,6 +9,9 @@ abstract class ValueFailure<T> with _$ValueFailure {
   const factory ValueFailure.invalidEmail() = InvalidEmail;
   const factory ValueFailure.shortPassword({required int minLength}) = ShortPassword;
   const factory ValueFailure.paswordsAreNotSame() = PaswordsAreNotSame;
-  const factory ValueFailure.shortageName() = ShortageName;
+  const factory ValueFailure.shortageName({String? errorMessage}) = ShortageName;
   const factory ValueFailure.shortageAddress() = ShortageAddress;
+  const factory ValueFailure.invalidNumber({String? errorMessage}) = InvalidNumber;
+  const factory ValueFailure.invalidDate({String? errorMessage}) = InvalidDate;
+  const factory ValueFailure.invalidProductCount({String? errorMessage}) = InvalidProductCount;
 }

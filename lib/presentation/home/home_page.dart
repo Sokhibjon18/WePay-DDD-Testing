@@ -1,9 +1,14 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
+import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
+import 'package:we_pay/domain/models/product/product.dart';
+import 'package:we_pay/domain/product/product_failure.dart';
 import 'package:we_pay/presentation/home/widgets/bottom_sheet.dart';
 import 'package:we_pay/presentation/home/widgets/apartment_item.dart';
 
@@ -30,6 +35,13 @@ class HomePageState extends State<HomePage> {
             },
             icon: const Icon(Icons.add),
           ),
+          StreamBuilder<z.Either<ProductFailure, List<Product>>>(
+            stream: context.read<ProductActorBloc>().productsStream.stream,
+            builder: ((_, snapshot) {
+              log(snapshot.data.toString());
+              return snapshot.data?.fold((l) => null, (r) => Text('${r.length}')) ?? Container();
+            }),
+          )
         ],
       ),
       body: StreamBuilder<z.Either<ApartmentFailure, List<Apartment>>>(

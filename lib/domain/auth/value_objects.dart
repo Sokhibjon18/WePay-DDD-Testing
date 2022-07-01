@@ -1,7 +1,7 @@
+import 'package:we_pay/domain/auth/auth_validators.dart';
 import 'package:we_pay/domain/core/value_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:we_pay/domain/core/value_object.dart';
-import 'package:we_pay/domain/core/value_validators.dart';
 
 class EmailAddress extends ValueObject {
   @override

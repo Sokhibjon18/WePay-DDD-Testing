@@ -23,8 +23,11 @@ mixin _$ValueFailure<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,8 +37,11 @@ mixin _$ValueFailure<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -45,8 +51,11 @@ mixin _$ValueFailure<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +68,9 @@ mixin _$ValueFailure<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +82,9 @@ mixin _$ValueFailure<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +96,9 @@ mixin _$ValueFailure<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -174,8 +192,11 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
     return exceedingLength(maxLength);
   }
@@ -188,8 +209,11 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
     return exceedingLength?.call(maxLength);
   }
@@ -202,8 +226,11 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -222,6 +249,9 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return exceedingLength(this);
   }
@@ -236,6 +266,9 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return exceedingLength?.call(this);
   }
@@ -250,6 +283,9 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -312,8 +348,11 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
     return empty();
   }
@@ -326,8 +365,11 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
     return empty?.call();
   }
@@ -340,8 +382,11 @@ class _$Empty<T> implements Empty<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -360,6 +405,9 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return empty(this);
   }
@@ -374,6 +422,9 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return empty?.call(this);
   }
@@ -388,6 +439,9 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -447,8 +501,11 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
     return invalidEmail();
   }
@@ -461,8 +518,11 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
     return invalidEmail?.call();
   }
@@ -475,8 +535,11 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -495,6 +558,9 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return invalidEmail(this);
   }
@@ -509,6 +575,9 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return invalidEmail?.call(this);
   }
@@ -523,6 +592,9 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -606,8 +678,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
     return shortPassword(minLength);
   }
@@ -620,8 +695,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
     return shortPassword?.call(minLength);
   }
@@ -634,8 +712,11 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -654,6 +735,9 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return shortPassword(this);
   }
@@ -668,6 +752,9 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return shortPassword?.call(this);
   }
@@ -682,6 +769,9 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -747,8 +837,11 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
     return paswordsAreNotSame();
   }
@@ -761,8 +854,11 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
     return paswordsAreNotSame?.call();
   }
@@ -775,8 +871,11 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (paswordsAreNotSame != null) {
@@ -795,6 +894,9 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return paswordsAreNotSame(this);
   }
@@ -809,6 +911,9 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return paswordsAreNotSame?.call(this);
   }
@@ -823,6 +928,9 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (paswordsAreNotSame != null) {
@@ -841,6 +949,7 @@ abstract class _$$ShortageNameCopyWith<T, $Res> {
   factory _$$ShortageNameCopyWith(
           _$ShortageName<T> value, $Res Function(_$ShortageName<T>) then) =
       __$$ShortageNameCopyWithImpl<T, $Res>;
+  $Res call({String? errorMessage});
 }
 
 /// @nodoc
@@ -853,26 +962,50 @@ class __$$ShortageNameCopyWithImpl<T, $Res>
 
   @override
   _$ShortageName<T> get _value => super._value as _$ShortageName<T>;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$ShortageName<T>(
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ShortageName<T> implements ShortageName<T> {
-  const _$ShortageName();
+  const _$ShortageName({this.errorMessage});
+
+  @override
+  final String? errorMessage;
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.shortageName()';
+    return 'ValueFailure<$T>.shortageName(errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShortageName<T>);
+        (other.runtimeType == runtimeType &&
+            other is _$ShortageName<T> &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$ShortageNameCopyWith<T, _$ShortageName<T>> get copyWith =>
+      __$$ShortageNameCopyWithImpl<T, _$ShortageName<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -882,10 +1015,13 @@ class _$ShortageName<T> implements ShortageName<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
-    return shortageName();
+    return shortageName(errorMessage);
   }
 
   @override
@@ -896,10 +1032,13 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
-    return shortageName?.call();
+    return shortageName?.call(errorMessage);
   }
 
   @override
@@ -910,12 +1049,15 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (shortageName != null) {
-      return shortageName();
+      return shortageName(errorMessage);
     }
     return orElse();
   }
@@ -930,6 +1072,9 @@ class _$ShortageName<T> implements ShortageName<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return shortageName(this);
   }
@@ -944,6 +1089,9 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return shortageName?.call(this);
   }
@@ -958,6 +1106,9 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (shortageName != null) {
@@ -968,7 +1119,12 @@ class _$ShortageName<T> implements ShortageName<T> {
 }
 
 abstract class ShortageName<T> implements ValueFailure<T> {
-  const factory ShortageName() = _$ShortageName<T>;
+  const factory ShortageName({final String? errorMessage}) = _$ShortageName<T>;
+
+  String? get errorMessage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$ShortageNameCopyWith<T, _$ShortageName<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1017,8 +1173,11 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     required TResult Function() invalidEmail,
     required TResult Function(int minLength) shortPassword,
     required TResult Function() paswordsAreNotSame,
-    required TResult Function() shortageName,
+    required TResult Function(String? errorMessage) shortageName,
     required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
   }) {
     return shortageAddress();
   }
@@ -1031,8 +1190,11 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
   }) {
     return shortageAddress?.call();
   }
@@ -1045,8 +1207,11 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function()? invalidEmail,
     TResult Function(int minLength)? shortPassword,
     TResult Function()? paswordsAreNotSame,
-    TResult Function()? shortageName,
+    TResult Function(String? errorMessage)? shortageName,
     TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (shortageAddress != null) {
@@ -1065,6 +1230,9 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
     required TResult Function(ShortageName<T> value) shortageName,
     required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
   }) {
     return shortageAddress(this);
   }
@@ -1079,6 +1247,9 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
   }) {
     return shortageAddress?.call(this);
   }
@@ -1093,6 +1264,9 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
     TResult Function(ShortageName<T> value)? shortageName,
     TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
     required TResult orElse(),
   }) {
     if (shortageAddress != null) {
@@ -1104,4 +1278,557 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
 
 abstract class ShortageAddress<T> implements ValueFailure<T> {
   const factory ShortageAddress() = _$ShortageAddress<T>;
+}
+
+/// @nodoc
+abstract class _$$InvalidNumberCopyWith<T, $Res> {
+  factory _$$InvalidNumberCopyWith(
+          _$InvalidNumber<T> value, $Res Function(_$InvalidNumber<T>) then) =
+      __$$InvalidNumberCopyWithImpl<T, $Res>;
+  $Res call({String? errorMessage});
+}
+
+/// @nodoc
+class __$$InvalidNumberCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidNumberCopyWith<T, $Res> {
+  __$$InvalidNumberCopyWithImpl(
+      _$InvalidNumber<T> _value, $Res Function(_$InvalidNumber<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidNumber<T>));
+
+  @override
+  _$InvalidNumber<T> get _value => super._value as _$InvalidNumber<T>;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$InvalidNumber<T>(
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidNumber<T> implements InvalidNumber<T> {
+  const _$InvalidNumber({this.errorMessage});
+
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidNumber(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidNumber<T> &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidNumberCopyWith<T, _$InvalidNumber<T>> get copyWith =>
+      __$$InvalidNumberCopyWithImpl<T, _$InvalidNumber<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int maxLength) exceedingLength,
+    required TResult Function() empty,
+    required TResult Function() invalidEmail,
+    required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
+    required TResult Function(String? errorMessage) shortageName,
+    required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
+  }) {
+    return invalidNumber(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+  }) {
+    return invalidNumber?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+    required TResult orElse(),
+  }) {
+    if (invalidNumber != null) {
+      return invalidNumber(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
+    required TResult Function(ShortageName<T> value) shortageName,
+    required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+  }) {
+    return invalidNumber(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+  }) {
+    return invalidNumber?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    required TResult orElse(),
+  }) {
+    if (invalidNumber != null) {
+      return invalidNumber(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidNumber<T> implements ValueFailure<T> {
+  const factory InvalidNumber({final String? errorMessage}) =
+      _$InvalidNumber<T>;
+
+  String? get errorMessage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$InvalidNumberCopyWith<T, _$InvalidNumber<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidDateCopyWith<T, $Res> {
+  factory _$$InvalidDateCopyWith(
+          _$InvalidDate<T> value, $Res Function(_$InvalidDate<T>) then) =
+      __$$InvalidDateCopyWithImpl<T, $Res>;
+  $Res call({String? errorMessage});
+}
+
+/// @nodoc
+class __$$InvalidDateCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidDateCopyWith<T, $Res> {
+  __$$InvalidDateCopyWithImpl(
+      _$InvalidDate<T> _value, $Res Function(_$InvalidDate<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidDate<T>));
+
+  @override
+  _$InvalidDate<T> get _value => super._value as _$InvalidDate<T>;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$InvalidDate<T>(
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidDate<T> implements InvalidDate<T> {
+  const _$InvalidDate({this.errorMessage});
+
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidDate(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidDate<T> &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidDateCopyWith<T, _$InvalidDate<T>> get copyWith =>
+      __$$InvalidDateCopyWithImpl<T, _$InvalidDate<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int maxLength) exceedingLength,
+    required TResult Function() empty,
+    required TResult Function() invalidEmail,
+    required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
+    required TResult Function(String? errorMessage) shortageName,
+    required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
+  }) {
+    return invalidDate(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+  }) {
+    return invalidDate?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+    required TResult orElse(),
+  }) {
+    if (invalidDate != null) {
+      return invalidDate(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
+    required TResult Function(ShortageName<T> value) shortageName,
+    required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+  }) {
+    return invalidDate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+  }) {
+    return invalidDate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    required TResult orElse(),
+  }) {
+    if (invalidDate != null) {
+      return invalidDate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidDate<T> implements ValueFailure<T> {
+  const factory InvalidDate({final String? errorMessage}) = _$InvalidDate<T>;
+
+  String? get errorMessage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$InvalidDateCopyWith<T, _$InvalidDate<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$InvalidProductCountCopyWith<T, $Res> {
+  factory _$$InvalidProductCountCopyWith(_$InvalidProductCount<T> value,
+          $Res Function(_$InvalidProductCount<T>) then) =
+      __$$InvalidProductCountCopyWithImpl<T, $Res>;
+  $Res call({String? errorMessage});
+}
+
+/// @nodoc
+class __$$InvalidProductCountCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$InvalidProductCountCopyWith<T, $Res> {
+  __$$InvalidProductCountCopyWithImpl(_$InvalidProductCount<T> _value,
+      $Res Function(_$InvalidProductCount<T>) _then)
+      : super(_value, (v) => _then(v as _$InvalidProductCount<T>));
+
+  @override
+  _$InvalidProductCount<T> get _value =>
+      super._value as _$InvalidProductCount<T>;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$InvalidProductCount<T>(
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InvalidProductCount<T> implements InvalidProductCount<T> {
+  const _$InvalidProductCount({this.errorMessage});
+
+  @override
+  final String? errorMessage;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidProductCount(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidProductCount<T> &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$InvalidProductCountCopyWith<T, _$InvalidProductCount<T>> get copyWith =>
+      __$$InvalidProductCountCopyWithImpl<T, _$InvalidProductCount<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int maxLength) exceedingLength,
+    required TResult Function() empty,
+    required TResult Function() invalidEmail,
+    required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
+    required TResult Function(String? errorMessage) shortageName,
+    required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
+  }) {
+    return invalidProductCount(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+  }) {
+    return invalidProductCount?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+    required TResult orElse(),
+  }) {
+    if (invalidProductCount != null) {
+      return invalidProductCount(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
+    required TResult Function(ShortageName<T> value) shortageName,
+    required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+  }) {
+    return invalidProductCount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+  }) {
+    return invalidProductCount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    required TResult orElse(),
+  }) {
+    if (invalidProductCount != null) {
+      return invalidProductCount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidProductCount<T> implements ValueFailure<T> {
+  const factory InvalidProductCount({final String? errorMessage}) =
+      _$InvalidProductCount<T>;
+
+  String? get errorMessage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$InvalidProductCountCopyWith<T, _$InvalidProductCount<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
