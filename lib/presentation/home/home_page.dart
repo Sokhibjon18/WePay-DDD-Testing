@@ -9,6 +9,7 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +19,7 @@ class HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              bottomsheet(context);
+              bottomsheet(context, controller);
             },
             icon: const Icon(Icons.add),
           ),

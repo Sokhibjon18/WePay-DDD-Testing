@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-Container reusableTextField(String text) {
+Container reusableTextField(String text, TextEditingController controller) {
   return Container(
     margin: const EdgeInsets.only(left: 32, right: 32, top: 20),
     decoration: const BoxDecoration(
@@ -13,6 +13,7 @@ Container reusableTextField(String text) {
       ],
     ),
     child: TextField(
+      controller: controller,
       cursorColor: Colors.white,
       style: TextStyle(color: Colors.blue.withOpacity(0.5)),
       decoration: InputDecoration(
@@ -79,7 +80,7 @@ Container reusableTextField(String text) {
 //   );
 // }
 
-void bottomsheet(context) {
+void bottomsheet(context, TextEditingController controller) {
   List informs = ['Region', 'District', 'Street'];
   showModalBottomSheet(
     context: context,
@@ -119,7 +120,7 @@ void bottomsheet(context) {
             itemCount: informs.length,
             itemBuilder: (context, index) => Container(
               margin: const EdgeInsets.only(left: 32, right: 32, top: 24),
-              child: reusableTextField(informs[index]),
+              child: reusableTextField(informs[index], controller),
             ),
           ),
           Row(
@@ -128,12 +129,12 @@ void bottomsheet(context) {
               Container(
                 width: MediaQuery.of(context).size.width*0.384,
                 margin: const EdgeInsets.only(left: 32, right: 24, top: 24),
-                child: reusableTextField('House number'),
+                child: reusableTextField('House number', controller),
               ),
               Container(
                 width: MediaQuery.of(context).size.width*0.39,
                 margin: const EdgeInsets.only(right: 32, top: 24),
-                child: reusableTextField('Flat number'),
+                child: reusableTextField('Flat number', controller),
               ),
             ],
           ),
