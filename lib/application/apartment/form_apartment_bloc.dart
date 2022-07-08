@@ -8,6 +8,8 @@ import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
 import 'package:we_pay/domain/apartment/value_objects.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
+import 'package:we_pay/domain/models/request/request.dart';
+import 'package:we_pay/domain/search/search_failure.dart';
 
 part 'form_apartment_event.dart';
 part 'form_apartment_state.dart';
@@ -18,9 +20,11 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
   final IApartmentRepository _repository;
 
   StreamController<Either<ApartmentFailure, List<Apartment>>> apartmentStream = StreamController();
+  StreamController<Either<SearchFailure, List<RequestToJoin>>> requestStream = StreamController();
 
   FormApartmentBloc(this._repository) : super(FormApartmentState.initial()) {
     apartmentStream.addStream(_repository.watchAll());
+    requestStream.addStream(_repository.watchRequests());
     on<_Initial>((event, emit) {
       emit(FormApartmentState.initial());
     });

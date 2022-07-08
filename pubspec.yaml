@@ -11,34 +11,33 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
   freezed_annotation: ^2.0.3
   dartz: ^0.10.1
   flutter_bloc: ^8.0.1
-  firebase_core: ^1.17.0
-  firebase_auth: ^3.3.18
-  google_sign_in: ^5.3.1
+  firebase_core: ^1.19.1
+  firebase_auth: ^3.4.1
+  google_sign_in: ^5.3.3
   injectable: ^1.5.3
   get_it: ^7.2.0
   another_flushbar: ^1.10.29
   uuid: ^3.0.6
-  auto_route: ^4.0.1
-  cloud_firestore: ^3.1.16
+  auto_route: ^4.2.0
+  cloud_firestore: ^3.2.1
   json_annotation: ^4.5.0
-  rxdart: ^0.27.3
-  flutter_hooks: ^0.18.4
+  rxdart: ^0.27.4
   provider: ^6.0.3
   email_validator: ^2.0.1
   flutter_slidable: ^1.3.0
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^2.0.1
   build_runner: ^2.1.11
   freezed: ^2.0.3+1
   injectable_generator: ^1.5.3
-  auto_route_generator: ^4.0.0
+  auto_route_generator: ^4.2.0
   json_serializable: ^6.2.0
   
 flutter:

@@ -1,37 +1,46 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:we_pay/domain/models/user_model/user_model.dart';
+import 'package:we_pay/injection.dart';
 
 extension FirebaseFirestoreX on FirebaseFirestore {
   Future<DocumentSnapshot> getUser(String uid) async {
-    return FirebaseFirestore.instance.collection('user').doc(uid).get();
+    return getIt<FirebaseFirestore>().collection('user').doc(uid).get();
   }
 
   Future<void> setUser(UserModel userModel) async {
-    await FirebaseFirestore.instance.collection('user').doc(userModel.uid).set(userModel.toJson());
+    await getIt<FirebaseFirestore>().collection('user').doc(userModel.uid).set(userModel.toJson());
   }
 
   Future<void> addApartmentToUser(String userId, String apartmentId) async {
-    await FirebaseFirestore.instance.collection('user').doc(userId).update({
+    await getIt<FirebaseFirestore>().collection('user').doc(userId).update({
       'ownedApartments': FieldValue.arrayUnion([apartmentId])
     });
   }
 
   Future<void> updateUser(UserModel userModel) async {
-    await FirebaseFirestore.instance
+    await getIt<FirebaseFirestore>()
         .collection('user')
         .doc(userModel.uid)
         .update(userModel.toJson());
   }
 
   DocumentReference<Map<String, dynamic>> apartment(String apartmentId) {
-    return FirebaseFirestore.instance.collection('apartment').doc(apartmentId);
+    return getIt<FirebaseFirestore>().collection('apartment').doc(apartmentId);
+  }
+
+  DocumentReference<Map<String, dynamic>> getRequestReference(String ownerId, String uid) {
+    return getIt<FirebaseFirestore>()
+        .collection('user')
+        .doc(ownerId)
+        .collection('requests')
+        .doc(uid);
   }
 
   DocumentReference<Map<String, dynamic>> productDirectory({
     required String apartmentId,
     required String productId,
   }) {
-    return FirebaseFirestore.instance
+    return getIt<FirebaseFirestore>()
         .collection('apartment')
         .doc(apartmentId)
         .collection('expenses')
@@ -44,7 +53,7 @@ extension FirebaseFirestoreX on FirebaseFirestore {
   }) {
     Timestamp startDate = Timestamp.fromDate(DateTime(date.year, date.month));
     Timestamp endDate = Timestamp.fromDate(DateTime(date.year, date.month + 1));
-    return FirebaseFirestore.instance
+    return getIt<FirebaseFirestore>()
         .collection('apartment')
         .doc(apartmentId)
         .collection('expenses')

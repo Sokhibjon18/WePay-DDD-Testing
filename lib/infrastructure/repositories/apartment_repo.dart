@@ -8,7 +8,9 @@ import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
+import 'package:we_pay/domain/models/request/request.dart';
 import 'package:we_pay/domain/models/user_model/user_model.dart';
+import 'package:we_pay/domain/search/search_failure.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -94,7 +96,9 @@ class ApartmentRepository implements IApartmentRepository {
 
   @override
   Stream<Either<ApartmentFailure, List<Apartment>>> watchAll() async* {
-    final snapshotStream = _firestore.collection('apartment').snapshots();
+    final currentUserId = _auth.currentUser!.uid;
+    final snapshotStream =
+        _firestore.collection('apartment').where('users', arrayContains: currentUserId).snapshots();
     yield* snapshotStream.map((snapshot) {
       final apartmentList = snapshot.docs.map((e) => Apartment.fromJson(e.data())).toList();
       return right<ApartmentFailure, List<Apartment>>(apartmentList);
@@ -103,6 +107,23 @@ class ApartmentRepository implements IApartmentRepository {
         return left(const ApartmentFailure.permissionDenied());
       } else {
         return left(const ApartmentFailure.serverError());
+      }
+    });
+  }
+
+  @override
+  Stream<Either<SearchFailure, List<RequestToJoin>>> watchRequests() async* {
+    final userId = _auth.currentUser!.uid;
+    final snapshotStream =
+        _firestore.collection('user').doc(userId).collection('requests').snapshots();
+    yield* snapshotStream.map((snapshot) {
+      final apartmentList = snapshot.docs.map((e) => RequestToJoin.fromJson(e.data())).toList();
+      return right<SearchFailure, List<RequestToJoin>>(apartmentList);
+    }).onErrorReturnWith((error, stackTrace) {
+      if (error is FirebaseException) {
+        return left(SearchFailure.server(errorMessage: error.message));
+      } else {
+        return left(SearchFailure.unexpected(error.toString()));
       }
     });
   }

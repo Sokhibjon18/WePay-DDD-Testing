@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
 
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';

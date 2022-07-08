@@ -1,7 +1,5 @@
 import 'dart:async';
-import 'dart:developer';
-
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -22,10 +20,12 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
   StreamController<Either<ProductFailure, List<Product>>> productsStream = StreamController();
 
   ProductActorBloc(this._repository) : super(const _Initial()) {
-    productsStream
-        .addStream(_repository.watchAll('51ded484-5638-413c-8089-5503ac4d7eec', DateTime(2022, 7)));
+    productsStream.addStream(_repository.watchAll(
+      '51ded484-5638-413c-8089-5503ac4d7eec',
+      DateTime(2022, 7),
+    ));
     on<_Create>((event, emit) async {
-      final result = await _repository.create(
+      await _repository.create(
         Product(
           apartmentId: '51ded484-5638-413c-8089-5503ac4d7eec',
           name: ProductName('name'),
@@ -37,10 +37,9 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
           date: DateTime.now(),
         ),
       );
-      log(result.toString());
     });
     on<_Update>((event, emit) async {
-      final result = await _repository.update(
+      await _repository.update(
         Product(
           uid: 'e07b7eb3-98c4-4403-84b6-1aef188e3112',
           apartmentId: '51ded484-5638-413c-8089-5503ac4d7eec',
@@ -53,7 +52,6 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
           date: DateTime.now(),
         ),
       );
-      log(result.toString());
     });
   }
 }

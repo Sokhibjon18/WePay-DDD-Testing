@@ -19,4 +19,7 @@ abstract class Apartment implements _$Apartment {
   }) = _Apartment;
 
   factory Apartment.fromJson(Map<String, dynamic> json) => _$ApartmentFromJson(json);
+
+  String getFullAddress() =>
+      '$region, $district, $street, $houseNumber${flatNumber.isEmpty ? '' : ', $flatNumber'}';
 }

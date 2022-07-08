@@ -48,7 +48,6 @@ class ProductRepository implements IProductRepository {
   Future<Either<ProductFailure, Unit>> delete(Product product) async {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
-      String date = '${product.date.month}-${product.date.year}';
       await _firestore
           .productDirectory(apartmentId: productDto.apartmentId, productId: productDto.uid)
           .delete();
@@ -62,7 +61,6 @@ class ProductRepository implements IProductRepository {
   Future<Either<ProductFailure, Unit>> update(Product product) async {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
-      String date = '${product.date.month}-${product.date.year}';
       log(productDto.toString());
       await _firestore
           .productDirectory(apartmentId: productDto.apartmentId, productId: productDto.uid)
