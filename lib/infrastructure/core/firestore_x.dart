@@ -24,6 +24,22 @@ extension FirebaseFirestoreX on FirebaseFirestore {
         .update(userModel.toJson());
   }
 
+  Future<String> getUserName(String userId) async {
+    return await getIt<FirebaseFirestore>()
+        .collection('user')
+        .doc(userId)
+        .get()
+        .then((value) => value.data()?['name']);
+  }
+
+  Future<int> getUserColor(String userId) async {
+    return await getIt<FirebaseFirestore>()
+        .collection('user')
+        .doc(userId)
+        .get()
+        .then((value) => value.data()?['color']);
+  }
+
   DocumentReference<Map<String, dynamic>> apartment(String apartmentId) {
     return getIt<FirebaseFirestore>().collection('apartment').doc(apartmentId);
   }
@@ -58,6 +74,7 @@ extension FirebaseFirestoreX on FirebaseFirestore {
         .doc(apartmentId)
         .collection('expenses')
         .where('date', isGreaterThanOrEqualTo: startDate, isLessThan: endDate)
+        .orderBy('date', descending: true)
         .snapshots();
   }
 }

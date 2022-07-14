@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:dartz/dartz.dart';
+import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -17,17 +17,25 @@ part 'product_actor_bloc.freezed.dart';
 class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
   final IProductRepository _repository;
 
-  StreamController<Either<ProductFailure, List<Product>>> productsStream = StreamController();
+  StreamSubscription<z.Either<ProductFailure, List<Product>>>? productsSubscription;
+  late StreamController<DateTime> dateTimeStream = StreamController.broadcast();
+  late DateTime dateTime;
+  late String apartmentId;
 
-  ProductActorBloc(this._repository) : super(const _Initial()) {
-    productsStream.addStream(_repository.watchAll(
-      '51ded484-5638-413c-8089-5503ac4d7eec',
-      DateTime(2022, 7),
-    ));
+  ProductActorBloc(this._repository) : super(ProductActorState.initial()) {
+    on<_Watch>((event, emit) {
+      apartmentId = event.apartmentId;
+      dateTime = event.time;
+      dateTimeStream.add(dateTime);
+      productsSubscription =
+          _repository.watchAllProductInApartment(apartmentId, dateTime).listen((event) {
+        add(ProductActorEvent.productsReceived(event));
+      });
+    });
     on<_Create>((event, emit) async {
       await _repository.create(
         Product(
-          apartmentId: '51ded484-5638-413c-8089-5503ac4d7eec',
+          apartmentId: event.apartmentId,
           name: ProductName('name'),
           buyerName: 'Name',
           buyerId: '5w9GY16EHkQkZvN3AvOQ3KGkMER2',
@@ -42,7 +50,7 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
       await _repository.update(
         Product(
           uid: 'e07b7eb3-98c4-4403-84b6-1aef188e3112',
-          apartmentId: '51ded484-5638-413c-8089-5503ac4d7eec',
+          apartmentId: event.apartmentId,
           name: ProductName('Kulcha'),
           buyerName: 'Aziz',
           buyerId: '5w9GY16EHkQkZvN3AvOQ3KGkMER2',
@@ -53,5 +61,21 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
         ),
       );
     });
+    on<_ProductsReceived>((event, emit) {
+      event.failureOrProducts.fold(
+        (productFailure) => emit(ProductActorState.loadFailure(productFailure)),
+        (productList) => emit(
+          productList.isEmpty
+              ? const ProductActorState.emptyList()
+              : ProductActorState.loadSuccess(productList),
+        ),
+      );
+    });
+  }
+
+  @override
+  Future<void> close() async {
+    await productsSubscription?.cancel();
+    return super.close();
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/presentation/search/widgets/join_dialog.dart';
+import 'package:we_pay/presentation/screens/search/widgets/join_dialog.dart';
 
 class SearchResultItem extends StatelessWidget {
   const SearchResultItem({Key? key, required this.apartment}) : super(key: key);

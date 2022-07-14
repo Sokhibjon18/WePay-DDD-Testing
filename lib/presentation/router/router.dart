@@ -1,9 +1,10 @@
 import 'package:auto_route/annotations.dart';
-import 'package:we_pay/presentation/auth/login_page.dart';
-import 'package:we_pay/presentation/auth/sign_up_page.dart';
-import 'package:we_pay/presentation/home/home_page.dart';
-import 'package:we_pay/presentation/search/search_page.dart';
-import 'package:we_pay/presentation/splash/splash_page.dart';
+import 'package:we_pay/presentation/screens/auth/login_page.dart';
+import 'package:we_pay/presentation/screens/auth/sign_up_page.dart';
+import 'package:we_pay/presentation/screens/expense/expense_page.dart';
+import 'package:we_pay/presentation/screens/home/home_page.dart';
+import 'package:we_pay/presentation/screens/search/search_page.dart';
+import 'package:we_pay/presentation/screens/splash/splash_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -13,6 +14,7 @@ import 'package:we_pay/presentation/splash/splash_page.dart';
     AutoRoute(page: SignUpPage),
     AutoRoute(page: HomePage),
     AutoRoute(page: SearchPage),
+    AutoRoute(page: ExpensePage),
   ],
 )
 class $AppRouter {}

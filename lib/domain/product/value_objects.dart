@@ -23,6 +23,10 @@ class ProductPrice extends ValueObject {
   factory ProductPrice(String price) {
     return ProductPrice._(validatePrice(price));
   }
+
+  int toInt() {
+    return int.parse(super.getRight());
+  }
 }
 
 class ProductBoughtTime extends ValueObject {
@@ -38,11 +42,11 @@ class ProductBoughtTime extends ValueObject {
 
 class ProductCount extends ValueObject {
   @override
-  final Either<ValueFailure, DateTime> value;
+  final Either<ValueFailure, int> value;
 
   const ProductCount._(this.value);
 
-  factory ProductCount(DateTime date) {
-    return ProductCount._(validateDate(date));
+  factory ProductCount(int count) {
+    return ProductCount._(validateCout(count));
   }
 }

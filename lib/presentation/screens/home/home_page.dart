@@ -9,10 +9,10 @@ import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/domain/models/request/request.dart';
 import 'package:we_pay/domain/search/search_failure.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/home/widgets/add_or_reject_dialog.dart';
-import 'package:we_pay/presentation/home/widgets/bottom_sheet.dart';
-import 'package:we_pay/presentation/home/widgets/apartment_item.dart';
-import 'package:we_pay/presentation/home/widgets/request_header.dart';
+import 'package:we_pay/presentation/screens/home/widgets/add_or_reject_dialog.dart';
+import 'package:we_pay/presentation/screens/home/widgets/bottom_sheet.dart';
+import 'package:we_pay/presentation/screens/home/widgets/apartment_item.dart';
+import 'package:we_pay/presentation/screens/home/widgets/request_header.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 
 class HomePage extends StatefulWidget {
@@ -53,14 +53,6 @@ class HomePageState extends State<HomePage> {
             },
             icon: const Icon(Icons.person_rounded),
           ),
-          //!Testing perpose of product addition
-          // StreamBuilder<z.Either<ProductFailure, List<Product>>>(
-          //   stream: context.read<ProductActorBloc>().productsStream.stream,
-          //   builder: ((_, snapshot) {
-          //     log(snapshot.data.toString());
-          //     return snapshot.data?.fold((l) => null, (r) => Text('${r.length}')) ?? Container();
-          //   }),
-          // )
         ],
       ),
       body: SingleChildScrollView(

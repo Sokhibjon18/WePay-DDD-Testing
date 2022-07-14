@@ -5,8 +5,8 @@ import 'package:we_pay/application/request/request_bloc.dart';
 import 'package:we_pay/application/search/search_bloc.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/presentation/search/widgets/result_item.dart';
-import 'package:we_pay/presentation/search/widgets/search_field.dart';
+import 'package:we_pay/presentation/screens/search/widgets/result_item.dart';
+import 'package:we_pay/presentation/screens/search/widgets/search_field.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);

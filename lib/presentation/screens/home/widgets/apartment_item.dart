@@ -1,11 +1,14 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
+import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/home/home_page.dart';
-import 'package:we_pay/presentation/home/widgets/bottom_sheet.dart';
+import 'package:we_pay/presentation/router/router.gr.dart';
+import 'package:we_pay/presentation/screens/home/home_page.dart';
+import 'package:we_pay/presentation/screens/home/widgets/bottom_sheet.dart';
 
 class ApartmentItem extends StatelessWidget {
   const ApartmentItem({Key? key, required this.apartment}) : super(key: key);
@@ -18,7 +21,7 @@ class ApartmentItem extends StatelessWidget {
       startActionPane: ActionPane(
         openThreshold: 0.2,
         closeThreshold: 0.2,
-        extentRatio: 0.25,
+        extentRatio: 0.4,
         motion: const DrawerMotion(),
         children: [
           SlidableAction(
@@ -32,14 +35,6 @@ class ApartmentItem extends StatelessWidget {
             icon: Icons.mode_edit_rounded,
             label: 'Edit',
           ),
-        ],
-      ),
-      endActionPane: ActionPane(
-        extentRatio: 0.25,
-        openThreshold: 0.2,
-        closeThreshold: 0.2,
-        motion: const DrawerMotion(),
-        children: [
           SlidableAction(
             onPressed: (_) {
               context.read<FormApartmentBloc>().add(FormApartmentEvent.deleteApartment(apartment));
@@ -52,7 +47,12 @@ class ApartmentItem extends StatelessWidget {
         ],
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          context
+              .read<ProductActorBloc>()
+              .add(ProductActorEvent.watch(apartment.uid!, DateTime.now()));
+          context.router.push(ExpenseRoute(apartmentName: apartment.getFullAddress()));
+        },
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Row(

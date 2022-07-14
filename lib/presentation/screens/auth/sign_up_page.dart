@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/auth/auth_bloc.dart';
-import 'package:we_pay/presentation/auth/forms/sign_up_form.dart';
-import 'package:we_pay/presentation/auth/widget/simple_btn.dart';
-import 'package:we_pay/presentation/auth/widget/reusables.dart';
+import 'package:we_pay/presentation/screens/auth/forms/sign_up_form.dart';
+import 'package:we_pay/presentation/screens/auth/widget/simple_btn.dart';
+import 'package:we_pay/presentation/screens/auth/widget/reusables.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

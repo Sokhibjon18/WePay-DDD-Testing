@@ -20,13 +20,9 @@ Either<ValueFailure, DateTime> validateDate(DateTime date) {
       : left(const ValueFailure.invalidDate(errorMessage: 'Invalid date picked'));
 }
 
-Either<ValueFailure, String> validateCout(String count) {
-  int? parsedNumber = int.tryParse(count);
-  if (parsedNumber == null) {
-    return left(const ValueFailure.invalidProductCount(errorMessage: 'Invalid product count'));
-  } else if (parsedNumber < 1) {
-    return left(
-        const ValueFailure.invalidProductCount(errorMessage: 'Number should be more then 0'));
+Either<ValueFailure, int> validateCout(int count) {
+  if (count < 1) {
+    return left(const ValueFailure.invalidProductCount(errorMessage: 'Invalid count'));
   } else {
     return right(count);
   }

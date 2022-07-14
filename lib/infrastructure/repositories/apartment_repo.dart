@@ -68,11 +68,10 @@ class ApartmentRepository implements IApartmentRepository {
   Future<Either<ApartmentFailure, Unit>> delete(Apartment apartment) async {
     try {
       final apartmentId = apartment.uid!;
-      final userId = _auth.currentUser!.uid;
-      if (userId == apartment.ownerId) {
+      if (apartment.users.isEmpty) {
         await _firestore.collection('apartment').doc(apartmentId).delete();
-        await deleteApartmentFromUser(apartment);
       }
+      await deleteApartmentFromUser(apartment);
       return right(unit);
     } on FirebaseException catch (_) {
       return left(const ApartmentFailure.serverError());

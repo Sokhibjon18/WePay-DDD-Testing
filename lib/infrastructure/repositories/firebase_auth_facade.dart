@@ -1,4 +1,5 @@
-import 'dart:developer';
+import 'dart:developer' as dev;
+import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -10,6 +11,7 @@ import 'package:we_pay/domain/auth/i_auth_facade.dart';
 import 'package:we_pay/domain/auth/value_objects.dart';
 import 'package:we_pay/domain/models/user_model/user_model.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
+import 'package:we_pay/presentation/constants/colors.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
@@ -92,16 +94,19 @@ class FirebaseAuthFacade implements IAuthFacade {
         UserModel userModel = UserModel.fromJson(user.data()!);
         _firestore.updateUser(userModel);
       } else {
+        final randomPosition = Random().nextInt(6) + 1;
+        final color = userColors[randomPosition].value;
         UserModel userModel = UserModel(
           uid: uid,
           name: name!,
           email: email,
+          color: color,
           serverTimeStamp: FieldValue.serverTimestamp(),
         );
         _firestore.setUser(userModel);
       }
     } on FirebaseException catch (e) {
-      log(e.message.toString());
+      dev.log(e.message.toString());
     }
   }
 
@@ -111,7 +116,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       await _auth.signOut();
       await _googleAuth.signOut();
     } catch (e) {
-      log(e.toString());
+      dev.log(e.toString());
     }
   }
 }

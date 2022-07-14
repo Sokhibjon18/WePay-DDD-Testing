@@ -22,6 +22,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 mixin _$UserModel {
   String get uid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  int get color => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   List<String> get ownedApartments => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
@@ -40,6 +41,7 @@ abstract class $UserModelCopyWith<$Res> {
   $Res call(
       {String uid,
       String name,
+      int color,
       String? email,
       List<String> ownedApartments,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
@@ -57,6 +59,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
   $Res call({
     Object? uid = freezed,
     Object? name = freezed,
+    Object? color = freezed,
     Object? email = freezed,
     Object? ownedApartments = freezed,
     Object? serverTimeStamp = freezed,
@@ -70,6 +73,10 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -95,6 +102,7 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   $Res call(
       {String uid,
       String name,
+      int color,
       String? email,
       List<String> ownedApartments,
       @ServerTimestampConverter() FieldValue serverTimeStamp});
@@ -114,6 +122,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
   $Res call({
     Object? uid = freezed,
     Object? name = freezed,
+    Object? color = freezed,
     Object? email = freezed,
     Object? ownedApartments = freezed,
     Object? serverTimeStamp = freezed,
@@ -127,6 +136,10 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as int,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -149,6 +162,7 @@ class _$_UserModel extends _UserModel {
   const _$_UserModel(
       {required this.uid,
       required this.name,
+      required this.color,
       this.email,
       final List<String> ownedApartments = const [],
       @ServerTimestampConverter() required this.serverTimeStamp})
@@ -162,6 +176,8 @@ class _$_UserModel extends _UserModel {
   final String uid;
   @override
   final String name;
+  @override
+  final int color;
   @override
   final String? email;
   final List<String> _ownedApartments;
@@ -178,7 +194,7 @@ class _$_UserModel extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(uid: $uid, name: $name, email: $email, ownedApartments: $ownedApartments, serverTimeStamp: $serverTimeStamp)';
+    return 'UserModel(uid: $uid, name: $name, color: $color, email: $email, ownedApartments: $ownedApartments, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -188,6 +204,7 @@ class _$_UserModel extends _UserModel {
             other is _$_UserModel &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality()
                 .equals(other._ownedApartments, _ownedApartments) &&
@@ -201,6 +218,7 @@ class _$_UserModel extends _UserModel {
       runtimeType,
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(color),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(_ownedApartments),
       const DeepCollectionEquality().hash(serverTimeStamp));
@@ -220,6 +238,7 @@ abstract class _UserModel extends UserModel {
   const factory _UserModel(
       {required final String uid,
       required final String name,
+      required final int color,
       final String? email,
       final List<String> ownedApartments,
       @ServerTimestampConverter()
@@ -233,6 +252,8 @@ abstract class _UserModel extends UserModel {
   String get uid => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
+  @override
+  int get color => throw _privateConstructorUsedError;
   @override
   String? get email => throw _privateConstructorUsedError;
   @override
