@@ -11,6 +11,8 @@ class ProductFormState with _$ProductFormState {
     required bool loading,
     required bool showErrorMessage,
     required Option<Either<ProductFailure, Unit>> creationFailure,
+    required Option<Either<ValueFailure, Product>> editOption,
+    required Option<Either<ValueFailure, Product>> deleteOption,
   }) = _ProductFormState;
 
   factory ProductFormState.initial() => ProductFormState(
@@ -22,6 +24,8 @@ class ProductFormState with _$ProductFormState {
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),
+        editOption: none(),
+        deleteOption: none(),
       );
 
   factory ProductFormState.edit(Product product) => ProductFormState(
@@ -33,5 +37,7 @@ class ProductFormState with _$ProductFormState {
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),
+        editOption: none(),
+        deleteOption: none(),
       );
 }

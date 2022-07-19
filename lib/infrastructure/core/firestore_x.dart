@@ -63,6 +63,21 @@ extension FirebaseFirestoreX on FirebaseFirestore {
         .doc(productId);
   }
 
+  Future<QuerySnapshot<Map<String, dynamic>>> apartmentCurrentMonthExpences({
+    required String apartmentId,
+    required DateTime date,
+  }) {
+    Timestamp startDate = Timestamp.fromDate(DateTime(date.year, date.month));
+    Timestamp endDate = Timestamp.fromDate(DateTime(date.year, date.month + 1));
+    return getIt<FirebaseFirestore>()
+        .collection('apartment')
+        .doc(apartmentId)
+        .collection('expenses')
+        .where('date', isGreaterThanOrEqualTo: startDate, isLessThan: endDate)
+        .orderBy('date', descending: true)
+        .get();
+  }
+
   Stream<QuerySnapshot<Map<String, dynamic>>> apartmentExpenses({
     required String apartmentId,
     required DateTime date,

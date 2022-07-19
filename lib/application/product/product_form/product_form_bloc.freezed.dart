@@ -1950,6 +1950,10 @@ mixin _$ProductFormState {
   bool get showErrorMessage => throw _privateConstructorUsedError;
   Option<Either<ProductFailure, Unit>> get creationFailure =>
       throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, Product>> get editOption =>
+      throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, Product>> get deleteOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductFormStateCopyWith<ProductFormState> get copyWith =>
@@ -1969,7 +1973,9 @@ abstract class $ProductFormStateCopyWith<$Res> {
       ProductCount count,
       bool loading,
       bool showErrorMessage,
-      Option<Either<ProductFailure, Unit>> creationFailure});
+      Option<Either<ProductFailure, Unit>> creationFailure,
+      Option<Either<ValueFailure, Product>> editOption,
+      Option<Either<ValueFailure, Product>> deleteOption});
 }
 
 /// @nodoc
@@ -1991,6 +1997,8 @@ class _$ProductFormStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? showErrorMessage = freezed,
     Object? creationFailure = freezed,
+    Object? editOption = freezed,
+    Object? deleteOption = freezed,
   }) {
     return _then(_value.copyWith(
       productName: productName == freezed
@@ -2025,6 +2033,14 @@ class _$ProductFormStateCopyWithImpl<$Res>
           ? _value.creationFailure
           : creationFailure // ignore: cast_nullable_to_non_nullable
               as Option<Either<ProductFailure, Unit>>,
+      editOption: editOption == freezed
+          ? _value.editOption
+          : editOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, Product>>,
+      deleteOption: deleteOption == freezed
+          ? _value.deleteOption
+          : deleteOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, Product>>,
     ));
   }
 }
@@ -2044,7 +2060,9 @@ abstract class _$$_ProductFormStateCopyWith<$Res>
       ProductCount count,
       bool loading,
       bool showErrorMessage,
-      Option<Either<ProductFailure, Unit>> creationFailure});
+      Option<Either<ProductFailure, Unit>> creationFailure,
+      Option<Either<ValueFailure, Product>> editOption,
+      Option<Either<ValueFailure, Product>> deleteOption});
 }
 
 /// @nodoc
@@ -2068,6 +2086,8 @@ class __$$_ProductFormStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? showErrorMessage = freezed,
     Object? creationFailure = freezed,
+    Object? editOption = freezed,
+    Object? deleteOption = freezed,
   }) {
     return _then(_$_ProductFormState(
       productName: productName == freezed
@@ -2102,6 +2122,14 @@ class __$$_ProductFormStateCopyWithImpl<$Res>
           ? _value.creationFailure
           : creationFailure // ignore: cast_nullable_to_non_nullable
               as Option<Either<ProductFailure, Unit>>,
+      editOption: editOption == freezed
+          ? _value.editOption
+          : editOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, Product>>,
+      deleteOption: deleteOption == freezed
+          ? _value.deleteOption
+          : deleteOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, Product>>,
     ));
   }
 }
@@ -2117,7 +2145,9 @@ class _$_ProductFormState implements _ProductFormState {
       required this.count,
       required this.loading,
       required this.showErrorMessage,
-      required this.creationFailure});
+      required this.creationFailure,
+      required this.editOption,
+      required this.deleteOption});
 
   @override
   final ProductName productName;
@@ -2135,10 +2165,14 @@ class _$_ProductFormState implements _ProductFormState {
   final bool showErrorMessage;
   @override
   final Option<Either<ProductFailure, Unit>> creationFailure;
+  @override
+  final Option<Either<ValueFailure, Product>> editOption;
+  @override
+  final Option<Either<ValueFailure, Product>> deleteOption;
 
   @override
   String toString() {
-    return 'ProductFormState(productName: $productName, price: $price, note: $note, dateTime: $dateTime, count: $count, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure)';
+    return 'ProductFormState(productName: $productName, price: $price, note: $note, dateTime: $dateTime, count: $count, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure, editOption: $editOption, deleteOption: $deleteOption)';
   }
 
   @override
@@ -2156,7 +2190,11 @@ class _$_ProductFormState implements _ProductFormState {
             const DeepCollectionEquality()
                 .equals(other.showErrorMessage, showErrorMessage) &&
             const DeepCollectionEquality()
-                .equals(other.creationFailure, creationFailure));
+                .equals(other.creationFailure, creationFailure) &&
+            const DeepCollectionEquality()
+                .equals(other.editOption, editOption) &&
+            const DeepCollectionEquality()
+                .equals(other.deleteOption, deleteOption));
   }
 
   @override
@@ -2169,7 +2207,9 @@ class _$_ProductFormState implements _ProductFormState {
       const DeepCollectionEquality().hash(count),
       const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(showErrorMessage),
-      const DeepCollectionEquality().hash(creationFailure));
+      const DeepCollectionEquality().hash(creationFailure),
+      const DeepCollectionEquality().hash(editOption),
+      const DeepCollectionEquality().hash(deleteOption));
 
   @JsonKey(ignore: true)
   @override
@@ -2179,15 +2219,17 @@ class _$_ProductFormState implements _ProductFormState {
 
 abstract class _ProductFormState implements ProductFormState {
   const factory _ProductFormState(
-      {required final ProductName productName,
-      required final ProductPrice price,
-      required final String note,
-      required final DateTime dateTime,
-      required final ProductCount count,
-      required final bool loading,
-      required final bool showErrorMessage,
-      required final Option<Either<ProductFailure, Unit>>
-          creationFailure}) = _$_ProductFormState;
+          {required final ProductName productName,
+          required final ProductPrice price,
+          required final String note,
+          required final DateTime dateTime,
+          required final ProductCount count,
+          required final bool loading,
+          required final bool showErrorMessage,
+          required final Option<Either<ProductFailure, Unit>> creationFailure,
+          required final Option<Either<ValueFailure, Product>> editOption,
+          required final Option<Either<ValueFailure, Product>> deleteOption}) =
+      _$_ProductFormState;
 
   @override
   ProductName get productName => throw _privateConstructorUsedError;
@@ -2205,6 +2247,12 @@ abstract class _ProductFormState implements ProductFormState {
   bool get showErrorMessage => throw _privateConstructorUsedError;
   @override
   Option<Either<ProductFailure, Unit>> get creationFailure =>
+      throw _privateConstructorUsedError;
+  @override
+  Option<Either<ValueFailure, Product>> get editOption =>
+      throw _privateConstructorUsedError;
+  @override
+  Option<Either<ValueFailure, Product>> get deleteOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

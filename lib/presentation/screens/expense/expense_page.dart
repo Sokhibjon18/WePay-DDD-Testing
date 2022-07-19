@@ -1,6 +1,4 @@
-import 'dart:async';
-import 'dart:developer';
-
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,7 +9,6 @@ import 'package:we_pay/presentation/screens/expense/widgets/app_bar.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/product_bottom_sheet.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/product_item.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/total_expenses.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
 
 class ExpensePage extends StatefulWidget {
   const ExpensePage({Key? key, required this.apartmentName}) : super(key: key);
@@ -29,15 +26,56 @@ class ExpensePageState extends State<ExpensePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: expencePageAppBar(context, widget.apartmentName),
-      body: BlocBuilder<ProductActorBloc, ProductActorState>(
-        builder: (context, state) {
-          return state.maybeMap(
-            loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
-            loadSuccess: (loadSuccess) => loadSuccessWidget(loadSuccess.productList),
-            emptyList: (_) => emptyListWidget(),
-            orElse: () => Container(),
+      body: BlocListener<ProductFormBloc, ProductFormState>(
+        listener: (context, state) {
+          state.editOption.fold(
+            () => null,
+            (a) => a.fold(
+              (f) {
+                String errorMessage = '';
+                errorMessage = f.maybeMap(
+                  wrongOwner: (value) => value.errorMessage,
+                  orElse: () => '',
+                );
+                if (errorMessage.isNotEmpty) {
+                  FlushbarHelper.createInformation(message: errorMessage).show(context);
+                }
+              },
+              (r) {
+                productBottomsheet(
+                  context.findAncestorStateOfType<ExpensePageState>()!.context,
+                  product: r,
+                );
+              },
+            ),
+          );
+          state.deleteOption.fold(
+            () => null,
+            (a) => a.fold(
+              (f) {
+                String errorMessage = '';
+                errorMessage = f.maybeMap(
+                  wrongOwner: (value) => value.errorMessage,
+                  orElse: () => '',
+                );
+                if (errorMessage.isNotEmpty) {
+                  FlushbarHelper.createInformation(message: errorMessage).show(context);
+                }
+              },
+              (r) => null,
+            ),
           );
         },
+        child: BlocBuilder<ProductActorBloc, ProductActorState>(
+          builder: (context, state) {
+            return state.maybeMap(
+              loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
+              loadSuccess: (loadSuccess) => loadSuccessWidget(loadSuccess.productList),
+              emptyList: (_) => emptyListWidget(),
+              orElse: () => Container(),
+            );
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),

@@ -128,6 +128,7 @@ void bottomsheet(BuildContext context, {Apartment? apartment}) {
                         ),
                         const SizedBox(height: 24),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Expanded(
@@ -158,6 +159,7 @@ void bottomsheet(BuildContext context, {Apartment? apartment}) {
                               child: reusableTextField(
                                 context: context,
                                 hint: 'Flat number',
+                                inputType: TextInputType.number,
                                 text: apartment?.flatNumber ?? '',
                                 onChanged: (text) {
                                   BlocProvider.of<FormApartmentBloc>(context)

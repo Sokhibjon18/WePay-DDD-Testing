@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
+import 'package:we_pay/domain/core/value_failure.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:dartz/dartz.dart';
 import 'package:we_pay/domain/product/i_product_repository.dart';
@@ -80,6 +81,18 @@ class ProductRepository implements IProductRepository {
     } on FirebaseException catch (e) {
       log('${e.code}::${e.stackTrace}');
       return left(ProductFailure.unexpected(e.code));
+    }
+  }
+
+  @override
+  Future<Either<ValueFailure, Product>> isUserOwnerOf(Product product) async {
+    try {
+      String userId = _auth.currentUser?.uid ?? '';
+      return userId == product.buyerId
+          ? right(product)
+          : left(const ValueFailure.wrongOwner('This is not your product'));
+    } catch (e) {
+      return left(ValueFailure.wrongOwner(e.toString()));
     }
   }
 }

@@ -11,6 +11,8 @@ class FormApartmentState with _$FormApartmentState {
     required bool loading,
     required bool showErrorMessage,
     required Option<Either<ApartmentFailure, Unit>> creationFailure,
+    required Option<Either<ValueFailure, Apartment>> editOptions,
+    required Option<Either<ApartmentFailure, Unit>> deleteOption,
   }) = _AddingApartmentState;
 
   factory FormApartmentState.initial() => FormApartmentState(
@@ -22,6 +24,8 @@ class FormApartmentState with _$FormApartmentState {
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),
+        editOptions: none(),
+        deleteOption: none(),
       );
 
   factory FormApartmentState.edit(Apartment apartment) => FormApartmentState(
@@ -33,5 +37,7 @@ class FormApartmentState with _$FormApartmentState {
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),
+        editOptions: none(),
+        deleteOption: none(),
       );
 }

@@ -14,4 +14,5 @@ abstract class ValueFailure<T> with _$ValueFailure {
   const factory ValueFailure.invalidNumber({String? errorMessage}) = InvalidNumber;
   const factory ValueFailure.invalidDate({String? errorMessage}) = InvalidDate;
   const factory ValueFailure.invalidProductCount({String? errorMessage}) = InvalidProductCount;
+  const factory ValueFailure.wrongOwner(String errorMessage) = WrongOwner;
 }

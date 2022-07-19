@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+
 String priceFixer(String price) {
   String newPrice = '';
   if (price.length > 3) {
@@ -9,7 +11,7 @@ String priceFixer(String price) {
   }
 }
 
-String getMonthAndYear(DateTime? date) {
+String getMonthAndYear(DateTime? date, {bool onlyMonth = false}) {
   date = date ?? DateTime.now();
   String month;
   switch (date.month) {
@@ -52,7 +54,7 @@ String getMonthAndYear(DateTime? date) {
     default:
       month = 'Error';
   }
-  return '$month, ${date.year}';
+  return onlyMonth ? month : '$month, ${date.year}';
 }
 
 String getDayMonthYear(DateTime? time) {

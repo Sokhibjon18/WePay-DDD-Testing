@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:we_pay/domain/core/value_failure.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/domain/product/product_failure.dart';
 
@@ -7,7 +8,7 @@ abstract class IProductRepository {
     String apartmentId,
     DateTime date,
   );
-  // Stream<Either<ProductFailure, List<Product>>> watch();
+  Future<Either<ValueFailure, Product>> isUserOwnerOf(Product product);
   Future<Either<ProductFailure, Unit>> create(Product product);
   Future<Either<ProductFailure, Unit>> update(Product product);
   Future<Either<ProductFailure, Unit>> delete(Product product);

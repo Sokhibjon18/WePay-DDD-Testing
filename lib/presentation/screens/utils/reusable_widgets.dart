@@ -6,12 +6,14 @@ Widget reusableTextField({
   required Function onChanged,
   required Function validator,
   required String text,
+  TextInputType inputType = TextInputType.text,
 }) {
   return TextFormField(
     cursorColor: Colors.white,
     onChanged: (value) => onChanged(value),
     validator: (_) => validator(),
     initialValue: text,
+    keyboardType: inputType,
     decoration: InputDecoration(
       labelText: hint,
       labelStyle: const TextStyle(color: Colors.grey),

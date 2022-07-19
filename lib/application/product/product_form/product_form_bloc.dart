@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:uuid/uuid.dart';
+import 'package:we_pay/domain/core/value_failure.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/domain/product/i_product_repository.dart';
 import 'package:we_pay/domain/product/product_failure.dart';
@@ -25,8 +26,14 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
     on<_Initial>((event, emit) {
       emit(ProductFormState.initial());
     });
-    on<_EditingProduct>((event, emit) {
-      emit(ProductFormState.edit(event.product));
+    on<_EditingProduct>((event, emit) async {
+      final isOwner = await _repository.isUserOwnerOf(event.product);
+      emit(state.copyWith(editOption: optionOf(isOwner), loading: true));
+      isOwner.fold(
+        (f) => null,
+        (u) => emit(ProductFormState.edit(event.product)),
+      );
+      emit(state.copyWith(editOption: none(), loading: false));
     });
     on<_NameChanged>((event, emit) {
       emit(state.copyWith(productName: ProductName(event.name), creationFailure: none()));
@@ -111,20 +118,15 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
       ));
     });
     on<_DeleteProduct>((event, emit) async {
-      Either<ProductFailure, Unit>? failureOrSuccess;
-
-      emit(state.copyWith(
-        loading: true,
-        creationFailure: none(),
-      ));
-
-      failureOrSuccess = await _repository.delete(event.product);
-
-      emit(state.copyWith(
-        loading: false,
-        showErrorMessage: true,
-        creationFailure: optionOf(failureOrSuccess),
-      ));
+      final isOwner = await _repository.isUserOwnerOf(event.product);
+      emit(state.copyWith(deleteOption: optionOf(isOwner), loading: true));
+      isOwner.fold(
+        (f) => null,
+        (u) async {
+          await _repository.delete(event.product);
+        },
+      );
+      emit(state.copyWith(editOption: none(), loading: false, showErrorMessage: true));
     });
   }
 }

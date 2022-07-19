@@ -26,6 +26,8 @@ mixin _$Apartment {
   String get district => throw _privateConstructorUsedError;
   String get street => throw _privateConstructorUsedError;
   String get houseNumber => throw _privateConstructorUsedError;
+  String? get currentMonthExpences => throw _privateConstructorUsedError;
+  String? get roommates => throw _privateConstructorUsedError;
   String get flatNumber => throw _privateConstructorUsedError;
   List<String> get users => throw _privateConstructorUsedError;
 
@@ -46,6 +48,8 @@ abstract class $ApartmentCopyWith<$Res> {
       String district,
       String street,
       String houseNumber,
+      String? currentMonthExpences,
+      String? roommates,
       String flatNumber,
       List<String> users});
 }
@@ -66,6 +70,8 @@ class _$ApartmentCopyWithImpl<$Res> implements $ApartmentCopyWith<$Res> {
     Object? district = freezed,
     Object? street = freezed,
     Object? houseNumber = freezed,
+    Object? currentMonthExpences = freezed,
+    Object? roommates = freezed,
     Object? flatNumber = freezed,
     Object? users = freezed,
   }) {
@@ -94,6 +100,14 @@ class _$ApartmentCopyWithImpl<$Res> implements $ApartmentCopyWith<$Res> {
           ? _value.houseNumber
           : houseNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      currentMonthExpences: currentMonthExpences == freezed
+          ? _value.currentMonthExpences
+          : currentMonthExpences // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roommates: roommates == freezed
+          ? _value.roommates
+          : roommates // ignore: cast_nullable_to_non_nullable
+              as String?,
       flatNumber: flatNumber == freezed
           ? _value.flatNumber
           : flatNumber // ignore: cast_nullable_to_non_nullable
@@ -119,6 +133,8 @@ abstract class _$$_ApartmentCopyWith<$Res> implements $ApartmentCopyWith<$Res> {
       String district,
       String street,
       String houseNumber,
+      String? currentMonthExpences,
+      String? roommates,
       String flatNumber,
       List<String> users});
 }
@@ -141,6 +157,8 @@ class __$$_ApartmentCopyWithImpl<$Res> extends _$ApartmentCopyWithImpl<$Res>
     Object? district = freezed,
     Object? street = freezed,
     Object? houseNumber = freezed,
+    Object? currentMonthExpences = freezed,
+    Object? roommates = freezed,
     Object? flatNumber = freezed,
     Object? users = freezed,
   }) {
@@ -169,6 +187,14 @@ class __$$_ApartmentCopyWithImpl<$Res> extends _$ApartmentCopyWithImpl<$Res>
           ? _value.houseNumber
           : houseNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      currentMonthExpences: currentMonthExpences == freezed
+          ? _value.currentMonthExpences
+          : currentMonthExpences // ignore: cast_nullable_to_non_nullable
+              as String?,
+      roommates: roommates == freezed
+          ? _value.roommates
+          : roommates // ignore: cast_nullable_to_non_nullable
+              as String?,
       flatNumber: flatNumber == freezed
           ? _value.flatNumber
           : flatNumber // ignore: cast_nullable_to_non_nullable
@@ -191,6 +217,8 @@ class _$_Apartment extends _Apartment {
       required this.district,
       required this.street,
       required this.houseNumber,
+      this.currentMonthExpences,
+      this.roommates,
       this.flatNumber = '',
       final List<String> users = const []})
       : _users = users,
@@ -212,6 +240,10 @@ class _$_Apartment extends _Apartment {
   @override
   final String houseNumber;
   @override
+  final String? currentMonthExpences;
+  @override
+  final String? roommates;
+  @override
   @JsonKey()
   final String flatNumber;
   final List<String> _users;
@@ -224,7 +256,7 @@ class _$_Apartment extends _Apartment {
 
   @override
   String toString() {
-    return 'Apartment(uid: $uid, ownerId: $ownerId, region: $region, district: $district, street: $street, houseNumber: $houseNumber, flatNumber: $flatNumber, users: $users)';
+    return 'Apartment(uid: $uid, ownerId: $ownerId, region: $region, district: $district, street: $street, houseNumber: $houseNumber, currentMonthExpences: $currentMonthExpences, roommates: $roommates, flatNumber: $flatNumber, users: $users)';
   }
 
   @override
@@ -240,6 +272,9 @@ class _$_Apartment extends _Apartment {
             const DeepCollectionEquality()
                 .equals(other.houseNumber, houseNumber) &&
             const DeepCollectionEquality()
+                .equals(other.currentMonthExpences, currentMonthExpences) &&
+            const DeepCollectionEquality().equals(other.roommates, roommates) &&
+            const DeepCollectionEquality()
                 .equals(other.flatNumber, flatNumber) &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
@@ -254,6 +289,8 @@ class _$_Apartment extends _Apartment {
       const DeepCollectionEquality().hash(district),
       const DeepCollectionEquality().hash(street),
       const DeepCollectionEquality().hash(houseNumber),
+      const DeepCollectionEquality().hash(currentMonthExpences),
+      const DeepCollectionEquality().hash(roommates),
       const DeepCollectionEquality().hash(flatNumber),
       const DeepCollectionEquality().hash(_users));
 
@@ -276,6 +313,8 @@ abstract class _Apartment extends Apartment {
       required final String district,
       required final String street,
       required final String houseNumber,
+      final String? currentMonthExpences,
+      final String? roommates,
       final String flatNumber,
       final List<String> users}) = _$_Apartment;
   const _Apartment._() : super._();
@@ -295,6 +334,10 @@ abstract class _Apartment extends Apartment {
   String get street => throw _privateConstructorUsedError;
   @override
   String get houseNumber => throw _privateConstructorUsedError;
+  @override
+  String? get currentMonthExpences => throw _privateConstructorUsedError;
+  @override
+  String? get roommates => throw _privateConstructorUsedError;
   @override
   String get flatNumber => throw _privateConstructorUsedError;
   @override

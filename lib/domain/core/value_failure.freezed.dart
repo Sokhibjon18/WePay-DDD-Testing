@@ -28,6 +28,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$ValueFailure<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +58,7 @@ mixin _$ValueFailure<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +74,7 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +89,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +104,7 @@ mixin _$ValueFailure<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -197,6 +203,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return exceedingLength(maxLength);
   }
@@ -214,6 +221,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return exceedingLength?.call(maxLength);
   }
@@ -231,6 +239,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -252,6 +261,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return exceedingLength(this);
   }
@@ -269,6 +279,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return exceedingLength?.call(this);
   }
@@ -286,6 +297,7 @@ class _$ExceedingLength<T> implements ExceedingLength<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (exceedingLength != null) {
@@ -353,6 +365,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return empty();
   }
@@ -370,6 +383,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return empty?.call();
   }
@@ -387,6 +401,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -408,6 +423,7 @@ class _$Empty<T> implements Empty<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return empty(this);
   }
@@ -425,6 +441,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return empty?.call(this);
   }
@@ -442,6 +459,7 @@ class _$Empty<T> implements Empty<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -506,6 +524,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return invalidEmail();
   }
@@ -523,6 +542,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return invalidEmail?.call();
   }
@@ -540,6 +560,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -561,6 +582,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return invalidEmail(this);
   }
@@ -578,6 +600,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return invalidEmail?.call(this);
   }
@@ -595,6 +618,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -683,6 +707,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return shortPassword(minLength);
   }
@@ -700,6 +725,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return shortPassword?.call(minLength);
   }
@@ -717,6 +743,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -738,6 +765,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return shortPassword(this);
   }
@@ -755,6 +783,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return shortPassword?.call(this);
   }
@@ -772,6 +801,7 @@ class _$ShortPassword<T> implements ShortPassword<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (shortPassword != null) {
@@ -842,6 +872,7 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return paswordsAreNotSame();
   }
@@ -859,6 +890,7 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return paswordsAreNotSame?.call();
   }
@@ -876,6 +908,7 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (paswordsAreNotSame != null) {
@@ -897,6 +930,7 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return paswordsAreNotSame(this);
   }
@@ -914,6 +948,7 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return paswordsAreNotSame?.call(this);
   }
@@ -931,6 +966,7 @@ class _$PaswordsAreNotSame<T> implements PaswordsAreNotSame<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (paswordsAreNotSame != null) {
@@ -1020,6 +1056,7 @@ class _$ShortageName<T> implements ShortageName<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return shortageName(errorMessage);
   }
@@ -1037,6 +1074,7 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return shortageName?.call(errorMessage);
   }
@@ -1054,6 +1092,7 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (shortageName != null) {
@@ -1075,6 +1114,7 @@ class _$ShortageName<T> implements ShortageName<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return shortageName(this);
   }
@@ -1092,6 +1132,7 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return shortageName?.call(this);
   }
@@ -1109,6 +1150,7 @@ class _$ShortageName<T> implements ShortageName<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (shortageName != null) {
@@ -1178,6 +1220,7 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return shortageAddress();
   }
@@ -1195,6 +1238,7 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return shortageAddress?.call();
   }
@@ -1212,6 +1256,7 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (shortageAddress != null) {
@@ -1233,6 +1278,7 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return shortageAddress(this);
   }
@@ -1250,6 +1296,7 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return shortageAddress?.call(this);
   }
@@ -1267,6 +1314,7 @@ class _$ShortageAddress<T> implements ShortageAddress<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (shortageAddress != null) {
@@ -1356,6 +1404,7 @@ class _$InvalidNumber<T> implements InvalidNumber<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return invalidNumber(errorMessage);
   }
@@ -1373,6 +1422,7 @@ class _$InvalidNumber<T> implements InvalidNumber<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return invalidNumber?.call(errorMessage);
   }
@@ -1390,6 +1440,7 @@ class _$InvalidNumber<T> implements InvalidNumber<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidNumber != null) {
@@ -1411,6 +1462,7 @@ class _$InvalidNumber<T> implements InvalidNumber<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return invalidNumber(this);
   }
@@ -1428,6 +1480,7 @@ class _$InvalidNumber<T> implements InvalidNumber<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return invalidNumber?.call(this);
   }
@@ -1445,6 +1498,7 @@ class _$InvalidNumber<T> implements InvalidNumber<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidNumber != null) {
@@ -1540,6 +1594,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return invalidDate(errorMessage);
   }
@@ -1557,6 +1612,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return invalidDate?.call(errorMessage);
   }
@@ -1574,6 +1630,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidDate != null) {
@@ -1595,6 +1652,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return invalidDate(this);
   }
@@ -1612,6 +1670,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return invalidDate?.call(this);
   }
@@ -1629,6 +1688,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidDate != null) {
@@ -1725,6 +1785,7 @@ class _$InvalidProductCount<T> implements InvalidProductCount<T> {
     required TResult Function(String? errorMessage) invalidNumber,
     required TResult Function(String? errorMessage) invalidDate,
     required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
   }) {
     return invalidProductCount(errorMessage);
   }
@@ -1742,6 +1803,7 @@ class _$InvalidProductCount<T> implements InvalidProductCount<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
   }) {
     return invalidProductCount?.call(errorMessage);
   }
@@ -1759,6 +1821,7 @@ class _$InvalidProductCount<T> implements InvalidProductCount<T> {
     TResult Function(String? errorMessage)? invalidNumber,
     TResult Function(String? errorMessage)? invalidDate,
     TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidProductCount != null) {
@@ -1780,6 +1843,7 @@ class _$InvalidProductCount<T> implements InvalidProductCount<T> {
     required TResult Function(InvalidNumber<T> value) invalidNumber,
     required TResult Function(InvalidDate<T> value) invalidDate,
     required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
   }) {
     return invalidProductCount(this);
   }
@@ -1797,6 +1861,7 @@ class _$InvalidProductCount<T> implements InvalidProductCount<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
   }) {
     return invalidProductCount?.call(this);
   }
@@ -1814,6 +1879,7 @@ class _$InvalidProductCount<T> implements InvalidProductCount<T> {
     TResult Function(InvalidNumber<T> value)? invalidNumber,
     TResult Function(InvalidDate<T> value)? invalidDate,
     TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
     required TResult orElse(),
   }) {
     if (invalidProductCount != null) {
@@ -1830,5 +1896,194 @@ abstract class InvalidProductCount<T> implements ValueFailure<T> {
   String? get errorMessage => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$InvalidProductCountCopyWith<T, _$InvalidProductCount<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$WrongOwnerCopyWith<T, $Res> {
+  factory _$$WrongOwnerCopyWith(
+          _$WrongOwner<T> value, $Res Function(_$WrongOwner<T>) then) =
+      __$$WrongOwnerCopyWithImpl<T, $Res>;
+  $Res call({String errorMessage});
+}
+
+/// @nodoc
+class __$$WrongOwnerCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements _$$WrongOwnerCopyWith<T, $Res> {
+  __$$WrongOwnerCopyWithImpl(
+      _$WrongOwner<T> _value, $Res Function(_$WrongOwner<T>) _then)
+      : super(_value, (v) => _then(v as _$WrongOwner<T>));
+
+  @override
+  _$WrongOwner<T> get _value => super._value as _$WrongOwner<T>;
+
+  @override
+  $Res call({
+    Object? errorMessage = freezed,
+  }) {
+    return _then(_$WrongOwner<T>(
+      errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$WrongOwner<T> implements WrongOwner<T> {
+  const _$WrongOwner(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.wrongOwner(errorMessage: $errorMessage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WrongOwner<T> &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(errorMessage));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$WrongOwnerCopyWith<T, _$WrongOwner<T>> get copyWith =>
+      __$$WrongOwnerCopyWithImpl<T, _$WrongOwner<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int maxLength) exceedingLength,
+    required TResult Function() empty,
+    required TResult Function() invalidEmail,
+    required TResult Function(int minLength) shortPassword,
+    required TResult Function() paswordsAreNotSame,
+    required TResult Function(String? errorMessage) shortageName,
+    required TResult Function() shortageAddress,
+    required TResult Function(String? errorMessage) invalidNumber,
+    required TResult Function(String? errorMessage) invalidDate,
+    required TResult Function(String? errorMessage) invalidProductCount,
+    required TResult Function(String errorMessage) wrongOwner,
+  }) {
+    return wrongOwner(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
+  }) {
+    return wrongOwner?.call(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int maxLength)? exceedingLength,
+    TResult Function()? empty,
+    TResult Function()? invalidEmail,
+    TResult Function(int minLength)? shortPassword,
+    TResult Function()? paswordsAreNotSame,
+    TResult Function(String? errorMessage)? shortageName,
+    TResult Function()? shortageAddress,
+    TResult Function(String? errorMessage)? invalidNumber,
+    TResult Function(String? errorMessage)? invalidDate,
+    TResult Function(String? errorMessage)? invalidProductCount,
+    TResult Function(String errorMessage)? wrongOwner,
+    required TResult orElse(),
+  }) {
+    if (wrongOwner != null) {
+      return wrongOwner(errorMessage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ExceedingLength<T> value) exceedingLength,
+    required TResult Function(Empty<T> value) empty,
+    required TResult Function(InvalidEmail<T> value) invalidEmail,
+    required TResult Function(ShortPassword<T> value) shortPassword,
+    required TResult Function(PaswordsAreNotSame<T> value) paswordsAreNotSame,
+    required TResult Function(ShortageName<T> value) shortageName,
+    required TResult Function(ShortageAddress<T> value) shortageAddress,
+    required TResult Function(InvalidNumber<T> value) invalidNumber,
+    required TResult Function(InvalidDate<T> value) invalidDate,
+    required TResult Function(InvalidProductCount<T> value) invalidProductCount,
+    required TResult Function(WrongOwner<T> value) wrongOwner,
+  }) {
+    return wrongOwner(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
+  }) {
+    return wrongOwner?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ExceedingLength<T> value)? exceedingLength,
+    TResult Function(Empty<T> value)? empty,
+    TResult Function(InvalidEmail<T> value)? invalidEmail,
+    TResult Function(ShortPassword<T> value)? shortPassword,
+    TResult Function(PaswordsAreNotSame<T> value)? paswordsAreNotSame,
+    TResult Function(ShortageName<T> value)? shortageName,
+    TResult Function(ShortageAddress<T> value)? shortageAddress,
+    TResult Function(InvalidNumber<T> value)? invalidNumber,
+    TResult Function(InvalidDate<T> value)? invalidDate,
+    TResult Function(InvalidProductCount<T> value)? invalidProductCount,
+    TResult Function(WrongOwner<T> value)? wrongOwner,
+    required TResult orElse(),
+  }) {
+    if (wrongOwner != null) {
+      return wrongOwner(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class WrongOwner<T> implements ValueFailure<T> {
+  const factory WrongOwner(final String errorMessage) = _$WrongOwner<T>;
+
+  String get errorMessage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$WrongOwnerCopyWith<T, _$WrongOwner<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,4 +12,6 @@ class FormApartmentEvent with _$FormApartmentEvent {
   const factory FormApartmentEvent.creatApartment() = _CreateApartment;
   const factory FormApartmentEvent.updateApartment(String uid, String ownerId) = _UpdateApartment;
   const factory FormApartmentEvent.deleteApartment(Apartment apartment) = _DeleteApartment;
+  const factory FormApartmentEvent.getApartmentUsersAndExpenses(List<Apartment> apartments) =
+      _GetApartmentUsersAndExpenses;
 }

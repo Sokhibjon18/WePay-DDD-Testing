@@ -7,12 +7,15 @@ import 'package:uuid/uuid.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
+import 'package:we_pay/domain/core/value_failure.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
+import 'package:we_pay/domain/models/current_date_expense.dart';
 import 'package:we_pay/domain/models/request/request.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
+import 'package:we_pay/domain/models/roommates.dart';
 import 'package:we_pay/domain/search/search_failure.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:we_pay/presentation/screens/utils/functions.dart';
 
 @LazySingleton(as: IApartmentRepository)
 class ApartmentRepository implements IApartmentRepository {
@@ -39,41 +42,24 @@ class ApartmentRepository implements IApartmentRepository {
     }
   }
 
-  Future<Either<ApartmentFailure, Unit>> deleteApartmentFromUser(Apartment apartment) async {
-    List<String> detectApartmentAndDelete(List<String> ownedApartments) {
-      List<String> newApartmentList = [];
-      for (var apartmentId in ownedApartments) {
-        if (apartmentId != apartment.uid) {
-          newApartmentList.add(apartmentId);
-        }
-      }
-      return newApartmentList;
-    }
-
-    try {
-      final userId = apartment.ownerId!;
-      final userMap =
-          await _firestore.collection('user').doc(userId).get().then((value) => value.data());
-      var user = UserModel.fromJson(userMap!);
-      user = user.copyWith(ownedApartments: detectApartmentAndDelete(user.ownedApartments));
-      await _firestore.updateUser(user);
-      return right(unit);
-    } on FirebaseException catch (e) {
-      log('${e.code} ${e.message}');
-      return left(const ApartmentFailure.serverError());
-    }
-  }
-
   @override
   Future<Either<ApartmentFailure, Unit>> delete(Apartment apartment) async {
     try {
       final apartmentId = apartment.uid!;
-      if (apartment.users.isEmpty) {
-        await _firestore.collection('apartment').doc(apartmentId).delete();
+      final userId = _auth.currentUser?.uid;
+      await _firestore.apartment(apartmentId).update({
+        'users': FieldValue.arrayRemove([userId])
+      });
+      await _firestore.collection('user').doc(userId).update({
+        'ownedApartments': FieldValue.arrayRemove([apartmentId])
+      });
+      if (apartment.users.length <= 1) {
+        await _firestore.apartment(apartmentId).delete();
       }
-      await deleteApartmentFromUser(apartment);
       return right(unit);
     } on FirebaseException catch (_) {
+      return left(const ApartmentFailure.serverError());
+    } catch (_) {
       return left(const ApartmentFailure.serverError());
     }
   }
@@ -125,5 +111,62 @@ class ApartmentRepository implements IApartmentRepository {
         return left(SearchFailure.unexpected(error.toString()));
       }
     });
+  }
+
+  @override
+  Future<List<Roommates>> getApartmentWithUsers(List<Apartment> apartments) async {
+    try {
+      List<Roommates> apartmentWithRoommates = [];
+      for (var i = 0; i < apartments.length; i++) {
+        String usersString = '';
+        for (var userId in apartments[i].users) {
+          usersString += ', ${await _firestore.getUserName(userId)}';
+        }
+        usersString = 'Roommates: ${usersString.substring(2)}';
+        apartmentWithRoommates.add(Roommates(apartments[i].uid!, usersString));
+      }
+      return apartmentWithRoommates;
+    } on FirebaseException catch (e) {
+      log('${e.code} ${e.message}');
+      return [];
+    }
+  }
+
+  @override
+  Future<List<CurrentDateExpense>> getCurrentMonthExpences(List<Apartment> apartments) async {
+    try {
+      List<CurrentDateExpense> expenses = [];
+      for (var apartment in apartments) {
+        String month = getMonthAndYear(DateTime.now(), onlyMonth: true).substring(0, 3);
+        int apartmentExpence = 0;
+        final allExpences = await _firestore
+            .apartmentCurrentMonthExpences(
+              apartmentId: apartment.uid!,
+              date: DateTime.now(),
+            )
+            .then((value) => value.docs);
+        for (var expence in allExpences) {
+          apartmentExpence += expence.data()['price'] as int;
+        }
+        month += ': ${priceFixer(apartmentExpence.toString())}';
+        expenses.add(CurrentDateExpense(apartment.uid!, month));
+      }
+      return expenses;
+    } on FirebaseException catch (e) {
+      log('${e.code} ${e.message}');
+      return [];
+    }
+  }
+
+  @override
+  Future<Either<ValueFailure, Apartment>> isUserOwnerOf(Apartment apartment) async {
+    try {
+      String userId = _auth.currentUser?.uid ?? '';
+      return userId == apartment.ownerId
+          ? right(apartment)
+          : left(const ValueFailure.wrongOwner('You are not owner of this apartment'));
+    } catch (e) {
+      return left(ValueFailure.wrongOwner(e.toString()));
+    }
   }
 }

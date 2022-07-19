@@ -5,6 +5,8 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
+import 'package:we_pay/domain/models/current_date_expense.dart';
+import 'package:we_pay/domain/models/roommates.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:we_pay/presentation/screens/home/home_page.dart';
@@ -27,8 +29,6 @@ class ApartmentItem extends StatelessWidget {
           SlidableAction(
             onPressed: (_) {
               context.read<FormApartmentBloc>().add(FormApartmentEvent.editingApartment(apartment));
-              bottomsheet(context.findAncestorStateOfType<HomePageState>()!.context,
-                  apartment: apartment);
             },
             backgroundColor: green,
             spacing: 8,
@@ -68,11 +68,16 @@ class ApartmentItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     const SizedBox(height: 4),
-                    const Text(
-                      'Roommates: Me, Example, Examle2',
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                      maxLines: 2,
-                      overflow: TextOverflow.fade,
+                    StreamBuilder<List<Roommates>>(
+                      stream: context.read<FormApartmentBloc>().roommates.stream,
+                      builder: (context, snapshot) {
+                        return Text(
+                          snapshot.data == null ? 'Loading' : getUsersFromList(snapshot.data!),
+                          style: const TextStyle(fontSize: 12, color: Colors.grey),
+                          maxLines: 2,
+                          overflow: TextOverflow.fade,
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -80,10 +85,17 @@ class ApartmentItem extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 color: Colors.green,
-                child: const Center(
-                  child: Text(
-                    'Jan: 0 sum',
-                    style: TextStyle(color: Colors.white),
+                child: Center(
+                  child: StreamBuilder<List<CurrentDateExpense>>(
+                    stream: context.read<FormApartmentBloc>().expenses.stream,
+                    builder: (context, snapshot) {
+                      return Text(
+                        snapshot.data == null ? 'Loading' : getExPensesFromList(snapshot.data!),
+                        style: const TextStyle(fontSize: 14, color: white),
+                        maxLines: 2,
+                        overflow: TextOverflow.fade,
+                      );
+                    },
                   ),
                 ),
               ),
@@ -92,5 +104,23 @@ class ApartmentItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String getUsersFromList(List<Roommates> roommates) {
+    for (var item in roommates) {
+      if (item.apartmentId == apartment.uid!) {
+        return item.roommates;
+      }
+    }
+    return 'Not found';
+  }
+
+  String getExPensesFromList(List<CurrentDateExpense> expenses) {
+    for (var item in expenses) {
+      if (item.apartmentId == apartment.uid!) {
+        return item.expence;
+      }
+    }
+    return 'Not found';
   }
 }

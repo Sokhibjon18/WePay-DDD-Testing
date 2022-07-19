@@ -13,6 +13,8 @@ _$_Apartment _$$_ApartmentFromJson(Map<String, dynamic> json) => _$_Apartment(
       district: json['district'] as String,
       street: json['street'] as String,
       houseNumber: json['houseNumber'] as String,
+      currentMonthExpences: json['currentMonthExpences'] as String?,
+      roommates: json['roommates'] as String?,
       flatNumber: json['flatNumber'] as String? ?? '',
       users:
           (json['users'] as List<dynamic>?)?.map((e) => e as String).toList() ??
@@ -27,6 +29,8 @@ Map<String, dynamic> _$$_ApartmentToJson(_$_Apartment instance) =>
       'district': instance.district,
       'street': instance.street,
       'houseNumber': instance.houseNumber,
+      'currentMonthExpences': instance.currentMonthExpences,
+      'roommates': instance.roommates,
       'flatNumber': instance.flatNumber,
       'users': instance.users,
     };

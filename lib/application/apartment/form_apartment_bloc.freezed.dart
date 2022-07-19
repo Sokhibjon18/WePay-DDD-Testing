@@ -28,6 +28,8 @@ mixin _$FormApartmentEvent {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$FormApartmentEvent {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +59,7 @@ mixin _$FormApartmentEvent {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +75,8 @@ mixin _$FormApartmentEvent {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +91,8 @@ mixin _$FormApartmentEvent {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +107,8 @@ mixin _$FormApartmentEvent {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -171,6 +181,8 @@ class _$_Initial implements _Initial {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return initial();
   }
@@ -188,6 +200,7 @@ class _$_Initial implements _Initial {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return initial?.call();
   }
@@ -205,6 +218,7 @@ class _$_Initial implements _Initial {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -226,6 +240,8 @@ class _$_Initial implements _Initial {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return initial(this);
   }
@@ -243,6 +259,8 @@ class _$_Initial implements _Initial {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return initial?.call(this);
   }
@@ -260,6 +278,8 @@ class _$_Initial implements _Initial {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -357,6 +377,8 @@ class _$_EditingApartment implements _EditingApartment {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return editingApartment(apartment);
   }
@@ -374,6 +396,7 @@ class _$_EditingApartment implements _EditingApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return editingApartment?.call(apartment);
   }
@@ -391,6 +414,7 @@ class _$_EditingApartment implements _EditingApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (editingApartment != null) {
@@ -412,6 +436,8 @@ class _$_EditingApartment implements _EditingApartment {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return editingApartment(this);
   }
@@ -429,6 +455,8 @@ class _$_EditingApartment implements _EditingApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return editingApartment?.call(this);
   }
@@ -446,6 +474,8 @@ class _$_EditingApartment implements _EditingApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (editingApartment != null) {
@@ -540,6 +570,8 @@ class _$_RegionChanged implements _RegionChanged {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return regionChanged(region);
   }
@@ -557,6 +589,7 @@ class _$_RegionChanged implements _RegionChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return regionChanged?.call(region);
   }
@@ -574,6 +607,7 @@ class _$_RegionChanged implements _RegionChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (regionChanged != null) {
@@ -595,6 +629,8 @@ class _$_RegionChanged implements _RegionChanged {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return regionChanged(this);
   }
@@ -612,6 +648,8 @@ class _$_RegionChanged implements _RegionChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return regionChanged?.call(this);
   }
@@ -629,6 +667,8 @@ class _$_RegionChanged implements _RegionChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (regionChanged != null) {
@@ -722,6 +762,8 @@ class _$_DistrictChanged implements _DistrictChanged {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return districtChanged(district);
   }
@@ -739,6 +781,7 @@ class _$_DistrictChanged implements _DistrictChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return districtChanged?.call(district);
   }
@@ -756,6 +799,7 @@ class _$_DistrictChanged implements _DistrictChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (districtChanged != null) {
@@ -777,6 +821,8 @@ class _$_DistrictChanged implements _DistrictChanged {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return districtChanged(this);
   }
@@ -794,6 +840,8 @@ class _$_DistrictChanged implements _DistrictChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return districtChanged?.call(this);
   }
@@ -811,6 +859,8 @@ class _$_DistrictChanged implements _DistrictChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (districtChanged != null) {
@@ -905,6 +955,8 @@ class _$_StreetNameChanged implements _StreetNameChanged {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return streetNameChanged(street);
   }
@@ -922,6 +974,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return streetNameChanged?.call(street);
   }
@@ -939,6 +992,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (streetNameChanged != null) {
@@ -960,6 +1014,8 @@ class _$_StreetNameChanged implements _StreetNameChanged {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return streetNameChanged(this);
   }
@@ -977,6 +1033,8 @@ class _$_StreetNameChanged implements _StreetNameChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return streetNameChanged?.call(this);
   }
@@ -994,6 +1052,8 @@ class _$_StreetNameChanged implements _StreetNameChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (streetNameChanged != null) {
@@ -1088,6 +1148,8 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return houseNumberChanged(house);
   }
@@ -1105,6 +1167,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return houseNumberChanged?.call(house);
   }
@@ -1122,6 +1185,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (houseNumberChanged != null) {
@@ -1143,6 +1207,8 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return houseNumberChanged(this);
   }
@@ -1160,6 +1226,8 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return houseNumberChanged?.call(this);
   }
@@ -1177,6 +1245,8 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (houseNumberChanged != null) {
@@ -1271,6 +1341,8 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return flatNumberChanged(flat);
   }
@@ -1288,6 +1360,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return flatNumberChanged?.call(flat);
   }
@@ -1305,6 +1378,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (flatNumberChanged != null) {
@@ -1326,6 +1400,8 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return flatNumberChanged(this);
   }
@@ -1343,6 +1419,8 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return flatNumberChanged?.call(this);
   }
@@ -1360,6 +1438,8 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (flatNumberChanged != null) {
@@ -1429,6 +1509,8 @@ class _$_CreateApartment implements _CreateApartment {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return creatApartment();
   }
@@ -1446,6 +1528,7 @@ class _$_CreateApartment implements _CreateApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return creatApartment?.call();
   }
@@ -1463,6 +1546,7 @@ class _$_CreateApartment implements _CreateApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (creatApartment != null) {
@@ -1484,6 +1568,8 @@ class _$_CreateApartment implements _CreateApartment {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return creatApartment(this);
   }
@@ -1501,6 +1587,8 @@ class _$_CreateApartment implements _CreateApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return creatApartment?.call(this);
   }
@@ -1518,6 +1606,8 @@ class _$_CreateApartment implements _CreateApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (creatApartment != null) {
@@ -1616,6 +1706,8 @@ class _$_UpdateApartment implements _UpdateApartment {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return updateApartment(uid, ownerId);
   }
@@ -1633,6 +1725,7 @@ class _$_UpdateApartment implements _UpdateApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return updateApartment?.call(uid, ownerId);
   }
@@ -1650,6 +1743,7 @@ class _$_UpdateApartment implements _UpdateApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (updateApartment != null) {
@@ -1671,6 +1765,8 @@ class _$_UpdateApartment implements _UpdateApartment {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return updateApartment(this);
   }
@@ -1688,6 +1784,8 @@ class _$_UpdateApartment implements _UpdateApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return updateApartment?.call(this);
   }
@@ -1705,6 +1803,8 @@ class _$_UpdateApartment implements _UpdateApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (updateApartment != null) {
@@ -1809,6 +1909,8 @@ class _$_DeleteApartment implements _DeleteApartment {
     required TResult Function() creatApartment,
     required TResult Function(String uid, String ownerId) updateApartment,
     required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
   }) {
     return deleteApartment(apartment);
   }
@@ -1826,6 +1928,7 @@ class _$_DeleteApartment implements _DeleteApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
   }) {
     return deleteApartment?.call(apartment);
   }
@@ -1843,6 +1946,7 @@ class _$_DeleteApartment implements _DeleteApartment {
     TResult Function()? creatApartment,
     TResult Function(String uid, String ownerId)? updateApartment,
     TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (deleteApartment != null) {
@@ -1864,6 +1968,8 @@ class _$_DeleteApartment implements _DeleteApartment {
     required TResult Function(_CreateApartment value) creatApartment,
     required TResult Function(_UpdateApartment value) updateApartment,
     required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
   }) {
     return deleteApartment(this);
   }
@@ -1881,6 +1987,8 @@ class _$_DeleteApartment implements _DeleteApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
   }) {
     return deleteApartment?.call(this);
   }
@@ -1898,6 +2006,8 @@ class _$_DeleteApartment implements _DeleteApartment {
     TResult Function(_CreateApartment value)? creatApartment,
     TResult Function(_UpdateApartment value)? updateApartment,
     TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
     required TResult orElse(),
   }) {
     if (deleteApartment != null) {
@@ -1918,6 +2028,209 @@ abstract class _DeleteApartment implements FormApartmentEvent {
 }
 
 /// @nodoc
+abstract class _$$_GetApartmentUsersAndExpensesCopyWith<$Res> {
+  factory _$$_GetApartmentUsersAndExpensesCopyWith(
+          _$_GetApartmentUsersAndExpenses value,
+          $Res Function(_$_GetApartmentUsersAndExpenses) then) =
+      __$$_GetApartmentUsersAndExpensesCopyWithImpl<$Res>;
+  $Res call({List<Apartment> apartments});
+}
+
+/// @nodoc
+class __$$_GetApartmentUsersAndExpensesCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
+    implements _$$_GetApartmentUsersAndExpensesCopyWith<$Res> {
+  __$$_GetApartmentUsersAndExpensesCopyWithImpl(
+      _$_GetApartmentUsersAndExpenses _value,
+      $Res Function(_$_GetApartmentUsersAndExpenses) _then)
+      : super(_value, (v) => _then(v as _$_GetApartmentUsersAndExpenses));
+
+  @override
+  _$_GetApartmentUsersAndExpenses get _value =>
+      super._value as _$_GetApartmentUsersAndExpenses;
+
+  @override
+  $Res call({
+    Object? apartments = freezed,
+  }) {
+    return _then(_$_GetApartmentUsersAndExpenses(
+      apartments == freezed
+          ? _value._apartments
+          : apartments // ignore: cast_nullable_to_non_nullable
+              as List<Apartment>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
+  const _$_GetApartmentUsersAndExpenses(final List<Apartment> apartments)
+      : _apartments = apartments;
+
+  final List<Apartment> _apartments;
+  @override
+  List<Apartment> get apartments {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_apartments);
+  }
+
+  @override
+  String toString() {
+    return 'FormApartmentEvent.getApartmentUsersAndExpenses(apartments: $apartments)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_GetApartmentUsersAndExpenses &&
+            const DeepCollectionEquality()
+                .equals(other._apartments, _apartments));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_apartments));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_GetApartmentUsersAndExpensesCopyWith<_$_GetApartmentUsersAndExpenses>
+      get copyWith => __$$_GetApartmentUsersAndExpensesCopyWithImpl<
+          _$_GetApartmentUsersAndExpenses>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Apartment apartment) editingApartment,
+    required TResult Function(String region) regionChanged,
+    required TResult Function(String district) districtChanged,
+    required TResult Function(String street) streetNameChanged,
+    required TResult Function(String house) houseNumberChanged,
+    required TResult Function(String flat) flatNumberChanged,
+    required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
+  }) {
+    return getApartmentUsersAndExpenses(apartments);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
+  }) {
+    return getApartmentUsersAndExpenses?.call(apartments);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
+    required TResult orElse(),
+  }) {
+    if (getApartmentUsersAndExpenses != null) {
+      return getApartmentUsersAndExpenses(apartments);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingApartment value) editingApartment,
+    required TResult Function(_RegionChanged value) regionChanged,
+    required TResult Function(_DistrictChanged value) districtChanged,
+    required TResult Function(_StreetNameChanged value) streetNameChanged,
+    required TResult Function(_HouseNumberChanged value) houseNumberChanged,
+    required TResult Function(_FlatNumberChanged value) flatNumberChanged,
+    required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
+  }) {
+    return getApartmentUsersAndExpenses(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
+  }) {
+    return getApartmentUsersAndExpenses?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
+    required TResult orElse(),
+  }) {
+    if (getApartmentUsersAndExpenses != null) {
+      return getApartmentUsersAndExpenses(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetApartmentUsersAndExpenses implements FormApartmentEvent {
+  const factory _GetApartmentUsersAndExpenses(
+      final List<Apartment> apartments) = _$_GetApartmentUsersAndExpenses;
+
+  List<Apartment> get apartments => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_GetApartmentUsersAndExpensesCopyWith<_$_GetApartmentUsersAndExpenses>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$FormApartmentState {
   Address get regionName => throw _privateConstructorUsedError;
   Address get districtName => throw _privateConstructorUsedError;
@@ -1927,6 +2240,10 @@ mixin _$FormApartmentState {
   bool get loading => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
   Option<Either<ApartmentFailure, Unit>> get creationFailure =>
+      throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, Apartment>> get editOptions =>
+      throw _privateConstructorUsedError;
+  Option<Either<ApartmentFailure, Unit>> get deleteOption =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1947,7 +2264,9 @@ abstract class $FormApartmentStateCopyWith<$Res> {
       HouseNumber flatNumber,
       bool loading,
       bool showErrorMessage,
-      Option<Either<ApartmentFailure, Unit>> creationFailure});
+      Option<Either<ApartmentFailure, Unit>> creationFailure,
+      Option<Either<ValueFailure, Apartment>> editOptions,
+      Option<Either<ApartmentFailure, Unit>> deleteOption});
 }
 
 /// @nodoc
@@ -1969,6 +2288,8 @@ class _$FormApartmentStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? showErrorMessage = freezed,
     Object? creationFailure = freezed,
+    Object? editOptions = freezed,
+    Object? deleteOption = freezed,
   }) {
     return _then(_value.copyWith(
       regionName: regionName == freezed
@@ -2003,6 +2324,14 @@ class _$FormApartmentStateCopyWithImpl<$Res>
           ? _value.creationFailure
           : creationFailure // ignore: cast_nullable_to_non_nullable
               as Option<Either<ApartmentFailure, Unit>>,
+      editOptions: editOptions == freezed
+          ? _value.editOptions
+          : editOptions // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, Apartment>>,
+      deleteOption: deleteOption == freezed
+          ? _value.deleteOption
+          : deleteOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ApartmentFailure, Unit>>,
     ));
   }
 }
@@ -2022,7 +2351,9 @@ abstract class _$$_AddingApartmentStateCopyWith<$Res>
       HouseNumber flatNumber,
       bool loading,
       bool showErrorMessage,
-      Option<Either<ApartmentFailure, Unit>> creationFailure});
+      Option<Either<ApartmentFailure, Unit>> creationFailure,
+      Option<Either<ValueFailure, Apartment>> editOptions,
+      Option<Either<ApartmentFailure, Unit>> deleteOption});
 }
 
 /// @nodoc
@@ -2046,6 +2377,8 @@ class __$$_AddingApartmentStateCopyWithImpl<$Res>
     Object? loading = freezed,
     Object? showErrorMessage = freezed,
     Object? creationFailure = freezed,
+    Object? editOptions = freezed,
+    Object? deleteOption = freezed,
   }) {
     return _then(_$_AddingApartmentState(
       regionName: regionName == freezed
@@ -2080,6 +2413,14 @@ class __$$_AddingApartmentStateCopyWithImpl<$Res>
           ? _value.creationFailure
           : creationFailure // ignore: cast_nullable_to_non_nullable
               as Option<Either<ApartmentFailure, Unit>>,
+      editOptions: editOptions == freezed
+          ? _value.editOptions
+          : editOptions // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ValueFailure, Apartment>>,
+      deleteOption: deleteOption == freezed
+          ? _value.deleteOption
+          : deleteOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ApartmentFailure, Unit>>,
     ));
   }
 }
@@ -2095,7 +2436,9 @@ class _$_AddingApartmentState implements _AddingApartmentState {
       required this.flatNumber,
       required this.loading,
       required this.showErrorMessage,
-      required this.creationFailure});
+      required this.creationFailure,
+      required this.editOptions,
+      required this.deleteOption});
 
   @override
   final Address regionName;
@@ -2113,10 +2456,14 @@ class _$_AddingApartmentState implements _AddingApartmentState {
   final bool showErrorMessage;
   @override
   final Option<Either<ApartmentFailure, Unit>> creationFailure;
+  @override
+  final Option<Either<ValueFailure, Apartment>> editOptions;
+  @override
+  final Option<Either<ApartmentFailure, Unit>> deleteOption;
 
   @override
   String toString() {
-    return 'FormApartmentState(regionName: $regionName, districtName: $districtName, streetName: $streetName, houseNumber: $houseNumber, flatNumber: $flatNumber, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure)';
+    return 'FormApartmentState(regionName: $regionName, districtName: $districtName, streetName: $streetName, houseNumber: $houseNumber, flatNumber: $flatNumber, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure, editOptions: $editOptions, deleteOption: $deleteOption)';
   }
 
   @override
@@ -2138,7 +2485,11 @@ class _$_AddingApartmentState implements _AddingApartmentState {
             const DeepCollectionEquality()
                 .equals(other.showErrorMessage, showErrorMessage) &&
             const DeepCollectionEquality()
-                .equals(other.creationFailure, creationFailure));
+                .equals(other.creationFailure, creationFailure) &&
+            const DeepCollectionEquality()
+                .equals(other.editOptions, editOptions) &&
+            const DeepCollectionEquality()
+                .equals(other.deleteOption, deleteOption));
   }
 
   @override
@@ -2151,7 +2502,9 @@ class _$_AddingApartmentState implements _AddingApartmentState {
       const DeepCollectionEquality().hash(flatNumber),
       const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(showErrorMessage),
-      const DeepCollectionEquality().hash(creationFailure));
+      const DeepCollectionEquality().hash(creationFailure),
+      const DeepCollectionEquality().hash(editOptions),
+      const DeepCollectionEquality().hash(deleteOption));
 
   @JsonKey(ignore: true)
   @override
@@ -2162,15 +2515,17 @@ class _$_AddingApartmentState implements _AddingApartmentState {
 
 abstract class _AddingApartmentState implements FormApartmentState {
   const factory _AddingApartmentState(
-      {required final Address regionName,
-      required final Address districtName,
-      required final Address streetName,
-      required final HouseNumber houseNumber,
-      required final HouseNumber flatNumber,
-      required final bool loading,
-      required final bool showErrorMessage,
-      required final Option<Either<ApartmentFailure, Unit>>
-          creationFailure}) = _$_AddingApartmentState;
+          {required final Address regionName,
+          required final Address districtName,
+          required final Address streetName,
+          required final HouseNumber houseNumber,
+          required final HouseNumber flatNumber,
+          required final bool loading,
+          required final bool showErrorMessage,
+          required final Option<Either<ApartmentFailure, Unit>> creationFailure,
+          required final Option<Either<ValueFailure, Apartment>> editOptions,
+          required final Option<Either<ApartmentFailure, Unit>> deleteOption}) =
+      _$_AddingApartmentState;
 
   @override
   Address get regionName => throw _privateConstructorUsedError;
@@ -2188,6 +2543,12 @@ abstract class _AddingApartmentState implements FormApartmentState {
   bool get showErrorMessage => throw _privateConstructorUsedError;
   @override
   Option<Either<ApartmentFailure, Unit>> get creationFailure =>
+      throw _privateConstructorUsedError;
+  @override
+  Option<Either<ValueFailure, Apartment>> get editOptions =>
+      throw _privateConstructorUsedError;
+  @override
+  Option<Either<ApartmentFailure, Unit>> get deleteOption =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

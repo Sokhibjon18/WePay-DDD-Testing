@@ -6,10 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
 import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/screens/expense/date_picker/date_text_form_field.dart';
-import 'package:we_pay/presentation/screens/expense/date_picker/product_date_picker.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
 import 'package:we_pay/presentation/screens/utils/reusable_widgets.dart';
 
 void productBottomsheet(BuildContext context, {Product? product}) {
@@ -74,6 +71,7 @@ void productBottomsheet(BuildContext context, {Product? product}) {
                         reusableTextField(
                           context: context,
                           hint: 'Name',
+                          inputType: TextInputType.name,
                           text: product?.name.getRight() ?? '',
                           onChanged: (text) {
                             BlocProvider.of<ProductFormBloc>(context)
@@ -95,6 +93,7 @@ void productBottomsheet(BuildContext context, {Product? product}) {
                         reusableTextField(
                           context: context,
                           hint: 'Price',
+                          inputType: TextInputType.number,
                           text: product?.price.getRight() ?? '',
                           onChanged: (text) {
                             BlocProvider.of<ProductFormBloc>(context)
@@ -131,6 +130,7 @@ void productBottomsheet(BuildContext context, {Product? product}) {
                               child: reusableTextField(
                                 context: context,
                                 hint: 'Count',
+                                inputType: TextInputType.number,
                                 text: product?.count.toString() ?? '1',
                                 onChanged: (String text) {
                                   BlocProvider.of<ProductFormBloc>(context)

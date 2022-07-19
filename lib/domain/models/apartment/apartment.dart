@@ -14,6 +14,8 @@ abstract class Apartment implements _$Apartment {
     required String district,
     required String street,
     required String houseNumber,
+    String? currentMonthExpences,
+    String? roommates,
     @Default('') String flatNumber,
     @Default([]) List<String> users,
   }) = _Apartment;
