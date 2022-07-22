@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: non_constant_identifier_names
+
 part of 'product_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ProductDto _$$_ProductDtoFromJson(Map<String, dynamic> json) =>
-    _$_ProductDto(
+_$_ProductDto _$$_ProductDtoFromJson(Map<String, dynamic> json) => _$_ProductDto(
       uid: json['uid'] as String,
       name: json['name'] as String,
       buyerId: json['buyerId'] as String,
@@ -20,8 +21,7 @@ _$_ProductDto _$$_ProductDtoFromJson(Map<String, dynamic> json) =>
       note: json['note'] as String?,
     );
 
-Map<String, dynamic> _$$_ProductDtoToJson(_$_ProductDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_ProductDtoToJson(_$_ProductDto instance) => <String, dynamic>{
       'uid': instance.uid,
       'name': instance.name,
       'buyerId': instance.buyerId,

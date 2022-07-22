@@ -1,5 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
-
 String priceFixer(String price) {
   String newPrice = '';
   if (price.length > 3) {

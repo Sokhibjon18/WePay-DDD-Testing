@@ -9,8 +9,6 @@ import 'package:we_pay/domain/models/current_date_expense.dart';
 import 'package:we_pay/domain/models/roommates.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
-import 'package:we_pay/presentation/screens/home/home_page.dart';
-import 'package:we_pay/presentation/screens/home/widgets/bottom_sheet.dart';
 
 class ApartmentItem extends StatelessWidget {
   const ApartmentItem({Key? key, required this.apartment}) : super(key: key);

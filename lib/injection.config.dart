@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
+
 // **************************************************************************
 // InjectableConfigGenerator
 // **************************************************************************
@@ -36,37 +38,26 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
     {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModules = _$FirebaseInjectableModules();
-  gh.lazySingleton<_i3.FirebaseAuth>(
-      () => firebaseInjectableModules.firebaseAuth);
-  gh.lazySingleton<_i4.FirebaseFirestore>(
-      () => firebaseInjectableModules.firestore);
-  gh.lazySingleton<_i5.GoogleSignIn>(
-      () => firebaseInjectableModules.googleSignIn);
-  gh.lazySingleton<_i6.IApartmentRepository>(() => _i7.ApartmentRepository(
-      get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
+  gh.lazySingleton<_i3.FirebaseAuth>(() => firebaseInjectableModules.firebaseAuth);
+  gh.lazySingleton<_i4.FirebaseFirestore>(() => firebaseInjectableModules.firestore);
+  gh.lazySingleton<_i5.GoogleSignIn>(() => firebaseInjectableModules.googleSignIn);
+  gh.lazySingleton<_i6.IApartmentRepository>(
+      () => _i7.ApartmentRepository(get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
   gh.lazySingleton<_i8.IAuthFacade>(() => _i9.FirebaseAuthFacade(
-      get<_i3.FirebaseAuth>(),
-      get<_i5.GoogleSignIn>(),
-      get<_i4.FirebaseFirestore>()));
-  gh.lazySingleton<_i10.IProductRepository>(() => _i11.ProductRepository(
-      get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
-  gh.lazySingleton<_i12.IRequestRepository>(() => _i13.RequestRepository(
-      get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
+      get<_i3.FirebaseAuth>(), get<_i5.GoogleSignIn>(), get<_i4.FirebaseFirestore>()));
+  gh.lazySingleton<_i10.IProductRepository>(
+      () => _i11.ProductRepository(get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
+  gh.lazySingleton<_i12.IRequestRepository>(
+      () => _i13.RequestRepository(get<_i4.FirebaseFirestore>(), get<_i3.FirebaseAuth>()));
   gh.lazySingleton<_i14.ISearchRepository>(
       () => _i15.SearchRepository(get<_i4.FirebaseFirestore>()));
-  gh.factory<_i16.ProductActorBloc>(
-      () => _i16.ProductActorBloc(get<_i10.IProductRepository>()));
-  gh.factory<_i17.ProductFormBloc>(
-      () => _i17.ProductFormBloc(get<_i10.IProductRepository>()));
-  gh.factory<_i18.RequestBloc>(
-      () => _i18.RequestBloc(get<_i12.IRequestRepository>()));
-  gh.factory<_i19.SearchBloc>(
-      () => _i19.SearchBloc(get<_i14.ISearchRepository>()));
-  gh.factory<_i20.SignInCheckerBloc>(
-      () => _i20.SignInCheckerBloc(get<_i8.IAuthFacade>()));
+  gh.factory<_i16.ProductActorBloc>(() => _i16.ProductActorBloc(get<_i10.IProductRepository>()));
+  gh.factory<_i17.ProductFormBloc>(() => _i17.ProductFormBloc(get<_i10.IProductRepository>()));
+  gh.factory<_i18.RequestBloc>(() => _i18.RequestBloc(get<_i12.IRequestRepository>()));
+  gh.factory<_i19.SearchBloc>(() => _i19.SearchBloc(get<_i14.ISearchRepository>()));
+  gh.factory<_i20.SignInCheckerBloc>(() => _i20.SignInCheckerBloc(get<_i8.IAuthFacade>()));
   gh.factory<_i21.AuthBloc>(() => _i21.AuthBloc(get<_i8.IAuthFacade>()));
-  gh.factory<_i22.FormApartmentBloc>(
-      () => _i22.FormApartmentBloc(get<_i6.IApartmentRepository>()));
+  gh.factory<_i22.FormApartmentBloc>(() => _i22.FormApartmentBloc(get<_i6.IApartmentRepository>()));
   return get;
 }
 
