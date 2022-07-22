@@ -45,17 +45,17 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyChoovd4l5oq0GBBZdUaiLQ-1jtaxw9Qds',
-    appId: '1:854123972211:web:dfc423cb02a85c3a958c06',
+    appId: '1:854123972211:web:1b3453225997c46a958c06',
     messagingSenderId: '854123972211',
     projectId: 'wepay-817af',
     authDomain: 'wepay-817af.firebaseapp.com',
     storageBucket: 'wepay-817af.appspot.com',
-    measurementId: 'G-S4D25ZMMB5',
+    measurementId: 'G-QCSQ261BJG',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyD25a57-MCgyTyaNj0ixAk_ZwALK7GHWZI',
-    appId: '1:854123972211:android:0f147309e22f47a7958c06',
+    appId: '1:854123972211:android:b50b70e58289cedf958c06',
     messagingSenderId: '854123972211',
     projectId: 'wepay-817af',
     storageBucket: 'wepay-817af.appspot.com',
@@ -63,7 +63,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyBrEDN1v9MfAQA4KN8qwADtELDlth1G2wU',
-    appId: '1:854123972211:ios:ee851d0ff852e6c7958c06',
+    appId: '1:854123972211:ios:c6512a196c6f9ac1958c06',
     messagingSenderId: '854123972211',
     projectId: 'wepay-817af',
     storageBucket: 'wepay-817af.appspot.com',
@@ -73,7 +73,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyBrEDN1v9MfAQA4KN8qwADtELDlth1G2wU',
-    appId: '1:854123972211:ios:ee851d0ff852e6c7958c06',
+    appId: '1:854123972211:ios:c6512a196c6f9ac1958c06',
     messagingSenderId: '854123972211',
     projectId: 'wepay-817af',
     storageBucket: 'wepay-817af.appspot.com',

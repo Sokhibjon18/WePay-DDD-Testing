@@ -31,10 +31,10 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
       StreamController.broadcast();
 
   FormApartmentBloc(this._repository) : super(FormApartmentState.initial()) {
-    apartmentStream.addStream(_repository.watchAll());
-    requestStream.addStream(_repository.watchRequests());
     on<_Initial>((event, emit) {
       emit(FormApartmentState.initial());
+      apartmentStream.addStream(_repository.watchAll());
+      requestStream.addStream(_repository.watchRequests());
     });
     on<_RegionChanged>((event, emit) {
       emit(state.copyWith(regionName: Address(event.region), creationFailure: none()));

@@ -26,6 +26,12 @@ class HomePage extends StatefulWidget {
 
 class HomePageState extends State<HomePage> {
   @override
+  void initState() {
+    context.read<FormApartmentBloc>().add(const FormApartmentEvent.initial());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(

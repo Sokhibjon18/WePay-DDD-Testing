@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:854123972211:android:0f147309e22f47a7958c06",
+        "mobilesdk_app_id": "1:854123972211:android:b50b70e58289cedf958c06",
         "android_client_info": {
-          "package_name": "com.example.we_pay"
+          "package_name": "uz.sokhib.roommate"
         }
       },
       "oauth_client": [
@@ -29,6 +29,13 @@
             {
               "client_id": "854123972211-2vikpg903sa0q0fo4jdif1ljf3tej3ks.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "854123972211-rubv9iu7170k29mvhbs7hp0csan3v5f1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.wePay"
+              }
             }
           ]
         }
