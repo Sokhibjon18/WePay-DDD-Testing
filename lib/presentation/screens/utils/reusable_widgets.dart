@@ -7,8 +7,10 @@ Widget reusableTextField({
   required Function validator,
   required String text,
   TextInputType inputType = TextInputType.text,
+  bool enable = true,
 }) {
   return TextFormField(
+    enabled: enable,
     cursorColor: Colors.white,
     onChanged: (value) => onChanged(value),
     validator: (_) => validator(),

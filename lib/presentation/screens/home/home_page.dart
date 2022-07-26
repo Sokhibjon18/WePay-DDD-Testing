@@ -4,6 +4,7 @@ import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
+import 'package:we_pay/application/profile/profile_bloc.dart';
 import 'package:we_pay/application/search/search_bloc.dart';
 import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
@@ -49,8 +50,8 @@ class HomePageState extends State<HomePage> {
         actions: [
           IconButton(
             onPressed: () {
-              context.read<SignInCheckerBloc>().add(const SignInCheckerEvent.signOut());
-              context.router.replaceAll([const LogInRoute()]);
+              context.read<ProfileBloc>().add(const ProfileEvent.started());
+              context.router.push(const ProfileRoute());
             },
             icon: const Icon(Icons.person_rounded),
           ),

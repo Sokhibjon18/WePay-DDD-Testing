@@ -9,6 +9,7 @@ abstract class IProductRepository {
     DateTime date,
   );
   Future<Either<ValueFailure, Product>> isUserOwnerOf(Product product);
+  Future<List<Product>> updateUsersNameAndColor(List<Product> produts);
   Future<Either<ProductFailure, Unit>> create(Product product);
   Future<Either<ProductFailure, Unit>> update(Product product);
   Future<Either<ProductFailure, Unit>> delete(Product product);

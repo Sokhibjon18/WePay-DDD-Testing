@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'user_model.dart';
 
 // **************************************************************************
@@ -13,16 +11,21 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       name: json['name'] as String,
       color: json['color'] as int,
       email: json['email'] as String?,
-      ownedApartments:
-          (json['ownedApartments'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const [],
-      serverTimeStamp: const ServerTimestampConverter().fromJson(json['serverTimeStamp'] as Object),
+      ownedApartments: (json['ownedApartments'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      serverTimeStamp: const ServerTimestampConverter()
+          .fromJson(json['serverTimeStamp'] as Object),
     );
 
-Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) => <String, dynamic>{
+Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
+    <String, dynamic>{
       'uid': instance.uid,
       'name': instance.name,
       'color': instance.color,
       'email': instance.email,
       'ownedApartments': instance.ownedApartments,
-      'serverTimeStamp': const ServerTimestampConverter().toJson(instance.serverTimeStamp),
+      'serverTimeStamp':
+          const ServerTimestampConverter().toJson(instance.serverTimeStamp),
     };

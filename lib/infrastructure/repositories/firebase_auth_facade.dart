@@ -89,7 +89,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   Future<void> saveOrUpdateUser({String? name, String? email}) async {
     try {
       String uid = _auth.currentUser!.uid;
-      final user = await _firestore.collection('user').doc(uid).get();
+      final user = await _firestore.getUser(uid);
       if (user.exists) {
         UserModel userModel = UserModel.fromJson(user.data()!);
         _firestore.updateUser(userModel);

@@ -3,8 +3,8 @@ import 'package:we_pay/domain/models/user_model/user_model.dart';
 import 'package:we_pay/injection.dart';
 
 extension FirebaseFirestoreX on FirebaseFirestore {
-  Future<DocumentSnapshot> getUser(String uid) async {
-    return getIt<FirebaseFirestore>().collection('user').doc(uid).get();
+  Future<DocumentSnapshot<Map<String, dynamic>>> getUser(String uid) async {
+    return await getIt<FirebaseFirestore>().collection('user').doc(uid).get();
   }
 
   Future<void> setUser(UserModel userModel) async {

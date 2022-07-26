@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
@@ -61,14 +62,15 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
         ),
       );
     });
-    on<_ProductsReceived>((event, emit) {
-      event.failureOrProducts.fold(
-        (productFailure) => emit(ProductActorState.loadFailure(productFailure)),
-        (productList) => emit(
-          productList.isEmpty
-              ? const ProductActorState.emptyList()
-              : ProductActorState.loadSuccess(productList),
-        ),
+    on<_ProductsReceived>((event, emit) async {
+      await event.failureOrProducts.fold<Future>(
+        (productFailure) async => emit(ProductActorState.loadFailure(productFailure)),
+        (productList) async {
+          final newList = await _repository.updateUsersNameAndColor(productList);
+          newList.isEmpty
+              ? emit(const ProductActorState.emptyList())
+              : emit(ProductActorState.loadSuccess(newList));
+        },
       );
     });
   }

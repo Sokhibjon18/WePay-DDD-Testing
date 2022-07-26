@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +32,6 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
 
   FormApartmentBloc(this._repository) : super(FormApartmentState.initial()) {
     on<_Initial>((event, emit) {
-      emit(FormApartmentState.initial());
       apartmentStream.addStream(_repository.watchAll());
       requestStream.addStream(_repository.watchRequests());
     });

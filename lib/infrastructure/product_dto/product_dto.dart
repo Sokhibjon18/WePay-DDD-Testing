@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
 import 'package:we_pay/domain/models/product/product.dart';
+import 'package:we_pay/domain/product/i_product_repository.dart';
 import 'package:we_pay/domain/product/value_objects.dart';
 
 part 'product_dto.freezed.dart';

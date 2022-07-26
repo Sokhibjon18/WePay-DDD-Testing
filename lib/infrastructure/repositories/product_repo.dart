@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:we_pay/domain/core/value_failure.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:dartz/dartz.dart';
+import 'package:we_pay/domain/models/user_model/user_model.dart';
 import 'package:we_pay/domain/product/i_product_repository.dart';
 import 'package:we_pay/domain/product/product_failure.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
@@ -24,8 +25,10 @@ class ProductRepository implements IProductRepository {
   Stream<Either<ProductFailure, List<Product>>> watchAllProductInApartment(
       String apartmentId, DateTime date) async* {
     yield* _firestore.apartmentExpenses(apartmentId: apartmentId, date: date).map((snapshot) {
-      final productList =
-          snapshot.docs.map((e) => ProductDto.fromJson(e.data()).toDomain()).toList();
+      final productList = snapshot.docs.map((e) {
+        final product = ProductDto.fromJson(e.data()).toDomain();
+        return ProductDto.fromJson(e.data()).toDomain();
+      }).toList();
       return right<ProductFailure, List<Product>>(productList);
     }).onErrorReturnWith((error, stackTrace) {
       log('$error::$stackTrace');
@@ -35,6 +38,23 @@ class ProductRepository implements IProductRepository {
         return left(ProductFailure.unexpected('$error $stackTrace'));
       }
     });
+  }
+
+  @override
+  Future<List<Product>> updateUsersNameAndColor(List<Product> produts) async {
+    try {
+      final List<Product> list = [];
+      for (var product in produts) {
+        final userMap = await _firestore.getUser(product.buyerId);
+        final user = UserModel.fromJson(userMap.data()!);
+        final newProduct = product.copyWith(buyerName: user.name, color: Color(user.color));
+        list.add(newProduct);
+      }
+      return list;
+    } catch (e) {
+      log(e.toString());
+      return [];
+    }
   }
 
   @override

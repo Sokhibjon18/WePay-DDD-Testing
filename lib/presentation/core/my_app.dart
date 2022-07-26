@@ -9,6 +9,7 @@ import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
 import 'package:we_pay/application/request/request_bloc.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
+import 'package:we_pay/application/profile/profile_bloc.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => getIt<SearchBloc>()),
         BlocProvider(create: (_) => getIt<RequestBloc>()),
         BlocProvider(create: (_) => getIt<ProductFormBloc>()),
+        BlocProvider(create: (_) => getIt<ProfileBloc>()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
