@@ -15,8 +15,7 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      serverTimeStamp: const ServerTimestampConverter()
-          .fromJson(json['serverTimeStamp'] as Object),
+      serverTimeStamp: json['serverTimeStamp'],
     );
 
 Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
@@ -26,6 +25,5 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
       'color': instance.color,
       'email': instance.email,
       'ownedApartments': instance.ownedApartments,
-      'serverTimeStamp':
-          const ServerTimestampConverter().toJson(instance.serverTimeStamp),
+      'serverTimeStamp': instance.serverTimeStamp,
     };

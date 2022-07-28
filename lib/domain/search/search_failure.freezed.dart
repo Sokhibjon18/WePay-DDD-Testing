@@ -226,7 +226,7 @@ class _$ServerFailure implements ServerFailure {
 abstract class ServerFailure implements SearchFailure {
   const factory ServerFailure({final String? errorMessage}) = _$ServerFailure;
 
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get errorMessage;
   @JsonKey(ignore: true)
   _$$ServerFailureCopyWith<_$ServerFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -372,7 +372,7 @@ class _$Unexpected implements Unexpected {
 abstract class Unexpected implements SearchFailure {
   const factory Unexpected(final String errorMessage) = _$Unexpected;
 
-  String get errorMessage => throw _privateConstructorUsedError;
+  String get errorMessage;
   @JsonKey(ignore: true)
   _$$UnexpectedCopyWith<_$Unexpected> get copyWith =>
       throw _privateConstructorUsedError;

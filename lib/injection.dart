@@ -5,6 +5,6 @@ import 'package:we_pay/injection.config.dart';
 GetIt getIt = GetIt.I;
 
 @injectableInit
-void configurInjection(String env) {
-  $initGetIt(getIt, environment: env);
+Future<void> configurInjection(String env) async {
+  await $initGetIt(getIt, environment: env);
 }

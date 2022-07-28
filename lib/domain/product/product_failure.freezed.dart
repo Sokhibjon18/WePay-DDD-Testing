@@ -436,7 +436,7 @@ class _$Unexpected implements Unexpected {
 abstract class Unexpected implements ProductFailure {
   const factory Unexpected(final String errorMessage) = _$Unexpected;
 
-  String get errorMessage => throw _privateConstructorUsedError;
+  String get errorMessage;
   @JsonKey(ignore: true)
   _$$UnexpectedCopyWith<_$Unexpected> get copyWith =>
       throw _privateConstructorUsedError;

@@ -301,7 +301,9 @@ class _$_Apartment extends _Apartment {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ApartmentToJson(this);
+    return _$$_ApartmentToJson(
+      this,
+    );
   }
 }
 
@@ -323,25 +325,25 @@ abstract class _Apartment extends Apartment {
       _$_Apartment.fromJson;
 
   @override
-  String? get uid => throw _privateConstructorUsedError;
+  String? get uid;
   @override
-  String? get ownerId => throw _privateConstructorUsedError;
+  String? get ownerId;
   @override
-  String get region => throw _privateConstructorUsedError;
+  String get region;
   @override
-  String get district => throw _privateConstructorUsedError;
+  String get district;
   @override
-  String get street => throw _privateConstructorUsedError;
+  String get street;
   @override
-  String get houseNumber => throw _privateConstructorUsedError;
+  String get houseNumber;
   @override
-  String? get currentMonthExpences => throw _privateConstructorUsedError;
+  String? get currentMonthExpences;
   @override
-  String? get roommates => throw _privateConstructorUsedError;
+  String? get roommates;
   @override
-  String get flatNumber => throw _privateConstructorUsedError;
+  String get flatNumber;
   @override
-  List<String> get users => throw _privateConstructorUsedError;
+  List<String> get users;
   @override
   @JsonKey(ignore: true)
   _$$_ApartmentCopyWith<_$_Apartment> get copyWith =>

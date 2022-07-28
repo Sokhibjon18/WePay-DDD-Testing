@@ -311,7 +311,7 @@ abstract class ExceedingLength<T> implements ValueFailure<T> {
   const factory ExceedingLength({required final int maxLength}) =
       _$ExceedingLength<T>;
 
-  int get maxLength => throw _privateConstructorUsedError;
+  int get maxLength;
   @JsonKey(ignore: true)
   _$$ExceedingLengthCopyWith<T, _$ExceedingLength<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -815,7 +815,7 @@ abstract class ShortPassword<T> implements ValueFailure<T> {
   const factory ShortPassword({required final int minLength}) =
       _$ShortPassword<T>;
 
-  int get minLength => throw _privateConstructorUsedError;
+  int get minLength;
   @JsonKey(ignore: true)
   _$$ShortPasswordCopyWith<T, _$ShortPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1163,7 +1163,7 @@ class _$ShortageName<T> implements ShortageName<T> {
 abstract class ShortageName<T> implements ValueFailure<T> {
   const factory ShortageName({final String? errorMessage}) = _$ShortageName<T>;
 
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get errorMessage;
   @JsonKey(ignore: true)
   _$$ShortageNameCopyWith<T, _$ShortageName<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1512,7 +1512,7 @@ abstract class InvalidNumber<T> implements ValueFailure<T> {
   const factory InvalidNumber({final String? errorMessage}) =
       _$InvalidNumber<T>;
 
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get errorMessage;
   @JsonKey(ignore: true)
   _$$InvalidNumberCopyWith<T, _$InvalidNumber<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1701,7 +1701,7 @@ class _$InvalidDate<T> implements InvalidDate<T> {
 abstract class InvalidDate<T> implements ValueFailure<T> {
   const factory InvalidDate({final String? errorMessage}) = _$InvalidDate<T>;
 
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get errorMessage;
   @JsonKey(ignore: true)
   _$$InvalidDateCopyWith<T, _$InvalidDate<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1893,7 +1893,7 @@ abstract class InvalidProductCount<T> implements ValueFailure<T> {
   const factory InvalidProductCount({final String? errorMessage}) =
       _$InvalidProductCount<T>;
 
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String? get errorMessage;
   @JsonKey(ignore: true)
   _$$InvalidProductCountCopyWith<T, _$InvalidProductCount<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2082,7 +2082,7 @@ class _$WrongOwner<T> implements WrongOwner<T> {
 abstract class WrongOwner<T> implements ValueFailure<T> {
   const factory WrongOwner(final String errorMessage) = _$WrongOwner<T>;
 
-  String get errorMessage => throw _privateConstructorUsedError;
+  String get errorMessage;
   @JsonKey(ignore: true)
   _$$WrongOwnerCopyWith<T, _$WrongOwner<T>> get copyWith =>
       throw _privateConstructorUsedError;

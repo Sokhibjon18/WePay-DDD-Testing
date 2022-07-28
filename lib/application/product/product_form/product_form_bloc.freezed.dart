@@ -458,7 +458,7 @@ class _$_EditingProduct implements _EditingProduct {
 abstract class _EditingProduct implements ProductFormEvent {
   const factory _EditingProduct(final Product product) = _$_EditingProduct;
 
-  Product get product => throw _privateConstructorUsedError;
+  Product get product;
   @JsonKey(ignore: true)
   _$$_EditingProductCopyWith<_$_EditingProduct> get copyWith =>
       throw _privateConstructorUsedError;
@@ -640,7 +640,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements ProductFormEvent {
   const factory _NameChanged(final String name) = _$_NameChanged;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
   _$$_NameChangedCopyWith<_$_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -822,7 +822,7 @@ class _$_PriceChanged implements _PriceChanged {
 abstract class _PriceChanged implements ProductFormEvent {
   const factory _PriceChanged(final String price) = _$_PriceChanged;
 
-  String get price => throw _privateConstructorUsedError;
+  String get price;
   @JsonKey(ignore: true)
   _$$_PriceChangedCopyWith<_$_PriceChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1004,7 +1004,7 @@ class _$_NoteChanged implements _NoteChanged {
 abstract class _NoteChanged implements ProductFormEvent {
   const factory _NoteChanged(final String note) = _$_NoteChanged;
 
-  String get note => throw _privateConstructorUsedError;
+  String get note;
   @JsonKey(ignore: true)
   _$$_NoteChangedCopyWith<_$_NoteChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1186,7 +1186,7 @@ class _$_DateChanged implements _DateChanged {
 abstract class _DateChanged implements ProductFormEvent {
   const factory _DateChanged(final DateTime date) = _$_DateChanged;
 
-  DateTime get date => throw _privateConstructorUsedError;
+  DateTime get date;
   @JsonKey(ignore: true)
   _$$_DateChangedCopyWith<_$_DateChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1368,7 +1368,7 @@ class _$_CountChanged implements _CountChanged {
 abstract class _CountChanged implements ProductFormEvent {
   const factory _CountChanged(final int count) = _$_CountChanged;
 
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @JsonKey(ignore: true)
   _$$_CountChangedCopyWith<_$_CountChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1551,7 +1551,7 @@ class _$_CreateProduct implements _CreateProduct {
 abstract class _CreateProduct implements ProductFormEvent {
   const factory _CreateProduct(final String apartmentId) = _$_CreateProduct;
 
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @JsonKey(ignore: true)
   _$$_CreateProductCopyWith<_$_CreateProduct> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1742,7 +1742,7 @@ class _$_UpdateProduct implements _UpdateProduct {
 abstract class _UpdateProduct implements ProductFormEvent {
   const factory _UpdateProduct(final Product product) = _$_UpdateProduct;
 
-  Product get product => throw _privateConstructorUsedError;
+  Product get product;
   @JsonKey(ignore: true)
   _$$_UpdateProductCopyWith<_$_UpdateProduct> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1933,7 +1933,7 @@ class _$_DeleteProduct implements _DeleteProduct {
 abstract class _DeleteProduct implements ProductFormEvent {
   const factory _DeleteProduct(final Product product) = _$_DeleteProduct;
 
-  Product get product => throw _privateConstructorUsedError;
+  Product get product;
   @JsonKey(ignore: true)
   _$$_DeleteProductCopyWith<_$_DeleteProduct> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2232,28 +2232,25 @@ abstract class _ProductFormState implements ProductFormState {
       _$_ProductFormState;
 
   @override
-  ProductName get productName => throw _privateConstructorUsedError;
+  ProductName get productName;
   @override
-  ProductPrice get price => throw _privateConstructorUsedError;
+  ProductPrice get price;
   @override
-  String get note => throw _privateConstructorUsedError;
+  String get note;
   @override
-  DateTime get dateTime => throw _privateConstructorUsedError;
+  DateTime get dateTime;
   @override
-  ProductCount get count => throw _privateConstructorUsedError;
+  ProductCount get count;
   @override
-  bool get loading => throw _privateConstructorUsedError;
+  bool get loading;
   @override
-  bool get showErrorMessage => throw _privateConstructorUsedError;
+  bool get showErrorMessage;
   @override
-  Option<Either<ProductFailure, Unit>> get creationFailure =>
-      throw _privateConstructorUsedError;
+  Option<Either<ProductFailure, Unit>> get creationFailure;
   @override
-  Option<Either<ValueFailure, Product>> get editOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, Product>> get editOption;
   @override
-  Option<Either<ValueFailure, Product>> get deleteOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, Product>> get deleteOption;
   @override
   @JsonKey(ignore: true)
   _$$_ProductFormStateCopyWith<_$_ProductFormState> get copyWith =>

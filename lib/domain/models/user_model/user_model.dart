@@ -14,7 +14,7 @@ abstract class UserModel implements _$UserModel {
     required int color,
     String? email,
     @Default([]) List<String> ownedApartments,
-    @ServerTimestampConverter() required FieldValue serverTimeStamp,
+    @ServerTimestampConverter() required dynamic serverTimeStamp,
   }) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => _$UserModelFromJson(json);

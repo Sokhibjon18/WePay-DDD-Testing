@@ -295,25 +295,25 @@ abstract class _Product extends Product {
   const _Product._() : super._();
 
   @override
-  String? get uid => throw _privateConstructorUsedError;
+  String? get uid;
   @override
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @override
-  ProductName get name => throw _privateConstructorUsedError;
+  ProductName get name;
   @override
-  String get buyerName => throw _privateConstructorUsedError;
+  String get buyerName;
   @override
-  String get buyerId => throw _privateConstructorUsedError;
+  String get buyerId;
   @override
-  ProductPrice get price => throw _privateConstructorUsedError;
+  ProductPrice get price;
   @override
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @override
-  Color get color => throw _privateConstructorUsedError;
+  Color get color;
   @override
-  String? get note => throw _privateConstructorUsedError;
+  String? get note;
   @override
-  DateTime get date => throw _privateConstructorUsedError;
+  DateTime get date;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

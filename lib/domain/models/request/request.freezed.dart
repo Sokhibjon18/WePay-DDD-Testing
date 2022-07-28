@@ -207,7 +207,9 @@ class _$_RequestToJoin extends _RequestToJoin {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RequestToJoinToJson(this);
+    return _$$_RequestToJoinToJson(
+      this,
+    );
   }
 }
 
@@ -224,15 +226,15 @@ abstract class _RequestToJoin extends RequestToJoin {
       _$_RequestToJoin.fromJson;
 
   @override
-  String get userId => throw _privateConstructorUsedError;
+  String get userId;
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @override
-  String get apartmentName => throw _privateConstructorUsedError;
+  String get apartmentName;
   @override
   @JsonKey(ignore: true)
   _$$_RequestToJoinCopyWith<_$_RequestToJoin> get copyWith =>

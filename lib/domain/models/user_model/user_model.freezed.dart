@@ -26,7 +26,7 @@ mixin _$UserModel {
   String? get email => throw _privateConstructorUsedError;
   List<String> get ownedApartments => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
+  dynamic get serverTimeStamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +44,7 @@ abstract class $UserModelCopyWith<$Res> {
       int color,
       String? email,
       List<String> ownedApartments,
-      @ServerTimestampConverter() FieldValue serverTimeStamp});
+      @ServerTimestampConverter() dynamic serverTimeStamp});
 }
 
 /// @nodoc
@@ -88,7 +88,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
           : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
+              as dynamic,
     ));
   }
 }
@@ -105,7 +105,7 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       int color,
       String? email,
       List<String> ownedApartments,
-      @ServerTimestampConverter() FieldValue serverTimeStamp});
+      @ServerTimestampConverter() dynamic serverTimeStamp});
 }
 
 /// @nodoc
@@ -151,7 +151,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
           : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
+              as dynamic,
     ));
   }
 }
@@ -190,7 +190,7 @@ class _$_UserModel extends _UserModel {
 
   @override
   @ServerTimestampConverter()
-  final FieldValue serverTimeStamp;
+  final dynamic serverTimeStamp;
 
   @override
   String toString() {
@@ -230,37 +230,39 @@ class _$_UserModel extends _UserModel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserModelToJson(this);
+    return _$$_UserModelToJson(
+      this,
+    );
   }
 }
 
 abstract class _UserModel extends UserModel {
   const factory _UserModel(
-      {required final String uid,
-      required final String name,
-      required final int color,
-      final String? email,
-      final List<String> ownedApartments,
-      @ServerTimestampConverter()
-          required final FieldValue serverTimeStamp}) = _$_UserModel;
+          {required final String uid,
+          required final String name,
+          required final int color,
+          final String? email,
+          final List<String> ownedApartments,
+          @ServerTimestampConverter() required final dynamic serverTimeStamp}) =
+      _$_UserModel;
   const _UserModel._() : super._();
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
 
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  int get color => throw _privateConstructorUsedError;
+  int get color;
   @override
-  String? get email => throw _privateConstructorUsedError;
+  String? get email;
   @override
-  List<String> get ownedApartments => throw _privateConstructorUsedError;
+  List<String> get ownedApartments;
   @override
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
+  dynamic get serverTimeStamp;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

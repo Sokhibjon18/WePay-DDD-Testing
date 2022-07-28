@@ -16,5 +16,5 @@ abstract class IAuthFacade {
   });
   Future<Either<AuthFailure, Unit>> signInWithGoogle();
   Future<void> signOut();
-  Future<void> saveOrUpdateUser();
+  Future<void> saveOrUpdateUserInFirestore();
 }
