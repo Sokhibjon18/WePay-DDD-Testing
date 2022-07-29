@@ -357,7 +357,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements ProfileEvent {
   const factory _EmailChanged(final String email) = _$_EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -509,7 +509,7 @@ class _$_NameChanged implements _NameChanged {
 abstract class _NameChanged implements ProfileEvent {
   const factory _NameChanged(final String name) = _$_NameChanged;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
   _$$_NameChangedCopyWith<_$_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -661,7 +661,7 @@ class _$_ColorChanged implements _ColorChanged {
 abstract class _ColorChanged implements ProfileEvent {
   const factory _ColorChanged(final int color) = _$_ColorChanged;
 
-  int get color => throw _privateConstructorUsedError;
+  int get color;
   @JsonKey(ignore: true)
   _$$_ColorChangedCopyWith<_$_ColorChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1022,21 +1022,19 @@ abstract class _ProfileState implements ProfileState {
       _$_ProfileState;
 
   @override
-  EmailAddress get email => throw _privateConstructorUsedError;
+  EmailAddress get email;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  int get color => throw _privateConstructorUsedError;
+  int get color;
   @override
-  bool get showErrorMessage => throw _privateConstructorUsedError;
+  bool get showErrorMessage;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  Option<Either<ProfileFailure, Unit>> get failureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ProfileFailure, Unit>> get failureOrSuccessOption;
   @override
-  Option<Either<ProfileFailure, UserModel>> get user =>
-      throw _privateConstructorUsedError;
+  Option<Either<ProfileFailure, UserModel>> get user;
   @override
   @JsonKey(ignore: true)
   _$$_ProfileStateCopyWith<_$_ProfileState> get copyWith =>

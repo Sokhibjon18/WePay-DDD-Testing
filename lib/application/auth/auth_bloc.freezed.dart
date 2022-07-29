@@ -284,7 +284,7 @@ class _$EmailChanged implements EmailChanged {
 abstract class EmailChanged implements AuthEvent {
   const factory EmailChanged(final String email) = _$EmailChanged;
 
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @JsonKey(ignore: true)
   _$$EmailChangedCopyWith<_$EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -461,7 +461,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements AuthEvent {
   const factory PasswordChanged(final String password) = _$PasswordChanged;
 
-  String get password => throw _privateConstructorUsedError;
+  String get password;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -642,7 +642,7 @@ abstract class RepeatedPasswordChanged implements AuthEvent {
   const factory RepeatedPasswordChanged(final String repeatedPassword) =
       _$RepeatedPasswordChanged;
 
-  String get repeatedPassword => throw _privateConstructorUsedError;
+  String get repeatedPassword;
   @JsonKey(ignore: true)
   _$$RepeatedPasswordChangedCopyWith<_$RepeatedPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -818,7 +818,7 @@ class _$NameChanged implements NameChanged {
 abstract class NameChanged implements AuthEvent {
   const factory NameChanged(final String name) = _$NameChanged;
 
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @JsonKey(ignore: true)
   _$$NameChangedCopyWith<_$NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1654,20 +1654,19 @@ abstract class _AuthFormState implements AuthState {
           authFailureOrSuccessOption}) = _$_AuthFormState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Name get name => throw _privateConstructorUsedError;
+  Name get name;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  Password get repeatedPassword => throw _privateConstructorUsedError;
+  Password get repeatedPassword;
   @override
-  bool get showErrorMessage => throw _privateConstructorUsedError;
+  bool get showErrorMessage;
   @override
-  bool get isSubmitting => throw _privateConstructorUsedError;
+  bool get isSubmitting;
   @override
-  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get authFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
   _$$_AuthFormStateCopyWith<_$_AuthFormState> get copyWith =>

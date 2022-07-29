@@ -296,7 +296,9 @@ class _$_ProductDto extends _ProductDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_ProductDtoToJson(this);
+    return _$$_ProductDtoToJson(
+      this,
+    );
   }
 }
 
@@ -318,26 +320,26 @@ abstract class _ProductDto extends ProductDto {
       _$_ProductDto.fromJson;
 
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get buyerId => throw _privateConstructorUsedError;
+  String get buyerId;
   @override
-  String get buyerName => throw _privateConstructorUsedError;
+  String get buyerName;
   @override
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @override
-  int get price => throw _privateConstructorUsedError;
+  int get price;
   @override
-  int get count => throw _privateConstructorUsedError;
+  int get count;
   @override
-  int get color => throw _privateConstructorUsedError;
+  int get color;
   @override
   @DateTimeConverter()
-  DateTime get date => throw _privateConstructorUsedError;
+  DateTime get date;
   @override
-  String? get note => throw _privateConstructorUsedError;
+  String? get note;
   @override
   @JsonKey(ignore: true)
   _$$_ProductDtoCopyWith<_$_ProductDto> get copyWith =>

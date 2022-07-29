@@ -489,7 +489,7 @@ abstract class _EditingApartment implements FormApartmentEvent {
   const factory _EditingApartment(final Apartment apartment) =
       _$_EditingApartment;
 
-  Apartment get apartment => throw _privateConstructorUsedError;
+  Apartment get apartment;
   @JsonKey(ignore: true)
   _$$_EditingApartmentCopyWith<_$_EditingApartment> get copyWith =>
       throw _privateConstructorUsedError;
@@ -681,7 +681,7 @@ class _$_RegionChanged implements _RegionChanged {
 abstract class _RegionChanged implements FormApartmentEvent {
   const factory _RegionChanged(final String region) = _$_RegionChanged;
 
-  String get region => throw _privateConstructorUsedError;
+  String get region;
   @JsonKey(ignore: true)
   _$$_RegionChangedCopyWith<_$_RegionChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -873,7 +873,7 @@ class _$_DistrictChanged implements _DistrictChanged {
 abstract class _DistrictChanged implements FormApartmentEvent {
   const factory _DistrictChanged(final String district) = _$_DistrictChanged;
 
-  String get district => throw _privateConstructorUsedError;
+  String get district;
   @JsonKey(ignore: true)
   _$$_DistrictChangedCopyWith<_$_DistrictChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1066,7 +1066,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
 abstract class _StreetNameChanged implements FormApartmentEvent {
   const factory _StreetNameChanged(final String street) = _$_StreetNameChanged;
 
-  String get street => throw _privateConstructorUsedError;
+  String get street;
   @JsonKey(ignore: true)
   _$$_StreetNameChangedCopyWith<_$_StreetNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1259,7 +1259,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
 abstract class _HouseNumberChanged implements FormApartmentEvent {
   const factory _HouseNumberChanged(final String house) = _$_HouseNumberChanged;
 
-  String get house => throw _privateConstructorUsedError;
+  String get house;
   @JsonKey(ignore: true)
   _$$_HouseNumberChangedCopyWith<_$_HouseNumberChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1452,7 +1452,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
 abstract class _FlatNumberChanged implements FormApartmentEvent {
   const factory _FlatNumberChanged(final String flat) = _$_FlatNumberChanged;
 
-  String get flat => throw _privateConstructorUsedError;
+  String get flat;
   @JsonKey(ignore: true)
   _$$_FlatNumberChangedCopyWith<_$_FlatNumberChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1818,8 +1818,8 @@ abstract class _UpdateApartment implements FormApartmentEvent {
   const factory _UpdateApartment(final String uid, final String ownerId) =
       _$_UpdateApartment;
 
-  String get uid => throw _privateConstructorUsedError;
-  String get ownerId => throw _privateConstructorUsedError;
+  String get uid;
+  String get ownerId;
   @JsonKey(ignore: true)
   _$$_UpdateApartmentCopyWith<_$_UpdateApartment> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2021,7 +2021,7 @@ abstract class _DeleteApartment implements FormApartmentEvent {
   const factory _DeleteApartment(final Apartment apartment) =
       _$_DeleteApartment;
 
-  Apartment get apartment => throw _privateConstructorUsedError;
+  Apartment get apartment;
   @JsonKey(ignore: true)
   _$$_DeleteApartmentCopyWith<_$_DeleteApartment> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2224,7 +2224,7 @@ abstract class _GetApartmentUsersAndExpenses implements FormApartmentEvent {
   const factory _GetApartmentUsersAndExpenses(
       final List<Apartment> apartments) = _$_GetApartmentUsersAndExpenses;
 
-  List<Apartment> get apartments => throw _privateConstructorUsedError;
+  List<Apartment> get apartments;
   @JsonKey(ignore: true)
   _$$_GetApartmentUsersAndExpensesCopyWith<_$_GetApartmentUsersAndExpenses>
       get copyWith => throw _privateConstructorUsedError;
@@ -2528,28 +2528,25 @@ abstract class _AddingApartmentState implements FormApartmentState {
       _$_AddingApartmentState;
 
   @override
-  Address get regionName => throw _privateConstructorUsedError;
+  Address get regionName;
   @override
-  Address get districtName => throw _privateConstructorUsedError;
+  Address get districtName;
   @override
-  Address get streetName => throw _privateConstructorUsedError;
+  Address get streetName;
   @override
-  HouseNumber get houseNumber => throw _privateConstructorUsedError;
+  HouseNumber get houseNumber;
   @override
-  HouseNumber get flatNumber => throw _privateConstructorUsedError;
+  HouseNumber get flatNumber;
   @override
-  bool get loading => throw _privateConstructorUsedError;
+  bool get loading;
   @override
-  bool get showErrorMessage => throw _privateConstructorUsedError;
+  bool get showErrorMessage;
   @override
-  Option<Either<ApartmentFailure, Unit>> get creationFailure =>
-      throw _privateConstructorUsedError;
+  Option<Either<ApartmentFailure, Unit>> get creationFailure;
   @override
-  Option<Either<ValueFailure, Apartment>> get editOptions =>
-      throw _privateConstructorUsedError;
+  Option<Either<ValueFailure, Apartment>> get editOptions;
   @override
-  Option<Either<ApartmentFailure, Unit>> get deleteOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<ApartmentFailure, Unit>> get deleteOption;
   @override
   @JsonKey(ignore: true)
   _$$_AddingApartmentStateCopyWith<_$_AddingApartmentState> get copyWith =>
