@@ -10,6 +10,7 @@ import 'package:we_pay/application/request/request_bloc.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
 import 'package:we_pay/application/profile/profile_bloc.dart';
+import 'package:we_pay/application/connection/connection_bloc.dart' as con;
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (_) => getIt<RequestBloc>()),
         BlocProvider(create: (_) => getIt<ProductFormBloc>()),
         BlocProvider(create: (_) => getIt<ProfileBloc>()),
+        BlocProvider(
+            create: (_) => getIt<con.ConnectionBloc>()..add(const con.ConnectionEvent.listen())),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),

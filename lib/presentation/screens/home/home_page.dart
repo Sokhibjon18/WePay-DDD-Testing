@@ -1,12 +1,15 @@
+import 'dart:developer';
+
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
+import 'package:we_pay/application/connection/connection_bloc.dart' as con;
 import 'package:we_pay/application/profile/profile_bloc.dart';
 import 'package:we_pay/application/search/search_bloc.dart';
-import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
 import 'package:we_pay/domain/apartment/apartment_failure.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/domain/models/request/request.dart';
@@ -17,6 +20,7 @@ import 'package:we_pay/presentation/screens/home/widgets/bottom_sheet.dart';
 import 'package:we_pay/presentation/screens/home/widgets/apartment_item.dart';
 import 'package:we_pay/presentation/screens/home/widgets/request_header.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
+import 'package:we_pay/presentation/screens/utils/functions.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -64,47 +68,62 @@ class HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: BlocListener<FormApartmentBloc, FormApartmentState>(
-        listener: (context, state) {
-          state.editOptions.fold(
-            () => null,
-            (a) => a.fold(
-              (f) {
-                String errorMessage = '';
-                errorMessage = f.maybeMap(
-                  wrongOwner: (value) => value.errorMessage,
-                  orElse: () => '',
-                );
-                if (errorMessage.isNotEmpty) {
-                  FlushbarHelper.createInformation(message: errorMessage).show(context);
+      body: MultiBlocListener(
+        listeners: [
+          BlocListener<FormApartmentBloc, FormApartmentState>(
+            listener: (context, state) {
+              state.editOptions.fold(
+                () => null,
+                (a) => a.fold(
+                  (f) {
+                    String errorMessage = '';
+                    errorMessage = f.maybeMap(
+                      wrongOwner: (value) => value.errorMessage,
+                      orElse: () => '',
+                    );
+                    if (errorMessage.isNotEmpty) {
+                      FlushbarHelper.createInformation(message: errorMessage).show(context);
+                    }
+                  },
+                  (r) {
+                    bottomsheet(
+                      context.findAncestorStateOfType<HomePageState>()!.context,
+                      apartment: r,
+                    );
+                  },
+                ),
+              );
+              state.deleteOption.fold(
+                () => null,
+                (a) => a.fold(
+                  (f) {
+                    final errorMessage = f.map(
+                      serverError: (_) => 'Server error',
+                      permissionDenied: (_) => 'Permission denied',
+                    );
+                    if (errorMessage.isNotEmpty) {
+                      FlushbarHelper.createError(message: errorMessage).show(context);
+                    }
+                  },
+                  (r) {
+                    FlushbarHelper.createInformation(message: 'Apartment deleted').show(context);
+                  },
+                ),
+              );
+            },
+          ),
+          BlocListener<con.ConnectionBloc, con.ConnectionState>(
+            listener: (context, state) {
+              state.connected.fold(() => null, (a) {
+                if (!a) {
+                  showNoConnectionDialog(context);
+                } else {
+                  dismissConnectionDialog(context);
                 }
-              },
-              (r) {
-                bottomsheet(
-                  context.findAncestorStateOfType<HomePageState>()!.context,
-                  apartment: r,
-                );
-              },
-            ),
-          );
-          state.deleteOption.fold(
-            () => null,
-            (a) => a.fold(
-              (f) {
-                final errorMessage = f.map(
-                  serverError: (_) => 'Server error',
-                  permissionDenied: (_) => 'Permission denied',
-                );
-                if (errorMessage.isNotEmpty) {
-                  FlushbarHelper.createError(message: errorMessage).show(context);
-                }
-              },
-              (r) {
-                FlushbarHelper.createInformation(message: 'Apartment deleted').show(context);
-              },
-            ),
-          );
-        },
+              });
+            },
+          ),
+        ],
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -162,7 +181,7 @@ class HomePageState extends State<HomePage> {
                               itemBuilder: (context, index) {
                                 return ListTile(
                                   title: Text(
-                                    '${r[index].email} wants to join',
+                                    '//${r[index].email} wants to join',
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),

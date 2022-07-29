@@ -22,7 +22,6 @@ class ProfileForm extends StatelessWidget {
       child: Column(
         children: [
           reusableTextField(
-            enable: false,
             context: context,
             hint: 'Email',
             text: email,

@@ -42,7 +42,7 @@ class ProfileRepository implements IProfileRepository {
         email: profile.email,
         color: profile.color,
       );
-      // await _auth.currentUser?.updateEmail(profile.email);
+      await _auth.currentUser?.updateEmail(profile.email);
       await _firestore.updateUser(newUser);
       return right(unit);
     } on FirebaseException catch (e) {

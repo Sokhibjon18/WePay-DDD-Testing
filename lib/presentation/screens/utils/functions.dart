@@ -1,3 +1,8 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+
 String priceFixer(String price) {
   String newPrice = '';
   if (price.length > 3) {
@@ -60,4 +65,21 @@ String getDayMonthYear(DateTime? time) {
   String day = time.day < 10 ? '0${time.day}' : time.day.toString();
   String month = time.month < 10 ? '0${time.month}' : time.month.toString();
   return '$day.$month.${time.year}';
+}
+
+bool dialogShowing = false;
+
+void showNoConnectionDialog(BuildContext context) async {
+  dialogShowing = true;
+  await showDialog(
+    context: context,
+    useSafeArea: false,
+    barrierDismissible: false,
+    barrierColor: Colors.black.withOpacity(0.7),
+    builder: (_) => Lottie.asset('assets/lottie/con.json'),
+  );
+}
+
+void dismissConnectionDialog(BuildContext context) {
+  dialogShowing ? Navigator.pop(context) : null;
 }

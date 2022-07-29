@@ -1,3 +1,4 @@
+import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,33 +26,49 @@ class ProfilePage extends StatelessWidget {
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: BlocConsumer<ProfileBloc, ProfileState>(
+          listenWhen: (pre, cur) => pre.failureOrSuccessOption != cur.failureOrSuccessOption,
           listener: (context, state) {
             state.user.fold(() => null, (a) => a.fold((l) => null, (r) => null));
+            state.failureOrSuccessOption.fold(
+              () => null,
+              (successOrFailure) => successOrFailure.fold(
+                (failure) {
+                  String errorMessage = failure.map(
+                    server: (_) => 'Server Error',
+                    unexpected: (value) => value.errorMessage,
+                  );
+                  FlushbarHelper.createError(message: errorMessage).show(context);
+                },
+                (success) => null,
+              ),
+            );
           },
           builder: (context, state) {
             if (state.isLoading && !state.showErrorMessage) {
               return const Center(child: CircularProgressIndicator());
             } else {
-              return Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ProfileForm(
-                      email: getEmailFromOption(state.user),
-                      name: getNameFromOption(state.user),
-                      showErrorMessage: state.showErrorMessage,
-                    ),
-                    const SizedBox(height: 24),
-                    const Text('Color on the chart'),
-                    const SizedBox(height: 8),
-                    ProfileColorPicker(color: state.color),
-                    const SizedBox(height: 32),
-                    const ProfileSaveBtn(),
-                    const SizedBox(height: 24),
-                    Expanded(child: Container()),
-                    const LogOutBtn()
-                  ],
+              return SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProfileForm(
+                        email: getEmailFromOption(state.user),
+                        name: getNameFromOption(state.user),
+                        showErrorMessage: state.showErrorMessage,
+                      ),
+                      const SizedBox(height: 24),
+                      const Text('Color on the chart'),
+                      const SizedBox(height: 8),
+                      ProfileColorPicker(color: state.color),
+                      const SizedBox(height: 32),
+                      const ProfileSaveBtn(),
+                      const SizedBox(height: 24),
+                      const LogOutBtn()
+                    ],
+                  ),
                 ),
               );
             }
