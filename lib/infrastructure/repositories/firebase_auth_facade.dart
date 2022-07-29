@@ -1,9 +1,11 @@
-import 'dart:developer' as dev;
-import 'dart:math';
+import 'dart:convert';
+import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:we_pay/domain/auth/auth_failure.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:dartz/dartz.dart';
@@ -18,8 +20,9 @@ class FirebaseAuthFacade implements IAuthFacade {
   final FirebaseAuth _auth;
   final GoogleSignIn _googleAuth;
   final FirebaseFirestore _firestore;
+  final SharedPreferences _sharedPreferences;
 
-  FirebaseAuthFacade(this._auth, this._googleAuth, this._firestore);
+  FirebaseAuthFacade(this._auth, this._googleAuth, this._firestore, this._sharedPreferences);
 
   @override
   Future<Option<User>> getSignedUser() async => optionOf(_auth.currentUser);
@@ -35,7 +38,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: email.getRight(),
         password: password.getRight(),
       );
-      saveOrUpdateUser(name: name.getRight(), email: email.getRight());
+      saveOrUpdateUserInFirestore(name: name.getRight(), email: email.getRight());
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'email-already-in-use'
@@ -54,7 +57,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: email.getRight(),
         password: password.getRight(),
       );
-      saveOrUpdateUser();
+      await saveOrUpdateUserInFirestore();
+      saveEmailAndPassword(email.getRight(), password.getRight());
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'user-not-found' || e.code == 'wrong-password'
@@ -78,35 +82,43 @@ class FirebaseAuthFacade implements IAuthFacade {
         idToken: googleAuthentication.idToken,
       );
       await _auth.signInWithCredential(authCredential);
-      saveOrUpdateUser();
+      await saveOrUpdateUserInFirestore();
+      await saveCredentials(googleAuthentication.accessToken!, googleAuthentication.idToken!);
       return right(unit);
-    } on FirebaseException catch (_) {
+    } on FirebaseException catch (e) {
+      log(e.code);
+      return left(const AuthFailure.serverError());
+    } catch (e) {
+      log(e.toString());
       return left(const AuthFailure.serverError());
     }
   }
 
   @override
-  Future<void> saveOrUpdateUser({String? name, String? email}) async {
+  Future<void> saveOrUpdateUserInFirestore({String? name, String? email}) async {
     try {
       String uid = _auth.currentUser!.uid;
       final user = await _firestore.getUser(uid);
+      UserModel userModel;
       if (user.exists) {
-        UserModel userModel = UserModel.fromJson(user.data()!);
-        _firestore.updateUser(userModel);
+        userModel = UserModel.fromJson(user.data()!);
+        await _firestore.updateUser(userModel);
       } else {
-        final randomPosition = Random().nextInt(6) + 1;
+        final randomPosition = math.Random().nextInt(6) + 1;
         final color = userColors[randomPosition].value;
-        UserModel userModel = UserModel(
+        userModel = UserModel(
           uid: uid,
           name: name!,
           email: email,
           color: color,
           serverTimeStamp: FieldValue.serverTimestamp(),
         );
-        _firestore.setUser(userModel);
+        await _firestore.setUser(userModel);
       }
     } on FirebaseException catch (e) {
-      dev.log(e.message.toString());
+      log(e.code);
+    } catch (e) {
+      log(e.toString());
     }
   }
 
@@ -116,7 +128,18 @@ class FirebaseAuthFacade implements IAuthFacade {
       await _auth.signOut();
       await _googleAuth.signOut();
     } catch (e) {
-      dev.log(e.toString());
+      log(e.toString());
     }
+  }
+
+  Future<void> saveEmailAndPassword(String email, String password) async {
+    await _sharedPreferences.setString('email', email);
+    await _sharedPreferences.setString('password', password);
+  }
+
+  Future<void> saveCredentials(String accessToken, String idToken) async {
+    await _sharedPreferences.setBool('withGoogle', true);
+    await _sharedPreferences.setString('accessToken', accessToken);
+    await _sharedPreferences.setString('idToken', idToken);
   }
 }

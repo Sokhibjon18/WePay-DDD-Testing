@@ -244,7 +244,7 @@ class _$_Create implements _Create {
 abstract class _Create implements ProductActorEvent {
   const factory _Create(final String apartmentId) = _$_Create;
 
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @JsonKey(ignore: true)
   _$$_CreateCopyWith<_$_Create> get copyWith =>
       throw _privateConstructorUsedError;
@@ -399,7 +399,7 @@ class _$_Update implements _Update {
 abstract class _Update implements ProductActorEvent {
   const factory _Update(final String apartmentId) = _$_Update;
 
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @JsonKey(ignore: true)
   _$$_UpdateCopyWith<_$_Update> get copyWith =>
       throw _privateConstructorUsedError;
@@ -554,7 +554,7 @@ class _$_Delete implements _Delete {
 abstract class _Delete implements ProductActorEvent {
   const factory _Delete(final String apartmentId) = _$_Delete;
 
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get apartmentId;
   @JsonKey(ignore: true)
   _$$_DeleteCopyWith<_$_Delete> get copyWith =>
       throw _privateConstructorUsedError;
@@ -719,8 +719,8 @@ abstract class _Watch implements ProductActorEvent {
   const factory _Watch(final String apartmentId, final DateTime time) =
       _$_Watch;
 
-  String get apartmentId => throw _privateConstructorUsedError;
-  DateTime get time => throw _privateConstructorUsedError;
+  String get apartmentId;
+  DateTime get time;
   @JsonKey(ignore: true)
   _$$_WatchCopyWith<_$_Watch> get copyWith =>
       throw _privateConstructorUsedError;
@@ -879,8 +879,7 @@ abstract class _ProductsReceived implements ProductActorEvent {
           final z.Either<ProductFailure, List<Product>> failureOrProducts) =
       _$_ProductsReceived;
 
-  z.Either<ProductFailure, List<Product>> get failureOrProducts =>
-      throw _privateConstructorUsedError;
+  z.Either<ProductFailure, List<Product>> get failureOrProducts;
   @JsonKey(ignore: true)
   _$$_ProductsReceivedCopyWith<_$_ProductsReceived> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1222,7 +1221,7 @@ class _$_LoadFailure implements _LoadFailure {
 abstract class _LoadFailure implements ProductActorState {
   const factory _LoadFailure(final ProductFailure failure) = _$_LoadFailure;
 
-  ProductFailure get failure => throw _privateConstructorUsedError;
+  ProductFailure get failure;
   @JsonKey(ignore: true)
   _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1374,7 +1373,7 @@ class _$_LoadSuccess implements _LoadSuccess {
 abstract class _LoadSuccess implements ProductActorState {
   const factory _LoadSuccess(final List<Product> productList) = _$_LoadSuccess;
 
-  List<Product> get productList => throw _privateConstructorUsedError;
+  List<Product> get productList;
   @JsonKey(ignore: true)
   _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;

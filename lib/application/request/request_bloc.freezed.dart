@@ -349,7 +349,7 @@ abstract class _SendJoinRequest implements RequestEvent {
   const factory _SendJoinRequest(final Apartment apartment) =
       _$_SendJoinRequest;
 
-  Apartment get apartment => throw _privateConstructorUsedError;
+  Apartment get apartment;
   @JsonKey(ignore: true)
   _$$_SendJoinRequestCopyWith<_$_SendJoinRequest> get copyWith =>
       throw _privateConstructorUsedError;
@@ -504,7 +504,7 @@ class _$_AcceptRequest implements _AcceptRequest {
 abstract class _AcceptRequest implements RequestEvent {
   const factory _AcceptRequest(final RequestToJoin request) = _$_AcceptRequest;
 
-  RequestToJoin get request => throw _privateConstructorUsedError;
+  RequestToJoin get request;
   @JsonKey(ignore: true)
   _$$_AcceptRequestCopyWith<_$_AcceptRequest> get copyWith =>
       throw _privateConstructorUsedError;
@@ -659,7 +659,7 @@ class _$_RejectRequest implements _RejectRequest {
 abstract class _RejectRequest implements RequestEvent {
   const factory _RejectRequest(final RequestToJoin request) = _$_RejectRequest;
 
-  RequestToJoin get request => throw _privateConstructorUsedError;
+  RequestToJoin get request;
   @JsonKey(ignore: true)
   _$$_RejectRequestCopyWith<_$_RejectRequest> get copyWith =>
       throw _privateConstructorUsedError;
@@ -801,10 +801,9 @@ abstract class _RequestState implements RequestState {
           requstFailureOrSuccess}) = _$_RequestState;
 
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  Option<Either<RequestFailure, RequestOperations>>
-      get requstFailureOrSuccess => throw _privateConstructorUsedError;
+  Option<Either<RequestFailure, RequestOperations>> get requstFailureOrSuccess;
   @override
   @JsonKey(ignore: true)
   _$$_RequestStateCopyWith<_$_RequestState> get copyWith =>

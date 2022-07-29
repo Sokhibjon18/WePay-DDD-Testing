@@ -24,9 +24,9 @@ class SearchResultItem extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             const SizedBox(height: 4),
-            const Text(
-              'Roommates: Me, Example, Examle2',
-              style: TextStyle(fontSize: 12, color: Colors.grey),
+            Text(
+              'Roommates cout: ${apartment.users.length}',
+              style: const TextStyle(fontSize: 12, color: Colors.grey),
               maxLines: 2,
               overflow: TextOverflow.fade,
             ),

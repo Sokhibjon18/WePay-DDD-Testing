@@ -197,7 +197,7 @@ class _$_Search implements _Search {
 abstract class _Search implements SearchEvent {
   const factory _Search(final String text) = _$_Search;
 
-  String get text => throw _privateConstructorUsedError;
+  String get text;
   @JsonKey(ignore: true)
   _$$_SearchCopyWith<_$_Search> get copyWith =>
       throw _privateConstructorUsedError;
@@ -461,12 +461,11 @@ abstract class _SearchState implements SearchState {
           listOrFailure}) = _$_SearchState;
 
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  bool get sendingRequest => throw _privateConstructorUsedError;
+  bool get sendingRequest;
   @override
-  Option<Either<SearchFailure, List<Apartment>>> get listOrFailure =>
-      throw _privateConstructorUsedError;
+  Option<Either<SearchFailure, List<Apartment>>> get listOrFailure;
   @override
   @JsonKey(ignore: true)
   _$$_SearchStateCopyWith<_$_SearchState> get copyWith =>
