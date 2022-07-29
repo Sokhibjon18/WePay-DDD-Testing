@@ -25,10 +25,8 @@ class ProductRepository implements IProductRepository {
   Stream<Either<ProductFailure, List<Product>>> watchAllProductInApartment(
       String apartmentId, DateTime date) async* {
     yield* _firestore.apartmentExpenses(apartmentId: apartmentId, date: date).map((snapshot) {
-      final productList = snapshot.docs.map((e) {
-        final product = ProductDto.fromJson(e.data()).toDomain();
-        return ProductDto.fromJson(e.data()).toDomain();
-      }).toList();
+      final productList =
+          snapshot.docs.map((e) => ProductDto.fromJson(e.data()).toDomain()).toList();
       return right<ProductFailure, List<Product>>(productList);
     }).onErrorReturnWith((error, stackTrace) {
       log('$error::$stackTrace');

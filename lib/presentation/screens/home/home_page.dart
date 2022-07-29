@@ -1,8 +1,5 @@
-import 'dart:developer';
-
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
