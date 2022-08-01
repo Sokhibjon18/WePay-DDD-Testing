@@ -32,6 +32,7 @@ dependencies:
   shared_preferences: ^2.0.15
   connectivity_plus: ^2.3.6
   lottie: ^1.4.0
+  google_mobile_ads: ^2.0.0
   
 dev_dependencies:
   flutter_test:

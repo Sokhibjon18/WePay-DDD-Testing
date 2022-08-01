@@ -3,6 +3,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:injectable/injectable.dart';
+import 'package:we_pay/add_manager.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
 import 'package:we_pay/application/connection/connection_bloc.dart' as con;
 import 'package:we_pay/application/profile/profile_bloc.dart';
@@ -27,9 +30,17 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  late final BannerAd myBanner;
+
   @override
   void initState() {
     context.read<FormApartmentBloc>().add(const FormApartmentEvent.initial());
+    myBanner = BannerAd(
+      adUnitId: AdManager.testingBannerAdUnitId,
+      size: AdSize.mediumRectangle,
+      listener: const BannerAdListener(),
+      request: const AdRequest(),
+    )..load();
     super.initState();
   }
 
@@ -141,8 +152,15 @@ class HomePageState extends State<HomePage> {
                         return ListView.separated(
                           shrinkWrap: true,
                           physics: const BouncingScrollPhysics(),
-                          itemCount: r.length,
+                          itemCount: r.length + 1,
                           itemBuilder: (context, index) {
+                            if (index >= r.length) {
+                              return Container(
+                                // margin: const EdgeInsets.only(top: 16),
+                                constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
+                                child: AdWidget(ad: myBanner),
+                              );
+                            }
                             return ApartmentItem(apartment: r[index]);
                           },
                           separatorBuilder: (BuildContext _, int index) {

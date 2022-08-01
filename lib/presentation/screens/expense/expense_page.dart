@@ -1,5 +1,7 @@
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:we_pay/add_manager.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
@@ -21,6 +23,18 @@ class ExpensePage extends StatefulWidget {
 
 class ExpensePageState extends State<ExpensePage> {
   late final width = MediaQuery.of(context).size.width;
+  late final BannerAd bannerAd;
+
+  @override
+  void initState() {
+    bannerAd = BannerAd(
+      adUnitId: AdManager.testingBannerAdUnitId,
+      size: AdSize.banner,
+      listener: const BannerAdListener(),
+      request: const AdRequest(),
+    )..load();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,21 +82,31 @@ class ExpensePageState extends State<ExpensePage> {
         },
         child: BlocBuilder<ProductActorBloc, ProductActorState>(
           builder: (context, state) {
-            return state.maybeMap(
-              loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
-              loadSuccess: (loadSuccess) => loadSuccessWidget(loadSuccess.productList),
-              emptyList: (_) => emptyListWidget(),
-              orElse: () => Container(),
+            return Column(
+              children: [
+                Expanded(
+                  child: state.maybeMap(
+                    loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
+                    loadSuccess: (loadSuccess) => loadSuccessWidget(loadSuccess.productList),
+                    emptyList: (_) => emptyListWidget(),
+                    orElse: () => Container(),
+                  ),
+                ),
+                SizedBox(height: 50, child: AdWidget(ad: bannerAd))
+              ],
             );
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          context.read<ProductFormBloc>().add(const ProductFormEvent.initial());
-          productBottomsheet(context);
-        },
+      floatingActionButton: Container(
+        margin: const EdgeInsets.only(bottom: 50),
+        child: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            context.read<ProductFormBloc>().add(const ProductFormEvent.initial());
+            productBottomsheet(context);
+          },
+        ),
       ),
     );
   }
@@ -95,44 +119,50 @@ class ExpensePageState extends State<ExpensePage> {
       );
 
   Widget loadSuccessWidget(List<Product> products) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              TotalExpenses(products),
-              Container(
-                height: width * 0.7,
-                padding: EdgeInsets.only(top: width * 0.45),
-                alignment: Alignment.topCenter,
-                width: width,
-                child: Align(
+    return Column(
+      children: [
+        Expanded(
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
                   alignment: Alignment.center,
-                  child: Wrap(children: getModelWidget(products)),
+                  children: [
+                    TotalExpenses(products),
+                    Container(
+                      height: width * 0.7,
+                      padding: EdgeInsets.only(top: width * 0.45),
+                      alignment: Alignment.topCenter,
+                      width: width,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Wrap(children: getModelWidget(products)),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 64),
-            child: ListView.separated(
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              itemBuilder: (context, index) => ProductItem(product: products[index]),
-              separatorBuilder: (_, index) {
-                return Container(
-                  height: 0.5,
-                  color: Colors.grey[300],
-                );
-              },
-              itemCount: products.length,
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 64),
+                  child: ListView.separated(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: products.length,
+                    itemBuilder: (context, index) => ProductItem(product: products[index]),
+                    separatorBuilder: (_, index) {
+                      return Container(
+                        height: 0.5,
+                        color: Colors.grey[300],
+                      );
+                    },
+                  ),
+                )
+              ],
             ),
-          )
-        ],
-      ),
+          ),
+        ),
+      ],
     );
   }
 
