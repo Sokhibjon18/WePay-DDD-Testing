@@ -152,15 +152,14 @@ class HomePageState extends State<HomePage> {
                         return ListView.separated(
                           shrinkWrap: true,
                           physics: const BouncingScrollPhysics(),
-                          itemCount: r.length + 1,
+                          itemCount: r.length,
                           itemBuilder: (context, index) {
-                            if (index >= r.length) {
-                              return Container(
-                                // margin: const EdgeInsets.only(top: 16),
-                                constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
-                                child: AdWidget(ad: myBanner),
-                              );
-                            }
+                            // if (index >= r.length) {
+                            //   return Container(
+                            //     constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
+                            //     child: AdWidget(ad: myBanner),
+                            //   );
+                            // }
                             return ApartmentItem(apartment: r[index]);
                           },
                           separatorBuilder: (BuildContext _, int index) {
@@ -174,6 +173,10 @@ class HomePageState extends State<HomePage> {
                     );
                   }
                 },
+              ),
+              Container(
+                constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
+                child: AdWidget(ad: myBanner),
               ),
               StreamBuilder<z.Either<SearchFailure, List<RequestToJoin>>>(
                 stream: context.read<FormApartmentBloc>().requestStream.stream,

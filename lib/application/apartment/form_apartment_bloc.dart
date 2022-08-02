@@ -30,6 +30,7 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
 
   FormApartmentBloc(this._repository) : super(FormApartmentState.initial()) {
     on<_Initial>((event, emit) async {
+      emit(FormApartmentState.initial());
       apartmentStream.addStream(_repository.watchAll());
       requestStream.addStream(_repository.watchRequests());
     });
