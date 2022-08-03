@@ -45,11 +45,12 @@ class ApartmentItem extends StatelessWidget {
         ],
       ),
       child: InkWell(
-        onTap: () {
+        onTap: () async {
           context
               .read<ProductActorBloc>()
               .add(ProductActorEvent.watch(apartment.uid!, DateTime.now()));
-          context.router.push(ExpenseRoute(apartmentName: apartment.getFullAddress()));
+          await context.router.push(ExpenseRoute(apartmentName: apartment.getFullAddress()));
+          context.read<FormApartmentBloc>().add(const FormApartmentEvent.initializeStreams());
         },
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

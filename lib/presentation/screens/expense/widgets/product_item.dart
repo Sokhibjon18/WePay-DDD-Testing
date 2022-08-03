@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
+import 'package:we_pay/presentation/screens/expense/widgets/product_dialog.dart';
 import 'package:we_pay/presentation/screens/utils/functions.dart';
 
 class ProductItem extends StatelessWidget {
@@ -41,7 +42,9 @@ class ProductItem extends StatelessWidget {
         ],
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          showDialog(context: context, builder: (_) => ProductDialog(product: product));
+        },
         child: ListTile(
           leading: Container(
             margin: const EdgeInsets.symmetric(vertical: 4),

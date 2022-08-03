@@ -3,6 +3,7 @@ part of 'form_apartment_bloc.dart';
 @freezed
 class FormApartmentEvent with _$FormApartmentEvent {
   const factory FormApartmentEvent.initial() = _Initial;
+  const factory FormApartmentEvent.initializeStreams() = _InitializeStreams;
   const factory FormApartmentEvent.editingApartment(Apartment apartment) = _EditingApartment;
   const factory FormApartmentEvent.regionChanged(String region) = _RegionChanged;
   const factory FormApartmentEvent.districtChanged(String district) = _DistrictChanged;

@@ -19,6 +19,7 @@ mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -35,6 +36,7 @@ mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -50,6 +52,7 @@ mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -66,6 +69,7 @@ mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -82,6 +86,7 @@ mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -98,6 +103,7 @@ mixin _$FormApartmentEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -172,6 +178,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -191,6 +198,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -209,6 +217,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -231,6 +240,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -250,6 +260,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -269,6 +280,7 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -291,6 +303,175 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements FormApartmentEvent {
   const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$$_InitializeStreamsCopyWith<$Res> {
+  factory _$$_InitializeStreamsCopyWith(_$_InitializeStreams value,
+          $Res Function(_$_InitializeStreams) then) =
+      __$$_InitializeStreamsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InitializeStreamsCopyWithImpl<$Res>
+    extends _$FormApartmentEventCopyWithImpl<$Res>
+    implements _$$_InitializeStreamsCopyWith<$Res> {
+  __$$_InitializeStreamsCopyWithImpl(
+      _$_InitializeStreams _value, $Res Function(_$_InitializeStreams) _then)
+      : super(_value, (v) => _then(v as _$_InitializeStreams));
+
+  @override
+  _$_InitializeStreams get _value => super._value as _$_InitializeStreams;
+}
+
+/// @nodoc
+
+class _$_InitializeStreams implements _InitializeStreams {
+  const _$_InitializeStreams();
+
+  @override
+  String toString() {
+    return 'FormApartmentEvent.initializeStreams()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_InitializeStreams);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() initializeStreams,
+    required TResult Function(Apartment apartment) editingApartment,
+    required TResult Function(String region) regionChanged,
+    required TResult Function(String district) districtChanged,
+    required TResult Function(String street) streetNameChanged,
+    required TResult Function(String house) houseNumberChanged,
+    required TResult Function(String flat) flatNumberChanged,
+    required TResult Function() creatApartment,
+    required TResult Function(String uid, String ownerId) updateApartment,
+    required TResult Function(Apartment apartment) deleteApartment,
+    required TResult Function(List<Apartment> apartments)
+        getApartmentUsersAndExpenses,
+  }) {
+    return initializeStreams();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initializeStreams,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
+  }) {
+    return initializeStreams?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? initializeStreams,
+    TResult Function(Apartment apartment)? editingApartment,
+    TResult Function(String region)? regionChanged,
+    TResult Function(String district)? districtChanged,
+    TResult Function(String street)? streetNameChanged,
+    TResult Function(String house)? houseNumberChanged,
+    TResult Function(String flat)? flatNumberChanged,
+    TResult Function()? creatApartment,
+    TResult Function(String uid, String ownerId)? updateApartment,
+    TResult Function(Apartment apartment)? deleteApartment,
+    TResult Function(List<Apartment> apartments)? getApartmentUsersAndExpenses,
+    required TResult orElse(),
+  }) {
+    if (initializeStreams != null) {
+      return initializeStreams();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
+    required TResult Function(_EditingApartment value) editingApartment,
+    required TResult Function(_RegionChanged value) regionChanged,
+    required TResult Function(_DistrictChanged value) districtChanged,
+    required TResult Function(_StreetNameChanged value) streetNameChanged,
+    required TResult Function(_HouseNumberChanged value) houseNumberChanged,
+    required TResult Function(_FlatNumberChanged value) flatNumberChanged,
+    required TResult Function(_CreateApartment value) creatApartment,
+    required TResult Function(_UpdateApartment value) updateApartment,
+    required TResult Function(_DeleteApartment value) deleteApartment,
+    required TResult Function(_GetApartmentUsersAndExpenses value)
+        getApartmentUsersAndExpenses,
+  }) {
+    return initializeStreams(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
+  }) {
+    return initializeStreams?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
+    TResult Function(_EditingApartment value)? editingApartment,
+    TResult Function(_RegionChanged value)? regionChanged,
+    TResult Function(_DistrictChanged value)? districtChanged,
+    TResult Function(_StreetNameChanged value)? streetNameChanged,
+    TResult Function(_HouseNumberChanged value)? houseNumberChanged,
+    TResult Function(_FlatNumberChanged value)? flatNumberChanged,
+    TResult Function(_CreateApartment value)? creatApartment,
+    TResult Function(_UpdateApartment value)? updateApartment,
+    TResult Function(_DeleteApartment value)? deleteApartment,
+    TResult Function(_GetApartmentUsersAndExpenses value)?
+        getApartmentUsersAndExpenses,
+    required TResult orElse(),
+  }) {
+    if (initializeStreams != null) {
+      return initializeStreams(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitializeStreams implements FormApartmentEvent {
+  const factory _InitializeStreams() = _$_InitializeStreams;
 }
 
 /// @nodoc
@@ -368,6 +549,7 @@ class _$_EditingApartment implements _EditingApartment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -387,6 +569,7 @@ class _$_EditingApartment implements _EditingApartment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -405,6 +588,7 @@ class _$_EditingApartment implements _EditingApartment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -427,6 +611,7 @@ class _$_EditingApartment implements _EditingApartment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -446,6 +631,7 @@ class _$_EditingApartment implements _EditingApartment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -465,6 +651,7 @@ class _$_EditingApartment implements _EditingApartment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -561,6 +748,7 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -580,6 +768,7 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -598,6 +787,7 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -620,6 +810,7 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -639,6 +830,7 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -658,6 +850,7 @@ class _$_RegionChanged implements _RegionChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -753,6 +946,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -772,6 +966,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -790,6 +985,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -812,6 +1008,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -831,6 +1028,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -850,6 +1048,7 @@ class _$_DistrictChanged implements _DistrictChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -946,6 +1145,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -965,6 +1165,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -983,6 +1184,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1005,6 +1207,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -1024,6 +1227,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1043,6 +1247,7 @@ class _$_StreetNameChanged implements _StreetNameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1139,6 +1344,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -1158,6 +1364,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1176,6 +1383,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1198,6 +1406,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -1217,6 +1426,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1236,6 +1446,7 @@ class _$_HouseNumberChanged implements _HouseNumberChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1332,6 +1543,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -1351,6 +1563,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1369,6 +1582,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1391,6 +1605,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -1410,6 +1625,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1429,6 +1645,7 @@ class _$_FlatNumberChanged implements _FlatNumberChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1500,6 +1717,7 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -1519,6 +1737,7 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1537,6 +1756,7 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1559,6 +1779,7 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -1578,6 +1799,7 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1597,6 +1819,7 @@ class _$_CreateApartment implements _CreateApartment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1697,6 +1920,7 @@ class _$_UpdateApartment implements _UpdateApartment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -1716,6 +1940,7 @@ class _$_UpdateApartment implements _UpdateApartment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1734,6 +1959,7 @@ class _$_UpdateApartment implements _UpdateApartment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1756,6 +1982,7 @@ class _$_UpdateApartment implements _UpdateApartment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -1775,6 +2002,7 @@ class _$_UpdateApartment implements _UpdateApartment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1794,6 +2022,7 @@ class _$_UpdateApartment implements _UpdateApartment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1900,6 +2129,7 @@ class _$_DeleteApartment implements _DeleteApartment {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -1919,6 +2149,7 @@ class _$_DeleteApartment implements _DeleteApartment {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1937,6 +2168,7 @@ class _$_DeleteApartment implements _DeleteApartment {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -1959,6 +2191,7 @@ class _$_DeleteApartment implements _DeleteApartment {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -1978,6 +2211,7 @@ class _$_DeleteApartment implements _DeleteApartment {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -1997,6 +2231,7 @@ class _$_DeleteApartment implements _DeleteApartment {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -2103,6 +2338,7 @@ class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() initializeStreams,
     required TResult Function(Apartment apartment) editingApartment,
     required TResult Function(String region) regionChanged,
     required TResult Function(String district) districtChanged,
@@ -2122,6 +2358,7 @@ class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -2140,6 +2377,7 @@ class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? initializeStreams,
     TResult Function(Apartment apartment)? editingApartment,
     TResult Function(String region)? regionChanged,
     TResult Function(String district)? districtChanged,
@@ -2162,6 +2400,7 @@ class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
+    required TResult Function(_InitializeStreams value) initializeStreams,
     required TResult Function(_EditingApartment value) editingApartment,
     required TResult Function(_RegionChanged value) regionChanged,
     required TResult Function(_DistrictChanged value) districtChanged,
@@ -2181,6 +2420,7 @@ class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,
@@ -2200,6 +2440,7 @@ class _$_GetApartmentUsersAndExpenses implements _GetApartmentUsersAndExpenses {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
+    TResult Function(_InitializeStreams value)? initializeStreams,
     TResult Function(_EditingApartment value)? editingApartment,
     TResult Function(_RegionChanged value)? regionChanged,
     TResult Function(_DistrictChanged value)? districtChanged,

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -23,16 +24,22 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
 
   StreamController<Either<ApartmentFailure, List<Apartment>>> apartmentStream =
       StreamController.broadcast();
-  StreamController<List<Roommates>> roommates = StreamController.broadcast();
-  StreamController<List<CurrentDateExpense>> expenses = StreamController.broadcast();
   StreamController<Either<SearchFailure, List<RequestToJoin>>> requestStream =
       StreamController.broadcast();
+  StreamController<List<Roommates>> roommates = StreamController.broadcast();
+  StreamController<List<CurrentDateExpense>> expenses = StreamController.broadcast();
 
   FormApartmentBloc(this._repository) : super(FormApartmentState.initial()) {
     on<_Initial>((event, emit) async {
       emit(FormApartmentState.initial());
-      apartmentStream.addStream(_repository.watchAll());
-      requestStream.addStream(_repository.watchRequests());
+    });
+    on<_InitializeStreams>((event, emit) {
+      _repository.watchAll().listen((event) {
+        apartmentStream.sink.add(event);
+      });
+      _repository.watchRequests().listen((event) {
+        requestStream.sink.add(event);
+      });
     });
     on<_RegionChanged>((event, emit) {
       emit(state.copyWith(regionName: Address(event.region), creationFailure: none()));

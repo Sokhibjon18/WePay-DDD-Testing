@@ -146,7 +146,7 @@ class ApartmentRepository implements IApartmentRepository {
             )
             .then((value) => value.docs);
         for (var expence in allExpences) {
-          apartmentExpence += expence.data()['price'] as int;
+          apartmentExpence += (expence.data()['price'] as int) * (expence.data()['count'] as int);
         }
         month += ': ${priceFixer(apartmentExpence.toString())}';
         expenses.add(CurrentDateExpense(apartment.uid!, month));

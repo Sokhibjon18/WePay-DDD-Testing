@@ -1,10 +1,12 @@
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:dartz/dartz.dart' as z;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:injectable/injectable.dart';
 import 'package:we_pay/add_manager.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
 import 'package:we_pay/application/connection/connection_bloc.dart' as con;
@@ -34,14 +36,20 @@ class HomePageState extends State<HomePage> {
 
   @override
   void initState() {
+    context.read<FormApartmentBloc>().add(const FormApartmentEvent.initializeStreams());
     context.read<FormApartmentBloc>().add(const FormApartmentEvent.initial());
     myBanner = BannerAd(
-      adUnitId: AdManager.testingBannerAdUnitId,
+      adUnitId: AdManager.bannerAdUnitIdHome,
       size: AdSize.mediumRectangle,
       listener: const BannerAdListener(),
       request: const AdRequest(),
     )..load();
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
   }
 
   @override

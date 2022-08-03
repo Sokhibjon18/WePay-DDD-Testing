@@ -10,7 +10,7 @@ const grey = Color(0xFF5F5F5F);
 const userColors = [
   Colors.redAccent,
   Colors.greenAccent,
-  Colors.yellowAccent,
+  Colors.lime,
   Colors.purpleAccent,
   Colors.orangeAccent,
   Colors.blueAccent,

@@ -28,7 +28,7 @@ class ExpensePageState extends State<ExpensePage> {
   @override
   void initState() {
     bannerAd = BannerAd(
-      adUnitId: AdManager.testingBannerAdUnitId,
+      adUnitId: AdManager.bannerAdUnitIdExpenses,
       size: AdSize.banner,
       listener: const BannerAdListener(),
       request: const AdRequest(),
