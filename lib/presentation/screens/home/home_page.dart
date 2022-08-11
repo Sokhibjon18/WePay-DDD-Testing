@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
@@ -162,12 +161,6 @@ class HomePageState extends State<HomePage> {
                           physics: const BouncingScrollPhysics(),
                           itemCount: r.length,
                           itemBuilder: (context, index) {
-                            // if (index >= r.length) {
-                            //   return Container(
-                            //     constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
-                            //     child: AdWidget(ad: myBanner),
-                            //   );
-                            // }
                             return ApartmentItem(apartment: r[index]);
                           },
                           separatorBuilder: (BuildContext _, int index) {
@@ -182,10 +175,10 @@ class HomePageState extends State<HomePage> {
                   }
                 },
               ),
-              Container(
-                constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
-                child: AdWidget(ad: myBanner),
-              ),
+              // Container(
+              //   constraints: const BoxConstraints(minHeight: 50, maxHeight: 250),
+              //   child: AdWidget(ad: myBanner),
+              // ),
               StreamBuilder<z.Either<SearchFailure, List<RequestToJoin>>>(
                 stream: context.read<FormApartmentBloc>().requestStream.stream,
                 builder: (context, snapshot) {

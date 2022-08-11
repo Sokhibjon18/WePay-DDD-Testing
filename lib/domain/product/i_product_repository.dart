@@ -13,4 +13,5 @@ abstract class IProductRepository {
   Future<Either<ProductFailure, Unit>> create(Product product);
   Future<Either<ProductFailure, Unit>> update(Product product);
   Future<Either<ProductFailure, Unit>> delete(Product product);
+  Future<void> sendNotification(List<String> usersList, String expenseInfo);
 }

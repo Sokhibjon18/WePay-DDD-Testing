@@ -13,6 +13,7 @@ abstract class UserModel implements _$UserModel {
     required String name,
     required int color,
     String? email,
+    String? notificationToken,
     @Default([]) List<String> ownedApartments,
     @ServerTimestampConverter() required FieldValue serverTimeStamp,
   }) = _UserModel;

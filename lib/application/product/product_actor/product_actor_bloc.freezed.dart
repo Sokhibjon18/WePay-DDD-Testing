@@ -18,9 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId) create,
-    required TResult Function(String apartmentId) update,
-    required TResult Function(String apartmentId) delete,
     required TResult Function(String apartmentId, DateTime time) watch,
     required TResult Function(
             z.Either<ProductFailure, List<Product>> failureOrProducts)
@@ -29,9 +26,6 @@ mixin _$ProductActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
     TResult Function(String apartmentId, DateTime time)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
@@ -39,9 +33,6 @@ mixin _$ProductActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
     TResult Function(String apartmentId, DateTime time)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
@@ -50,27 +41,18 @@ mixin _$ProductActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Create value) create,
-    required TResult Function(_Update value) update,
-    required TResult Function(_Delete value) delete,
     required TResult Function(_Watch value) watch,
     required TResult Function(_ProductsReceived value) productsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
     TResult Function(_Watch value)? watch,
     TResult Function(_ProductsReceived value)? productsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
     TResult Function(_Watch value)? watch,
     TResult Function(_ProductsReceived value)? productsReceived,
     required TResult orElse(),
@@ -93,471 +75,6 @@ class _$ProductActorEventCopyWithImpl<$Res>
   final ProductActorEvent _value;
   // ignore: unused_field
   final $Res Function(ProductActorEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$_CreateCopyWith<$Res> {
-  factory _$$_CreateCopyWith(_$_Create value, $Res Function(_$_Create) then) =
-      __$$_CreateCopyWithImpl<$Res>;
-  $Res call({String apartmentId});
-}
-
-/// @nodoc
-class __$$_CreateCopyWithImpl<$Res>
-    extends _$ProductActorEventCopyWithImpl<$Res>
-    implements _$$_CreateCopyWith<$Res> {
-  __$$_CreateCopyWithImpl(_$_Create _value, $Res Function(_$_Create) _then)
-      : super(_value, (v) => _then(v as _$_Create));
-
-  @override
-  _$_Create get _value => super._value as _$_Create;
-
-  @override
-  $Res call({
-    Object? apartmentId = freezed,
-  }) {
-    return _then(_$_Create(
-      apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Create implements _Create {
-  const _$_Create(this.apartmentId);
-
-  @override
-  final String apartmentId;
-
-  @override
-  String toString() {
-    return 'ProductActorEvent.create(apartmentId: $apartmentId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Create &&
-            const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(apartmentId));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_CreateCopyWith<_$_Create> get copyWith =>
-      __$$_CreateCopyWithImpl<_$_Create>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId) create,
-    required TResult Function(String apartmentId) update,
-    required TResult Function(String apartmentId) delete,
-    required TResult Function(String apartmentId, DateTime time) watch,
-    required TResult Function(
-            z.Either<ProductFailure, List<Product>> failureOrProducts)
-        productsReceived,
-  }) {
-    return create(apartmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
-    TResult Function(String apartmentId, DateTime time)? watch,
-    TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
-        productsReceived,
-  }) {
-    return create?.call(apartmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
-    TResult Function(String apartmentId, DateTime time)? watch,
-    TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
-        productsReceived,
-    required TResult orElse(),
-  }) {
-    if (create != null) {
-      return create(apartmentId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Create value) create,
-    required TResult Function(_Update value) update,
-    required TResult Function(_Delete value) delete,
-    required TResult Function(_Watch value) watch,
-    required TResult Function(_ProductsReceived value) productsReceived,
-  }) {
-    return create(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
-    TResult Function(_Watch value)? watch,
-    TResult Function(_ProductsReceived value)? productsReceived,
-  }) {
-    return create?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
-    TResult Function(_Watch value)? watch,
-    TResult Function(_ProductsReceived value)? productsReceived,
-    required TResult orElse(),
-  }) {
-    if (create != null) {
-      return create(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Create implements ProductActorEvent {
-  const factory _Create(final String apartmentId) = _$_Create;
-
-  String get apartmentId;
-  @JsonKey(ignore: true)
-  _$$_CreateCopyWith<_$_Create> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_UpdateCopyWith<$Res> {
-  factory _$$_UpdateCopyWith(_$_Update value, $Res Function(_$_Update) then) =
-      __$$_UpdateCopyWithImpl<$Res>;
-  $Res call({String apartmentId});
-}
-
-/// @nodoc
-class __$$_UpdateCopyWithImpl<$Res>
-    extends _$ProductActorEventCopyWithImpl<$Res>
-    implements _$$_UpdateCopyWith<$Res> {
-  __$$_UpdateCopyWithImpl(_$_Update _value, $Res Function(_$_Update) _then)
-      : super(_value, (v) => _then(v as _$_Update));
-
-  @override
-  _$_Update get _value => super._value as _$_Update;
-
-  @override
-  $Res call({
-    Object? apartmentId = freezed,
-  }) {
-    return _then(_$_Update(
-      apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Update implements _Update {
-  const _$_Update(this.apartmentId);
-
-  @override
-  final String apartmentId;
-
-  @override
-  String toString() {
-    return 'ProductActorEvent.update(apartmentId: $apartmentId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Update &&
-            const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(apartmentId));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_UpdateCopyWith<_$_Update> get copyWith =>
-      __$$_UpdateCopyWithImpl<_$_Update>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId) create,
-    required TResult Function(String apartmentId) update,
-    required TResult Function(String apartmentId) delete,
-    required TResult Function(String apartmentId, DateTime time) watch,
-    required TResult Function(
-            z.Either<ProductFailure, List<Product>> failureOrProducts)
-        productsReceived,
-  }) {
-    return update(apartmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
-    TResult Function(String apartmentId, DateTime time)? watch,
-    TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
-        productsReceived,
-  }) {
-    return update?.call(apartmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
-    TResult Function(String apartmentId, DateTime time)? watch,
-    TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
-        productsReceived,
-    required TResult orElse(),
-  }) {
-    if (update != null) {
-      return update(apartmentId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Create value) create,
-    required TResult Function(_Update value) update,
-    required TResult Function(_Delete value) delete,
-    required TResult Function(_Watch value) watch,
-    required TResult Function(_ProductsReceived value) productsReceived,
-  }) {
-    return update(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
-    TResult Function(_Watch value)? watch,
-    TResult Function(_ProductsReceived value)? productsReceived,
-  }) {
-    return update?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
-    TResult Function(_Watch value)? watch,
-    TResult Function(_ProductsReceived value)? productsReceived,
-    required TResult orElse(),
-  }) {
-    if (update != null) {
-      return update(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Update implements ProductActorEvent {
-  const factory _Update(final String apartmentId) = _$_Update;
-
-  String get apartmentId;
-  @JsonKey(ignore: true)
-  _$$_UpdateCopyWith<_$_Update> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_DeleteCopyWith<$Res> {
-  factory _$$_DeleteCopyWith(_$_Delete value, $Res Function(_$_Delete) then) =
-      __$$_DeleteCopyWithImpl<$Res>;
-  $Res call({String apartmentId});
-}
-
-/// @nodoc
-class __$$_DeleteCopyWithImpl<$Res>
-    extends _$ProductActorEventCopyWithImpl<$Res>
-    implements _$$_DeleteCopyWith<$Res> {
-  __$$_DeleteCopyWithImpl(_$_Delete _value, $Res Function(_$_Delete) _then)
-      : super(_value, (v) => _then(v as _$_Delete));
-
-  @override
-  _$_Delete get _value => super._value as _$_Delete;
-
-  @override
-  $Res call({
-    Object? apartmentId = freezed,
-  }) {
-    return _then(_$_Delete(
-      apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Delete implements _Delete {
-  const _$_Delete(this.apartmentId);
-
-  @override
-  final String apartmentId;
-
-  @override
-  String toString() {
-    return 'ProductActorEvent.delete(apartmentId: $apartmentId)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Delete &&
-            const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(apartmentId));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_DeleteCopyWith<_$_Delete> get copyWith =>
-      __$$_DeleteCopyWithImpl<_$_Delete>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId) create,
-    required TResult Function(String apartmentId) update,
-    required TResult Function(String apartmentId) delete,
-    required TResult Function(String apartmentId, DateTime time) watch,
-    required TResult Function(
-            z.Either<ProductFailure, List<Product>> failureOrProducts)
-        productsReceived,
-  }) {
-    return delete(apartmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
-    TResult Function(String apartmentId, DateTime time)? watch,
-    TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
-        productsReceived,
-  }) {
-    return delete?.call(apartmentId);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
-    TResult Function(String apartmentId, DateTime time)? watch,
-    TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
-        productsReceived,
-    required TResult orElse(),
-  }) {
-    if (delete != null) {
-      return delete(apartmentId);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Create value) create,
-    required TResult Function(_Update value) update,
-    required TResult Function(_Delete value) delete,
-    required TResult Function(_Watch value) watch,
-    required TResult Function(_ProductsReceived value) productsReceived,
-  }) {
-    return delete(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
-    TResult Function(_Watch value)? watch,
-    TResult Function(_ProductsReceived value)? productsReceived,
-  }) {
-    return delete?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
-    TResult Function(_Watch value)? watch,
-    TResult Function(_ProductsReceived value)? productsReceived,
-    required TResult orElse(),
-  }) {
-    if (delete != null) {
-      return delete(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Delete implements ProductActorEvent {
-  const factory _Delete(final String apartmentId) = _$_Delete;
-
-  String get apartmentId;
-  @JsonKey(ignore: true)
-  _$$_DeleteCopyWith<_$_Delete> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -633,9 +150,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId) create,
-    required TResult Function(String apartmentId) update,
-    required TResult Function(String apartmentId) delete,
     required TResult Function(String apartmentId, DateTime time) watch,
     required TResult Function(
             z.Either<ProductFailure, List<Product>> failureOrProducts)
@@ -647,9 +161,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
     TResult Function(String apartmentId, DateTime time)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
@@ -660,9 +171,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
     TResult Function(String apartmentId, DateTime time)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
@@ -677,9 +185,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Create value) create,
-    required TResult Function(_Update value) update,
-    required TResult Function(_Delete value) delete,
     required TResult Function(_Watch value) watch,
     required TResult Function(_ProductsReceived value) productsReceived,
   }) {
@@ -689,9 +194,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
     TResult Function(_Watch value)? watch,
     TResult Function(_ProductsReceived value)? productsReceived,
   }) {
@@ -701,9 +203,6 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
     TResult Function(_Watch value)? watch,
     TResult Function(_ProductsReceived value)? productsReceived,
     required TResult orElse(),
@@ -792,9 +291,6 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId) create,
-    required TResult Function(String apartmentId) update,
-    required TResult Function(String apartmentId) delete,
     required TResult Function(String apartmentId, DateTime time) watch,
     required TResult Function(
             z.Either<ProductFailure, List<Product>> failureOrProducts)
@@ -806,9 +302,6 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
     TResult Function(String apartmentId, DateTime time)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
@@ -819,9 +312,6 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId)? create,
-    TResult Function(String apartmentId)? update,
-    TResult Function(String apartmentId)? delete,
     TResult Function(String apartmentId, DateTime time)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
@@ -836,9 +326,6 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Create value) create,
-    required TResult Function(_Update value) update,
-    required TResult Function(_Delete value) delete,
     required TResult Function(_Watch value) watch,
     required TResult Function(_ProductsReceived value) productsReceived,
   }) {
@@ -848,9 +335,6 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
     TResult Function(_Watch value)? watch,
     TResult Function(_ProductsReceived value)? productsReceived,
   }) {
@@ -860,9 +344,6 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Create value)? create,
-    TResult Function(_Update value)? update,
-    TResult Function(_Delete value)? delete,
     TResult Function(_Watch value)? watch,
     TResult Function(_ProductsReceived value)? productsReceived,
     required TResult orElse(),

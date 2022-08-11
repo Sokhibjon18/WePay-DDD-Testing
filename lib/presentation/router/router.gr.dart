@@ -14,6 +14,7 @@
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:flutter/material.dart' as _i9;
 
+import '../../domain/models/apartment/apartment.dart' as _i10;
 import '../screens/auth/login_page.dart' as _i2;
 import '../screens/auth/sign_up_page.dart' as _i3;
 import '../screens/expense/expense_page.dart' as _i6;
@@ -52,8 +53,7 @@ class AppRouter extends _i8.RootStackRouter {
       final args = routeData.argsAs<ExpenseRouteArgs>();
       return _i8.MaterialPageX<dynamic>(
           routeData: routeData,
-          child: _i6.ExpensePage(
-              key: args.key, apartmentName: args.apartmentName));
+          child: _i6.ExpensePage(key: args.key, apartment: args.apartment));
     },
     ProfileRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
@@ -116,24 +116,24 @@ class SearchRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.ExpensePage]
 class ExpenseRoute extends _i8.PageRouteInfo<ExpenseRouteArgs> {
-  ExpenseRoute({_i9.Key? key, required String apartmentName})
+  ExpenseRoute({_i9.Key? key, required _i10.Apartment apartment})
       : super(ExpenseRoute.name,
             path: '/expense-page',
-            args: ExpenseRouteArgs(key: key, apartmentName: apartmentName));
+            args: ExpenseRouteArgs(key: key, apartment: apartment));
 
   static const String name = 'ExpenseRoute';
 }
 
 class ExpenseRouteArgs {
-  const ExpenseRouteArgs({this.key, required this.apartmentName});
+  const ExpenseRouteArgs({this.key, required this.apartment});
 
   final _i9.Key? key;
 
-  final String apartmentName;
+  final _i10.Apartment apartment;
 
   @override
   String toString() {
-    return 'ExpenseRouteArgs{key: $key, apartmentName: $apartmentName}';
+    return 'ExpenseRouteArgs{key: $key, apartment: $apartment}';
   }
 }
 

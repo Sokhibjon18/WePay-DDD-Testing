@@ -20,18 +20,21 @@ mixin _$SignInCheckerEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequest,
     required TResult Function() signOut,
+    required TResult Function() updateNotificationToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,22 @@ mixin _$SignInCheckerEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequest value) authCheckRequest,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_UpdateNotificationToken value)
+        updateNotificationToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequest value)? authCheckRequest,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequest value)? authCheckRequest,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +123,7 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequest,
     required TResult Function() signOut,
+    required TResult Function() updateNotificationToken,
   }) {
     return authCheckRequest();
   }
@@ -125,6 +133,7 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
   }) {
     return authCheckRequest?.call();
   }
@@ -134,6 +143,7 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
     required TResult orElse(),
   }) {
     if (authCheckRequest != null) {
@@ -147,6 +157,8 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequest value) authCheckRequest,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_UpdateNotificationToken value)
+        updateNotificationToken,
   }) {
     return authCheckRequest(this);
   }
@@ -156,6 +168,7 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequest value)? authCheckRequest,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
   }) {
     return authCheckRequest?.call(this);
   }
@@ -165,6 +178,7 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequest value)? authCheckRequest,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
     required TResult orElse(),
   }) {
     if (authCheckRequest != null) {
@@ -220,6 +234,7 @@ class _$_SignOut implements _SignOut {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequest,
     required TResult Function() signOut,
+    required TResult Function() updateNotificationToken,
   }) {
     return signOut();
   }
@@ -229,6 +244,7 @@ class _$_SignOut implements _SignOut {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
   }) {
     return signOut?.call();
   }
@@ -238,6 +254,7 @@ class _$_SignOut implements _SignOut {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -251,6 +268,8 @@ class _$_SignOut implements _SignOut {
   TResult map<TResult extends Object?>({
     required TResult Function(_AuthCheckRequest value) authCheckRequest,
     required TResult Function(_SignOut value) signOut,
+    required TResult Function(_UpdateNotificationToken value)
+        updateNotificationToken,
   }) {
     return signOut(this);
   }
@@ -260,6 +279,7 @@ class _$_SignOut implements _SignOut {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_AuthCheckRequest value)? authCheckRequest,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
   }) {
     return signOut?.call(this);
   }
@@ -269,6 +289,7 @@ class _$_SignOut implements _SignOut {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AuthCheckRequest value)? authCheckRequest,
     TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -280,6 +301,120 @@ class _$_SignOut implements _SignOut {
 
 abstract class _SignOut implements SignInCheckerEvent {
   const factory _SignOut() = _$_SignOut;
+}
+
+/// @nodoc
+abstract class _$$_UpdateNotificationTokenCopyWith<$Res> {
+  factory _$$_UpdateNotificationTokenCopyWith(_$_UpdateNotificationToken value,
+          $Res Function(_$_UpdateNotificationToken) then) =
+      __$$_UpdateNotificationTokenCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UpdateNotificationTokenCopyWithImpl<$Res>
+    extends _$SignInCheckerEventCopyWithImpl<$Res>
+    implements _$$_UpdateNotificationTokenCopyWith<$Res> {
+  __$$_UpdateNotificationTokenCopyWithImpl(_$_UpdateNotificationToken _value,
+      $Res Function(_$_UpdateNotificationToken) _then)
+      : super(_value, (v) => _then(v as _$_UpdateNotificationToken));
+
+  @override
+  _$_UpdateNotificationToken get _value =>
+      super._value as _$_UpdateNotificationToken;
+}
+
+/// @nodoc
+
+class _$_UpdateNotificationToken implements _UpdateNotificationToken {
+  const _$_UpdateNotificationToken();
+
+  @override
+  String toString() {
+    return 'SignInCheckerEvent.updateNotificationToken()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_UpdateNotificationToken);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequest,
+    required TResult Function() signOut,
+    required TResult Function() updateNotificationToken,
+  }) {
+    return updateNotificationToken();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? authCheckRequest,
+    TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
+  }) {
+    return updateNotificationToken?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequest,
+    TResult Function()? signOut,
+    TResult Function()? updateNotificationToken,
+    required TResult orElse(),
+  }) {
+    if (updateNotificationToken != null) {
+      return updateNotificationToken();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOut value) signOut,
+    required TResult Function(_UpdateNotificationToken value)
+        updateNotificationToken,
+  }) {
+    return updateNotificationToken(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
+  }) {
+    return updateNotificationToken?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOut value)? signOut,
+    TResult Function(_UpdateNotificationToken value)? updateNotificationToken,
+    required TResult orElse(),
+  }) {
+    if (updateNotificationToken != null) {
+      return updateNotificationToken(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateNotificationToken implements SignInCheckerEvent {
+  const factory _UpdateNotificationToken() = _$_UpdateNotificationToken;
 }
 
 /// @nodoc

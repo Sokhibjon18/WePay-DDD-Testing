@@ -32,35 +32,6 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
         add(ProductActorEvent.productsReceived(event));
       });
     });
-    on<_Create>((event, emit) async {
-      await _repository.create(
-        Product(
-          apartmentId: event.apartmentId,
-          name: ProductName('name'),
-          buyerName: 'Name',
-          buyerId: '5w9GY16EHkQkZvN3AvOQ3KGkMER2',
-          price: ProductPrice('80000'),
-          count: 4,
-          color: Colors.blue,
-          date: DateTime.now(),
-        ),
-      );
-    });
-    on<_Update>((event, emit) async {
-      await _repository.update(
-        Product(
-          uid: 'e07b7eb3-98c4-4403-84b6-1aef188e3112',
-          apartmentId: event.apartmentId,
-          name: ProductName('Kulcha'),
-          buyerName: 'Aziz',
-          buyerId: '5w9GY16EHkQkZvN3AvOQ3KGkMER2',
-          price: ProductPrice('20000'),
-          count: 2,
-          color: Colors.red,
-          date: DateTime.now(),
-        ),
-      );
-    });
     on<_ProductsReceived>((event, emit) async {
       await event.failureOrProducts.fold<Future>(
         (productFailure) async => emit(ProductActorState.loadFailure(productFailure)),

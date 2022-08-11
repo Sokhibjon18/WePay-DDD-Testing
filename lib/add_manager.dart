@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 class AdManager {
-  static bool isReleasing = false;
+  static bool isReleasing = true;
 
   static String get appId {
     if (Platform.isAndroid) {

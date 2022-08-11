@@ -16,12 +16,18 @@ class SignInCheckerBloc extends Bloc<SignInCheckerEvent, SignInCheckerState> {
       final userOption = await _authFacade.getSignedUser();
       userOption.fold(
         () => emit(const SignInCheckerState.unauthenticated()),
-        (a) => emit(const SignInCheckerState.authenticated()),
+        (a) {
+          emit(const SignInCheckerState.authenticated());
+          add(const _UpdateNotificationToken());
+        },
       );
     });
     on<_SignOut>((event, emit) async {
       await _authFacade.signOut();
       emit(const SignInCheckerState.unauthenticated());
+    });
+    on<_UpdateNotificationToken>((event, emit) async {
+      await _authFacade.updateNotificationToken();
     });
   }
 }

@@ -32,6 +32,14 @@ extension FirebaseFirestoreX on FirebaseFirestore {
         .then((value) => value.data()?['name']);
   }
 
+  Future<String> getUserNotificationToken(String userId) async {
+    return await getIt<FirebaseFirestore>()
+        .collection('user')
+        .doc(userId)
+        .get()
+        .then((value) => value.data()?['notificationToken']);
+  }
+
   Future<int> getUserColor(String userId) async {
     return await getIt<FirebaseFirestore>()
         .collection('user')

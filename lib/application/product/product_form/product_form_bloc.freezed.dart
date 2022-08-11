@@ -26,6 +26,7 @@ mixin _$ProductFormEvent {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) =>
@@ -40,6 +41,7 @@ mixin _$ProductFormEvent {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) =>
@@ -54,6 +56,7 @@ mixin _$ProductFormEvent {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -69,6 +72,7 @@ mixin _$ProductFormEvent {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) =>
@@ -83,6 +87,7 @@ mixin _$ProductFormEvent {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) =>
@@ -97,6 +102,7 @@ mixin _$ProductFormEvent {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -169,6 +175,7 @@ class _$_Initial implements _Initial {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -186,6 +193,7 @@ class _$_Initial implements _Initial {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -203,6 +211,7 @@ class _$_Initial implements _Initial {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -224,6 +233,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -241,6 +251,7 @@ class _$_Initial implements _Initial {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -258,6 +269,7 @@ class _$_Initial implements _Initial {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -355,6 +367,7 @@ class _$_EditingProduct implements _EditingProduct {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -372,6 +385,7 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -389,6 +403,7 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -410,6 +425,7 @@ class _$_EditingProduct implements _EditingProduct {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -427,6 +443,7 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -444,6 +461,7 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -537,6 +555,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -554,6 +573,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -571,6 +591,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -592,6 +613,7 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -609,6 +631,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -626,6 +649,7 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -719,6 +743,7 @@ class _$_PriceChanged implements _PriceChanged {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -736,6 +761,7 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -753,6 +779,7 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -774,6 +801,7 @@ class _$_PriceChanged implements _PriceChanged {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -791,6 +819,7 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -808,6 +837,7 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -901,6 +931,7 @@ class _$_NoteChanged implements _NoteChanged {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -918,6 +949,7 @@ class _$_NoteChanged implements _NoteChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -935,6 +967,7 @@ class _$_NoteChanged implements _NoteChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -956,6 +989,7 @@ class _$_NoteChanged implements _NoteChanged {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -973,6 +1007,7 @@ class _$_NoteChanged implements _NoteChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -990,6 +1025,7 @@ class _$_NoteChanged implements _NoteChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -1083,6 +1119,7 @@ class _$_DateChanged implements _DateChanged {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -1100,6 +1137,7 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -1117,6 +1155,7 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -1138,6 +1177,7 @@ class _$_DateChanged implements _DateChanged {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -1155,6 +1195,7 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -1172,6 +1213,7 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -1265,6 +1307,7 @@ class _$_CountChanged implements _CountChanged {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -1282,6 +1325,7 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -1299,6 +1343,7 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -1320,6 +1365,7 @@ class _$_CountChanged implements _CountChanged {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -1337,6 +1383,7 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -1354,6 +1401,7 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -1448,6 +1496,7 @@ class _$_CreateProduct implements _CreateProduct {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -1465,6 +1514,7 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -1482,6 +1532,7 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -1503,6 +1554,7 @@ class _$_CreateProduct implements _CreateProduct {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -1520,6 +1572,7 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -1537,6 +1590,7 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -1554,6 +1608,199 @@ abstract class _CreateProduct implements ProductFormEvent {
   String get apartmentId;
   @JsonKey(ignore: true)
   _$$_CreateProductCopyWith<_$_CreateProduct> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SendNotificationCopyWith<$Res> {
+  factory _$$_SendNotificationCopyWith(
+          _$_SendNotification value, $Res Function(_$_SendNotification) then) =
+      __$$_SendNotificationCopyWithImpl<$Res>;
+  $Res call({List<String> users});
+}
+
+/// @nodoc
+class __$$_SendNotificationCopyWithImpl<$Res>
+    extends _$ProductFormEventCopyWithImpl<$Res>
+    implements _$$_SendNotificationCopyWith<$Res> {
+  __$$_SendNotificationCopyWithImpl(
+      _$_SendNotification _value, $Res Function(_$_SendNotification) _then)
+      : super(_value, (v) => _then(v as _$_SendNotification));
+
+  @override
+  _$_SendNotification get _value => super._value as _$_SendNotification;
+
+  @override
+  $Res call({
+    Object? users = freezed,
+  }) {
+    return _then(_$_SendNotification(
+      users == freezed
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SendNotification implements _SendNotification {
+  const _$_SendNotification(final List<String> users) : _users = users;
+
+  final List<String> _users;
+  @override
+  List<String> get users {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'ProductFormEvent.sendNotificationsTo(users: $users)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SendNotification &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SendNotificationCopyWith<_$_SendNotification> get copyWith =>
+      __$$_SendNotificationCopyWithImpl<_$_SendNotification>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(Product product) editingProduct,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String price) priceChanged,
+    required TResult Function(String note) noteChanged,
+    required TResult Function(DateTime date) dateChanged,
+    required TResult Function(int count) countChanged,
+    required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
+    required TResult Function(Product product) updateProduct,
+    required TResult Function(Product product) deleteProduct,
+  }) {
+    return sendNotificationsTo(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Product product)? editingProduct,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String price)? priceChanged,
+    TResult Function(String note)? noteChanged,
+    TResult Function(DateTime date)? dateChanged,
+    TResult Function(int count)? countChanged,
+    TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
+    TResult Function(Product product)? updateProduct,
+    TResult Function(Product product)? deleteProduct,
+  }) {
+    return sendNotificationsTo?.call(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(Product product)? editingProduct,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String price)? priceChanged,
+    TResult Function(String note)? noteChanged,
+    TResult Function(DateTime date)? dateChanged,
+    TResult Function(int count)? countChanged,
+    TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
+    TResult Function(Product product)? updateProduct,
+    TResult Function(Product product)? deleteProduct,
+    required TResult orElse(),
+  }) {
+    if (sendNotificationsTo != null) {
+      return sendNotificationsTo(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_EditingProduct value) editingProduct,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_PriceChanged value) priceChanged,
+    required TResult Function(_NoteChanged value) noteChanged,
+    required TResult Function(_DateChanged value) dateChanged,
+    required TResult Function(_CountChanged value) countChanged,
+    required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
+    required TResult Function(_UpdateProduct value) updateProduct,
+    required TResult Function(_DeleteProduct value) deleteProduct,
+  }) {
+    return sendNotificationsTo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingProduct value)? editingProduct,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_PriceChanged value)? priceChanged,
+    TResult Function(_NoteChanged value)? noteChanged,
+    TResult Function(_DateChanged value)? dateChanged,
+    TResult Function(_CountChanged value)? countChanged,
+    TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
+    TResult Function(_UpdateProduct value)? updateProduct,
+    TResult Function(_DeleteProduct value)? deleteProduct,
+  }) {
+    return sendNotificationsTo?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_EditingProduct value)? editingProduct,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_PriceChanged value)? priceChanged,
+    TResult Function(_NoteChanged value)? noteChanged,
+    TResult Function(_DateChanged value)? dateChanged,
+    TResult Function(_CountChanged value)? countChanged,
+    TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
+    TResult Function(_UpdateProduct value)? updateProduct,
+    TResult Function(_DeleteProduct value)? deleteProduct,
+    required TResult orElse(),
+  }) {
+    if (sendNotificationsTo != null) {
+      return sendNotificationsTo(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SendNotification implements ProductFormEvent {
+  const factory _SendNotification(final List<String> users) =
+      _$_SendNotification;
+
+  List<String> get users;
+  @JsonKey(ignore: true)
+  _$$_SendNotificationCopyWith<_$_SendNotification> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1639,6 +1886,7 @@ class _$_UpdateProduct implements _UpdateProduct {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -1656,6 +1904,7 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -1673,6 +1922,7 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -1694,6 +1944,7 @@ class _$_UpdateProduct implements _UpdateProduct {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -1711,6 +1962,7 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -1728,6 +1980,7 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -1830,6 +2083,7 @@ class _$_DeleteProduct implements _DeleteProduct {
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
+    required TResult Function(List<String> users) sendNotificationsTo,
     required TResult Function(Product product) updateProduct,
     required TResult Function(Product product) deleteProduct,
   }) {
@@ -1847,6 +2101,7 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
   }) {
@@ -1864,6 +2119,7 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
+    TResult Function(List<String> users)? sendNotificationsTo,
     TResult Function(Product product)? updateProduct,
     TResult Function(Product product)? deleteProduct,
     required TResult orElse(),
@@ -1885,6 +2141,7 @@ class _$_DeleteProduct implements _DeleteProduct {
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
+    required TResult Function(_SendNotification value) sendNotificationsTo,
     required TResult Function(_UpdateProduct value) updateProduct,
     required TResult Function(_DeleteProduct value) deleteProduct,
   }) {
@@ -1902,6 +2159,7 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
   }) {
@@ -1919,6 +2177,7 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
+    TResult Function(_SendNotification value)? sendNotificationsTo,
     TResult Function(_UpdateProduct value)? updateProduct,
     TResult Function(_DeleteProduct value)? deleteProduct,
     required TResult orElse(),
@@ -1948,7 +2207,9 @@ mixin _$ProductFormState {
   ProductCount get count => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
   bool get showErrorMessage => throw _privateConstructorUsedError;
-  Option<Either<ProductFailure, Unit>> get creationFailure =>
+  Option<Either<ProductFailure, Unit>> get creationOption =>
+      throw _privateConstructorUsedError;
+  Option<Either<ProductFailure, Unit>> get updateOption =>
       throw _privateConstructorUsedError;
   Option<Either<ValueFailure, Product>> get editOption =>
       throw _privateConstructorUsedError;
@@ -1973,7 +2234,8 @@ abstract class $ProductFormStateCopyWith<$Res> {
       ProductCount count,
       bool loading,
       bool showErrorMessage,
-      Option<Either<ProductFailure, Unit>> creationFailure,
+      Option<Either<ProductFailure, Unit>> creationOption,
+      Option<Either<ProductFailure, Unit>> updateOption,
       Option<Either<ValueFailure, Product>> editOption,
       Option<Either<ValueFailure, Product>> deleteOption});
 }
@@ -1996,7 +2258,8 @@ class _$ProductFormStateCopyWithImpl<$Res>
     Object? count = freezed,
     Object? loading = freezed,
     Object? showErrorMessage = freezed,
-    Object? creationFailure = freezed,
+    Object? creationOption = freezed,
+    Object? updateOption = freezed,
     Object? editOption = freezed,
     Object? deleteOption = freezed,
   }) {
@@ -2029,9 +2292,13 @@ class _$ProductFormStateCopyWithImpl<$Res>
           ? _value.showErrorMessage
           : showErrorMessage // ignore: cast_nullable_to_non_nullable
               as bool,
-      creationFailure: creationFailure == freezed
-          ? _value.creationFailure
-          : creationFailure // ignore: cast_nullable_to_non_nullable
+      creationOption: creationOption == freezed
+          ? _value.creationOption
+          : creationOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ProductFailure, Unit>>,
+      updateOption: updateOption == freezed
+          ? _value.updateOption
+          : updateOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<ProductFailure, Unit>>,
       editOption: editOption == freezed
           ? _value.editOption
@@ -2060,7 +2327,8 @@ abstract class _$$_ProductFormStateCopyWith<$Res>
       ProductCount count,
       bool loading,
       bool showErrorMessage,
-      Option<Either<ProductFailure, Unit>> creationFailure,
+      Option<Either<ProductFailure, Unit>> creationOption,
+      Option<Either<ProductFailure, Unit>> updateOption,
       Option<Either<ValueFailure, Product>> editOption,
       Option<Either<ValueFailure, Product>> deleteOption});
 }
@@ -2085,7 +2353,8 @@ class __$$_ProductFormStateCopyWithImpl<$Res>
     Object? count = freezed,
     Object? loading = freezed,
     Object? showErrorMessage = freezed,
-    Object? creationFailure = freezed,
+    Object? creationOption = freezed,
+    Object? updateOption = freezed,
     Object? editOption = freezed,
     Object? deleteOption = freezed,
   }) {
@@ -2118,9 +2387,13 @@ class __$$_ProductFormStateCopyWithImpl<$Res>
           ? _value.showErrorMessage
           : showErrorMessage // ignore: cast_nullable_to_non_nullable
               as bool,
-      creationFailure: creationFailure == freezed
-          ? _value.creationFailure
-          : creationFailure // ignore: cast_nullable_to_non_nullable
+      creationOption: creationOption == freezed
+          ? _value.creationOption
+          : creationOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<ProductFailure, Unit>>,
+      updateOption: updateOption == freezed
+          ? _value.updateOption
+          : updateOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<ProductFailure, Unit>>,
       editOption: editOption == freezed
           ? _value.editOption
@@ -2145,7 +2418,8 @@ class _$_ProductFormState implements _ProductFormState {
       required this.count,
       required this.loading,
       required this.showErrorMessage,
-      required this.creationFailure,
+      required this.creationOption,
+      required this.updateOption,
       required this.editOption,
       required this.deleteOption});
 
@@ -2164,7 +2438,9 @@ class _$_ProductFormState implements _ProductFormState {
   @override
   final bool showErrorMessage;
   @override
-  final Option<Either<ProductFailure, Unit>> creationFailure;
+  final Option<Either<ProductFailure, Unit>> creationOption;
+  @override
+  final Option<Either<ProductFailure, Unit>> updateOption;
   @override
   final Option<Either<ValueFailure, Product>> editOption;
   @override
@@ -2172,7 +2448,7 @@ class _$_ProductFormState implements _ProductFormState {
 
   @override
   String toString() {
-    return 'ProductFormState(productName: $productName, price: $price, note: $note, dateTime: $dateTime, count: $count, loading: $loading, showErrorMessage: $showErrorMessage, creationFailure: $creationFailure, editOption: $editOption, deleteOption: $deleteOption)';
+    return 'ProductFormState(productName: $productName, price: $price, note: $note, dateTime: $dateTime, count: $count, loading: $loading, showErrorMessage: $showErrorMessage, creationOption: $creationOption, updateOption: $updateOption, editOption: $editOption, deleteOption: $deleteOption)';
   }
 
   @override
@@ -2190,7 +2466,9 @@ class _$_ProductFormState implements _ProductFormState {
             const DeepCollectionEquality()
                 .equals(other.showErrorMessage, showErrorMessage) &&
             const DeepCollectionEquality()
-                .equals(other.creationFailure, creationFailure) &&
+                .equals(other.creationOption, creationOption) &&
+            const DeepCollectionEquality()
+                .equals(other.updateOption, updateOption) &&
             const DeepCollectionEquality()
                 .equals(other.editOption, editOption) &&
             const DeepCollectionEquality()
@@ -2207,7 +2485,8 @@ class _$_ProductFormState implements _ProductFormState {
       const DeepCollectionEquality().hash(count),
       const DeepCollectionEquality().hash(loading),
       const DeepCollectionEquality().hash(showErrorMessage),
-      const DeepCollectionEquality().hash(creationFailure),
+      const DeepCollectionEquality().hash(creationOption),
+      const DeepCollectionEquality().hash(updateOption),
       const DeepCollectionEquality().hash(editOption),
       const DeepCollectionEquality().hash(deleteOption));
 
@@ -2226,7 +2505,8 @@ abstract class _ProductFormState implements ProductFormState {
           required final ProductCount count,
           required final bool loading,
           required final bool showErrorMessage,
-          required final Option<Either<ProductFailure, Unit>> creationFailure,
+          required final Option<Either<ProductFailure, Unit>> creationOption,
+          required final Option<Either<ProductFailure, Unit>> updateOption,
           required final Option<Either<ValueFailure, Product>> editOption,
           required final Option<Either<ValueFailure, Product>> deleteOption}) =
       _$_ProductFormState;
@@ -2246,7 +2526,9 @@ abstract class _ProductFormState implements ProductFormState {
   @override
   bool get showErrorMessage;
   @override
-  Option<Either<ProductFailure, Unit>> get creationFailure;
+  Option<Either<ProductFailure, Unit>> get creationOption;
+  @override
+  Option<Either<ProductFailure, Unit>> get updateOption;
   @override
   Option<Either<ValueFailure, Product>> get editOption;
   @override
