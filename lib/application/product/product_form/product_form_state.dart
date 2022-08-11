@@ -10,7 +10,8 @@ class ProductFormState with _$ProductFormState {
     required ProductCount count,
     required bool loading,
     required bool showErrorMessage,
-    required Option<Either<ProductFailure, Unit>> creationFailure,
+    required Option<Either<ProductFailure, Unit>> creationOption,
+    required Option<Either<ProductFailure, Unit>> updateOption,
     required Option<Either<ValueFailure, Product>> editOption,
     required Option<Either<ValueFailure, Product>> deleteOption,
   }) = _ProductFormState;
@@ -23,7 +24,8 @@ class ProductFormState with _$ProductFormState {
         count: ProductCount(1),
         loading: false,
         showErrorMessage: false,
-        creationFailure: none(),
+        creationOption: none(),
+        updateOption: none(),
         editOption: none(),
         deleteOption: none(),
       );
@@ -36,7 +38,8 @@ class ProductFormState with _$ProductFormState {
         count: ProductCount(product.count),
         loading: false,
         showErrorMessage: false,
-        creationFailure: none(),
+        creationOption: none(),
+        updateOption: none(),
         editOption: none(),
         deleteOption: none(),
       );

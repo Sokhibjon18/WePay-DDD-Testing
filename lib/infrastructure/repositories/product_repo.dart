@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +14,7 @@ import 'package:we_pay/domain/product/product_failure.dart';
 import 'package:we_pay/infrastructure/core/firestore_x.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:we_pay/infrastructure/product_dto/product_dto.dart';
+import 'package:we_pay/infrastructure/strings.dart';
 
 @LazySingleton(as: IProductRepository)
 class ProductRepository implements IProductRepository {
@@ -75,6 +77,32 @@ class ProductRepository implements IProductRepository {
   }
 
   @override
+  Future<void> sendNotification(List<String> usersList, String expenseInfo) async {
+    final dio = Dio();
+    dio.options.headers['Authorization'] = 'key=$notificationKey';
+    dio.options.headers['Content-Type'] = 'application/json';
+    String userName = await _firestore.getUserName(_auth.currentUser!.uid);
+    String currentUserId = _auth.currentUser!.uid;
+
+    List<String> tokens = [];
+
+    for (var userId in usersList) {
+      if (userId != currentUserId) {
+        tokens.add(await _firestore.getUserNotificationToken(userId));
+      }
+    }
+
+    await dio.post(
+      'https://fcm.googleapis.com/fcm/send',
+      data: getJsonString(
+        tokens,
+        userName,
+        expenseInfo,
+      ),
+    );
+  }
+
+  @override
   Future<Either<ProductFailure, Unit>> delete(Product product) async {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
@@ -113,4 +141,12 @@ class ProductRepository implements IProductRepository {
       return left(ValueFailure.wrongOwner(e.toString()));
     }
   }
+
+  Map<String, Object> getJsonString(List<String> tokens, String name, String message) => {
+        "registration_ids": tokens,
+        "notification": {
+          "title": name,
+          "body": message,
+        }
+      };
 }

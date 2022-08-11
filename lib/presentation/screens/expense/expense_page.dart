@@ -5,6 +5,7 @@ import 'package:we_pay/add_manager.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
+import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/app_bar.dart';
@@ -13,9 +14,9 @@ import 'package:we_pay/presentation/screens/expense/widgets/product_item.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/total_expenses.dart';
 
 class ExpensePage extends StatefulWidget {
-  const ExpensePage({Key? key, required this.apartmentName}) : super(key: key);
+  const ExpensePage({Key? key, required this.apartment}) : super(key: key);
 
-  final String apartmentName;
+  final Apartment apartment;
 
   @override
   State<ExpensePage> createState() => ExpensePageState();
@@ -39,9 +40,18 @@ class ExpensePageState extends State<ExpensePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: expencePageAppBar(context, widget.apartmentName),
+      appBar: expencePageAppBar(context, widget.apartment.getFullAddress()),
       body: BlocListener<ProductFormBloc, ProductFormState>(
         listener: (context, state) {
+          state.creationOption.fold(
+            () => null,
+            (a) => a.fold(
+              (f) => null,
+              (u) => context
+                  .read<ProductFormBloc>()
+                  .add(ProductFormEvent.sendNotificationsTo(widget.apartment.users)),
+            ),
+          );
           state.editOption.fold(
             () => null,
             (a) => a.fold(
@@ -89,7 +99,7 @@ class ExpensePageState extends State<ExpensePage> {
                     loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
                     loadSuccess: (loadSuccess) => loadSuccessWidget(loadSuccess.productList),
                     emptyList: (_) => emptyListWidget(),
-                    orElse: () => Container(),
+                    orElse: () => const Center(child: CircularProgressIndicator()),
                   ),
                 ),
                 SizedBox(height: 50, child: AdWidget(ad: bannerAd))

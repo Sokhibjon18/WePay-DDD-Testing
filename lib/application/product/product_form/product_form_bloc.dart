@@ -11,6 +11,7 @@ import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/domain/product/i_product_repository.dart';
 import 'package:we_pay/domain/product/product_failure.dart';
 import 'package:we_pay/domain/product/value_objects.dart';
+import 'package:we_pay/presentation/screens/utils/functions.dart';
 
 part 'product_form_event.dart';
 part 'product_form_state.dart';
@@ -23,6 +24,8 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
   StreamController<DateTime> productDateTime = StreamController.broadcast();
 
   ProductFormBloc(this._repository) : super(ProductFormState.initial()) {
+    late Product product;
+
     on<_Initial>((event, emit) {
       emit(ProductFormState.initial());
     });
@@ -36,20 +39,20 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
       emit(state.copyWith(editOption: none(), loading: false));
     });
     on<_NameChanged>((event, emit) {
-      emit(state.copyWith(productName: ProductName(event.name), creationFailure: none()));
+      emit(state.copyWith(productName: ProductName(event.name), creationOption: none()));
     });
     on<_PriceChanged>((event, emit) {
-      emit(state.copyWith(price: ProductPrice(event.price), creationFailure: none()));
+      emit(state.copyWith(price: ProductPrice(event.price), creationOption: none()));
     });
     on<_NoteChanged>((event, emit) {
-      emit(state.copyWith(note: event.note, creationFailure: none()));
+      emit(state.copyWith(note: event.note, creationOption: none()));
     });
     on<_DateChanged>((event, emit) {
-      emit(state.copyWith(dateTime: event.date, creationFailure: none()));
+      emit(state.copyWith(dateTime: event.date, creationOption: none()));
       productDateTime.add(event.date);
     });
     on<_CountChanged>((event, emit) {
-      emit(state.copyWith(count: ProductCount(event.count), creationFailure: none()));
+      emit(state.copyWith(count: ProductCount(event.count), creationOption: none()));
     });
     on<_UpdateProduct>((event, emit) async {
       Either<ProductFailure, Unit>? failureOrSuccess;
@@ -61,7 +64,7 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
       if (validateName && validatePrice && validateCount) {
         emit(state.copyWith(
           loading: true,
-          creationFailure: none(),
+          updateOption: none(),
         ));
 
         final currentProduct = event.product;
@@ -74,12 +77,16 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
           date: state.dateTime,
           count: state.count.getRight(),
         ));
+
+        emit(state.copyWith(
+          loading: false,
+          updateOption: optionOf(failureOrSuccess),
+        ));
       }
 
       emit(state.copyWith(
-        loading: false,
         showErrorMessage: true,
-        creationFailure: optionOf(failureOrSuccess),
+        updateOption: none(),
       ));
     });
     on<_CreateProduct>((event, emit) async {
@@ -92,29 +99,33 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
       if (validateName && validatePrice && validateCount) {
         emit(state.copyWith(
           loading: true,
-          creationFailure: none(),
+          creationOption: none(),
         ));
 
-        failureOrSuccess = await _repository.create(
-          Product(
-            uid: const Uuid().v4(),
-            name: state.productName,
-            price: state.price,
-            note: state.note,
-            date: state.dateTime,
-            count: state.count.getRight(),
-            apartmentId: event.apartmentId,
-            buyerName: '',
-            buyerId: '',
-            color: Colors.redAccent,
-          ),
+        product = Product(
+          uid: const Uuid().v4(),
+          name: state.productName,
+          price: state.price,
+          note: state.note,
+          date: state.dateTime,
+          count: state.count.getRight(),
+          apartmentId: event.apartmentId,
+          buyerName: '',
+          buyerId: '',
+          color: Colors.redAccent,
         );
+
+        failureOrSuccess = await _repository.create(product);
+
+        emit(state.copyWith(
+          loading: false,
+          creationOption: optionOf(failureOrSuccess),
+        ));
       }
 
       emit(state.copyWith(
-        loading: false,
         showErrorMessage: true,
-        creationFailure: optionOf(failureOrSuccess),
+        creationOption: none(),
       ));
     });
     on<_DeleteProduct>((event, emit) async {
@@ -127,6 +138,13 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
         },
       );
       emit(state.copyWith(editOption: none(), loading: false, showErrorMessage: true));
+    });
+    on<_SendNotification>((event, emit) async {
+      final totalPrice = product.count * (int.tryParse(product.price.getRight()) ?? 0);
+      await _repository.sendNotification(
+        event.users,
+        '${priceFixer(totalPrice.toString())} so\'mga ${product.count} ta ${product.name.getRight()} oldim',
+      );
     });
   }
 }

@@ -11,6 +11,7 @@ _$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
       name: json['name'] as String,
       color: json['color'] as int,
       email: json['email'] as String?,
+      notificationToken: json['notificationToken'] as String?,
       ownedApartments: (json['ownedApartments'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -25,6 +26,7 @@ Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
       'name': instance.name,
       'color': instance.color,
       'email': instance.email,
+      'notificationToken': instance.notificationToken,
       'ownedApartments': instance.ownedApartments,
       'serverTimeStamp':
           const ServerTimestampConverter().toJson(instance.serverTimeStamp),

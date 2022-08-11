@@ -49,7 +49,7 @@ class ApartmentItem extends StatelessWidget {
           context
               .read<ProductActorBloc>()
               .add(ProductActorEvent.watch(apartment.uid!, DateTime.now()));
-          await context.router.push(ExpenseRoute(apartmentName: apartment.getFullAddress()));
+          await context.router.push(ExpenseRoute(apartment: apartment));
           context.read<FormApartmentBloc>().add(const FormApartmentEvent.initializeStreams());
         },
         child: Container(

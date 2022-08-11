@@ -52,7 +52,14 @@ void productBottomsheet(BuildContext context, {Product? product}) {
               padding: const EdgeInsets.only(top: 24, left: 32, right: 32, bottom: 32),
               child: BlocConsumer<ProductFormBloc, ProductFormState>(
                 listener: (context, state) {
-                  state.creationFailure.map(
+                  state.creationOption.map(
+                    (a) => a.fold(
+                      (f) => FlushbarHelper.createError(message: 'Server error')
+                          .show(bottomSheetContext),
+                      (r) => Navigator.pop(context),
+                    ),
+                  );
+                  state.updateOption.map(
                     (a) => a.fold(
                       (f) => FlushbarHelper.createError(message: 'Server error')
                           .show(bottomSheetContext),

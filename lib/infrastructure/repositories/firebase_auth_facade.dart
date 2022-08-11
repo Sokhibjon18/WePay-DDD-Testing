@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:math' as math;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,9 +20,16 @@ class FirebaseAuthFacade implements IAuthFacade {
   final FirebaseAuth _auth;
   final GoogleSignIn _googleAuth;
   final FirebaseFirestore _firestore;
+  final FirebaseMessaging _messaging;
   final SharedPreferences _sharedPreferences;
 
-  FirebaseAuthFacade(this._auth, this._googleAuth, this._firestore, this._sharedPreferences);
+  FirebaseAuthFacade(
+    this._auth,
+    this._googleAuth,
+    this._firestore,
+    this._sharedPreferences,
+    this._messaging,
+  );
 
   @override
   Future<Option<User>> getSignedUser() async => optionOf(_auth.currentUser);
@@ -37,7 +45,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         email: email.getRight(),
         password: password.getRight(),
       );
-      saveOrUpdateUserInFirestore(name: name.getRight(), email: email.getRight());
+      await saveOrUpdateUserInFirestore(name: name.getRight(), email: email.getRight());
+      await updateNotificationToken();
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'email-already-in-use'
@@ -57,7 +66,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         password: password.getRight(),
       );
       await saveOrUpdateUserInFirestore();
-      saveEmailAndPassword(email.getRight(), password.getRight());
+      await saveEmailAndPassword(email.getRight(), password.getRight());
+      await updateNotificationToken();
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'user-not-found' || e.code == 'wrong-password'
@@ -83,6 +93,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       await _auth.signInWithCredential(authCredential);
       await saveOrUpdateUserInFirestore();
       await saveCredentials(googleAuthentication.accessToken!, googleAuthentication.idToken!);
+      await updateNotificationToken();
       return right(unit);
     } on FirebaseException catch (e) {
       log(e.code);
@@ -122,10 +133,31 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
+  Future<void> updateNotificationToken() async {
+    try {
+      String userId = _auth.currentUser!.uid;
+      String localToken = _sharedPreferences.getString('nToken') ?? '';
+      String firebaseToken = await _messaging.getToken() ?? '';
+      if (localToken != firebaseToken) {
+        await _firestore
+            .collection('user')
+            .doc(userId)
+            .update({'notificationToken': firebaseToken});
+        await _sharedPreferences.setString('nToken', firebaseToken);
+      }
+    } on FirebaseException catch (e) {
+      log('${e.code} ${e.stackTrace}');
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
+  @override
   Future<void> signOut() async {
     try {
       await _auth.signOut();
       await _googleAuth.signOut();
+      await _messaging.deleteToken();
     } catch (e) {
       log(e.toString());
     }
