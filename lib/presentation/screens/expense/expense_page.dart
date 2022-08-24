@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:another_flushbar/flushbar_helper.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:we_pay/add_manager.dart';
@@ -7,6 +10,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/domain/models/product/product.dart';
+import 'package:we_pay/presentation/router/router.gr.dart';
+import 'package:we_pay/presentation/screens/debtors/models/member.dart';
 import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/app_bar.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/product_bottom_sheet.dart';
@@ -25,6 +30,7 @@ class ExpensePage extends StatefulWidget {
 class ExpensePageState extends State<ExpensePage> {
   late final width = MediaQuery.of(context).size.width;
   late final BannerAd bannerAd;
+  List<Product> products = [];
 
   @override
   void initState() {
@@ -97,7 +103,10 @@ class ExpensePageState extends State<ExpensePage> {
                 Expanded(
                   child: state.maybeMap(
                     loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
-                    loadSuccess: (loadSuccess) => loadSuccessWidget(loadSuccess.productList),
+                    loadSuccess: (loadSuccess) {
+                      products = loadSuccess.productList;
+                      return loadSuccessWidget(loadSuccess.productList);
+                    },
                     emptyList: (_) => emptyListWidget(),
                     orElse: () => const Center(child: CircularProgressIndicator()),
                   ),
@@ -109,15 +118,26 @@ class ExpensePageState extends State<ExpensePage> {
         ),
       ),
       floatingActionButton: Container(
-        margin: const EdgeInsets.only(bottom: 50),
-        child: FloatingActionButton(
-          child: const Icon(Icons.add),
-          onPressed: () {
-            context.read<ProductFormBloc>().add(const ProductFormEvent.initial());
-            productBottomsheet(context);
-          },
-        ),
-      ),
+          margin: const EdgeInsets.only(bottom: 50),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              FloatingActionButton(
+                child: const Icon(Icons.calculate),
+                onPressed: () {
+                  context.router.push(DebtorsRoute(products: products));
+                },
+              ),
+              const SizedBox(height: 8),
+              FloatingActionButton(
+                child: const Icon(Icons.add),
+                onPressed: () {
+                  context.read<ProductFormBloc>().add(const ProductFormEvent.initial());
+                  productBottomsheet(context);
+                },
+              ),
+            ],
+          )),
     );
   }
 
