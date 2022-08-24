@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
         debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'Roboto-Regular'),
       ),
     );
   }
