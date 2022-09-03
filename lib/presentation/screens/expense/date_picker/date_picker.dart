@@ -57,7 +57,7 @@ class _DatePickerState extends State<DatePicker> {
                         onTap: () => setState(() => year--),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: const Icon(Icons.chevron_left_rounded, color: grey),
+                          child: const Icon(Icons.chevron_left_rounded, color: greyLight),
                         ),
                       ),
                       Padding(
@@ -65,14 +65,14 @@ class _DatePickerState extends State<DatePicker> {
                         child: Text(
                           '$year',
                           style: const TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 18, color: grey),
+                              fontWeight: FontWeight.w500, fontSize: 18, color: greyLight),
                         ),
                       ),
                       GestureDetector(
                         onTap: () => setState(() => year++),
                         child: Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: const Icon(Icons.chevron_right_rounded, color: grey),
+                          child: const Icon(Icons.chevron_right_rounded, color: greyLight),
                         ),
                       )
                     ],

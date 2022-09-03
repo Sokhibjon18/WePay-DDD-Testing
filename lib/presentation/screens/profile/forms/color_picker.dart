@@ -25,7 +25,7 @@ class _ProfileColorPickerState extends State<ProfileColorPicker> {
   }
 
   List<Widget> getColoredCircles() {
-    return userColors
+    return userChartColors
         .map((e) => Padding(
               padding: const EdgeInsets.all(4),
               child: GestureDetector(
@@ -39,7 +39,9 @@ class _ProfileColorPickerState extends State<ProfileColorPicker> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(100),
                     color: e,
-                    boxShadow: const [BoxShadow(color: grey, blurRadius: 1, spreadRadius: 0.2)],
+                    boxShadow: const [
+                      BoxShadow(color: greyLight, blurRadius: 1, spreadRadius: 0.2)
+                    ],
                     border: selectedColor == e.value
                         ? Border.all(
                             color: white,

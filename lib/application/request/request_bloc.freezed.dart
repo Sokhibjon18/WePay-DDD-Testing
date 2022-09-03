@@ -19,7 +19,8 @@ mixin _$RequestEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Apartment apartment) sendJoinRequest,
+    required TResult Function(PublicExpense publicExpense, String userId)
+        inviteUserTo,
     required TResult Function(RequestToJoin request) acceptRequest,
     required TResult Function(RequestToJoin request) rejectRequest,
   }) =>
@@ -27,7 +28,7 @@ mixin _$RequestEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
   }) =>
@@ -35,7 +36,7 @@ mixin _$RequestEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
     required TResult orElse(),
@@ -44,7 +45,7 @@ mixin _$RequestEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SendJoinRequest value) sendJoinRequest,
+    required TResult Function(_InviteUserTo value) inviteUserTo,
     required TResult Function(_AcceptRequest value) acceptRequest,
     required TResult Function(_RejectRequest value) rejectRequest,
   }) =>
@@ -52,7 +53,7 @@ mixin _$RequestEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
   }) =>
@@ -60,7 +61,7 @@ mixin _$RequestEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
     required TResult orElse(),
@@ -124,7 +125,8 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Apartment apartment) sendJoinRequest,
+    required TResult Function(PublicExpense publicExpense, String userId)
+        inviteUserTo,
     required TResult Function(RequestToJoin request) acceptRequest,
     required TResult Function(RequestToJoin request) rejectRequest,
   }) {
@@ -135,7 +137,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
   }) {
@@ -146,7 +148,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
     required TResult orElse(),
@@ -161,7 +163,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SendJoinRequest value) sendJoinRequest,
+    required TResult Function(_InviteUserTo value) inviteUserTo,
     required TResult Function(_AcceptRequest value) acceptRequest,
     required TResult Function(_RejectRequest value) rejectRequest,
   }) {
@@ -172,7 +174,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
   }) {
@@ -183,7 +185,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
     required TResult orElse(),
@@ -200,109 +202,121 @@ abstract class _Started implements RequestEvent {
 }
 
 /// @nodoc
-abstract class _$$_SendJoinRequestCopyWith<$Res> {
-  factory _$$_SendJoinRequestCopyWith(
-          _$_SendJoinRequest value, $Res Function(_$_SendJoinRequest) then) =
-      __$$_SendJoinRequestCopyWithImpl<$Res>;
-  $Res call({Apartment apartment});
+abstract class _$$_InviteUserToCopyWith<$Res> {
+  factory _$$_InviteUserToCopyWith(
+          _$_InviteUserTo value, $Res Function(_$_InviteUserTo) then) =
+      __$$_InviteUserToCopyWithImpl<$Res>;
+  $Res call({PublicExpense publicExpense, String userId});
 
-  $ApartmentCopyWith<$Res> get apartment;
+  $PublicExpenseCopyWith<$Res> get publicExpense;
 }
 
 /// @nodoc
-class __$$_SendJoinRequestCopyWithImpl<$Res>
+class __$$_InviteUserToCopyWithImpl<$Res>
     extends _$RequestEventCopyWithImpl<$Res>
-    implements _$$_SendJoinRequestCopyWith<$Res> {
-  __$$_SendJoinRequestCopyWithImpl(
-      _$_SendJoinRequest _value, $Res Function(_$_SendJoinRequest) _then)
-      : super(_value, (v) => _then(v as _$_SendJoinRequest));
+    implements _$$_InviteUserToCopyWith<$Res> {
+  __$$_InviteUserToCopyWithImpl(
+      _$_InviteUserTo _value, $Res Function(_$_InviteUserTo) _then)
+      : super(_value, (v) => _then(v as _$_InviteUserTo));
 
   @override
-  _$_SendJoinRequest get _value => super._value as _$_SendJoinRequest;
+  _$_InviteUserTo get _value => super._value as _$_InviteUserTo;
 
   @override
   $Res call({
-    Object? apartment = freezed,
+    Object? publicExpense = freezed,
+    Object? userId = freezed,
   }) {
-    return _then(_$_SendJoinRequest(
-      apartment == freezed
-          ? _value.apartment
-          : apartment // ignore: cast_nullable_to_non_nullable
-              as Apartment,
+    return _then(_$_InviteUserTo(
+      publicExpense == freezed
+          ? _value.publicExpense
+          : publicExpense // ignore: cast_nullable_to_non_nullable
+              as PublicExpense,
+      userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
   @override
-  $ApartmentCopyWith<$Res> get apartment {
-    return $ApartmentCopyWith<$Res>(_value.apartment, (value) {
-      return _then(_value.copyWith(apartment: value));
+  $PublicExpenseCopyWith<$Res> get publicExpense {
+    return $PublicExpenseCopyWith<$Res>(_value.publicExpense, (value) {
+      return _then(_value.copyWith(publicExpense: value));
     });
   }
 }
 
 /// @nodoc
 
-class _$_SendJoinRequest implements _SendJoinRequest {
-  const _$_SendJoinRequest(this.apartment);
+class _$_InviteUserTo implements _InviteUserTo {
+  const _$_InviteUserTo(this.publicExpense, this.userId);
 
   @override
-  final Apartment apartment;
+  final PublicExpense publicExpense;
+  @override
+  final String userId;
 
   @override
   String toString() {
-    return 'RequestEvent.sendJoinRequest(apartment: $apartment)';
+    return 'RequestEvent.inviteUserTo(publicExpense: $publicExpense, userId: $userId)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SendJoinRequest &&
-            const DeepCollectionEquality().equals(other.apartment, apartment));
+            other is _$_InviteUserTo &&
+            const DeepCollectionEquality()
+                .equals(other.publicExpense, publicExpense) &&
+            const DeepCollectionEquality().equals(other.userId, userId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(apartment));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(publicExpense),
+      const DeepCollectionEquality().hash(userId));
 
   @JsonKey(ignore: true)
   @override
-  _$$_SendJoinRequestCopyWith<_$_SendJoinRequest> get copyWith =>
-      __$$_SendJoinRequestCopyWithImpl<_$_SendJoinRequest>(this, _$identity);
+  _$$_InviteUserToCopyWith<_$_InviteUserTo> get copyWith =>
+      __$$_InviteUserToCopyWithImpl<_$_InviteUserTo>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Apartment apartment) sendJoinRequest,
+    required TResult Function(PublicExpense publicExpense, String userId)
+        inviteUserTo,
     required TResult Function(RequestToJoin request) acceptRequest,
     required TResult Function(RequestToJoin request) rejectRequest,
   }) {
-    return sendJoinRequest(apartment);
+    return inviteUserTo(publicExpense, userId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
   }) {
-    return sendJoinRequest?.call(apartment);
+    return inviteUserTo?.call(publicExpense, userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
     required TResult orElse(),
   }) {
-    if (sendJoinRequest != null) {
-      return sendJoinRequest(apartment);
+    if (inviteUserTo != null) {
+      return inviteUserTo(publicExpense, userId);
     }
     return orElse();
   }
@@ -311,47 +325,48 @@ class _$_SendJoinRequest implements _SendJoinRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SendJoinRequest value) sendJoinRequest,
+    required TResult Function(_InviteUserTo value) inviteUserTo,
     required TResult Function(_AcceptRequest value) acceptRequest,
     required TResult Function(_RejectRequest value) rejectRequest,
   }) {
-    return sendJoinRequest(this);
+    return inviteUserTo(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
   }) {
-    return sendJoinRequest?.call(this);
+    return inviteUserTo?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
     required TResult orElse(),
   }) {
-    if (sendJoinRequest != null) {
-      return sendJoinRequest(this);
+    if (inviteUserTo != null) {
+      return inviteUserTo(this);
     }
     return orElse();
   }
 }
 
-abstract class _SendJoinRequest implements RequestEvent {
-  const factory _SendJoinRequest(final Apartment apartment) =
-      _$_SendJoinRequest;
+abstract class _InviteUserTo implements RequestEvent {
+  const factory _InviteUserTo(
+      final PublicExpense publicExpense, final String userId) = _$_InviteUserTo;
 
-  Apartment get apartment;
+  PublicExpense get publicExpense;
+  String get userId;
   @JsonKey(ignore: true)
-  _$$_SendJoinRequestCopyWith<_$_SendJoinRequest> get copyWith =>
+  _$$_InviteUserToCopyWith<_$_InviteUserTo> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -430,7 +445,8 @@ class _$_AcceptRequest implements _AcceptRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Apartment apartment) sendJoinRequest,
+    required TResult Function(PublicExpense publicExpense, String userId)
+        inviteUserTo,
     required TResult Function(RequestToJoin request) acceptRequest,
     required TResult Function(RequestToJoin request) rejectRequest,
   }) {
@@ -441,7 +457,7 @@ class _$_AcceptRequest implements _AcceptRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
   }) {
@@ -452,7 +468,7 @@ class _$_AcceptRequest implements _AcceptRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
     required TResult orElse(),
@@ -467,7 +483,7 @@ class _$_AcceptRequest implements _AcceptRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SendJoinRequest value) sendJoinRequest,
+    required TResult Function(_InviteUserTo value) inviteUserTo,
     required TResult Function(_AcceptRequest value) acceptRequest,
     required TResult Function(_RejectRequest value) rejectRequest,
   }) {
@@ -478,7 +494,7 @@ class _$_AcceptRequest implements _AcceptRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
   }) {
@@ -489,7 +505,7 @@ class _$_AcceptRequest implements _AcceptRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
     required TResult orElse(),
@@ -585,7 +601,8 @@ class _$_RejectRequest implements _RejectRequest {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(Apartment apartment) sendJoinRequest,
+    required TResult Function(PublicExpense publicExpense, String userId)
+        inviteUserTo,
     required TResult Function(RequestToJoin request) acceptRequest,
     required TResult Function(RequestToJoin request) rejectRequest,
   }) {
@@ -596,7 +613,7 @@ class _$_RejectRequest implements _RejectRequest {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
   }) {
@@ -607,7 +624,7 @@ class _$_RejectRequest implements _RejectRequest {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(Apartment apartment)? sendJoinRequest,
+    TResult Function(PublicExpense publicExpense, String userId)? inviteUserTo,
     TResult Function(RequestToJoin request)? acceptRequest,
     TResult Function(RequestToJoin request)? rejectRequest,
     required TResult orElse(),
@@ -622,7 +639,7 @@ class _$_RejectRequest implements _RejectRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_SendJoinRequest value) sendJoinRequest,
+    required TResult Function(_InviteUserTo value) inviteUserTo,
     required TResult Function(_AcceptRequest value) acceptRequest,
     required TResult Function(_RejectRequest value) rejectRequest,
   }) {
@@ -633,7 +650,7 @@ class _$_RejectRequest implements _RejectRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
   }) {
@@ -644,7 +661,7 @@ class _$_RejectRequest implements _RejectRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_SendJoinRequest value)? sendJoinRequest,
+    TResult Function(_InviteUserTo value)? inviteUserTo,
     TResult Function(_AcceptRequest value)? acceptRequest,
     TResult Function(_RejectRequest value)? rejectRequest,
     required TResult orElse(),

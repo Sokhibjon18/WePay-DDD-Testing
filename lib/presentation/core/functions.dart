@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:we_pay/presentation/constants/colors.dart';
 
 String priceFixer(String price) {
   String newPrice = '';
@@ -10,6 +12,15 @@ String priceFixer(String price) {
   } else {
     return price;
   }
+}
+
+changeStatusBarColor(Color color, Brightness iconsBrightness) {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: color,
+      statusBarIconBrightness: iconsBrightness,
+    ),
+  );
 }
 
 String getMonthAndYear(DateTime? date, {bool onlyMonth = false}) {
@@ -65,6 +76,8 @@ String getDayMonthYear(DateTime? time) {
   return '$day.$month.${time.year}';
 }
 
+showProgressIndicator() => const CircularProgressIndicator(color: greyDark, strokeWidth: 2.5);
+
 bool dialogShowing = false;
 
 void showNoConnectionDialog(BuildContext context) async {
@@ -79,5 +92,7 @@ void showNoConnectionDialog(BuildContext context) async {
 }
 
 void dismissConnectionDialog(BuildContext context) {
-  dialogShowing ? Navigator.pop(context) : null;
+  dialogShowing ? Navigator.pop(scaffoldContext(context)) : null;
 }
+
+BuildContext scaffoldContext(BuildContext context) => Scaffold.of(context).context;

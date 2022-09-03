@@ -5,7 +5,7 @@ import 'package:we_pay/presentation/screens/search/widgets/join_dialog.dart';
 class SearchResultItem extends StatelessWidget {
   const SearchResultItem({Key? key, required this.apartment}) : super(key: key);
 
-  final Apartment apartment;
+  final PublicExpense apartment;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SearchResultItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${apartment.region}, ${apartment.district}, ${apartment.street}, ${apartment.houseNumber}${apartment.flatNumber.isEmpty ? '' : ', ${apartment.flatNumber}'}',
+              apartment.name,
               style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
               overflow: TextOverflow.ellipsis,
             ),

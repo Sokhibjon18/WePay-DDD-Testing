@@ -4,13 +4,15 @@ part of 'search_bloc.dart';
 class SearchState with _$SearchState {
   const factory SearchState({
     required bool isLoading,
+    required bool firstTime,
     required bool sendingRequest,
-    required Option<Either<SearchFailure, List<Apartment>>> listOrFailure,
+    required Either<SearchFailure, UserModel>? userOrFailure,
   }) = _SearchState;
 
-  factory SearchState.initial() => _SearchState(
+  factory SearchState.initial() => const _SearchState(
         isLoading: false,
+        firstTime: true,
         sendingRequest: false,
-        listOrFailure: none(),
+        userOrFailure: null,
       );
 }

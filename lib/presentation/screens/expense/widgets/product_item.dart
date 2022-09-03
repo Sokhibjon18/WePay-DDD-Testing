@@ -5,7 +5,7 @@ import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/product_dialog.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
+import 'package:we_pay/presentation/core/functions.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({Key? key, required this.product}) : super(key: key);

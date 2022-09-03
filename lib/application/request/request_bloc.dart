@@ -16,9 +16,9 @@ class RequestBloc extends Bloc<RequestEvent, RequestState> {
   final IRequestRepository _repository;
 
   RequestBloc(this._repository) : super(RequestState.initial()) {
-    on<_SendJoinRequest>((event, emit) async {
+    on<_InviteUserTo>((event, emit) async {
       emit(state.copyWith(isLoading: true, requstFailureOrSuccess: none()));
-      final failureOrList = await _repository.sendRequestToJoin(event.apartment.uid!);
+      final failureOrList = await _repository.sendRequestToJoin(event.userId, event.publicExpense);
       emit(state.copyWith(isLoading: false, requstFailureOrSuccess: some(failureOrList)));
     });
     on<_AcceptRequest>((event, emit) async {

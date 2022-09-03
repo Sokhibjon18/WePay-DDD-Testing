@@ -21,6 +21,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$UserModel {
   String get uid => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get color => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res>;
   $Res call(
       {String uid,
+      int id,
       String name,
       int color,
       String? email,
@@ -60,6 +62,7 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
   @override
   $Res call({
     Object? uid = freezed,
+    Object? id = freezed,
     Object? name = freezed,
     Object? color = freezed,
     Object? email = freezed,
@@ -72,6 +75,10 @@ class _$UserModelCopyWithImpl<$Res> implements $UserModelCopyWith<$Res> {
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -108,6 +115,7 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @override
   $Res call(
       {String uid,
+      int id,
       String name,
       int color,
       String? email,
@@ -129,6 +137,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
+    Object? id = freezed,
     Object? name = freezed,
     Object? color = freezed,
     Object? email = freezed,
@@ -141,6 +150,10 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -174,6 +187,7 @@ class __$$_UserModelCopyWithImpl<$Res> extends _$UserModelCopyWithImpl<$Res>
 class _$_UserModel extends _UserModel {
   const _$_UserModel(
       {required this.uid,
+      required this.id,
       required this.name,
       required this.color,
       this.email,
@@ -188,6 +202,8 @@ class _$_UserModel extends _UserModel {
 
   @override
   final String uid;
+  @override
+  final int id;
   @override
   final String name;
   @override
@@ -210,7 +226,7 @@ class _$_UserModel extends _UserModel {
 
   @override
   String toString() {
-    return 'UserModel(uid: $uid, name: $name, color: $color, email: $email, notificationToken: $notificationToken, ownedApartments: $ownedApartments, serverTimeStamp: $serverTimeStamp)';
+    return 'UserModel(uid: $uid, id: $id, name: $name, color: $color, email: $email, notificationToken: $notificationToken, ownedApartments: $ownedApartments, serverTimeStamp: $serverTimeStamp)';
   }
 
   @override
@@ -219,6 +235,7 @@ class _$_UserModel extends _UserModel {
         (other.runtimeType == runtimeType &&
             other is _$_UserModel &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality().equals(other.email, email) &&
@@ -235,6 +252,7 @@ class _$_UserModel extends _UserModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(color),
       const DeepCollectionEquality().hash(email),
@@ -258,6 +276,7 @@ class _$_UserModel extends _UserModel {
 abstract class _UserModel extends UserModel {
   const factory _UserModel(
       {required final String uid,
+      required final int id,
       required final String name,
       required final int color,
       final String? email,
@@ -272,6 +291,8 @@ abstract class _UserModel extends UserModel {
 
   @override
   String get uid;
+  @override
+  int get id;
   @override
   String get name;
   @override

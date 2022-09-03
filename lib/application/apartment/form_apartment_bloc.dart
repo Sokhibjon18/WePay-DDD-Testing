@@ -22,7 +22,7 @@ part 'form_apartment_bloc.freezed.dart';
 class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
   final IApartmentRepository _repository;
 
-  StreamController<Either<ApartmentFailure, List<Apartment>>> apartmentStream =
+  StreamController<Either<ApartmentFailure, List<PublicExpense>>> apartmentStream =
       StreamController.broadcast();
   StreamController<Either<SearchFailure, List<RequestToJoin>>> requestStream =
       StreamController.broadcast();
@@ -41,20 +41,8 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
         requestStream.sink.add(event);
       });
     });
-    on<_RegionChanged>((event, emit) {
-      emit(state.copyWith(regionName: Address(event.region), creationFailure: none()));
-    });
-    on<_DistrictChanged>((event, emit) {
-      emit(state.copyWith(districtName: Address(event.district), creationFailure: none()));
-    });
-    on<_StreetNameChanged>((event, emit) {
-      emit(state.copyWith(streetName: Address(event.street), creationFailure: none()));
-    });
-    on<_HouseNumberChanged>((event, emit) {
-      emit(state.copyWith(houseNumber: HouseNumber(event.house), creationFailure: none()));
-    });
-    on<_FlatNumberChanged>((event, emit) {
-      emit(state.copyWith(flatNumber: HouseNumber(event.flat), creationFailure: none()));
+    on<_NameChanged>((event, emit) {
+      emit(state.copyWith(name: Address(event.region), creationFailure: none()));
     });
     on<_EditingApartment>((event, emit) async {
       final isOwner = await _repository.isUserOwnerOf(event.apartment);
@@ -72,25 +60,18 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
     on<_UpdateApartment>((event, emit) async {
       Either<ApartmentFailure, Unit>? failureOrSuccess;
 
-      final validateRegion = state.regionName.isValid();
-      final validateDistrict = state.districtName.isValid();
-      final validateStreet = state.streetName.isValid();
-      final validateHouseNumber = state.houseNumber.isValid();
+      final validateName = state.name.isValid();
 
-      if (validateHouseNumber && validateStreet && validateDistrict && validateRegion) {
+      if (validateName) {
         emit(state.copyWith(
           loading: true,
           creationFailure: none(),
         ));
 
         failureOrSuccess = await _repository.update(
-          Apartment(
+          PublicExpense(
             uid: event.uid,
-            region: state.regionName.getRight(),
-            district: state.districtName.getRight(),
-            street: state.streetName.getRight(),
-            houseNumber: state.houseNumber.getRight(),
-            flatNumber: state.flatNumber.isValid() ? state.flatNumber.getRight() : '',
+            name: state.name.getRight(),
           ),
         );
       }
@@ -104,25 +85,16 @@ class FormApartmentBloc extends Bloc<FormApartmentEvent, FormApartmentState> {
     on<_CreateApartment>((event, emit) async {
       Either<ApartmentFailure, Unit>? failureOrSuccess;
 
-      final validateRegion = state.regionName.isValid();
-      final validateDistrict = state.districtName.isValid();
-      final validateStreet = state.streetName.isValid();
-      final validateHouseNumber = state.houseNumber.isValid();
+      final validateName = state.name.isValid();
 
-      if (validateHouseNumber && validateStreet && validateDistrict && validateRegion) {
+      if (validateName) {
         emit(state.copyWith(
           loading: true,
           creationFailure: none(),
         ));
 
         failureOrSuccess = await _repository.create(
-          Apartment(
-            region: state.regionName.getRight(),
-            district: state.districtName.getRight(),
-            street: state.streetName.getRight(),
-            houseNumber: state.houseNumber.getRight(),
-            flatNumber: state.flatNumber.isValid() ? state.flatNumber.getRight() : '',
-          ),
+          PublicExpense(name: state.name.getRight()),
         );
       }
 

@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class JoinDialog extends StatelessWidget {
   const JoinDialog({Key? key, required this.apartment}) : super(key: key);
 
-  final Apartment apartment;
+  final PublicExpense apartment;
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class JoinDialog extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(32),
                 child: Text(
-                  '${apartment.region}, ${apartment.district}, ${apartment.street}, ${apartment.houseNumber}${apartment.flatNumber.isEmpty ? '' : ', ${apartment.flatNumber}'}',
+                  apartment.name,
                   style: const TextStyle(fontSize: 16),
                   textAlign: TextAlign.center,
                 ),
@@ -79,7 +79,7 @@ class JoinDialog extends StatelessWidget {
                     child: GestureDetector(
                       onTap: () {
                         Navigator.pop(context);
-                        context.read<RequestBloc>().add(RequestEvent.sendJoinRequest(apartment));
+                        // context.read<RequestBloc>().add(RequestEvent.inviteUserTo(apartment));
                       },
                       child: const SizedBox(
                         height: 40,

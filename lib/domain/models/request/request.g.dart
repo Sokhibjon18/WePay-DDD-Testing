@@ -11,8 +11,8 @@ _$_RequestToJoin _$$_RequestToJoinFromJson(Map<String, dynamic> json) =>
       userId: json['userId'] as String,
       uid: json['uid'] as String,
       email: json['email'] as String,
-      apartmentId: json['apartmentId'] as String,
-      apartmentName: json['apartmentName'] as String,
+      publicExpenseId: json['publicExpenseId'] as String,
+      publicExpenseName: json['publicExpenseName'] as String,
     );
 
 Map<String, dynamic> _$$_RequestToJoinToJson(_$_RequestToJoin instance) =>
@@ -20,6 +20,6 @@ Map<String, dynamic> _$$_RequestToJoinToJson(_$_RequestToJoin instance) =>
       'userId': instance.userId,
       'uid': instance.uid,
       'email': instance.email,
-      'apartmentId': instance.apartmentId,
-      'apartmentName': instance.apartmentName,
+      'publicExpenseId': instance.publicExpenseId,
+      'publicExpenseName': instance.publicExpenseName,
     };

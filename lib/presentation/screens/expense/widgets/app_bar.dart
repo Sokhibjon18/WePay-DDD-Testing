@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/screens/expense/date_picker/date_picker.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
+import 'package:we_pay/presentation/core/functions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 AppBar expencePageAppBar(BuildContext context, String apartmentName) => AppBar(

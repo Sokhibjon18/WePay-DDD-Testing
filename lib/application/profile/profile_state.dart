@@ -15,7 +15,7 @@ class ProfileState with _$ProfileState {
   factory ProfileState.initial() => ProfileState(
         email: EmailAddress(''),
         name: Name(''),
-        color: userColors.first.value,
+        color: userChartColors.first.value,
         showErrorMessage: false,
         isLoading: false,
         failureOrSuccessOption: none(),

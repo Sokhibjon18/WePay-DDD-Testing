@@ -11,8 +11,8 @@ abstract class RequestToJoin implements _$RequestToJoin {
     required String userId,
     required String uid,
     required String email,
-    required String apartmentId,
-    required String apartmentName,
+    required String publicExpenseId,
+    required String publicExpenseName,
   }) = _RequestToJoin;
 
   factory RequestToJoin.fromJson(Map<String, dynamic> json) => _$RequestToJoinFromJson(json);

@@ -8,12 +8,12 @@ import 'package:we_pay/domain/models/roommates.dart';
 import 'package:we_pay/domain/search/search_failure.dart';
 
 abstract class IApartmentRepository {
-  Stream<Either<ApartmentFailure, List<Apartment>>> watchAll();
+  Stream<Either<ApartmentFailure, List<PublicExpense>>> watchAll();
   Stream<Either<SearchFailure, List<RequestToJoin>>> watchRequests();
-  Future<List<Roommates>> getApartmentWithUsers(List<Apartment> apartmentIds);
-  Future<List<CurrentDateExpense>> getCurrentMonthExpences(List<Apartment> apartments);
-  Future<Either<ApartmentFailure, Unit>> create(Apartment apartment);
-  Future<Either<ValueFailure, Apartment>> isUserOwnerOf(Apartment apartment);
-  Future<Either<ApartmentFailure, Unit>> update(Apartment apartment);
-  Future<Either<ApartmentFailure, Unit>> delete(Apartment apartment);
+  Future<List<Roommates>> getApartmentWithUsers(List<PublicExpense> apartmentIds);
+  Future<List<CurrentDateExpense>> getCurrentMonthExpences(List<PublicExpense> apartments);
+  Future<Either<ApartmentFailure, Unit>> create(PublicExpense apartment);
+  Future<Either<ValueFailure, PublicExpense>> isUserOwnerOf(PublicExpense apartment);
+  Future<Either<ApartmentFailure, Unit>> update(PublicExpense apartment);
+  Future<Either<ApartmentFailure, Unit>> delete(PublicExpense apartment);
 }

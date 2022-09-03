@@ -4,24 +4,15 @@ part 'apartment.freezed.dart';
 part 'apartment.g.dart';
 
 @freezed
-abstract class Apartment implements _$Apartment {
-  const Apartment._();
+abstract class PublicExpense implements _$PublicExpense {
+  const PublicExpense._();
 
-  const factory Apartment({
-    String? uid,
+  const factory PublicExpense({
+    @Default('') String uid,
     String? ownerId,
-    required String region,
-    required String district,
-    required String street,
-    required String houseNumber,
-    String? currentMonthExpences,
-    String? roommates,
-    @Default('') String flatNumber,
+    @Default('') String name,
     @Default([]) List<String> users,
   }) = _Apartment;
 
-  factory Apartment.fromJson(Map<String, dynamic> json) => _$ApartmentFromJson(json);
-
-  String getFullAddress() =>
-      '$region, $district, $street, $houseNumber${flatNumber.isEmpty ? '' : ', $flatNumber'}';
+  factory PublicExpense.fromJson(Map<String, dynamic> json) => _$PublicExpenseFromJson(json);
 }

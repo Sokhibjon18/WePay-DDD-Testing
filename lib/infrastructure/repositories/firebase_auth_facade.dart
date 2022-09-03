@@ -47,6 +47,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       );
       await saveOrUpdateUserInFirestore(name: name.getRight(), email: email.getRight());
       await updateNotificationToken();
+      await saveEmailAndPassword(email.getRight(), password.getRight());
       return right(unit);
     } on FirebaseException catch (e) {
       return e.code == 'email-already-in-use'
@@ -108,16 +109,24 @@ class FirebaseAuthFacade implements IAuthFacade {
   Future<void> saveOrUpdateUserInFirestore({String? name, String? email}) async {
     try {
       String uid = _auth.currentUser!.uid;
+      int id = 0;
       final user = await _firestore.getUser(uid);
       UserModel userModel;
       if (user.exists) {
         userModel = UserModel.fromJson(user.data()!);
         await _firestore.updateUser(userModel);
+        id = userModel.id;
       } else {
-        final randomPosition = math.Random().nextInt(6) + 1;
-        final color = userColors[randomPosition].value;
+        final randomPosition = math.Random().nextInt(7);
+        final color = userChartColors[randomPosition].value;
+        final currentDate = DateTime.now();
+        id = (math.Random().nextInt(1000) * 1000000) +
+            (currentDate.day * 10000) +
+            (currentDate.month * 100) +
+            (currentDate.year % 100);
         userModel = UserModel(
           uid: uid,
+          id: id,
           name: name!,
           email: email,
           color: color,
@@ -125,6 +134,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         );
         await _firestore.setUser(userModel);
       }
+      _sharedPreferences.setInt('id', id);
     } on FirebaseException catch (e) {
       log(e.code);
     } catch (e) {

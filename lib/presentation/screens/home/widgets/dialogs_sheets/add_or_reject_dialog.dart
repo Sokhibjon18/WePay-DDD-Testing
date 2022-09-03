@@ -42,7 +42,7 @@ class AddOrRejectDialog extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(32),
                 child: Text(
-                  request.apartmentName,
+                  request.publicExpenseName,
                   style: const TextStyle(fontSize: 16),
                   textAlign: TextAlign.center,
                 ),

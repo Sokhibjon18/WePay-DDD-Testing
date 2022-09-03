@@ -20,7 +20,7 @@ import 'application/product/product_actor/product_actor_bloc.dart' as _i18;
 import 'application/product/product_form/product_form_bloc.dart' as _i19;
 import 'application/profile/profile_bloc.dart' as _i20;
 import 'application/request/request_bloc.dart' as _i21;
-import 'application/search/search_bloc.dart' as _i22;
+import 'application/search/search_user/search_bloc.dart' as _i22;
 import 'application/sign_in_checker/sign_in_checker_bloc.dart' as _i27;
 import 'domain/apartment/i_apartment_repository.dart' as _i8;
 import 'domain/auth/i_auth_facade.dart' as _i25;

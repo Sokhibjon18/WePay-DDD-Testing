@@ -48,16 +48,17 @@ extension FirebaseFirestoreX on FirebaseFirestore {
         .then((value) => value.data()?['color']);
   }
 
-  DocumentReference<Map<String, dynamic>> apartment(String apartmentId) {
-    return getIt<FirebaseFirestore>().collection('apartment').doc(apartmentId);
+  DocumentReference<Map<String, dynamic>> publicExpense(String apartmentId) {
+    return getIt<FirebaseFirestore>().collection('expensesInfo').doc(apartmentId);
   }
 
-  DocumentReference<Map<String, dynamic>> getRequestReference(String ownerId, String uid) {
+  DocumentReference<Map<String, dynamic>> getRequestReference(
+      String ownerId, String publicExpenseId) {
     return getIt<FirebaseFirestore>()
         .collection('user')
         .doc(ownerId)
         .collection('requests')
-        .doc(uid);
+        .doc(publicExpenseId);
   }
 
   DocumentReference<Map<String, dynamic>> productDirectory({
@@ -65,7 +66,7 @@ extension FirebaseFirestoreX on FirebaseFirestore {
     required String productId,
   }) {
     return getIt<FirebaseFirestore>()
-        .collection('apartment')
+        .collection('expensesInfo')
         .doc(apartmentId)
         .collection('expenses')
         .doc(productId);
@@ -78,7 +79,7 @@ extension FirebaseFirestoreX on FirebaseFirestore {
     Timestamp startDate = Timestamp.fromDate(DateTime(date.year, date.month));
     Timestamp endDate = Timestamp.fromDate(DateTime(date.year, date.month + 1));
     return getIt<FirebaseFirestore>()
-        .collection('apartment')
+        .collection('expensesInfo')
         .doc(apartmentId)
         .collection('expenses')
         .where('date', isGreaterThanOrEqualTo: startDate, isLessThan: endDate)
@@ -86,18 +87,28 @@ extension FirebaseFirestoreX on FirebaseFirestore {
         .get();
   }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> apartmentExpenses({
+  Stream<QuerySnapshot<Map<String, dynamic>>> publicExpenses({
     required String apartmentId,
     required DateTime date,
   }) {
     Timestamp startDate = Timestamp.fromDate(DateTime(date.year, date.month));
     Timestamp endDate = Timestamp.fromDate(DateTime(date.year, date.month + 1));
     return getIt<FirebaseFirestore>()
-        .collection('apartment')
+        .collection('expensesInfo')
         .doc(apartmentId)
         .collection('expenses')
         .where('date', isGreaterThanOrEqualTo: startDate, isLessThan: endDate)
         .orderBy('date', descending: true)
         .snapshots();
+  }
+
+  Future<bool> doesUserRequested(String userId, String publicExpenseId) async {
+    return await getIt<FirebaseFirestore>()
+        .collection('user')
+        .doc(userId)
+        .collection('requests')
+        .doc(publicExpenseId)
+        .get()
+        .then((value) => value.exists);
   }
 }

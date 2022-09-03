@@ -3,7 +3,7 @@ import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/screens/expense/date_picker/product_date_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
+import 'package:we_pay/presentation/core/functions.dart';
 
 class DateTextFormField extends StatefulWidget {
   const DateTextFormField({Key? key}) : super(key: key);
@@ -51,7 +51,7 @@ class _DateTextFormFieldState extends State<DateTextFormField> {
           borderSide: BorderSide(width: 1, color: Colors.grey[100]!),
         ),
         disabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(width: 1, color: grey),
+          borderSide: BorderSide(width: 1, color: greyLight),
         ),
       ),
     );

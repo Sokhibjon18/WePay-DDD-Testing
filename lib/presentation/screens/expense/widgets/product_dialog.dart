@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
+import 'package:we_pay/presentation/core/functions.dart';
 
 class ProductDialog extends StatelessWidget {
   const ProductDialog({Key? key, required this.product}) : super(key: key);

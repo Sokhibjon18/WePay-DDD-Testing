@@ -23,8 +23,8 @@ mixin _$RequestToJoin {
   String get userId => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  String get apartmentId => throw _privateConstructorUsedError;
-  String get apartmentName => throw _privateConstructorUsedError;
+  String get publicExpenseId => throw _privateConstructorUsedError;
+  String get publicExpenseName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,8 +41,8 @@ abstract class $RequestToJoinCopyWith<$Res> {
       {String userId,
       String uid,
       String email,
-      String apartmentId,
-      String apartmentName});
+      String publicExpenseId,
+      String publicExpenseName});
 }
 
 /// @nodoc
@@ -59,8 +59,8 @@ class _$RequestToJoinCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? uid = freezed,
     Object? email = freezed,
-    Object? apartmentId = freezed,
-    Object? apartmentName = freezed,
+    Object? publicExpenseId = freezed,
+    Object? publicExpenseName = freezed,
   }) {
     return _then(_value.copyWith(
       userId: userId == freezed
@@ -75,13 +75,13 @@ class _$RequestToJoinCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      apartmentId: apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId: publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
-      apartmentName: apartmentName == freezed
-          ? _value.apartmentName
-          : apartmentName // ignore: cast_nullable_to_non_nullable
+      publicExpenseName: publicExpenseName == freezed
+          ? _value.publicExpenseName
+          : publicExpenseName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -98,8 +98,8 @@ abstract class _$$_RequestToJoinCopyWith<$Res>
       {String userId,
       String uid,
       String email,
-      String apartmentId,
-      String apartmentName});
+      String publicExpenseId,
+      String publicExpenseName});
 }
 
 /// @nodoc
@@ -118,8 +118,8 @@ class __$$_RequestToJoinCopyWithImpl<$Res>
     Object? userId = freezed,
     Object? uid = freezed,
     Object? email = freezed,
-    Object? apartmentId = freezed,
-    Object? apartmentName = freezed,
+    Object? publicExpenseId = freezed,
+    Object? publicExpenseName = freezed,
   }) {
     return _then(_$_RequestToJoin(
       userId: userId == freezed
@@ -134,13 +134,13 @@ class __$$_RequestToJoinCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      apartmentId: apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId: publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
-      apartmentName: apartmentName == freezed
-          ? _value.apartmentName
-          : apartmentName // ignore: cast_nullable_to_non_nullable
+      publicExpenseName: publicExpenseName == freezed
+          ? _value.publicExpenseName
+          : publicExpenseName // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -153,8 +153,8 @@ class _$_RequestToJoin extends _RequestToJoin {
       {required this.userId,
       required this.uid,
       required this.email,
-      required this.apartmentId,
-      required this.apartmentName})
+      required this.publicExpenseId,
+      required this.publicExpenseName})
       : super._();
 
   factory _$_RequestToJoin.fromJson(Map<String, dynamic> json) =>
@@ -167,13 +167,13 @@ class _$_RequestToJoin extends _RequestToJoin {
   @override
   final String email;
   @override
-  final String apartmentId;
+  final String publicExpenseId;
   @override
-  final String apartmentName;
+  final String publicExpenseName;
 
   @override
   String toString() {
-    return 'RequestToJoin(userId: $userId, uid: $uid, email: $email, apartmentId: $apartmentId, apartmentName: $apartmentName)';
+    return 'RequestToJoin(userId: $userId, uid: $uid, email: $email, publicExpenseId: $publicExpenseId, publicExpenseName: $publicExpenseName)';
   }
 
   @override
@@ -185,9 +185,9 @@ class _$_RequestToJoin extends _RequestToJoin {
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId) &&
+                .equals(other.publicExpenseId, publicExpenseId) &&
             const DeepCollectionEquality()
-                .equals(other.apartmentName, apartmentName));
+                .equals(other.publicExpenseName, publicExpenseName));
   }
 
   @JsonKey(ignore: true)
@@ -197,8 +197,8 @@ class _$_RequestToJoin extends _RequestToJoin {
       const DeepCollectionEquality().hash(userId),
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(apartmentId),
-      const DeepCollectionEquality().hash(apartmentName));
+      const DeepCollectionEquality().hash(publicExpenseId),
+      const DeepCollectionEquality().hash(publicExpenseName));
 
   @JsonKey(ignore: true)
   @override
@@ -218,8 +218,8 @@ abstract class _RequestToJoin extends RequestToJoin {
       {required final String userId,
       required final String uid,
       required final String email,
-      required final String apartmentId,
-      required final String apartmentName}) = _$_RequestToJoin;
+      required final String publicExpenseId,
+      required final String publicExpenseName}) = _$_RequestToJoin;
   const _RequestToJoin._() : super._();
 
   factory _RequestToJoin.fromJson(Map<String, dynamic> json) =
@@ -232,9 +232,9 @@ abstract class _RequestToJoin extends RequestToJoin {
   @override
   String get email;
   @override
-  String get apartmentId;
+  String get publicExpenseId;
   @override
-  String get apartmentName;
+  String get publicExpenseName;
   @override
   @JsonKey(ignore: true)
   _$$_RequestToJoinCopyWith<_$_RequestToJoin> get copyWith =>

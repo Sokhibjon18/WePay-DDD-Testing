@@ -1,9 +1,8 @@
-import 'dart:developer';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +12,7 @@ import 'package:we_pay/presentation/core/my_app.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await setNotificationConfig();
   await MobileAds.instance.initialize();

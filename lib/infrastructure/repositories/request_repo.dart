@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
@@ -17,7 +19,7 @@ class RequestRepository implements IRequestRepository {
   RequestRepository(this._firestore, this._auth);
 
   Future<QuerySnapshot<Map<String, dynamic>>> doesUserHaveJoinRequest(
-    Apartment apartment,
+    PublicExpense apartment,
     String currentUserId,
   ) async {
     return await _firestore
@@ -25,32 +27,41 @@ class RequestRepository implements IRequestRepository {
         .doc(apartment.ownerId)
         .collection('requests')
         .where('userId', isEqualTo: currentUserId)
-        .where('apartmentName', isEqualTo: apartment.getFullAddress())
+        .where('apartmentName', isEqualTo: apartment)
         .get();
   }
 
+  // Future<bool> doesUserRequestedToJoin(String publicApartmentId) async {
+  //   final expenseReference = _firestore.collection('expensesInfo').doc(publicApartmentId);
+
+  //   return false;
+  // }
+
   @override
-  Future<Either<RequestFailure, RequestOperations>> sendRequestToJoin(String apartmentId) async {
+  Future<Either<RequestFailure, RequestOperations>> sendRequestToJoin(
+    String userId,
+    PublicExpense publicExpense,
+  ) async {
     try {
-      final apartmentFirestore = await _firestore.apartment(apartmentId).get();
-      final apartment = Apartment.fromJson(apartmentFirestore.data()!);
-      final currentUserId = _auth.currentUser!.uid;
       final currentUserEmail = _auth.currentUser!.email!;
-      var snapshot = await doesUserHaveJoinRequest(apartment, currentUserId);
-      if (apartment.users.contains(_auth.currentUser!.uid)) {
-        return left(const RequestFailure.userAlreadyAdded());
-      } else if (snapshot.docs.isNotEmpty) {
+
+      final doesUserRequested = await _firestore.doesUserRequested(userId, publicExpense.uid);
+      final isUserInThisApartment = publicExpense.users.contains(userId);
+
+      if (doesUserRequested) {
         return left(const RequestFailure.haveRequest());
+      } else if (isUserInThisApartment) {
+        return left(const RequestFailure.userAlreadyAdded());
       } else {
-        final uid = const Uuid().v4();
+        log('request sent');
         final request = RequestToJoin(
-          uid: uid,
-          userId: currentUserId,
+          uid: const Uuid().v4(),
+          userId: userId,
           email: currentUserEmail,
-          apartmentId: apartment.uid!,
-          apartmentName: apartment.getFullAddress(),
+          publicExpenseId: publicExpense.uid,
+          publicExpenseName: publicExpense.name,
         );
-        await _firestore.getRequestReference(apartment.ownerId!, uid).set(request.toJson());
+        await _firestore.getRequestReference(userId, publicExpense.uid).set(request.toJson());
         return right(RequestOperations.sent);
       }
     } on FirebaseException catch (e) {
@@ -64,13 +75,13 @@ class RequestRepository implements IRequestRepository {
   Future<Either<RequestFailure, RequestOperations>> acceptRequest(RequestToJoin request) async {
     try {
       final currentUserId = _auth.currentUser!.uid;
-      await _firestore.collection('user').doc(request.userId).update({
-        'ownedApartments': FieldValue.arrayUnion([request.apartmentId])
+      await _firestore.collection('user').doc(currentUserId).update({
+        'ownedApartments': FieldValue.arrayUnion([request.publicExpenseId])
       });
-      await _firestore.apartment(request.apartmentId).update({
-        'users': FieldValue.arrayUnion([request.userId])
+      await _firestore.publicExpense(request.publicExpenseId).update({
+        'users': FieldValue.arrayUnion([currentUserId])
       });
-      await _firestore.getRequestReference(currentUserId, request.uid).delete();
+      await _firestore.getRequestReference(currentUserId, request.publicExpenseId).delete();
       return right(RequestOperations.added);
     } on FirebaseException catch (e) {
       return left(RequestFailure.server(errorMessage: e.code));

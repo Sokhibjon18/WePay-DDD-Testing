@@ -11,7 +11,7 @@ import 'package:we_pay/domain/models/product/product.dart';
 import 'package:we_pay/domain/product/i_product_repository.dart';
 import 'package:we_pay/domain/product/product_failure.dart';
 import 'package:we_pay/domain/product/value_objects.dart';
-import 'package:we_pay/presentation/screens/utils/functions.dart';
+import 'package:we_pay/presentation/core/functions.dart';
 
 part 'product_form_event.dart';
 part 'product_form_state.dart';

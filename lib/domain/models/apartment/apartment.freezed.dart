@@ -14,103 +14,59 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Apartment _$ApartmentFromJson(Map<String, dynamic> json) {
+PublicExpense _$PublicExpenseFromJson(Map<String, dynamic> json) {
   return _Apartment.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Apartment {
-  String? get uid => throw _privateConstructorUsedError;
+mixin _$PublicExpense {
+  String get uid => throw _privateConstructorUsedError;
   String? get ownerId => throw _privateConstructorUsedError;
-  String get region => throw _privateConstructorUsedError;
-  String get district => throw _privateConstructorUsedError;
-  String get street => throw _privateConstructorUsedError;
-  String get houseNumber => throw _privateConstructorUsedError;
-  String? get currentMonthExpences => throw _privateConstructorUsedError;
-  String? get roommates => throw _privateConstructorUsedError;
-  String get flatNumber => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   List<String> get users => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ApartmentCopyWith<Apartment> get copyWith =>
+  $PublicExpenseCopyWith<PublicExpense> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ApartmentCopyWith<$Res> {
-  factory $ApartmentCopyWith(Apartment value, $Res Function(Apartment) then) =
-      _$ApartmentCopyWithImpl<$Res>;
-  $Res call(
-      {String? uid,
-      String? ownerId,
-      String region,
-      String district,
-      String street,
-      String houseNumber,
-      String? currentMonthExpences,
-      String? roommates,
-      String flatNumber,
-      List<String> users});
+abstract class $PublicExpenseCopyWith<$Res> {
+  factory $PublicExpenseCopyWith(
+          PublicExpense value, $Res Function(PublicExpense) then) =
+      _$PublicExpenseCopyWithImpl<$Res>;
+  $Res call({String uid, String? ownerId, String name, List<String> users});
 }
 
 /// @nodoc
-class _$ApartmentCopyWithImpl<$Res> implements $ApartmentCopyWith<$Res> {
-  _$ApartmentCopyWithImpl(this._value, this._then);
+class _$PublicExpenseCopyWithImpl<$Res>
+    implements $PublicExpenseCopyWith<$Res> {
+  _$PublicExpenseCopyWithImpl(this._value, this._then);
 
-  final Apartment _value;
+  final PublicExpense _value;
   // ignore: unused_field
-  final $Res Function(Apartment) _then;
+  final $Res Function(PublicExpense) _then;
 
   @override
   $Res call({
     Object? uid = freezed,
     Object? ownerId = freezed,
-    Object? region = freezed,
-    Object? district = freezed,
-    Object? street = freezed,
-    Object? houseNumber = freezed,
-    Object? currentMonthExpences = freezed,
-    Object? roommates = freezed,
-    Object? flatNumber = freezed,
+    Object? name = freezed,
     Object? users = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ownerId: ownerId == freezed
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
-      region: region == freezed
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String,
-      district: district == freezed
-          ? _value.district
-          : district // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: street == freezed
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
-      houseNumber: houseNumber == freezed
-          ? _value.houseNumber
-          : houseNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      currentMonthExpences: currentMonthExpences == freezed
-          ? _value.currentMonthExpences
-          : currentMonthExpences // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roommates: roommates == freezed
-          ? _value.roommates
-          : roommates // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flatNumber: flatNumber == freezed
-          ? _value.flatNumber
-          : flatNumber // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       users: users == freezed
           ? _value.users
@@ -121,26 +77,17 @@ class _$ApartmentCopyWithImpl<$Res> implements $ApartmentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_ApartmentCopyWith<$Res> implements $ApartmentCopyWith<$Res> {
+abstract class _$$_ApartmentCopyWith<$Res>
+    implements $PublicExpenseCopyWith<$Res> {
   factory _$$_ApartmentCopyWith(
           _$_Apartment value, $Res Function(_$_Apartment) then) =
       __$$_ApartmentCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String? uid,
-      String? ownerId,
-      String region,
-      String district,
-      String street,
-      String houseNumber,
-      String? currentMonthExpences,
-      String? roommates,
-      String flatNumber,
-      List<String> users});
+  $Res call({String uid, String? ownerId, String name, List<String> users});
 }
 
 /// @nodoc
-class __$$_ApartmentCopyWithImpl<$Res> extends _$ApartmentCopyWithImpl<$Res>
+class __$$_ApartmentCopyWithImpl<$Res> extends _$PublicExpenseCopyWithImpl<$Res>
     implements _$$_ApartmentCopyWith<$Res> {
   __$$_ApartmentCopyWithImpl(
       _$_Apartment _value, $Res Function(_$_Apartment) _then)
@@ -153,51 +100,21 @@ class __$$_ApartmentCopyWithImpl<$Res> extends _$ApartmentCopyWithImpl<$Res>
   $Res call({
     Object? uid = freezed,
     Object? ownerId = freezed,
-    Object? region = freezed,
-    Object? district = freezed,
-    Object? street = freezed,
-    Object? houseNumber = freezed,
-    Object? currentMonthExpences = freezed,
-    Object? roommates = freezed,
-    Object? flatNumber = freezed,
+    Object? name = freezed,
     Object? users = freezed,
   }) {
     return _then(_$_Apartment(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ownerId: ownerId == freezed
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
-      region: region == freezed
-          ? _value.region
-          : region // ignore: cast_nullable_to_non_nullable
-              as String,
-      district: district == freezed
-          ? _value.district
-          : district // ignore: cast_nullable_to_non_nullable
-              as String,
-      street: street == freezed
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
-      houseNumber: houseNumber == freezed
-          ? _value.houseNumber
-          : houseNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      currentMonthExpences: currentMonthExpences == freezed
-          ? _value.currentMonthExpences
-          : currentMonthExpences // ignore: cast_nullable_to_non_nullable
-              as String?,
-      roommates: roommates == freezed
-          ? _value.roommates
-          : roommates // ignore: cast_nullable_to_non_nullable
-              as String?,
-      flatNumber: flatNumber == freezed
-          ? _value.flatNumber
-          : flatNumber // ignore: cast_nullable_to_non_nullable
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       users: users == freezed
           ? _value._users
@@ -211,15 +128,9 @@ class __$$_ApartmentCopyWithImpl<$Res> extends _$ApartmentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Apartment extends _Apartment {
   const _$_Apartment(
-      {this.uid,
+      {this.uid = '',
       this.ownerId,
-      required this.region,
-      required this.district,
-      required this.street,
-      required this.houseNumber,
-      this.currentMonthExpences,
-      this.roommates,
-      this.flatNumber = '',
+      this.name = '',
       final List<String> users = const []})
       : _users = users,
         super._();
@@ -228,24 +139,13 @@ class _$_Apartment extends _Apartment {
       _$$_ApartmentFromJson(json);
 
   @override
-  final String? uid;
+  @JsonKey()
+  final String uid;
   @override
   final String? ownerId;
   @override
-  final String region;
-  @override
-  final String district;
-  @override
-  final String street;
-  @override
-  final String houseNumber;
-  @override
-  final String? currentMonthExpences;
-  @override
-  final String? roommates;
-  @override
   @JsonKey()
-  final String flatNumber;
+  final String name;
   final List<String> _users;
   @override
   @JsonKey()
@@ -256,7 +156,7 @@ class _$_Apartment extends _Apartment {
 
   @override
   String toString() {
-    return 'Apartment(uid: $uid, ownerId: $ownerId, region: $region, district: $district, street: $street, houseNumber: $houseNumber, currentMonthExpences: $currentMonthExpences, roommates: $roommates, flatNumber: $flatNumber, users: $users)';
+    return 'PublicExpense(uid: $uid, ownerId: $ownerId, name: $name, users: $users)';
   }
 
   @override
@@ -266,16 +166,7 @@ class _$_Apartment extends _Apartment {
             other is _$_Apartment &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.ownerId, ownerId) &&
-            const DeepCollectionEquality().equals(other.region, region) &&
-            const DeepCollectionEquality().equals(other.district, district) &&
-            const DeepCollectionEquality().equals(other.street, street) &&
-            const DeepCollectionEquality()
-                .equals(other.houseNumber, houseNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.currentMonthExpences, currentMonthExpences) &&
-            const DeepCollectionEquality().equals(other.roommates, roommates) &&
-            const DeepCollectionEquality()
-                .equals(other.flatNumber, flatNumber) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
 
@@ -285,13 +176,7 @@ class _$_Apartment extends _Apartment {
       runtimeType,
       const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(ownerId),
-      const DeepCollectionEquality().hash(region),
-      const DeepCollectionEquality().hash(district),
-      const DeepCollectionEquality().hash(street),
-      const DeepCollectionEquality().hash(houseNumber),
-      const DeepCollectionEquality().hash(currentMonthExpences),
-      const DeepCollectionEquality().hash(roommates),
-      const DeepCollectionEquality().hash(flatNumber),
+      const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
@@ -307,17 +192,11 @@ class _$_Apartment extends _Apartment {
   }
 }
 
-abstract class _Apartment extends Apartment {
+abstract class _Apartment extends PublicExpense {
   const factory _Apartment(
-      {final String? uid,
+      {final String uid,
       final String? ownerId,
-      required final String region,
-      required final String district,
-      required final String street,
-      required final String houseNumber,
-      final String? currentMonthExpences,
-      final String? roommates,
-      final String flatNumber,
+      final String name,
       final List<String> users}) = _$_Apartment;
   const _Apartment._() : super._();
 
@@ -325,23 +204,11 @@ abstract class _Apartment extends Apartment {
       _$_Apartment.fromJson;
 
   @override
-  String? get uid;
+  String get uid;
   @override
   String? get ownerId;
   @override
-  String get region;
-  @override
-  String get district;
-  @override
-  String get street;
-  @override
-  String get houseNumber;
-  @override
-  String? get currentMonthExpences;
-  @override
-  String? get roommates;
-  @override
-  String get flatNumber;
+  String get name;
   @override
   List<String> get users;
   @override

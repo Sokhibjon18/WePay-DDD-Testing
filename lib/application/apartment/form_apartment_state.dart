@@ -3,24 +3,16 @@ part of 'form_apartment_bloc.dart';
 @freezed
 class FormApartmentState with _$FormApartmentState {
   const factory FormApartmentState({
-    required Address regionName,
-    required Address districtName,
-    required Address streetName,
-    required HouseNumber houseNumber,
-    required HouseNumber flatNumber,
+    required Address name,
     required bool loading,
     required bool showErrorMessage,
     required Option<Either<ApartmentFailure, Unit>> creationFailure,
-    required Option<Either<ValueFailure, Apartment>> editOptions,
+    required Option<Either<ValueFailure, PublicExpense>> editOptions,
     required Option<Either<ApartmentFailure, Unit>> deleteOption,
   }) = _AddingApartmentState;
 
   factory FormApartmentState.initial() => FormApartmentState(
-        regionName: Address(''),
-        districtName: Address(''),
-        streetName: Address(''),
-        houseNumber: HouseNumber(''),
-        flatNumber: HouseNumber(''),
+        name: Address(''),
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),
@@ -28,12 +20,8 @@ class FormApartmentState with _$FormApartmentState {
         deleteOption: none(),
       );
 
-  factory FormApartmentState.edit(Apartment apartment) => FormApartmentState(
-        regionName: Address(apartment.region),
-        districtName: Address(apartment.district),
-        streetName: Address(apartment.street),
-        houseNumber: HouseNumber(apartment.houseNumber),
-        flatNumber: HouseNumber(apartment.flatNumber),
+  factory FormApartmentState.edit(PublicExpense apartment) => FormApartmentState(
+        name: Address(apartment.name),
         loading: false,
         showErrorMessage: false,
         creationFailure: none(),

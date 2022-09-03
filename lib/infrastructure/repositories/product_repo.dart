@@ -26,7 +26,7 @@ class ProductRepository implements IProductRepository {
   @override
   Stream<Either<ProductFailure, List<Product>>> watchAllProductInApartment(
       String apartmentId, DateTime date) async* {
-    yield* _firestore.apartmentExpenses(apartmentId: apartmentId, date: date).map((snapshot) {
+    yield* _firestore.publicExpenses(apartmentId: apartmentId, date: date).map((snapshot) {
       final productList =
           snapshot.docs.map((e) => ProductDto.fromJson(e.data()).toDomain()).toList();
       return right<ProductFailure, List<Product>>(productList);

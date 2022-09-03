@@ -21,7 +21,7 @@ import 'package:we_pay/presentation/screens/expense/widgets/total_expenses.dart'
 class ExpensePage extends StatefulWidget {
   const ExpensePage({Key? key, required this.apartment}) : super(key: key);
 
-  final Apartment apartment;
+  final PublicExpense apartment;
 
   @override
   State<ExpensePage> createState() => ExpensePageState();
@@ -46,7 +46,7 @@ class ExpensePageState extends State<ExpensePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: expencePageAppBar(context, widget.apartment.getFullAddress()),
+      appBar: expencePageAppBar(context, widget.apartment.name),
       body: BlocListener<ProductFormBloc, ProductFormState>(
         listener: (context, state) {
           state.creationOption.fold(
@@ -125,7 +125,7 @@ class ExpensePageState extends State<ExpensePage> {
               FloatingActionButton(
                 child: const Icon(Icons.calculate),
                 onPressed: () {
-                  context.router.push(DebtorsRoute(products: products));
+                  // context.router.push(DebtorsRoute(products: products));
                 },
               ),
               const SizedBox(height: 8),

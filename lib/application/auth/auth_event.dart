@@ -4,8 +4,6 @@ part of 'auth_bloc.dart';
 class AuthEvent with _$AuthEvent {
   const factory AuthEvent.emailChanged(String email) = EmailChanged;
   const factory AuthEvent.passwordChanged(String password) = PasswordChanged;
-  const factory AuthEvent.repeatedPasswordChanged(String repeatedPassword) =
-      RepeatedPasswordChanged;
   const factory AuthEvent.nameChanged(String name) = NameChanged;
   const factory AuthEvent.registerWithEmailAndPassword() = ResigisterWithEmailAndPassword;
   const factory AuthEvent.signInWithEmailAndPassword() = SignInWithEmailAndPassword;

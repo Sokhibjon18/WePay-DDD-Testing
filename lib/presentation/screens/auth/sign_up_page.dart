@@ -1,11 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:we_pay/application/auth/auth_bloc.dart';
+import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/screens/auth/forms/sign_up_form.dart';
-import 'package:we_pay/presentation/screens/auth/widget/simple_btn.dart';
-import 'package:we_pay/presentation/screens/auth/widget/reusables.dart';
-import 'package:we_pay/presentation/router/router.gr.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:we_pay/presentation/screens/auth/widget/header.dart';
+import 'package:we_pay/presentation/screens/auth/widget/sign_up_btns.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -13,94 +10,24 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(32.0),
-          constraints: BoxConstraints(
-            minHeight: MediaQuery.of(context).size.height,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              const Text(
-                'Create Account',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-              ),
-              const Text(
-                'Connect with your Friends Today!',
-                style: TextStyle(fontSize: 13, color: Colors.grey),
-              ),
-              const SizedBox(height: 32),
-              const SignUpForm(),
-              const SizedBox(height: 32),
-              BlocBuilder<AuthBloc, AuthState>(
-                buildWhen: (previous, current) => previous.isSubmitting != current.isSubmitting,
-                builder: (context, state) {
-                  return SimpleBtn(
-                    child: context.read<AuthBloc>().state.isSubmitting
-                        ? const CircularProgressIndicator(
-                            color: Colors.white,
-                          )
-                        : const Text(
-                            'Sign Up',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                    onTap: () {
-                      if (!context.read<AuthBloc>().state.isSubmitting) {
-                        context
-                            .read<AuthBloc>()
-                            .add(const AuthEvent.registerWithEmailAndPassword());
-                      }
-                    },
-                  );
-                },
-              ),
-              Container(
-                margin: const EdgeInsets.only(top: 48),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        height: 1,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    const Text('Or login with'),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Container(
-                        height: 1,
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 32),
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: loginWithAnother(context, 'assets/images/google.png', 'Google'),
-              ),
-              const SizedBox(height: 48),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Already have an account?'),
-                  const SizedBox(width: 8),
-                  textBtn('Log In', () {
-                    context.read<AuthBloc>().add(const Refresh());
-                    context.router.replace(const LogInRoute());
-                  }),
-                ],
-              ),
-            ],
+      backgroundColor: white,
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                authHeader('Yangi hisob ochish'),
+                const SignUpForm(),
+                const SizedBox(height: 32),
+                const SignUpBtns(),
+              ],
+            ),
           ),
         ),
       ),
