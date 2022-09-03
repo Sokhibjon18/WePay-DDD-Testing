@@ -6,8 +6,9 @@ import 'package:we_pay/presentation/constants/colors.dart';
 String priceFixer(String price) {
   String newPrice = '';
   if (price.length > 3) {
-    newPrice =
-        '${priceFixer(price.substring(0, price.length - 3))} ${price.substring(price.length - 3)}';
+    String withoutLast3 = price.substring(0, price.length - 3);
+    String last3 = price.substring(price.length - 3);
+    newPrice = '${priceFixer(withoutLast3)} $last3';
     return newPrice;
   } else {
     return price;

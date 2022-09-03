@@ -135,23 +135,19 @@ class ApartmentRepository implements IApartmentRepository {
   }
 
   @override
-  Future<List<CurrentDateExpense>> getCurrentMonthExpences(List<PublicExpense> apartments) async {
+  Future<List<CurrentDateExpense>> getCurrentMonthExpences(
+      List<PublicExpense> publicExpense) async {
     try {
       List<CurrentDateExpense> expenses = [];
-      for (var apartment in apartments) {
-        String month = getMonthAndYear(DateTime.now(), onlyMonth: true).substring(0, 3);
+      for (var apartment in publicExpense) {
         int apartmentExpence = 0;
         final allExpences = await _firestore
-            .apartmentCurrentMonthExpences(
-              apartmentId: apartment.uid,
-              date: DateTime.now(),
-            )
+            .apartmentCurrentMonthExpences(apartmentId: apartment.uid)
             .then((value) => value.docs);
         for (var expence in allExpences) {
           apartmentExpence += (expence.data()['price'] as int) * (expence.data()['count'] as int);
         }
-        month += ': ${priceFixer(apartmentExpence.toString())}';
-        expenses.add(CurrentDateExpense(apartment.uid, month));
+        expenses.add(CurrentDateExpense(apartment.uid, priceFixer('$apartmentExpence so`m')));
       }
       return expenses;
     } on FirebaseException catch (e) {
