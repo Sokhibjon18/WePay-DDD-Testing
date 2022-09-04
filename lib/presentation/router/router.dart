@@ -7,7 +7,6 @@ import 'package:we_pay/presentation/screens/debtors/debtors_page.dart';
 import 'package:we_pay/presentation/screens/expense/expense_page.dart';
 import 'package:we_pay/presentation/screens/home/home_page.dart';
 import 'package:we_pay/presentation/screens/profile/profile.dart';
-import 'package:we_pay/presentation/screens/search/search_page.dart';
 import 'package:we_pay/presentation/screens/splash/splash_page.dart';
 import 'package:we_pay/presentation/screens/statistics/statistics_page.dart';
 
@@ -34,6 +33,7 @@ import 'package:we_pay/presentation/screens/statistics/statistics_page.dart';
           name: 'HomeRouter',
           children: [
             AutoRoute(page: HomePage, path: ''),
+            AutoRoute(page: ExpensePage),
           ],
         ),
         AutoRoute(

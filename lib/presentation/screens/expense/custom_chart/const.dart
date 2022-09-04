@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:we_pay/presentation/constants/colors.dart';
 
 //measurments
 const double spaceBetweenCharts = pi / 90;
@@ -14,20 +15,9 @@ const Color dashboardTertiary = Color(0xffFCF8BB);
 
 //textSpan
 const TextSpan totalBalanceText = TextSpan(
-  text: 'Total Expence',
+  text: 'Umumiy xarajat',
   style: TextStyle(
-    color: dashboardSecondary,
-    fontWeight: FontWeight.w500,
-    fontSize: 12,
-    letterSpacing: 0.2,
-  ),
-);
-
-//textSpan
-const TextSpan unitOfCurrency = TextSpan(
-  text: 'thousend sum',
-  style: TextStyle(
-    color: Colors.grey,
+    color: greyDark,
     fontWeight: FontWeight.w500,
     fontSize: 12,
     letterSpacing: 0.2,

@@ -25,8 +25,8 @@ class ProductRepository implements IProductRepository {
 
   @override
   Stream<Either<ProductFailure, List<Product>>> watchAllProductInApartment(
-      String apartmentId, DateTime date) async* {
-    yield* _firestore.publicExpenses(apartmentId: apartmentId, date: date).map((snapshot) {
+      String publicExpenseId) async* {
+    yield* _firestore.publicExpenses(publicExpenseId: publicExpenseId).map((snapshot) {
       final productList =
           snapshot.docs.map((e) => ProductDto.fromJson(e.data()).toDomain()).toList();
       return right<ProductFailure, List<Product>>(productList);
@@ -67,7 +67,7 @@ class ProductRepository implements IProductRepository {
           product.copyWith(buyerId: buyerId, buyerName: buyerName, color: Color(productColor));
       ProductDto productDto = ProductDto.fromDomain(product);
       await _firestore
-          .productDirectory(apartmentId: productDto.apartmentId, productId: productDto.uid)
+          .productDirectory(apartmentId: productDto.publicExpenseId, productId: productDto.uid)
           .set(productDto.toJson());
       return right(unit);
     } on FirebaseException catch (e) {
@@ -107,7 +107,7 @@ class ProductRepository implements IProductRepository {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
       await _firestore
-          .productDirectory(apartmentId: productDto.apartmentId, productId: productDto.uid)
+          .productDirectory(apartmentId: productDto.publicExpenseId, productId: productDto.uid)
           .delete();
       return right(unit);
     } on FirebaseException catch (e) {
@@ -121,7 +121,7 @@ class ProductRepository implements IProductRepository {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
       await _firestore
-          .productDirectory(apartmentId: productDto.apartmentId, productId: productDto.uid)
+          .productDirectory(apartmentId: productDto.publicExpenseId, productId: productDto.uid)
           .update(productDto.toJson());
       return right(unit);
     } on FirebaseException catch (e) {

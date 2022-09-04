@@ -8,7 +8,7 @@ Either<ValueFailure, String> validateProductName(String input) {
 }
 
 Either<ValueFailure, String> validatePrice(String input) {
-  return int.tryParse(input) == null
+  return int.tryParse(input) == null || input.isEmpty
       ? left(const ValueFailure.invalidNumber(errorMessage: 'Invalid number format'))
       : right(input);
 }

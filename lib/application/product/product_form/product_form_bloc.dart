@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -44,15 +45,26 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
     on<_PriceChanged>((event, emit) {
       emit(state.copyWith(price: ProductPrice(event.price), creationOption: none()));
     });
-    on<_NoteChanged>((event, emit) {
-      emit(state.copyWith(note: event.note, creationOption: none()));
-    });
     on<_DateChanged>((event, emit) {
       emit(state.copyWith(dateTime: event.date, creationOption: none()));
       productDateTime.add(event.date);
     });
     on<_CountChanged>((event, emit) {
-      emit(state.copyWith(count: ProductCount(event.count), creationOption: none()));
+      if (state.count.getRight() > 1 && event.count < 0) {
+        emit(
+          state.copyWith(
+            count: ProductCount(state.count.getRight() - 1),
+            creationOption: none(),
+          ),
+        );
+      } else if (event.count > 0) {
+        emit(
+          state.copyWith(
+            count: ProductCount(state.count.getRight() + 1),
+            creationOption: none(),
+          ),
+        );
+      }
     });
     on<_UpdateProduct>((event, emit) async {
       Either<ProductFailure, Unit>? failureOrSuccess;
@@ -73,7 +85,6 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
           uid: event.product.uid,
           name: state.productName,
           price: state.price,
-          note: state.note,
           date: state.dateTime,
           count: state.count.getRight(),
         ));
@@ -106,10 +117,9 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
           uid: const Uuid().v4(),
           name: state.productName,
           price: state.price,
-          note: state.note,
           date: state.dateTime,
           count: state.count.getRight(),
-          apartmentId: event.apartmentId,
+          publicExpenseId: event.apartmentId,
           buyerName: '',
           buyerId: '',
           color: Colors.redAccent,

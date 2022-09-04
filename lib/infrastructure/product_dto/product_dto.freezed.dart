@@ -24,7 +24,7 @@ mixin _$ProductDto {
   String get name => throw _privateConstructorUsedError;
   String get buyerId => throw _privateConstructorUsedError;
   String get buyerName => throw _privateConstructorUsedError;
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get publicExpenseId => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   int get color => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $ProductDtoCopyWith<$Res> {
       String name,
       String buyerId,
       String buyerName,
-      String apartmentId,
+      String publicExpenseId,
       int price,
       int count,
       int color,
@@ -70,7 +70,7 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
     Object? name = freezed,
     Object? buyerId = freezed,
     Object? buyerName = freezed,
-    Object? apartmentId = freezed,
+    Object? publicExpenseId = freezed,
     Object? price = freezed,
     Object? count = freezed,
     Object? color = freezed,
@@ -94,9 +94,9 @@ class _$ProductDtoCopyWithImpl<$Res> implements $ProductDtoCopyWith<$Res> {
           ? _value.buyerName
           : buyerName // ignore: cast_nullable_to_non_nullable
               as String,
-      apartmentId: apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId: publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
       price: price == freezed
           ? _value.price
@@ -134,7 +134,7 @@ abstract class _$$_ProductDtoCopyWith<$Res>
       String name,
       String buyerId,
       String buyerName,
-      String apartmentId,
+      String publicExpenseId,
       int price,
       int count,
       int color,
@@ -158,7 +158,7 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
     Object? name = freezed,
     Object? buyerId = freezed,
     Object? buyerName = freezed,
-    Object? apartmentId = freezed,
+    Object? publicExpenseId = freezed,
     Object? price = freezed,
     Object? count = freezed,
     Object? color = freezed,
@@ -182,9 +182,9 @@ class __$$_ProductDtoCopyWithImpl<$Res> extends _$ProductDtoCopyWithImpl<$Res>
           ? _value.buyerName
           : buyerName // ignore: cast_nullable_to_non_nullable
               as String,
-      apartmentId: apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId: publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
       price: price == freezed
           ? _value.price
@@ -218,7 +218,7 @@ class _$_ProductDto extends _ProductDto {
       required this.name,
       required this.buyerId,
       required this.buyerName,
-      required this.apartmentId,
+      required this.publicExpenseId,
       required this.price,
       required this.count,
       required this.color,
@@ -238,7 +238,7 @@ class _$_ProductDto extends _ProductDto {
   @override
   final String buyerName;
   @override
-  final String apartmentId;
+  final String publicExpenseId;
   @override
   final int price;
   @override
@@ -253,7 +253,7 @@ class _$_ProductDto extends _ProductDto {
 
   @override
   String toString() {
-    return 'ProductDto(uid: $uid, name: $name, buyerId: $buyerId, buyerName: $buyerName, apartmentId: $apartmentId, price: $price, count: $count, color: $color, date: $date, note: $note)';
+    return 'ProductDto(uid: $uid, name: $name, buyerId: $buyerId, buyerName: $buyerName, publicExpenseId: $publicExpenseId, price: $price, count: $count, color: $color, date: $date, note: $note)';
   }
 
   @override
@@ -266,7 +266,7 @@ class _$_ProductDto extends _ProductDto {
             const DeepCollectionEquality().equals(other.buyerId, buyerId) &&
             const DeepCollectionEquality().equals(other.buyerName, buyerName) &&
             const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId) &&
+                .equals(other.publicExpenseId, publicExpenseId) &&
             const DeepCollectionEquality().equals(other.price, price) &&
             const DeepCollectionEquality().equals(other.count, count) &&
             const DeepCollectionEquality().equals(other.color, color) &&
@@ -282,7 +282,7 @@ class _$_ProductDto extends _ProductDto {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(buyerId),
       const DeepCollectionEquality().hash(buyerName),
-      const DeepCollectionEquality().hash(apartmentId),
+      const DeepCollectionEquality().hash(publicExpenseId),
       const DeepCollectionEquality().hash(price),
       const DeepCollectionEquality().hash(count),
       const DeepCollectionEquality().hash(color),
@@ -308,7 +308,7 @@ abstract class _ProductDto extends ProductDto {
       required final String name,
       required final String buyerId,
       required final String buyerName,
-      required final String apartmentId,
+      required final String publicExpenseId,
       required final int price,
       required final int count,
       required final int color,
@@ -328,7 +328,7 @@ abstract class _ProductDto extends ProductDto {
   @override
   String get buyerName;
   @override
-  String get apartmentId;
+  String get publicExpenseId;
   @override
   int get price;
   @override

@@ -1,15 +1,18 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 
 class MyPopUpMenu extends StatelessWidget {
-  const MyPopUpMenu({Key? key, required this.moreIconRectCordinates, required this.popUpItems})
+  const MyPopUpMenu(
+      {Key? key,
+      required this.moreIconRectCordinates,
+      required this.popUpItems,
+      this.isHorizontal = true})
       : super(key: key);
 
   final Rect moreIconRectCordinates;
   final List<MyPopUpMenuItem> popUpItems;
+  final bool isHorizontal;
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +20,11 @@ class MyPopUpMenu extends StatelessWidget {
       children: [
         Positioned(
           right: MediaQuery.of(context).size.width - moreIconRectCordinates.right,
-          top: moreIconRectCordinates.top -
-              (moreIconRectCordinates.bottom - moreIconRectCordinates.top),
+          top: 2 * moreIconRectCordinates.top - moreIconRectCordinates.bottom,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Container(
-                padding: const EdgeInsets.only(left: 2, right: 2),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
-                  color: grey,
-                  boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 6)],
-                ),
-                child: const Icon(Icons.more_horiz_rounded, color: blue),
-              ),
+              isHorizontal ? horizontalMoreBtn() : verticalMoreBtn(),
               const SizedBox(height: 4),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -53,6 +47,26 @@ class MyPopUpMenu extends StatelessWidget {
     );
   }
 }
+
+Widget verticalMoreBtn() => Container(
+      padding: const EdgeInsets.only(top: 2, bottom: 2),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        color: grey,
+        boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 6)],
+      ),
+      child: const Icon(Icons.more_vert, color: blue),
+    );
+
+Widget horizontalMoreBtn() => Container(
+      padding: const EdgeInsets.only(left: 2, right: 2),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(4),
+        color: grey,
+        boxShadow: const [BoxShadow(color: Colors.black38, blurRadius: 6)],
+      ),
+      child: const Icon(Icons.more_horiz_rounded, color: blue),
+    );
 
 class MyPopUpMenuItem extends StatelessWidget {
   const MyPopUpMenuItem({

@@ -69,9 +69,9 @@ void addExpenseBottomSheet(BuildContext context, {PublicExpense? publicExpense})
                       MyBtn(
                         child: state.loading
                             ? const CircularProgressIndicator(color: Colors.white)
-                            : const Text(
-                                'Yaratish',
-                                style: TextStyle(
+                            : Text(
+                                publicExpense == null ? 'Yaratish' : 'O`zgartirish',
+                                style: const TextStyle(
                                   letterSpacing: .1,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,

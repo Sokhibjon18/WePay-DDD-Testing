@@ -10,14 +10,13 @@ abstract class Product implements _$Product {
 
   const factory Product({
     String? uid,
-    required String apartmentId,
+    required String publicExpenseId,
     required ProductName name,
     required String buyerName,
     required String buyerId,
     required ProductPrice price,
     required int count,
     required Color color,
-    String? note,
     required DateTime date,
   }) = _Product;
 }

@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ProductActorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId, DateTime time) watch,
+    required TResult Function(String publicExpenseId) watch,
     required TResult Function(
             z.Either<ProductFailure, List<Product>> failureOrProducts)
         productsReceived,
@@ -26,14 +26,14 @@ mixin _$ProductActorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId, DateTime time)? watch,
+    TResult Function(String publicExpenseId)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId, DateTime time)? watch,
+    TResult Function(String publicExpenseId)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
     required TResult orElse(),
@@ -81,7 +81,7 @@ class _$ProductActorEventCopyWithImpl<$Res>
 abstract class _$$_WatchCopyWith<$Res> {
   factory _$$_WatchCopyWith(_$_Watch value, $Res Function(_$_Watch) then) =
       __$$_WatchCopyWithImpl<$Res>;
-  $Res call({String apartmentId, DateTime time});
+  $Res call({String publicExpenseId});
 }
 
 /// @nodoc
@@ -95,18 +95,13 @@ class __$$_WatchCopyWithImpl<$Res> extends _$ProductActorEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? apartmentId = freezed,
-    Object? time = freezed,
+    Object? publicExpenseId = freezed,
   }) {
     return _then(_$_Watch(
-      apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
-      time == freezed
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as DateTime,
     ));
   }
 }
@@ -114,16 +109,14 @@ class __$$_WatchCopyWithImpl<$Res> extends _$ProductActorEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Watch implements _Watch {
-  const _$_Watch(this.apartmentId, this.time);
+  const _$_Watch(this.publicExpenseId);
 
   @override
-  final String apartmentId;
-  @override
-  final DateTime time;
+  final String publicExpenseId;
 
   @override
   String toString() {
-    return 'ProductActorEvent.watch(apartmentId: $apartmentId, time: $time)';
+    return 'ProductActorEvent.watch(publicExpenseId: $publicExpenseId)';
   }
 
   @override
@@ -132,15 +125,12 @@ class _$_Watch implements _Watch {
         (other.runtimeType == runtimeType &&
             other is _$_Watch &&
             const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId) &&
-            const DeepCollectionEquality().equals(other.time, time));
+                .equals(other.publicExpenseId, publicExpenseId));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(apartmentId),
-      const DeepCollectionEquality().hash(time));
+      runtimeType, const DeepCollectionEquality().hash(publicExpenseId));
 
   @JsonKey(ignore: true)
   @override
@@ -150,34 +140,34 @@ class _$_Watch implements _Watch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId, DateTime time) watch,
+    required TResult Function(String publicExpenseId) watch,
     required TResult Function(
             z.Either<ProductFailure, List<Product>> failureOrProducts)
         productsReceived,
   }) {
-    return watch(apartmentId, time);
+    return watch(publicExpenseId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId, DateTime time)? watch,
+    TResult Function(String publicExpenseId)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
   }) {
-    return watch?.call(apartmentId, time);
+    return watch?.call(publicExpenseId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId, DateTime time)? watch,
+    TResult Function(String publicExpenseId)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
     required TResult orElse(),
   }) {
     if (watch != null) {
-      return watch(apartmentId, time);
+      return watch(publicExpenseId);
     }
     return orElse();
   }
@@ -215,11 +205,9 @@ class _$_Watch implements _Watch {
 }
 
 abstract class _Watch implements ProductActorEvent {
-  const factory _Watch(final String apartmentId, final DateTime time) =
-      _$_Watch;
+  const factory _Watch(final String publicExpenseId) = _$_Watch;
 
-  String get apartmentId;
-  DateTime get time;
+  String get publicExpenseId;
   @JsonKey(ignore: true)
   _$$_WatchCopyWith<_$_Watch> get copyWith =>
       throw _privateConstructorUsedError;
@@ -291,7 +279,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String apartmentId, DateTime time) watch,
+    required TResult Function(String publicExpenseId) watch,
     required TResult Function(
             z.Either<ProductFailure, List<Product>> failureOrProducts)
         productsReceived,
@@ -302,7 +290,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String apartmentId, DateTime time)? watch,
+    TResult Function(String publicExpenseId)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
   }) {
@@ -312,7 +300,7 @@ class _$_ProductsReceived implements _ProductsReceived {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String apartmentId, DateTime time)? watch,
+    TResult Function(String publicExpenseId)? watch,
     TResult Function(z.Either<ProductFailure, List<Product>> failureOrProducts)?
         productsReceived,
     required TResult orElse(),

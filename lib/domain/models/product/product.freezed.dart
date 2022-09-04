@@ -17,14 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Product {
   String? get uid => throw _privateConstructorUsedError;
-  String get apartmentId => throw _privateConstructorUsedError;
+  String get publicExpenseId => throw _privateConstructorUsedError;
   ProductName get name => throw _privateConstructorUsedError;
   String get buyerName => throw _privateConstructorUsedError;
   String get buyerId => throw _privateConstructorUsedError;
   ProductPrice get price => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   Color get color => throw _privateConstructorUsedError;
-  String? get note => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -37,14 +36,13 @@ abstract class $ProductCopyWith<$Res> {
       _$ProductCopyWithImpl<$Res>;
   $Res call(
       {String? uid,
-      String apartmentId,
+      String publicExpenseId,
       ProductName name,
       String buyerName,
       String buyerId,
       ProductPrice price,
       int count,
       Color color,
-      String? note,
       DateTime date});
 }
 
@@ -59,14 +57,13 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
   @override
   $Res call({
     Object? uid = freezed,
-    Object? apartmentId = freezed,
+    Object? publicExpenseId = freezed,
     Object? name = freezed,
     Object? buyerName = freezed,
     Object? buyerId = freezed,
     Object? price = freezed,
     Object? count = freezed,
     Object? color = freezed,
-    Object? note = freezed,
     Object? date = freezed,
   }) {
     return _then(_value.copyWith(
@@ -74,9 +71,9 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String?,
-      apartmentId: apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId: publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -102,10 +99,6 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      note: note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as String?,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -122,14 +115,13 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   @override
   $Res call(
       {String? uid,
-      String apartmentId,
+      String publicExpenseId,
       ProductName name,
       String buyerName,
       String buyerId,
       ProductPrice price,
       int count,
       Color color,
-      String? note,
       DateTime date});
 }
 
@@ -145,14 +137,13 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
   @override
   $Res call({
     Object? uid = freezed,
-    Object? apartmentId = freezed,
+    Object? publicExpenseId = freezed,
     Object? name = freezed,
     Object? buyerName = freezed,
     Object? buyerId = freezed,
     Object? price = freezed,
     Object? count = freezed,
     Object? color = freezed,
-    Object? note = freezed,
     Object? date = freezed,
   }) {
     return _then(_$_Product(
@@ -160,9 +151,9 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String?,
-      apartmentId: apartmentId == freezed
-          ? _value.apartmentId
-          : apartmentId // ignore: cast_nullable_to_non_nullable
+      publicExpenseId: publicExpenseId == freezed
+          ? _value.publicExpenseId
+          : publicExpenseId // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -188,10 +179,6 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      note: note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as String?,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -205,21 +192,20 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 class _$_Product extends _Product {
   const _$_Product(
       {this.uid,
-      required this.apartmentId,
+      required this.publicExpenseId,
       required this.name,
       required this.buyerName,
       required this.buyerId,
       required this.price,
       required this.count,
       required this.color,
-      this.note,
       required this.date})
       : super._();
 
   @override
   final String? uid;
   @override
-  final String apartmentId;
+  final String publicExpenseId;
   @override
   final ProductName name;
   @override
@@ -233,13 +219,11 @@ class _$_Product extends _Product {
   @override
   final Color color;
   @override
-  final String? note;
-  @override
   final DateTime date;
 
   @override
   String toString() {
-    return 'Product(uid: $uid, apartmentId: $apartmentId, name: $name, buyerName: $buyerName, buyerId: $buyerId, price: $price, count: $count, color: $color, note: $note, date: $date)';
+    return 'Product(uid: $uid, publicExpenseId: $publicExpenseId, name: $name, buyerName: $buyerName, buyerId: $buyerId, price: $price, count: $count, color: $color, date: $date)';
   }
 
   @override
@@ -249,14 +233,13 @@ class _$_Product extends _Product {
             other is _$_Product &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
-                .equals(other.apartmentId, apartmentId) &&
+                .equals(other.publicExpenseId, publicExpenseId) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.buyerName, buyerName) &&
             const DeepCollectionEquality().equals(other.buyerId, buyerId) &&
             const DeepCollectionEquality().equals(other.price, price) &&
             const DeepCollectionEquality().equals(other.count, count) &&
             const DeepCollectionEquality().equals(other.color, color) &&
-            const DeepCollectionEquality().equals(other.note, note) &&
             const DeepCollectionEquality().equals(other.date, date));
   }
 
@@ -264,14 +247,13 @@ class _$_Product extends _Product {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uid),
-      const DeepCollectionEquality().hash(apartmentId),
+      const DeepCollectionEquality().hash(publicExpenseId),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(buyerName),
       const DeepCollectionEquality().hash(buyerId),
       const DeepCollectionEquality().hash(price),
       const DeepCollectionEquality().hash(count),
       const DeepCollectionEquality().hash(color),
-      const DeepCollectionEquality().hash(note),
       const DeepCollectionEquality().hash(date));
 
   @JsonKey(ignore: true)
@@ -283,21 +265,20 @@ class _$_Product extends _Product {
 abstract class _Product extends Product {
   const factory _Product(
       {final String? uid,
-      required final String apartmentId,
+      required final String publicExpenseId,
       required final ProductName name,
       required final String buyerName,
       required final String buyerId,
       required final ProductPrice price,
       required final int count,
       required final Color color,
-      final String? note,
       required final DateTime date}) = _$_Product;
   const _Product._() : super._();
 
   @override
   String? get uid;
   @override
-  String get apartmentId;
+  String get publicExpenseId;
   @override
   ProductName get name;
   @override
@@ -310,8 +291,6 @@ abstract class _Product extends Product {
   int get count;
   @override
   Color get color;
-  @override
-  String? get note;
   @override
   DateTime get date;
   @override

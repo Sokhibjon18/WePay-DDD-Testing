@@ -147,7 +147,7 @@ class ApartmentRepository implements IApartmentRepository {
         for (var expence in allExpences) {
           apartmentExpence += (expence.data()['price'] as int) * (expence.data()['count'] as int);
         }
-        expenses.add(CurrentDateExpense(apartment.uid, priceFixer('$apartmentExpence so`m')));
+        expenses.add(CurrentDateExpense(apartment.uid, '${priceFixer('$apartmentExpence')} so`m'));
       }
       return expenses;
     } on FirebaseException catch (e) {

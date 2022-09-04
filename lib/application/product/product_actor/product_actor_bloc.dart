@@ -18,17 +18,14 @@ class ProductActorBloc extends Bloc<ProductActorEvent, ProductActorState> {
   final IProductRepository _repository;
 
   StreamSubscription<z.Either<ProductFailure, List<Product>>>? productsSubscription;
-  late StreamController<DateTime> dateTimeStream = StreamController.broadcast();
   late DateTime dateTime;
-  late String apartmentId;
+  late String publicExpenseId;
 
   ProductActorBloc(this._repository) : super(ProductActorState.initial()) {
     on<_Watch>((event, emit) {
-      apartmentId = event.apartmentId;
-      dateTime = event.time;
-      dateTimeStream.add(dateTime);
+      publicExpenseId = event.publicExpenseId;
       productsSubscription =
-          _repository.watchAllProductInApartment(apartmentId, dateTime).listen((event) {
+          _repository.watchAllProductInApartment(publicExpenseId).listen((event) {
         add(ProductActorEvent.productsReceived(event));
       });
     });

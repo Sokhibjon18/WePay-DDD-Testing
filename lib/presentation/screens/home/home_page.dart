@@ -14,7 +14,7 @@ import 'package:we_pay/injection.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/core/snackbar.dart';
 import 'package:we_pay/presentation/screens/home/widgets/dialogs_sheets/add_expense_bottom_sheet.dart';
-import 'package:we_pay/presentation/screens/home/widgets/list_items/apartment_item%20copy.dart';
+import 'package:we_pay/presentation/screens/home/widgets/list_items/public_expense_item.dart';
 import 'package:we_pay/presentation/screens/home/widgets/list_items/invitations_item.dart';
 import 'package:we_pay/presentation/router/router.gr.dart';
 import 'package:we_pay/presentation/core/functions.dart';
@@ -131,7 +131,7 @@ class HomePageState extends State<HomePage> {
                               physics: const BouncingScrollPhysics(),
                               itemCount: r.length,
                               itemBuilder: (context, index) {
-                                return ApartmentItem(publicExpens: r[index]);
+                                return PublicExpenseItem(publicExpens: r[index]);
                               },
                             ),
                           ],

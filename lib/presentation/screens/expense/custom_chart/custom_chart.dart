@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
+import 'package:we_pay/presentation/core/functions.dart';
 import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
 import 'package:we_pay/presentation/screens/expense/custom_chart/const.dart';
 
@@ -10,7 +11,7 @@ class PieChartPainter extends CustomPainter {
   late List<Path> listOfPaths;
   final double chartWidth;
 
-  double totalBalance = 0;
+  int totalBalance = 0;
 
   PieChartPainter(this.listOfCards, {this.chartWidth = 40}) {
     calculateTotalBalance();
@@ -19,7 +20,7 @@ class PieChartPainter extends CustomPainter {
   void calculateTotalBalance() {
     totalBalance = 0;
     for (var card in listOfCards) {
-      totalBalance += card.amout;
+      totalBalance += card.amout.toInt();
     }
   }
 
@@ -95,18 +96,15 @@ class PieChartPainter extends CustomPainter {
   }
 
   void drawBalanceText(Canvas canvas, Size size) {
-    final balanceInThousandsUnit = totalBalance / 1000;
     TextSpan totalBalanceText = TextSpan(
       children: [
         TextSpan(
           style: TextStyle(
             color: black,
             fontWeight: FontWeight.w700,
-            fontSize: size.width * 0.16,
+            fontSize: size.width / ('$totalBalance'.length + 1),
           ),
-          text: balanceInThousandsUnit >= 1000
-              ? '${balanceInThousandsUnit ~/ 1000} ${(balanceInThousandsUnit % 1000).toInt()}'
-              : '${balanceInThousandsUnit.toInt()}',
+          text: priceFixer('$totalBalance'),
         ),
       ],
     );
@@ -123,23 +121,6 @@ class PieChartPainter extends CustomPainter {
 
     final xCenter = (size.width - textPainter.width) / 2;
     final yCenter = (size.height - textPainter.height + chartWidth / 2 - 8) / 2;
-    Offset totalBalanceOffset = Offset(xCenter, yCenter);
-    textPainter.paint(canvas, totalBalanceOffset);
-  }
-
-  void drawUnitOfCurrency(Canvas canvas, Size size) {
-    final textPainter = TextPainter(
-      text: unitOfCurrency,
-      textDirection: TextDirection.ltr,
-    );
-
-    textPainter.layout(
-      minWidth: 0,
-      maxWidth: size.width,
-    );
-
-    final xCenter = (size.width - textPainter.width) / 2;
-    final yCenter = (size.height - textPainter.height + chartWidth) / 1.8;
     Offset totalBalanceOffset = Offset(xCenter, yCenter);
     textPainter.paint(canvas, totalBalanceOffset);
   }
@@ -161,7 +142,6 @@ class PieChartPainter extends CustomPainter {
     drawChart(canvas);
     drawStartingAndEndingCorners(canvas, size);
     drawTotalBalanceText(canvas, size);
-    drawUnitOfCurrency(canvas, size);
     drawBalanceText(canvas, size);
   }
 

@@ -17,7 +17,7 @@ abstract class ProductDto implements _$ProductDto {
     required String name,
     required String buyerId,
     required String buyerName,
-    required String apartmentId,
+    required String publicExpenseId,
     required int price,
     required int count,
     required int color,
@@ -36,7 +36,7 @@ abstract class ProductDto implements _$ProductDto {
       date: product.date,
       buyerName: product.buyerName,
       color: product.color.value,
-      apartmentId: product.apartmentId,
+      publicExpenseId: product.publicExpenseId,
     );
   }
 
@@ -50,7 +50,7 @@ abstract class ProductDto implements _$ProductDto {
       count: count,
       color: Color(color),
       date: date,
-      apartmentId: apartmentId,
+      publicExpenseId: publicExpenseId,
     );
   }
 

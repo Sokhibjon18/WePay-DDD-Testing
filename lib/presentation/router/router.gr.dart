@@ -12,18 +12,20 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
-import 'package:flutter/material.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 
+import '../../domain/models/apartment/apartment.dart' as _i11;
 import '../screens/auth/login_page.dart' as _i2;
 import '../screens/auth/sign_up_page.dart' as _i3;
+import '../screens/expense/expense_page.dart' as _i8;
 import '../screens/home/home_page.dart' as _i7;
-import '../screens/profile/profile.dart' as _i8;
+import '../screens/profile/profile.dart' as _i9;
 import '../screens/splash/splash_page.dart' as _i1;
 import '../screens/statistics/statistics_page.dart' as _i6;
 import 'bottom_navigation.dart' as _i4;
 
 class AppRouter extends _i5.RootStackRouter {
-  AppRouter([_i9.GlobalKey<_i9.NavigatorState>? navigatorKey])
+  AppRouter([_i10.GlobalKey<_i10.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
@@ -64,9 +66,16 @@ class AppRouter extends _i5.RootStackRouter {
       return _i5.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i7.HomePage());
     },
+    ExpenseRoute.name: (routeData) {
+      final args = routeData.argsAs<ExpenseRouteArgs>();
+      return _i5.MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: _i8.ExpensePage(
+              key: args.key, publicExpense: args.publicExpense));
+    },
     ProfileRoute.name: (routeData) {
       return _i5.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.ProfilePage());
+          routeData: routeData, child: const _i9.ProfilePage());
     }
   };
 
@@ -90,7 +99,9 @@ class AppRouter extends _i5.RootStackRouter {
                   parent: BottomNavigationRoute.name,
                   children: [
                     _i5.RouteConfig(HomeRoute.name,
-                        path: '', parent: HomeRouter.name)
+                        path: '', parent: HomeRouter.name),
+                    _i5.RouteConfig(ExpenseRoute.name,
+                        path: 'expense-page', parent: HomeRouter.name)
                   ]),
               _i5.RouteConfig(ProfileRouter.name,
                   path: 'profile',
@@ -182,7 +193,31 @@ class HomeRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i8.ProfilePage]
+/// [_i8.ExpensePage]
+class ExpenseRoute extends _i5.PageRouteInfo<ExpenseRouteArgs> {
+  ExpenseRoute({_i10.Key? key, required _i11.PublicExpense publicExpense})
+      : super(ExpenseRoute.name,
+            path: 'expense-page',
+            args: ExpenseRouteArgs(key: key, publicExpense: publicExpense));
+
+  static const String name = 'ExpenseRoute';
+}
+
+class ExpenseRouteArgs {
+  const ExpenseRouteArgs({this.key, required this.publicExpense});
+
+  final _i10.Key? key;
+
+  final _i11.PublicExpense publicExpense;
+
+  @override
+  String toString() {
+    return 'ExpenseRouteArgs{key: $key, publicExpense: $publicExpense}';
+  }
+}
+
+/// generated route for
+/// [_i9.ProfilePage]
 class ProfileRoute extends _i5.PageRouteInfo<void> {
   const ProfileRoute() : super(ProfileRoute.name, path: '');
 

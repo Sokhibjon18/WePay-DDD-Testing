@@ -22,7 +22,6 @@ mixin _$ProductFormEvent {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -37,7 +36,6 @@ mixin _$ProductFormEvent {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -52,7 +50,6 @@ mixin _$ProductFormEvent {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -68,7 +65,6 @@ mixin _$ProductFormEvent {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -83,7 +79,6 @@ mixin _$ProductFormEvent {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -98,7 +93,6 @@ mixin _$ProductFormEvent {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -171,7 +165,6 @@ class _$_Initial implements _Initial {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -189,7 +182,6 @@ class _$_Initial implements _Initial {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -207,7 +199,6 @@ class _$_Initial implements _Initial {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -229,7 +220,6 @@ class _$_Initial implements _Initial {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -247,7 +237,6 @@ class _$_Initial implements _Initial {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -265,7 +254,6 @@ class _$_Initial implements _Initial {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -363,7 +351,6 @@ class _$_EditingProduct implements _EditingProduct {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -381,7 +368,6 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -399,7 +385,6 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -421,7 +406,6 @@ class _$_EditingProduct implements _EditingProduct {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -439,7 +423,6 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -457,7 +440,6 @@ class _$_EditingProduct implements _EditingProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -551,7 +533,6 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -569,7 +550,6 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -587,7 +567,6 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -609,7 +588,6 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -627,7 +605,6 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -645,7 +622,6 @@ class _$_NameChanged implements _NameChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -739,7 +715,6 @@ class _$_PriceChanged implements _PriceChanged {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -757,7 +732,6 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -775,7 +749,6 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -797,7 +770,6 @@ class _$_PriceChanged implements _PriceChanged {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -815,7 +787,6 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -833,7 +804,6 @@ class _$_PriceChanged implements _PriceChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -855,194 +825,6 @@ abstract class _PriceChanged implements ProductFormEvent {
   String get price;
   @JsonKey(ignore: true)
   _$$_PriceChangedCopyWith<_$_PriceChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_NoteChangedCopyWith<$Res> {
-  factory _$$_NoteChangedCopyWith(
-          _$_NoteChanged value, $Res Function(_$_NoteChanged) then) =
-      __$$_NoteChangedCopyWithImpl<$Res>;
-  $Res call({String note});
-}
-
-/// @nodoc
-class __$$_NoteChangedCopyWithImpl<$Res>
-    extends _$ProductFormEventCopyWithImpl<$Res>
-    implements _$$_NoteChangedCopyWith<$Res> {
-  __$$_NoteChangedCopyWithImpl(
-      _$_NoteChanged _value, $Res Function(_$_NoteChanged) _then)
-      : super(_value, (v) => _then(v as _$_NoteChanged));
-
-  @override
-  _$_NoteChanged get _value => super._value as _$_NoteChanged;
-
-  @override
-  $Res call({
-    Object? note = freezed,
-  }) {
-    return _then(_$_NoteChanged(
-      note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_NoteChanged implements _NoteChanged {
-  const _$_NoteChanged(this.note);
-
-  @override
-  final String note;
-
-  @override
-  String toString() {
-    return 'ProductFormEvent.noteChanged(note: $note)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_NoteChanged &&
-            const DeepCollectionEquality().equals(other.note, note));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(note));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_NoteChangedCopyWith<_$_NoteChanged> get copyWith =>
-      __$$_NoteChangedCopyWithImpl<_$_NoteChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(Product product) editingProduct,
-    required TResult Function(String name) nameChanged,
-    required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
-    required TResult Function(DateTime date) dateChanged,
-    required TResult Function(int count) countChanged,
-    required TResult Function(String apartmentId) creatProduct,
-    required TResult Function(List<String> users) sendNotificationsTo,
-    required TResult Function(Product product) updateProduct,
-    required TResult Function(Product product) deleteProduct,
-  }) {
-    return noteChanged(note);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(Product product)? editingProduct,
-    TResult Function(String name)? nameChanged,
-    TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
-    TResult Function(DateTime date)? dateChanged,
-    TResult Function(int count)? countChanged,
-    TResult Function(String apartmentId)? creatProduct,
-    TResult Function(List<String> users)? sendNotificationsTo,
-    TResult Function(Product product)? updateProduct,
-    TResult Function(Product product)? deleteProduct,
-  }) {
-    return noteChanged?.call(note);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(Product product)? editingProduct,
-    TResult Function(String name)? nameChanged,
-    TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
-    TResult Function(DateTime date)? dateChanged,
-    TResult Function(int count)? countChanged,
-    TResult Function(String apartmentId)? creatProduct,
-    TResult Function(List<String> users)? sendNotificationsTo,
-    TResult Function(Product product)? updateProduct,
-    TResult Function(Product product)? deleteProduct,
-    required TResult orElse(),
-  }) {
-    if (noteChanged != null) {
-      return noteChanged(note);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_EditingProduct value) editingProduct,
-    required TResult Function(_NameChanged value) nameChanged,
-    required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
-    required TResult Function(_DateChanged value) dateChanged,
-    required TResult Function(_CountChanged value) countChanged,
-    required TResult Function(_CreateProduct value) creatProduct,
-    required TResult Function(_SendNotification value) sendNotificationsTo,
-    required TResult Function(_UpdateProduct value) updateProduct,
-    required TResult Function(_DeleteProduct value) deleteProduct,
-  }) {
-    return noteChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_EditingProduct value)? editingProduct,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
-    TResult Function(_DateChanged value)? dateChanged,
-    TResult Function(_CountChanged value)? countChanged,
-    TResult Function(_CreateProduct value)? creatProduct,
-    TResult Function(_SendNotification value)? sendNotificationsTo,
-    TResult Function(_UpdateProduct value)? updateProduct,
-    TResult Function(_DeleteProduct value)? deleteProduct,
-  }) {
-    return noteChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_EditingProduct value)? editingProduct,
-    TResult Function(_NameChanged value)? nameChanged,
-    TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
-    TResult Function(_DateChanged value)? dateChanged,
-    TResult Function(_CountChanged value)? countChanged,
-    TResult Function(_CreateProduct value)? creatProduct,
-    TResult Function(_SendNotification value)? sendNotificationsTo,
-    TResult Function(_UpdateProduct value)? updateProduct,
-    TResult Function(_DeleteProduct value)? deleteProduct,
-    required TResult orElse(),
-  }) {
-    if (noteChanged != null) {
-      return noteChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _NoteChanged implements ProductFormEvent {
-  const factory _NoteChanged(final String note) = _$_NoteChanged;
-
-  String get note;
-  @JsonKey(ignore: true)
-  _$$_NoteChangedCopyWith<_$_NoteChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1115,7 +897,6 @@ class _$_DateChanged implements _DateChanged {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -1133,7 +914,6 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1151,7 +931,6 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1173,7 +952,6 @@ class _$_DateChanged implements _DateChanged {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -1191,7 +969,6 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1209,7 +986,6 @@ class _$_DateChanged implements _DateChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1303,7 +1079,6 @@ class _$_CountChanged implements _CountChanged {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -1321,7 +1096,6 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1339,7 +1113,6 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1361,7 +1134,6 @@ class _$_CountChanged implements _CountChanged {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -1379,7 +1151,6 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1397,7 +1168,6 @@ class _$_CountChanged implements _CountChanged {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1492,7 +1262,6 @@ class _$_CreateProduct implements _CreateProduct {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -1510,7 +1279,6 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1528,7 +1296,6 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1550,7 +1317,6 @@ class _$_CreateProduct implements _CreateProduct {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -1568,7 +1334,6 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1586,7 +1351,6 @@ class _$_CreateProduct implements _CreateProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1684,7 +1448,6 @@ class _$_SendNotification implements _SendNotification {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -1702,7 +1465,6 @@ class _$_SendNotification implements _SendNotification {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1720,7 +1482,6 @@ class _$_SendNotification implements _SendNotification {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1742,7 +1503,6 @@ class _$_SendNotification implements _SendNotification {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -1760,7 +1520,6 @@ class _$_SendNotification implements _SendNotification {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1778,7 +1537,6 @@ class _$_SendNotification implements _SendNotification {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1882,7 +1640,6 @@ class _$_UpdateProduct implements _UpdateProduct {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -1900,7 +1657,6 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1918,7 +1674,6 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -1940,7 +1695,6 @@ class _$_UpdateProduct implements _UpdateProduct {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -1958,7 +1712,6 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -1976,7 +1729,6 @@ class _$_UpdateProduct implements _UpdateProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -2079,7 +1831,6 @@ class _$_DeleteProduct implements _DeleteProduct {
     required TResult Function(Product product) editingProduct,
     required TResult Function(String name) nameChanged,
     required TResult Function(String price) priceChanged,
-    required TResult Function(String note) noteChanged,
     required TResult Function(DateTime date) dateChanged,
     required TResult Function(int count) countChanged,
     required TResult Function(String apartmentId) creatProduct,
@@ -2097,7 +1848,6 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -2115,7 +1865,6 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(Product product)? editingProduct,
     TResult Function(String name)? nameChanged,
     TResult Function(String price)? priceChanged,
-    TResult Function(String note)? noteChanged,
     TResult Function(DateTime date)? dateChanged,
     TResult Function(int count)? countChanged,
     TResult Function(String apartmentId)? creatProduct,
@@ -2137,7 +1886,6 @@ class _$_DeleteProduct implements _DeleteProduct {
     required TResult Function(_EditingProduct value) editingProduct,
     required TResult Function(_NameChanged value) nameChanged,
     required TResult Function(_PriceChanged value) priceChanged,
-    required TResult Function(_NoteChanged value) noteChanged,
     required TResult Function(_DateChanged value) dateChanged,
     required TResult Function(_CountChanged value) countChanged,
     required TResult Function(_CreateProduct value) creatProduct,
@@ -2155,7 +1903,6 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -2173,7 +1920,6 @@ class _$_DeleteProduct implements _DeleteProduct {
     TResult Function(_EditingProduct value)? editingProduct,
     TResult Function(_NameChanged value)? nameChanged,
     TResult Function(_PriceChanged value)? priceChanged,
-    TResult Function(_NoteChanged value)? noteChanged,
     TResult Function(_DateChanged value)? dateChanged,
     TResult Function(_CountChanged value)? countChanged,
     TResult Function(_CreateProduct value)? creatProduct,
@@ -2202,7 +1948,6 @@ abstract class _DeleteProduct implements ProductFormEvent {
 mixin _$ProductFormState {
   ProductName get productName => throw _privateConstructorUsedError;
   ProductPrice get price => throw _privateConstructorUsedError;
-  String get note => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   ProductCount get count => throw _privateConstructorUsedError;
   bool get loading => throw _privateConstructorUsedError;
@@ -2229,7 +1974,6 @@ abstract class $ProductFormStateCopyWith<$Res> {
   $Res call(
       {ProductName productName,
       ProductPrice price,
-      String note,
       DateTime dateTime,
       ProductCount count,
       bool loading,
@@ -2253,7 +1997,6 @@ class _$ProductFormStateCopyWithImpl<$Res>
   $Res call({
     Object? productName = freezed,
     Object? price = freezed,
-    Object? note = freezed,
     Object? dateTime = freezed,
     Object? count = freezed,
     Object? loading = freezed,
@@ -2272,10 +2015,6 @@ class _$ProductFormStateCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as ProductPrice,
-      note: note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as String,
       dateTime: dateTime == freezed
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
@@ -2322,7 +2061,6 @@ abstract class _$$_ProductFormStateCopyWith<$Res>
   $Res call(
       {ProductName productName,
       ProductPrice price,
-      String note,
       DateTime dateTime,
       ProductCount count,
       bool loading,
@@ -2348,7 +2086,6 @@ class __$$_ProductFormStateCopyWithImpl<$Res>
   $Res call({
     Object? productName = freezed,
     Object? price = freezed,
-    Object? note = freezed,
     Object? dateTime = freezed,
     Object? count = freezed,
     Object? loading = freezed,
@@ -2367,10 +2104,6 @@ class __$$_ProductFormStateCopyWithImpl<$Res>
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
               as ProductPrice,
-      note: note == freezed
-          ? _value.note
-          : note // ignore: cast_nullable_to_non_nullable
-              as String,
       dateTime: dateTime == freezed
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
@@ -2413,7 +2146,6 @@ class _$_ProductFormState implements _ProductFormState {
   const _$_ProductFormState(
       {required this.productName,
       required this.price,
-      required this.note,
       required this.dateTime,
       required this.count,
       required this.loading,
@@ -2427,8 +2159,6 @@ class _$_ProductFormState implements _ProductFormState {
   final ProductName productName;
   @override
   final ProductPrice price;
-  @override
-  final String note;
   @override
   final DateTime dateTime;
   @override
@@ -2448,7 +2178,7 @@ class _$_ProductFormState implements _ProductFormState {
 
   @override
   String toString() {
-    return 'ProductFormState(productName: $productName, price: $price, note: $note, dateTime: $dateTime, count: $count, loading: $loading, showErrorMessage: $showErrorMessage, creationOption: $creationOption, updateOption: $updateOption, editOption: $editOption, deleteOption: $deleteOption)';
+    return 'ProductFormState(productName: $productName, price: $price, dateTime: $dateTime, count: $count, loading: $loading, showErrorMessage: $showErrorMessage, creationOption: $creationOption, updateOption: $updateOption, editOption: $editOption, deleteOption: $deleteOption)';
   }
 
   @override
@@ -2459,7 +2189,6 @@ class _$_ProductFormState implements _ProductFormState {
             const DeepCollectionEquality()
                 .equals(other.productName, productName) &&
             const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other.note, note) &&
             const DeepCollectionEquality().equals(other.dateTime, dateTime) &&
             const DeepCollectionEquality().equals(other.count, count) &&
             const DeepCollectionEquality().equals(other.loading, loading) &&
@@ -2480,7 +2209,6 @@ class _$_ProductFormState implements _ProductFormState {
       runtimeType,
       const DeepCollectionEquality().hash(productName),
       const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(note),
       const DeepCollectionEquality().hash(dateTime),
       const DeepCollectionEquality().hash(count),
       const DeepCollectionEquality().hash(loading),
@@ -2500,7 +2228,6 @@ abstract class _ProductFormState implements ProductFormState {
   const factory _ProductFormState(
           {required final ProductName productName,
           required final ProductPrice price,
-          required final String note,
           required final DateTime dateTime,
           required final ProductCount count,
           required final bool loading,
@@ -2515,8 +2242,6 @@ abstract class _ProductFormState implements ProductFormState {
   ProductName get productName;
   @override
   ProductPrice get price;
-  @override
-  String get note;
   @override
   DateTime get dateTime;
   @override

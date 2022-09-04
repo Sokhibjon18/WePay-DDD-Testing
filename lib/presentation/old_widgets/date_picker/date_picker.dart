@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/screens/expense/date_picker/month_picker.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:we_pay/presentation/old_widgets/date_picker/month_picker.dart';
 
 class DatePicker extends StatefulWidget {
   const DatePicker({Key? key, required this.date}) : super(key: key);
@@ -88,11 +88,9 @@ class _DatePickerState extends State<DatePicker> {
                     onTap: () {
                       Navigator.pop(context);
                       context.read<ProductActorBloc>().dateTime = DateTime(year, month);
-                      String apartmentId = context.read<ProductActorBloc>().apartmentId;
+                      String apartmentId = context.read<ProductActorBloc>().publicExpenseId;
                       DateTime date = context.read<ProductActorBloc>().dateTime;
-                      context
-                          .read<ProductActorBloc>()
-                          .add(ProductActorEvent.watch(apartmentId, date));
+                      context.read<ProductActorBloc>().add(ProductActorEvent.watch(apartmentId));
                     },
                     child: const SizedBox(
                       height: 40,

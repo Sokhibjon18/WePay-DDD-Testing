@@ -38,16 +38,16 @@ class ProductDialog extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                child: Text(
-                  product.note == null
-                      ? 'Without notes\n\n${product.date.day} ${getMonthAndYear(product.date)}'
-                      : '${product.note}\n\n${product.date.day} ${getMonthAndYear(product.date)}',
-                  style: const TextStyle(fontSize: 16),
-                  textAlign: TextAlign.left,
-                ),
-              ),
+              // Container(
+              //   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+              //   child: Text(
+              //     product.note == null
+              //         ? 'Without notes\n\n${product.date.day} ${getMonthAndYear(product.date)}'
+              //         : '${product.note}\n\n${product.date.day} ${getMonthAndYear(product.date)}',
+              //     style: const TextStyle(fontSize: 16),
+              //     textAlign: TextAlign.left,
+              //   ),
+              // ),
               GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: SizedBox(
