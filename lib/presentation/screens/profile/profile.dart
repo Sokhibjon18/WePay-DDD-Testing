@@ -1,10 +1,11 @@
-import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/profile/profile_bloc.dart';
 import 'package:we_pay/domain/models/user_model/user_model.dart';
 import 'package:we_pay/domain/profile/profile_failure.dart';
+import 'package:we_pay/presentation/core/functions.dart';
+import 'package:we_pay/presentation/core/snackbar.dart';
 import 'package:we_pay/presentation/screens/profile/forms/color_picker.dart';
 import 'package:we_pay/presentation/screens/profile/forms/log_out_btn.dart';
 import 'package:we_pay/presentation/screens/profile/forms/profile_form.dart';
@@ -29,7 +30,7 @@ class ProfilePage extends StatelessWidget {
                   server: (_) => 'Server Error',
                   unexpected: (value) => value.errorMessage,
                 );
-                FlushbarHelper.createError(message: errorMessage).show(context);
+                showSnackbar(scaffoldContext(context), SnackbarStatus.warning, errorMessage);
               },
               (success) => null,
             ),

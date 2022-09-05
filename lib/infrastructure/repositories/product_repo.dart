@@ -67,7 +67,7 @@ class ProductRepository implements IProductRepository {
           product.copyWith(buyerId: buyerId, buyerName: buyerName, color: Color(productColor));
       ProductDto productDto = ProductDto.fromDomain(product);
       await _firestore
-          .productDirectory(apartmentId: productDto.publicExpenseId, productId: productDto.uid)
+          .productDirectory(publicExpenseId: productDto.publicExpenseId, productId: productDto.uid)
           .set(productDto.toJson());
       return right(unit);
     } on FirebaseException catch (e) {
@@ -107,7 +107,7 @@ class ProductRepository implements IProductRepository {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
       await _firestore
-          .productDirectory(apartmentId: productDto.publicExpenseId, productId: productDto.uid)
+          .productDirectory(publicExpenseId: productDto.publicExpenseId, productId: productDto.uid)
           .delete();
       return right(unit);
     } on FirebaseException catch (e) {
@@ -121,7 +121,7 @@ class ProductRepository implements IProductRepository {
     try {
       ProductDto productDto = ProductDto.fromDomain(product);
       await _firestore
-          .productDirectory(apartmentId: productDto.publicExpenseId, productId: productDto.uid)
+          .productDirectory(publicExpenseId: productDto.publicExpenseId, productId: productDto.uid)
           .update(productDto.toJson());
       return right(unit);
     } on FirebaseException catch (e) {
@@ -136,7 +136,7 @@ class ProductRepository implements IProductRepository {
       String userId = _auth.currentUser?.uid ?? '';
       return userId == product.buyerId
           ? right(product)
-          : left(const ValueFailure.wrongOwner('This is not your product'));
+          : left(const ValueFailure.wrongOwner('Bu mahsulot sizga tegishli emas'));
     } catch (e) {
       return left(ValueFailure.wrongOwner(e.toString()));
     }

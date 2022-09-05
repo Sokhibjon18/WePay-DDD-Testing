@@ -28,7 +28,7 @@ Widget expencePageAppBar(BuildContext context, {required Function onDebtorTaped}
               ),
             ),
             GestureDetector(
-              onTap: () => onDebtorTaped,
+              onTap: () => onDebtorTaped(),
               child: const Text(
                 'Qarzdorlik',
                 style: TextStyle(

@@ -1,4 +1,5 @@
-import 'package:another_flushbar/flushbar_helper.dart';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +10,7 @@ import 'package:we_pay/presentation/constants/colors.dart';
 import 'package:we_pay/presentation/core/functions.dart';
 import 'package:we_pay/presentation/core/snackbar.dart';
 import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
+import 'package:we_pay/presentation/screens/expense/debtors_bottom_sheet/debtors_bottom_sheet.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/app_bar.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/product_bottom_sheet.dart';
 import 'package:we_pay/presentation/screens/expense/widgets/product_item.dart';
@@ -86,13 +88,13 @@ class ExpensePageState extends State<ExpensePage> {
                     orElse: () => '',
                   );
                   if (errorMessage.isNotEmpty) {
-                    FlushbarHelper.createInformation(message: errorMessage).show(context);
+                    showSnackbar(scaffoldContext(context), SnackbarStatus.warning, errorMessage);
                   }
                 },
-                (r) {
+                (product) {
                   productBottomsheet(
                     context.findAncestorStateOfType<ExpensePageState>()!.context,
-                    product: r,
+                    product: product,
                   );
                 },
               ),
@@ -107,7 +109,7 @@ class ExpensePageState extends State<ExpensePage> {
                     orElse: () => '',
                   );
                   if (errorMessage.isNotEmpty) {
-                    FlushbarHelper.createInformation(message: errorMessage).show(context);
+                    showSnackbar(scaffoldContext(context), SnackbarStatus.warning, errorMessage);
                   }
                 },
                 (r) => null,
@@ -119,12 +121,17 @@ class ExpensePageState extends State<ExpensePage> {
       child: Stack(
         children: [
           BlocBuilder<ProductActorBloc, ProductActorState>(
-            builder: (context, state) {
+            builder: (_, state) {
               return Container(
                 color: white,
                 child: Column(
                   children: [
-                    expencePageAppBar(context, onDebtorTaped: () {}),
+                    expencePageAppBar(context, onDebtorTaped: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (_) => DebtorsBottomSheet(products: products),
+                      );
+                    }),
                     Expanded(
                       child: state.maybeMap(
                         loadFailure: (loadFailure) => loadFailureWidget(loadFailure),
@@ -173,35 +180,65 @@ class ExpensePageState extends State<ExpensePage> {
   Widget loadSuccessWidget(List<Product> products) {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
-      child: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Positioned(top: 0, child: TotalExpenses(products)),
-            Positioned(
-              top: width * 0.5,
-              child: SizedBox(
-                width: width,
-                child: Column(
-                  children: [
-                    Wrap(
-                      alignment: WrapAlignment.center,
-                      children: getModelWidget(products),
-                    ),
-                    ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: products.length,
-                      itemBuilder: (context, index) => ProductItem(product: products[index]),
-                    ),
-                  ],
+      child: Column(
+        children: [
+          Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              TotalExpenses(products),
+              Container(
+                height: MediaQuery.of(context).size.width * 0.7 * 0.4,
+                margin: EdgeInsets.only(
+                  left: 16,
+                  right: 16,
+                  top: MediaQuery.of(context).size.width * 0.7 * 0.6,
+                ),
+                width: double.infinity,
+                alignment: Alignment.center,
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  children: getModelWidget(products),
                 ),
               ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 64),
+            child: ListView.builder(
+              padding: const EdgeInsets.only(),
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: products.length,
+              itemBuilder: (context, index) => ProductItem(product: products[index]),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
+      // Stack(
+      //   children: [
+      //     Positioned(top: 0, child: TotalExpenses(products)),
+      //     Positioned(
+      //       top: width * 0.5,
+      //       child: SizedBox(
+      //         width: width,
+      //         child: Column(
+      //           children: [
+      //             Wrap(
+      //               alignment: WrapAlignment.center,
+      //               children: getModelWidget(products),
+      //             ),
+      //             ListView.builder(
+      //               physics: const NeverScrollableScrollPhysics(),
+      //               shrinkWrap: true,
+      //               itemCount: products.length,
+      //               itemBuilder: (context, index) => ProductItem(product: products[index]),
+      //             ),
+      //           ],
+      //         ),
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 
@@ -225,9 +262,9 @@ class ExpensePageState extends State<ExpensePage> {
             color: grey,
             borderRadius: BorderRadius.circular(8),
           ),
-          width: MediaQuery.of(context).size.width * 0.2,
           child: Text(
             chartModel.name,
+            maxLines: 1,
             style: TextStyle(
               fontSize: 14,
               letterSpacing: 0.2,

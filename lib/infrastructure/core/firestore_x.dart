@@ -62,12 +62,12 @@ extension FirebaseFirestoreX on FirebaseFirestore {
   }
 
   DocumentReference<Map<String, dynamic>> productDirectory({
-    required String apartmentId,
+    required String publicExpenseId,
     required String productId,
   }) {
     return getIt<FirebaseFirestore>()
         .collection('expensesInfo')
-        .doc(apartmentId)
+        .doc(publicExpenseId)
         .collection('expenses')
         .doc(productId);
   }

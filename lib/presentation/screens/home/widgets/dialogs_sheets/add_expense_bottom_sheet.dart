@@ -1,9 +1,10 @@
-import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
 import 'package:we_pay/domain/models/apartment/apartment.dart';
 import 'package:we_pay/presentation/constants/colors.dart';
+import 'package:we_pay/presentation/core/functions.dart';
+import 'package:we_pay/presentation/core/snackbar.dart';
 import 'package:we_pay/presentation/screens/widgets/my_btn.dart';
 import 'package:we_pay/presentation/screens/widgets/my_text_field.dart';
 
@@ -34,8 +35,11 @@ void addExpenseBottomSheet(BuildContext context, {PublicExpense? publicExpense})
               listener: (context, state) {
                 state.creationFailure.map(
                   (a) => a.fold(
-                    (f) => FlushbarHelper.createError(message: 'Server xatoligi')
-                        .show(bottomSheetContext),
+                    (f) => showSnackbar(
+                      scaffoldContext(context),
+                      SnackbarStatus.warning,
+                      'Server xatoligi',
+                    ),
                     (r) => Navigator.pop(context),
                   ),
                 );

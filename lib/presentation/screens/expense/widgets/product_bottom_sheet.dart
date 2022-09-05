@@ -1,6 +1,3 @@
-import 'dart:developer';
-
-import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
@@ -63,6 +60,7 @@ void productBottomsheet(BuildContext context, {Product? product}) {
                   TextFormField(
                     autocorrect: false,
                     cursorColor: blue,
+                    initialValue: product == null ? '' : product.name.getRight(),
                     onChanged: (text) =>
                         context.read<ProductFormBloc>().add(ProductFormEvent.nameChanged(text)),
                     validator: (_) => context.read<ProductFormBloc>().state.productName.value.fold(
@@ -108,6 +106,7 @@ void productBottomsheet(BuildContext context, {Product? product}) {
                             TextFormField(
                               autocorrect: false,
                               cursorColor: blue,
+                              initialValue: product == null ? '' : product.price.getRight(),
                               keyboardType: TextInputType.number,
                               onChanged: (text) => context
                                   .read<ProductFormBloc>()
