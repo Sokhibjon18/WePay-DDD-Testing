@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

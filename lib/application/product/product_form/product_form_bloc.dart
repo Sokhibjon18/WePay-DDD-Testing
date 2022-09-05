@@ -147,7 +147,7 @@ class ProductFormBloc extends Bloc<ProductFormEvent, ProductFormState> {
           await _repository.delete(event.product);
         },
       );
-      emit(state.copyWith(editOption: none(), loading: false, showErrorMessage: true));
+      emit(state.copyWith(deleteOption: none(), loading: false, showErrorMessage: true));
     });
     on<_SendNotification>((event, emit) async {
       final totalPrice = product.count * (int.tryParse(product.price.getRight()) ?? 0);

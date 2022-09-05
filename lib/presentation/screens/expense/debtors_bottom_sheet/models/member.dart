@@ -8,6 +8,7 @@ class Member {
   final int expense;
 
   static calculateAverage(List<Member> members) {
+    if (members.isEmpty) return;
     var sum = 0;
     for (var member in members) {
       sum += member.expense;
