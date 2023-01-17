@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
+import '../../../application/product/product_actor/product_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/core/snackbar.dart';
-import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
-import 'package:we_pay/presentation/screens/expense/debtors_bottom_sheet/debtors_bottom_sheet.dart';
-import 'package:we_pay/presentation/screens/expense/widgets/app_bar.dart';
-import 'package:we_pay/presentation/screens/expense/widgets/product_bottom_sheet.dart';
-import 'package:we_pay/presentation/screens/expense/widgets/product_item.dart';
-import 'package:we_pay/presentation/screens/expense/widgets/total_expenses.dart';
+import '../../../application/product/product_form/product_form_bloc.dart';
+import '../../../domain/models/apartment/apartment.dart';
+import '../../../domain/models/product/product.dart';
+import '../../constants/colors.dart';
+import '../../core/functions.dart';
+import '../../core/snackbar.dart';
+import 'custom_chart/chart_model.dart';
+import 'debtors_bottom_sheet/debtors_bottom_sheet.dart';
+import 'widgets/app_bar.dart';
+import 'widgets/product_bottom_sheet.dart';
+import 'widgets/product_item.dart';
+import 'widgets/total_expenses.dart';
 
 class ExpensePage extends StatefulWidget {
   const ExpensePage({Key? key, required this.publicExpense}) : super(key: key);

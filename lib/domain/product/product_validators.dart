@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
+import '../core/value_failure.dart';
 
 Either<ValueFailure, String> validateProductName(String input) {
   return input.length < 2

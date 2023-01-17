@@ -2,11 +2,11 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
+import '../../domain/models/apartment/apartment.dart';
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/domain/search/i_search_repository.dart';
-import 'package:we_pay/domain/search/search_failure.dart';
+import '../../domain/models/user_model/user_model.dart';
+import '../../domain/search/i_search_repository.dart';
+import '../../domain/search/search_failure.dart';
 
 @LazySingleton(as: ISearchRepository)
 class SearchRepository implements ISearchRepository {

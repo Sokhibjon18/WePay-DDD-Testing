@@ -6,14 +6,14 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:we_pay/domain/auth/auth_failure.dart';
+import '../../domain/auth/auth_failure.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/auth/i_auth_facade.dart';
-import 'package:we_pay/domain/auth/value_objects.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/infrastructure/core/firestore_x.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../domain/auth/i_auth_facade.dart';
+import '../../domain/auth/value_objects.dart';
+import '../../domain/models/user_model/user_model.dart';
+import '../core/firestore_x.dart';
+import '../../presentation/constants/colors.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {

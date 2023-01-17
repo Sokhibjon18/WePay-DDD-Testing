@@ -1,18 +1,17 @@
 import 'dart:async';
-import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/apartment/apartment_failure.dart';
-import 'package:we_pay/domain/apartment/i_apartment_repository.dart';
-import 'package:we_pay/domain/apartment/value_objects.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/domain/models/current_date_expense.dart';
-import 'package:we_pay/domain/models/request/request.dart';
-import 'package:we_pay/domain/models/roommates.dart';
-import 'package:we_pay/domain/search/search_failure.dart';
+import '../../domain/apartment/apartment_failure.dart';
+import '../../domain/apartment/i_apartment_repository.dart';
+import '../../domain/apartment/value_objects.dart';
+import '../../domain/core/value_failure.dart';
+import '../../domain/models/apartment/apartment.dart';
+import '../../domain/models/current_date_expense.dart';
+import '../../domain/models/request/request.dart';
+import '../../domain/models/roommates.dart';
+import '../../domain/search/search_failure.dart';
 
 part 'form_apartment_event.dart';
 part 'form_apartment_state.dart';

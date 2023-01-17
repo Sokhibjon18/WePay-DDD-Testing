@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/injection.config.dart';
+import 'injection.config.dart';
 
 GetIt getIt = GetIt.I;
 

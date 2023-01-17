@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: non_constant_identifier_names
+
 part of 'request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RequestToJoin _$$_RequestToJoinFromJson(Map<String, dynamic> json) =>
-    _$_RequestToJoin(
+_$_RequestToJoin _$$_RequestToJoinFromJson(Map<String, dynamic> json) => _$_RequestToJoin(
       userId: json['userId'] as String,
       uid: json['uid'] as String,
       email: json['email'] as String,
@@ -15,8 +16,7 @@ _$_RequestToJoin _$$_RequestToJoinFromJson(Map<String, dynamic> json) =>
       publicExpenseName: json['publicExpenseName'] as String,
     );
 
-Map<String, dynamic> _$$_RequestToJoinToJson(_$_RequestToJoin instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_RequestToJoinToJson(_$_RequestToJoin instance) => <String, dynamic>{
       'userId': instance.userId,
       'uid': instance.uid,
       'email': instance.email,

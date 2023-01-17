@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/core/extensions.dart';
-import 'package:we_pay/presentation/screens/widgets/my_pop_up_menu.dart';
+import '../../../../application/product/product_form/product_form_bloc.dart';
+import '../../../../domain/models/product/product.dart';
+import '../../../constants/colors.dart';
+import '../../../core/functions.dart';
+import '../../../core/extensions.dart';
+import '../../widgets/my_pop_up_menu.dart';
 
 class ProductItem extends StatelessWidget {
   ProductItem({Key? key, required this.product}) : super(key: key);

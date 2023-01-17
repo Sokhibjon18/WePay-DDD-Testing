@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +6,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:uuid/uuid.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/domain/product/i_product_repository.dart';
-import 'package:we_pay/domain/product/product_failure.dart';
-import 'package:we_pay/domain/product/value_objects.dart';
-import 'package:we_pay/presentation/core/functions.dart';
+import '../../../domain/core/value_failure.dart';
+import '../../../domain/models/product/product.dart';
+import '../../../domain/product/i_product_repository.dart';
+import '../../../domain/product/product_failure.dart';
+import '../../../domain/product/value_objects.dart';
+import '../../../presentation/core/functions.dart';
 
 part 'product_form_event.dart';
 part 'product_form_state.dart';

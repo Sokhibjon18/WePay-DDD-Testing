@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/profile/profile_bloc.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/domain/profile/profile_failure.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/core/snackbar.dart';
-import 'package:we_pay/presentation/screens/profile/forms/color_picker.dart';
-import 'package:we_pay/presentation/screens/profile/forms/log_out_btn.dart';
-import 'package:we_pay/presentation/screens/profile/forms/profile_form.dart';
-import 'package:we_pay/presentation/screens/profile/forms/save_btn.dart';
+import '../../../application/profile/profile_bloc.dart';
+import '../../../domain/models/user_model/user_model.dart';
+import '../../../domain/profile/profile_failure.dart';
+import '../../core/functions.dart';
+import '../../core/snackbar.dart';
+import 'forms/color_picker.dart';
+import 'forms/log_out_btn.dart';
+import 'forms/profile_form.dart';
+import 'forms/save_btn.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);

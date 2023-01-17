@@ -6,9 +6,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/firebase_options.dart';
-import 'package:we_pay/injection.dart';
-import 'package:we_pay/presentation/core/my_app.dart';
+import 'firebase_options.dart';
+import 'injection.dart';
+import 'presentation/core/my_app.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();

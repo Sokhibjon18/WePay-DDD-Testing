@@ -2,10 +2,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/domain/models/request/request.dart';
-import 'package:we_pay/domain/request/i_request_repository.dart';
-import 'package:we_pay/domain/request/request_failure.dart';
+import '../../domain/models/apartment/apartment.dart';
+import '../../domain/models/request/request.dart';
+import '../../domain/request/i_request_repository.dart';
+import '../../domain/request/request_failure.dart';
 
 part 'request_event.dart';
 part 'request_state.dart';

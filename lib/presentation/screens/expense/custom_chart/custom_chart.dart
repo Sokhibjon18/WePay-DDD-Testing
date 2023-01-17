@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
-import 'package:we_pay/presentation/screens/expense/custom_chart/const.dart';
+import '../../../constants/colors.dart';
+import '../../../core/functions.dart';
+import 'chart_model.dart';
+import 'const.dart';
 
 class PieChartPainter extends CustomPainter {
   List<ChartModel> listOfCards;

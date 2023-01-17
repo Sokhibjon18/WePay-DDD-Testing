@@ -1,5 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
+// ignore_for_file: non_constant_identifier_names
+
 part of 'apartment.dart';
 
 // **************************************************************************
@@ -10,13 +12,10 @@ _$_Apartment _$$_ApartmentFromJson(Map<String, dynamic> json) => _$_Apartment(
       uid: json['uid'] as String? ?? '',
       ownerId: json['ownerId'] as String?,
       name: json['name'] as String? ?? '',
-      users:
-          (json['users'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              const [],
+      users: (json['users'] as List<dynamic>?)?.map((e) => e as String).toList() ?? const [],
     );
 
-Map<String, dynamic> _$$_ApartmentToJson(_$_Apartment instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_ApartmentToJson(_$_Apartment instance) => <String, dynamic>{
       'uid': instance.uid,
       'ownerId': instance.ownerId,
       'name': instance.name,

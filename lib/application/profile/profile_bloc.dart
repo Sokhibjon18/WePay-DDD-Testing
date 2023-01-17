@@ -2,11 +2,11 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/auth/value_objects.dart';
-import 'package:we_pay/domain/models/profile.dart';
-import 'package:we_pay/domain/profile/i_profile_repository.dart';
-import 'package:we_pay/domain/profile/profile_failure.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../domain/auth/value_objects.dart';
+import '../../domain/models/profile.dart';
+import '../../domain/profile/i_profile_repository.dart';
+import '../../domain/profile/profile_failure.dart';
+import '../../presentation/constants/colors.dart';
 
 import '../../domain/models/user_model/user_model.dart';
 

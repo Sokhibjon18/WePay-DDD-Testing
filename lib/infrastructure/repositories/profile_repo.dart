@@ -4,11 +4,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/models/profile.dart';
-import 'package:we_pay/domain/profile/profile_failure.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/domain/profile/i_profile_repository.dart';
-import 'package:we_pay/infrastructure/core/firestore_x.dart';
+import '../../domain/models/profile.dart';
+import '../../domain/profile/profile_failure.dart';
+import '../../domain/models/user_model/user_model.dart';
+import '../../domain/profile/i_profile_repository.dart';
+import '../core/firestore_x.dart';
 
 @LazySingleton(as: IProfileRepository)
 class ProfileRepository implements IProfileRepository {

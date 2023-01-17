@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/request/request_bloc.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/domain/models/request/request.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/snackbar.dart';
+
+import '../../../../../application/request/request_bloc.dart';
+import '../../../../../domain/models/apartment/apartment.dart';
+import '../../../../../domain/models/request/request.dart';
+import '../../../../../domain/models/user_model/user_model.dart';
+import '../../../../constants/colors.dart';
+import '../../../../core/snackbar.dart';
 
 class UserSearchItem extends StatelessWidget {
   const UserSearchItem({

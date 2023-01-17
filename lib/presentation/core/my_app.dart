@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
-import 'package:we_pay/application/search/search_user/search_bloc.dart';
-import 'package:we_pay/injection.dart';
-import 'package:we_pay/presentation/router/router.gr.dart';
-import 'package:we_pay/application/auth/auth_bloc.dart';
-import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
-import 'package:we_pay/application/request/request_bloc.dart';
-import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
-import 'package:we_pay/application/product/product_form/product_form_bloc.dart';
-import 'package:we_pay/application/profile/profile_bloc.dart';
-import 'package:we_pay/application/connection/connection_bloc.dart' as con;
+import '../../application/apartment/form_apartment_bloc.dart';
+import '../../application/search/search_user/search_bloc.dart';
+import '../../injection.dart';
+import '../router/router.gr.dart';
+import '../../application/auth/auth_bloc.dart';
+import '../../application/sign_in_checker/sign_in_checker_bloc.dart';
+import '../../application/request/request_bloc.dart';
+import '../../application/product/product_actor/product_actor_bloc.dart';
+import '../../application/product/product_form/product_form_bloc.dart';
+import '../../application/profile/profile_bloc.dart';
+import '../../application/connection/connection_bloc.dart' as con;
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);

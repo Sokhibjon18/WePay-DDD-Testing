@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/request/request_bloc.dart';
-import 'package:we_pay/domain/models/request/request.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../../../application/request/request_bloc.dart';
+import '../../../../../domain/models/request/request.dart';
+import '../../../../constants/colors.dart';
 
 class InvitationItem extends StatelessWidget {
   const InvitationItem({Key? key, required this.request}) : super(key: key);

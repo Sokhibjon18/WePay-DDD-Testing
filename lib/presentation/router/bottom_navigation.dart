@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/router/router.gr.dart';
-import 'package:we_pay/presentation/core/functions.dart';
+import '../constants/colors.dart';
+import 'router.gr.dart';
+import '../core/functions.dart';
 
 class BottomNavigationPage extends StatelessWidget {
   const BottomNavigationPage({Key? key}) : super(key: key);

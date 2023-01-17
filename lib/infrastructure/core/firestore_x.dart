@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/injection.dart';
+import '../../domain/models/user_model/user_model.dart';
+import '../../injection.dart';
 
 extension FirebaseFirestoreX on FirebaseFirestore {
   Future<DocumentSnapshot<Map<String, dynamic>>> getUser(String uid) async {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/screens/auth/forms/sign_up_form.dart';
-import 'package:we_pay/presentation/screens/auth/widget/header.dart';
-import 'package:we_pay/presentation/screens/auth/widget/sign_up_btns.dart';
+import '../../constants/colors.dart';
+import 'forms/sign_up_form.dart';
+import 'widget/header.dart';
+import 'widget/sign_up_btns.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({Key? key}) : super(key: key);

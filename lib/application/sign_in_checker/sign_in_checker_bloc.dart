@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/auth/i_auth_facade.dart';
+import '../../domain/auth/i_auth_facade.dart';
 
 part 'sign_in_checker_event.dart';
 part 'sign_in_checker_state.dart';

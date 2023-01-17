@@ -1,7 +1,7 @@
-import 'package:we_pay/domain/core/value_failure.dart';
+import '../core/value_failure.dart';
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/core/value_object.dart';
-import 'package:we_pay/domain/product/product_validators.dart';
+import '../core/value_object.dart';
+import 'product_validators.dart';
 
 class ProductName extends ValueObject {
   @override

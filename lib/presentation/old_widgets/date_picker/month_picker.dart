@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/product/product_actor/product_actor_bloc.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../application/product/product_actor/product_actor_bloc.dart';
+import '../../constants/colors.dart';
 
 class MonthPicker extends StatefulWidget {
   const MonthPicker({Key? key, required this.monthChanged}) : super(key: key);

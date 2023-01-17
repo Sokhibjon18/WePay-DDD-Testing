@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:we_pay/domain/product/value_objects.dart';
+import '../../product/value_objects.dart';
 
 part 'product.freezed.dart';
 

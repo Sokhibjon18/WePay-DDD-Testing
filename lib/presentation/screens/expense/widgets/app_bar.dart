@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../constants/colors.dart';
 
 Widget expencePageAppBar(BuildContext context, {required Function onDebtorTaped}) => SafeArea(
       child: Container(

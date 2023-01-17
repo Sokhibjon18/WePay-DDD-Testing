@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/auth/auth_bloc.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/router/router.gr.dart';
-import 'package:we_pay/presentation/screens/widgets/my_btn.dart';
+import '../../../../application/auth/auth_bloc.dart';
+import '../../../constants/colors.dart';
+import '../../../router/router.gr.dart';
+import '../../widgets/my_btn.dart';
 
 class SignUpBtns extends StatelessWidget {
   const SignUpBtns({Key? key}) : super(key: key);

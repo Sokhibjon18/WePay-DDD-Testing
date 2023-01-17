@@ -1,12 +1,10 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/domain/search/i_search_repository.dart';
-import 'package:we_pay/domain/search/search_failure.dart';
+import '../../../domain/models/user_model/user_model.dart';
+import '../../../domain/search/i_search_repository.dart';
+import '../../../domain/search/search_failure.dart';
 
 part 'search_event.dart';
 part 'search_state.dart';

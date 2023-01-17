@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:uuid/uuid.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
+import '../../domain/models/apartment/apartment.dart';
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/models/request/request.dart';
-import 'package:we_pay/domain/request/i_request_repository.dart';
-import 'package:we_pay/domain/request/request_failure.dart';
-import 'package:we_pay/infrastructure/core/firestore_x.dart';
+import '../../domain/models/request/request.dart';
+import '../../domain/request/i_request_repository.dart';
+import '../../domain/request/request_failure.dart';
+import '../core/firestore_x.dart';
 
 @LazySingleton(as: IRequestRepository)
 class RequestRepository implements IRequestRepository {

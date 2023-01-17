@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:we_pay/presentation/router/bottom_navigation.dart';
-import 'package:we_pay/presentation/screens/auth/login_page.dart';
-import 'package:we_pay/presentation/screens/auth/sign_up_page.dart';
-import 'package:we_pay/presentation/screens/expense/expense_page.dart';
-import 'package:we_pay/presentation/screens/home/home_page.dart';
-import 'package:we_pay/presentation/screens/profile/profile.dart';
-import 'package:we_pay/presentation/screens/splash/splash_page.dart';
-import 'package:we_pay/presentation/screens/statistics/statistics_page.dart';
+import 'bottom_navigation.dart';
+import '../screens/auth/login_page.dart';
+import '../screens/auth/sign_up_page.dart';
+import '../screens/expense/expense_page.dart';
+import '../screens/home/home_page.dart';
+import '../screens/profile/profile.dart';
+import '../screens/splash/splash_page.dart';
+import '../screens/statistics/statistics_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',

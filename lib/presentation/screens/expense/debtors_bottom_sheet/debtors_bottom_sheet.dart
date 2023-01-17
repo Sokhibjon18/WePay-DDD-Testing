@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/screens/expense/debtors_bottom_sheet/models/member.dart';
-import 'package:we_pay/presentation/screens/expense/debtors_bottom_sheet/models/member_to_member.dart';
+import '../../../../domain/models/product/product.dart';
+import '../../../constants/colors.dart';
+import '../../../core/functions.dart';
+import 'models/member.dart';
+import 'models/member_to_member.dart';
 
 class DebtorsBottomSheet extends StatelessWidget {
   DebtorsBottomSheet({Key? key, required this.products}) : super(key: key) {

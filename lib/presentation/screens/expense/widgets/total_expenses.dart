@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/presentation/screens/expense/custom_chart/chart_model.dart';
-import 'package:we_pay/presentation/screens/expense/custom_chart/custom_chart.dart';
+import '../../../../domain/models/product/product.dart';
+import '../custom_chart/chart_model.dart';
+import '../custom_chart/custom_chart.dart';
 
 class TotalExpenses extends StatelessWidget {
   const TotalExpenses(this.productList, {Key? key}) : super(key: key);

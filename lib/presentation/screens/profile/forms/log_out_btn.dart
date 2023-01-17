@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/router/router.gr.dart';
+import '../../../constants/colors.dart';
+import '../../../router/router.gr.dart';
 import 'package:we_pay/application/sign_in_checker/sign_in_checker_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

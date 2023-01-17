@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/screens/auth/forms/login_form.dart';
-import 'package:we_pay/presentation/screens/auth/widget/header.dart';
-import 'package:we_pay/presentation/screens/auth/widget/login_btns.dart';
-import 'package:we_pay/presentation/core/functions.dart';
+import '../../constants/colors.dart';
+import 'forms/login_form.dart';
+import 'widget/header.dart';
+import 'widget/login_btns.dart';
+import '../../core/functions.dart';
 
 class LogInPage extends StatelessWidget {
   const LogInPage({Key? key}) : super(key: key);

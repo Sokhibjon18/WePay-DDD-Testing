@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/apartment/apartment_validator.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
-import 'package:we_pay/domain/core/value_object.dart';
+import 'apartment_validator.dart';
+import '../core/value_failure.dart';
+import '../core/value_object.dart';
 
 class Address extends ValueObject {
   @override

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/application/request/request_bloc.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../domain/models/apartment/apartment.dart';
+import '../../constants/colors.dart';
 
 class JoinDialog extends StatelessWidget {
   const JoinDialog({Key? key, required this.apartment}) : super(key: key);

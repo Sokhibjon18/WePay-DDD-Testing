@@ -5,16 +5,16 @@ import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
-import 'package:we_pay/domain/models/product/product.dart';
+import '../../domain/core/value_failure.dart';
+import '../../domain/models/product/product.dart';
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/domain/product/i_product_repository.dart';
-import 'package:we_pay/domain/product/product_failure.dart';
-import 'package:we_pay/infrastructure/core/firestore_x.dart';
+import '../../domain/models/user_model/user_model.dart';
+import '../../domain/product/i_product_repository.dart';
+import '../../domain/product/product_failure.dart';
+import '../core/firestore_x.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:we_pay/infrastructure/product_dto/product_dto.dart';
-import 'package:we_pay/infrastructure/strings.dart';
+import '../product_dto/product_dto.dart';
+import '../strings.dart';
 
 @LazySingleton(as: IProductRepository)
 class ProductRepository implements IProductRepository {

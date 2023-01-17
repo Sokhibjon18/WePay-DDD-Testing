@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/domain/product/product_failure.dart';
+import '../core/value_failure.dart';
+import '../models/product/product.dart';
+import 'product_failure.dart';
 
 abstract class IProductRepository {
   Stream<Either<ProductFailure, List<Product>>> watchAllProductInApartment(String publicExpenseId);

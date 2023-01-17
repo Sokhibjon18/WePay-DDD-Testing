@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../constants/colors.dart';
 
 Widget authHeader(String title) => Container(
       padding: const EdgeInsets.symmetric(vertical: 42, horizontal: 32),

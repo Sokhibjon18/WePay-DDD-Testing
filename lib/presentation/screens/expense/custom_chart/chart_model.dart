@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../../domain/models/product/product.dart';
+import '../../../constants/colors.dart';
 
 class ChartModel {
   String name;

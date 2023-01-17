@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:we_pay/domain/auth/value_objects.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
+import 'value_objects.dart';
+import '../core/value_failure.dart';
 
 Either<ValueFailure<String>, String> validateStringNotEmpty(String input) {
   return input.isEmpty ? left(const ValueFailure.empty()) : right(input);

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:we_pay/domain/core/value_failure.dart';
+import '../core/value_failure.dart';
 
 Either<ValueFailure<String>, String> validateAddress(String input) {
   return input.length < 3 ? left(const ValueFailure.shortageAddress()) : right(input);

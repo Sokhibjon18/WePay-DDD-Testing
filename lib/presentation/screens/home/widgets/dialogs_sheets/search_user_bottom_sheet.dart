@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/request/request_bloc.dart';
-import 'package:we_pay/application/search/search_user/search_bloc.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/domain/models/user_model/user_model.dart';
-import 'package:we_pay/injection.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/screens/home/widgets/list_items/user_serach_item.dart';
-import 'package:we_pay/presentation/screens/widgets/my_btn.dart';
+import '../../../../../application/request/request_bloc.dart';
+import '../../../../../application/search/search_user/search_bloc.dart';
+import '../../../../../domain/models/apartment/apartment.dart';
+import '../../../../../domain/models/user_model/user_model.dart';
+import '../../../../../injection.dart';
+import '../../../../constants/colors.dart';
+import '../../../../core/functions.dart';
+import '../list_items/user_serach_item.dart';
+import '../../../widgets/my_btn.dart';
 
 void searchUserBottomSheet(BuildContext context, String publicExpensUid) {}
 

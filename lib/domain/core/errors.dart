@@ -1,4 +1,4 @@
-import 'package:we_pay/domain/core/value_failure.dart';
+import 'value_failure.dart';
 
 class UnexpectedErrorValue extends Error {
   UnexpectedErrorValue(this.valueFailure);

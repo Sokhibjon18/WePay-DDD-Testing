@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:we_pay/domain/auth/i_auth_facade.dart';
-import 'package:we_pay/domain/auth/value_objects.dart';
-import 'package:we_pay/domain/auth/auth_failure.dart';
+import '../../domain/auth/i_auth_facade.dart';
+import '../../domain/auth/value_objects.dart';
+import '../../domain/auth/auth_failure.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';

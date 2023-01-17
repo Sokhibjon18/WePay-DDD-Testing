@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
-import 'package:we_pay/domain/models/product/product.dart';
-import 'package:we_pay/domain/product/value_objects.dart';
+import '../../domain/models/product/product.dart';
+import '../../domain/product/value_objects.dart';
 
 part 'product_dto.freezed.dart';
 part 'product_dto.g.dart';

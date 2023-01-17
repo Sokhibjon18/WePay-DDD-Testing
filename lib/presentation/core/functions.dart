@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../constants/colors.dart';
 
 String priceFixer(String price) {
   String newPrice = '';

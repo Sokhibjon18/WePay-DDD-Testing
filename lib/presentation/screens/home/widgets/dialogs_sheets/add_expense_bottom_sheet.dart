@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/apartment/form_apartment_bloc.dart';
-import 'package:we_pay/domain/models/apartment/apartment.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/core/functions.dart';
-import 'package:we_pay/presentation/core/snackbar.dart';
-import 'package:we_pay/presentation/screens/widgets/my_btn.dart';
-import 'package:we_pay/presentation/screens/widgets/my_text_field.dart';
+import '../../../../../application/apartment/form_apartment_bloc.dart';
+import '../../../../../domain/models/apartment/apartment.dart';
+import '../../../../constants/colors.dart';
+import '../../../../core/functions.dart';
+import '../../../../core/snackbar.dart';
+import '../../../widgets/my_btn.dart';
+import '../../../widgets/my_text_field.dart';
 
 void addExpenseBottomSheet(BuildContext context, {PublicExpense? publicExpense}) {
   showModalBottomSheet<dynamic>(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/profile/profile_bloc.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../../application/profile/profile_bloc.dart';
+import '../../../constants/colors.dart';
 
 class ProfileSaveBtn extends StatelessWidget {
   const ProfileSaveBtn({Key? key}) : super(key: key);

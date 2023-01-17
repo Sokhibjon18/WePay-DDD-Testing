@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/application/profile/profile_bloc.dart';
-import 'package:we_pay/presentation/screens/utils/reusable_widgets.dart';
+import '../../../../application/profile/profile_bloc.dart';
+import '../../utils/reusable_widgets.dart';
 
 class ProfileForm extends StatelessWidget {
   const ProfileForm({

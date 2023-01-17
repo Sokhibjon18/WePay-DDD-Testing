@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
+import '../../../constants/colors.dart';
 
 //measurments
 const double spaceBetweenCharts = pi / 90;

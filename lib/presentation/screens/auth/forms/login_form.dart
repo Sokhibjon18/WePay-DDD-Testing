@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:we_pay/application/auth/auth_bloc.dart';
+import '../../../../application/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:we_pay/presentation/constants/colors.dart';
-import 'package:we_pay/presentation/router/router.gr.dart';
-import 'package:we_pay/presentation/core/snackbar.dart';
+import '../../../constants/colors.dart';
+import '../../../router/router.gr.dart';
+import '../../../core/snackbar.dart';
 
 class LoginFrom extends StatelessWidget {
   const LoginFrom({Key? key}) : super(key: key);
