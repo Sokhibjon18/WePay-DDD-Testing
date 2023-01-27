@@ -55,7 +55,7 @@ mixin _$AuthEvent {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -68,7 +68,7 @@ mixin _$AuthEvent {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -81,7 +81,7 @@ mixin _$AuthEvent {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -220,7 +220,7 @@ class _$EmailChanged implements EmailChanged {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -236,7 +236,7 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -252,7 +252,7 @@ class _$EmailChanged implements EmailChanged {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -390,7 +390,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -406,7 +406,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -422,7 +422,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -559,7 +559,7 @@ class _$NameChanged implements NameChanged {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -575,7 +575,7 @@ class _$NameChanged implements NameChanged {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -591,7 +591,7 @@ class _$NameChanged implements NameChanged {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -616,32 +616,31 @@ abstract class NameChanged implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$ResigisterWithEmailAndPasswordCopyWith<$Res> {
-  factory _$$ResigisterWithEmailAndPasswordCopyWith(
-          _$ResigisterWithEmailAndPassword value,
-          $Res Function(_$ResigisterWithEmailAndPassword) then) =
-      __$$ResigisterWithEmailAndPasswordCopyWithImpl<$Res>;
+abstract class _$$RegisterWithEmailAndPasswordCopyWith<$Res> {
+  factory _$$RegisterWithEmailAndPasswordCopyWith(
+          _$RegisterWithEmailAndPassword value,
+          $Res Function(_$RegisterWithEmailAndPassword) then) =
+      __$$RegisterWithEmailAndPasswordCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ResigisterWithEmailAndPasswordCopyWithImpl<$Res>
+class __$$RegisterWithEmailAndPasswordCopyWithImpl<$Res>
     extends _$AuthEventCopyWithImpl<$Res>
-    implements _$$ResigisterWithEmailAndPasswordCopyWith<$Res> {
-  __$$ResigisterWithEmailAndPasswordCopyWithImpl(
-      _$ResigisterWithEmailAndPassword _value,
-      $Res Function(_$ResigisterWithEmailAndPassword) _then)
-      : super(_value, (v) => _then(v as _$ResigisterWithEmailAndPassword));
+    implements _$$RegisterWithEmailAndPasswordCopyWith<$Res> {
+  __$$RegisterWithEmailAndPasswordCopyWithImpl(
+      _$RegisterWithEmailAndPassword _value,
+      $Res Function(_$RegisterWithEmailAndPassword) _then)
+      : super(_value, (v) => _then(v as _$RegisterWithEmailAndPassword));
 
   @override
-  _$ResigisterWithEmailAndPassword get _value =>
-      super._value as _$ResigisterWithEmailAndPassword;
+  _$RegisterWithEmailAndPassword get _value =>
+      super._value as _$RegisterWithEmailAndPassword;
 }
 
 /// @nodoc
 
-class _$ResigisterWithEmailAndPassword
-    implements ResigisterWithEmailAndPassword {
-  const _$ResigisterWithEmailAndPassword();
+class _$RegisterWithEmailAndPassword implements RegisterWithEmailAndPassword {
+  const _$RegisterWithEmailAndPassword();
 
   @override
   String toString() {
@@ -652,7 +651,7 @@ class _$ResigisterWithEmailAndPassword
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ResigisterWithEmailAndPassword);
+            other is _$RegisterWithEmailAndPassword);
   }
 
   @override
@@ -710,7 +709,7 @@ class _$ResigisterWithEmailAndPassword
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -726,7 +725,7 @@ class _$ResigisterWithEmailAndPassword
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -742,7 +741,7 @@ class _$ResigisterWithEmailAndPassword
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -757,9 +756,8 @@ class _$ResigisterWithEmailAndPassword
   }
 }
 
-abstract class ResigisterWithEmailAndPassword implements AuthEvent {
-  const factory ResigisterWithEmailAndPassword() =
-      _$ResigisterWithEmailAndPassword;
+abstract class RegisterWithEmailAndPassword implements AuthEvent {
+  const factory RegisterWithEmailAndPassword() = _$RegisterWithEmailAndPassword;
 }
 
 /// @nodoc
@@ -856,7 +854,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -872,7 +870,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -888,7 +886,7 @@ class _$SignInWithEmailAndPassword implements SignInWithEmailAndPassword {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -997,7 +995,7 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -1013,7 +1011,7 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -1029,7 +1027,7 @@ class _$SignInWithGoogle implements SignInWithGoogle {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -1135,7 +1133,7 @@ class _$Refresh implements Refresh {
     required TResult Function(EmailChanged value) emailChanged,
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(NameChanged value) nameChanged,
-    required TResult Function(ResigisterWithEmailAndPassword value)
+    required TResult Function(RegisterWithEmailAndPassword value)
         registerWithEmailAndPassword,
     required TResult Function(SignInWithEmailAndPassword value)
         signInWithEmailAndPassword,
@@ -1151,7 +1149,7 @@ class _$Refresh implements Refresh {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,
@@ -1167,7 +1165,7 @@ class _$Refresh implements Refresh {
     TResult Function(EmailChanged value)? emailChanged,
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(NameChanged value)? nameChanged,
-    TResult Function(ResigisterWithEmailAndPassword value)?
+    TResult Function(RegisterWithEmailAndPassword value)?
         registerWithEmailAndPassword,
     TResult Function(SignInWithEmailAndPassword value)?
         signInWithEmailAndPassword,

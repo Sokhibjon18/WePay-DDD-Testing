@@ -847,9 +847,3 @@ class MockSharedPreferences extends _i1.Mock implements _i13.SharedPreferences {
       returnValue: _i8.Future<void>.value(),
       returnValueForMissingStub: _i8.Future<void>.value()) as _i8.Future<void>);
 }
-
-/// A class which mocks [GoogleSignInAuthentication].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockGoogleSignInAuthentication extends _i1.Mock
-    implements _i9.GoogleSignInAuthentication {}

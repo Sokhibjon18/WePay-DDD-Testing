@@ -1,3 +1,5 @@
+// ignore_for_file: subtype_of_sealed_class
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -54,7 +56,7 @@ void main() {
   );
 
   group('getSignedUser', () {
-    test('should return signed user when it exists', () async {
+    test('should return signed User when it exists', () async {
       var fakeUser = _FakeUser();
       when(_auth.currentUser).thenReturn(fakeUser);
       var userOption = await repo.getSignedUser();
@@ -63,7 +65,7 @@ void main() {
       expect(userOption.isSome(), true);
     });
 
-    test('should return null when user does not exists', () async {
+    test('should return Null when user does not exists', () async {
       when(_auth.currentUser).thenReturn(null);
       var userOption = await repo.getSignedUser();
 
@@ -106,7 +108,7 @@ void main() {
       };
     });
 
-    test('should return unit when user created successfully', () async {
+    test('should return Unit when user created successfully', () async {
       when(_auth.createUserWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -128,7 +130,7 @@ void main() {
       expect(registeredUser, const Right(unit));
     });
 
-    test('should return email already in use failure when email already in use', () async {
+    test('should return Email Already In Use failure when email already in use', () async {
       when(_auth.createUserWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -141,7 +143,7 @@ void main() {
       expect(registeredUser, const Left(AuthFailure.emailAlreadyInUse()));
     });
 
-    test('should return server error failure when exception is not email-already-in-use', () async {
+    test('should return Server failure when exception is not email-already-in-use', () async {
       when(_auth.createUserWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -153,7 +155,7 @@ void main() {
       expect(registeredUser, const Left(AuthFailure.serverError()));
     });
 
-    test('should return unexpected error when exception is not related to Firebase', () async {
+    test('should return Unexpected failure when exception is not related to Firebase', () async {
       when(_auth.createUserWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -198,7 +200,7 @@ void main() {
       };
     });
 
-    test('should return unit when sign in successfully', () async {
+    test('should return Unit when sign in successfully', () async {
       when(_auth.signInWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -220,7 +222,8 @@ void main() {
       expect(user, const Right(unit));
     });
 
-    test('should return Firebase Exeption when user has invalid email and password combinations',
+    test(
+        'should return Invalid Email And Password Combination failure when user has invalid email and password combinations',
         () async {
       when(_auth.signInWithEmailAndPassword(
         email: email.getRight(),
@@ -233,7 +236,7 @@ void main() {
       expect(user, const Left(AuthFailure.invalidEmailAndPasswordCombination()));
     });
 
-    test('should return Firebase Exeption when there is unexpected error from net', () async {
+    test('should return Server failure when there is unexpected error from net', () async {
       when(_auth.signInWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -246,7 +249,7 @@ void main() {
       expect(user, const Left(AuthFailure.serverError()));
     });
 
-    test('should return Exeption when there is problem with application', () async {
+    test('should return Unexpected failure when there is problem with application', () async {
       when(_auth.signInWithEmailAndPassword(
         email: email.getRight(),
         password: password.getRight(),
@@ -269,13 +272,13 @@ void main() {
         reset(_firestore);
         reset(_messaging);
         reset(_sharedPreferences);
-        verifyNoMoreInteractions(_firestore);
-        verifyNoMoreInteractions(_messaging);
-        verifyNoMoreInteractions(_sharedPreferences);
+        verifyZeroInteractions(_firestore);
+        verifyZeroInteractions(_messaging);
+        verifyZeroInteractions(_sharedPreferences);
       };
     });
 
-    test('should return unit when sign in successfully', () async {
+    test('should return Unit when sign in successfully', () async {
       var googleUser = _FakeGoogleSignInAccount();
       final authCredential = GoogleAuthProvider.credential(
         accessToken: 'accessToken',
@@ -296,6 +299,64 @@ void main() {
       ]);
 
       expect(result, const Right(unit));
+    });
+
+    test('should return CanceledByUser failure when google user does not found', () async {
+      when(_googleAuth.signIn()).thenAnswer((_) async => null);
+
+      var result = await repo.signInWithGoogle();
+
+      verify(_googleAuth.signIn());
+
+      expect(result, const Left(AuthFailure.canceledByUser()));
+    });
+
+    test('should return Server failure when Firebase exception is found', () async {
+      when(_googleAuth.signIn()).thenThrow(FirebaseException(plugin: '', code: ''));
+
+      var result = await repo.signInWithGoogle();
+
+      verify(_googleAuth.signIn());
+      verificationsForExceptions();
+
+      expect(result, const Left(AuthFailure.serverError()));
+    });
+
+    test('should return Unexpected failure when Exception is found from app part', () async {
+      when(_googleAuth.signIn()).thenThrow(Exception());
+
+      var result = await repo.signInWithGoogle();
+
+      verify(_googleAuth.signIn());
+      verificationsForExceptions();
+
+      expect(result, const Left(AuthFailure.unexpectedError()));
+    });
+  });
+
+  group('signgOut', () {
+    test('signs out and delete notifivation token when entered by email and google account',
+        () async {
+      when(_auth.signOut()).thenAnswer((_) async {});
+      when(_googleAuth.signOut()).thenAnswer((_) async => null);
+      when(_messaging.deleteToken()).thenAnswer((_) async {});
+
+      repo.signOut();
+
+      verify(_auth.signOut());
+    });
+
+    test('throws exception when it is not capable of sign out', () {
+      reset(_auth);
+      reset(_googleAuth);
+      reset(_messaging);
+      when(_auth.signOut()).thenThrow(Exception());
+
+      repo.signOut();
+
+      verify(_auth.signOut());
+      verifyZeroInteractions(_googleAuth);
+      verifyZeroInteractions(_messaging);
     });
   });
 }
