@@ -33,7 +33,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         authFailureOrSuccessOption: none(),
       ));
     });
-    on<ResigisterWithEmailAndPassword>((event, emit) async {
+    on<RegisterWithEmailAndPassword>((event, emit) async {
       Either<AuthFailure, Unit>? failureOrSuccess;
 
       final emailIsValid = state.emailAddress.isValid();
@@ -48,14 +48,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           email: state.emailAddress,
           password: state.password,
         );
-
-        emit(state.copyWith(
-          isSubmitting: false,
-          authFailureOrSuccessOption: some(failureOrSuccess),
-        ));
       }
 
       emit(state.copyWith(
+        isSubmitting: false,
         showErrorMessage: true,
         authFailureOrSuccessOption: optionOf(failureOrSuccess),
       ));
@@ -73,14 +69,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           email: state.emailAddress,
           password: state.password,
         );
-
-        emit(state.copyWith(
-          isSubmitting: false,
-          authFailureOrSuccessOption: some(failureOrSuccess),
-        ));
       }
 
       emit(state.copyWith(
+        isSubmitting: false,
         showErrorMessage: true,
         authFailureOrSuccessOption: optionOf(failureOrSuccess),
       ));

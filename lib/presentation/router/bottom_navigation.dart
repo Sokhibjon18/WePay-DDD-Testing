@@ -43,6 +43,4 @@ class BottomNavigationPage extends StatelessWidget {
       },
     );
   }
-
-  onTaped(index) {}
 }
